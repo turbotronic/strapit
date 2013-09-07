@@ -1,0 +1,17 @@
+# Dependencies
+markdown:         rdiscount
+pygments:         true
+
+# Permalinks
+permalink:        pretty
+
+# Server
+destination:      ./_gh_pages
+exclude:          [".editorconfig", ".gitignore", ".ruby-version", "bower.json", "composer.json", "CONTRIBUTING.md", "CNAME", "LICENSE", "Gruntfile.js", "package.json", "node_modules", "README.md", "less"]
+port:             9001
+
+# Custom vars
+current_version:  2.0.0
+repo:             https://github.com/jboho/strapit
+download:         https://github.com/jboho/strapit/archive/strapit.zip
+download_dist:    https://sandbox.digitalfirstmedia.com/strapit/dist/strapit-v2.0.0-dist.zip

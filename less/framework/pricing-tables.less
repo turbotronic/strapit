@@ -1,0 +1,45 @@
+//
+// Pricing tables
+// --------------------------------------------------
+
+.pricing-table {
+  border: solid 1px @border-color;
+  border-radius: @border-radius-base;
+  margin-left: 0;
+  margin-bottom: @line-height-computed;
+  * {
+    line-height: 1;
+    text-align: center;
+    color: inherit;
+    font-weight: 300;
+  }
+  .title {
+    background-color: @border-color;
+    padding: 0.9375em 1.25em;
+    font-weight: @headings-font-weight;
+    .font-size(16);
+  }
+  .price {
+    background-color: #eee;
+    padding: 0.9375em 1.25em;
+    .font-size(20); 
+  }
+  .description {
+    background-color: #fff;
+    padding: @padding-base-horizontal;
+    color: lighten(@text-color, 35%);
+    .font-size(12);
+    line-height: 1.4;
+    border-bottom: dotted 1px @border-color; 
+  }
+  .bullet-item {
+    background-color: #fff;
+    padding: 0.9375em;
+    .font-size(12);
+    border-bottom: dotted 1px @border-color;
+  }
+  .cta-btn {
+    background-color: @gray-lightest;
+    padding: 1.25em 0;
+  }
+}

@@ -1,0 +1,2524 @@
+---
+layout: default
+title: CSS
+slug: css
+lead: "Global CSS settings, fundamental HTML elements styled and enhanced with extensible classes, and an advanced grid system."
+base_url: "../"
+---
+
+
+  <!-- Global Strapit settings
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="overview">Overview</h1>
+    </div>
+    <p class="lead">Get the lowdown on the key pieces of Strapit's infrastructure, including our approach to better, faster, stronger web development.</p>
+
+    <h3 id="overview-doctype">HTML5 doctype</h3>
+    <p>Strapit makes use of certain HTML elements and CSS properties that require the use of the HTML5 doctype. Include it at the beginning of all your projects.</p>
+{% highlight html %}
+<!DOCTYPE html>
+<html lang="en">
+  ...
+</html>
+{% endhighlight %}
+
+    <h3 id="overview-mobile">Mobile first</h3>
+    <p>Instead of adding on optional mobile styles, <strong>Strapit is mobile first</strong>. Mobile first styles can be found throughout the entire library instead of in separate files.</p>
+    <p>To ensure proper rendering and touch zooming, <strong>add the viewport meta tag</strong> to your <code>&lt;head&gt;</code>.</p>
+{% highlight html %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endhighlight %}
+    <p>You can disable zooming capabilities on mobile devices by adding <code>user-scalable=no</code> to the viewport meta tag. This disables zooming, meaning users are only able to scroll, and results in your site feeling a bit more like a native application. Overall we don't recommend this on every site, so use caution!</p>
+{% highlight html %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+{% endhighlight %}
+
+    <h3 id="overview-responsive-images">Responsive images <span class="text-danger">>>Desirable? Make responsive by default????</span></h3>
+    <p>Images in Strapit can be made responsive-friendly via the addition of the <code>.img-responsive</code> class. This applies <code>max-width: 100%;</code> and <code>height: auto;</code> to the image so that it scales nicely to the parent element.</p>
+{% highlight html %}
+<img src="..." class="img-responsive" alt="Responsive image">
+{% endhighlight %}
+
+    <h3 id="overview-type-links">Typography and links</h3>
+    <p>Strapit sets basic global show-grid, typography, and link styles. Specifically, we:</p>
+    <ul class="list">
+      <li>Remove <code>margin</code> on the body</li>
+      <li>Add <code>position: relative</code> on the body for use in off-canvas layouts</li>
+      <li>Set <code>background-color: white;</code> on the <code>body</code></li>
+      <li>Use the <code>@font-family-base</code>, <code>@font-size-base</code>, and <code>@line-height-base</code> attributes as our typographic base</li>
+      <li>Set the global link color via <code>@link-color</code> and apply link underlines only on <code>:hover</code></li>
+    </ul>
+    <p>These styles can be found within <code>scaffolding.less</code>.</p>
+
+    <h3 id="overview-normalize">Normalize</h3>
+    <p>For improved cross-browser rendering, we use <a href="http://necolas.github.io/normalize.css/" target="_blank">Normalize</a>, a project by <a href="http://twitter.com/necolas" target="_blank">Nicolas Gallagher</a> and <a href="http://twitter.com/jon_neal" target="_blank">Jonathan Neal</a>. However, rather than one large file, Normailize is split up within the framework where the appropriate styles are grouped the LESS file that they impact. For emaplle, you'll find Normailze's fonr styles within <code>forms.less</code>.</p><p>The advantage of this approach is that you use only the styles you need, so if you did not need <code>forms.less</code>, you would not get hte reset styles, either. The disadvantage is that it is harder to maintain when Normalize updates. For that reason, each Normalize style is commented with a version number e.g.: <code>//(nm v2.1.3)</code>.</p>
+
+    <h3 id="overview-container">Containers</h3>
+    <p>Easily center a page's contents by wrapping its contents in a <code>.container</code>.</p>
+{% highlight html %}
+<div class="container">
+  ...
+</div>
+{% endhighlight %}
+  </div>
+
+
+  <!-- Grid system
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="grid">Grid system</h1>
+    </div>
+<p class="lead">Strapit includes a responsive, mobile-first fluid grid system that appropriately scales up to 12 columns as the device or viewport size increases. It includes <a href="#grid-example-basic">predefined classes</a> for easy layout options, as well as powerful mixins for generating more semantic layouts.</p>
+	<div class="callout info">
+		<h4>But first, a work on the evolving philosophies behind responsive design</h4>
+		<p>You may notice that we have gone with the Foundation grid (with some modifications, such as the addition of Foundation's currently "experimental" <code>.md</code> class) over Bootstrap 3.0. The reason for this is we feel the Foundation grid is simpler and subsequently easier to modify.</p>
+		<p>Bootstrap provides for four distinct sizes that resolve to phone, tablets, desktops and large desktops in practice. We don't think it is useful to think of breakpoints in this way.</p>
+		<p>Instead, breakpoints should apply when the design needs to change to accommodate the viewport within which it is contained. So the breakpoints could be as few as one or as many as 20, the important consideration is that the site is functional and viewable at all sizes from 320px and up.</p>
+		<p>Obviously this is tough to accommodate for in a framework. So, we feel the winning grid is the one that has the least code to change, which, as of today, is Foundation's. That said, we like Bootstrap's class names and conventions better, so we used those.</p>
+	</div>
+	<h3 id="grid-media-queries">Media queries</h3>
+	<p>We use the following media queries to create the key breakpoints in our grid system.</p>
+{% highlight html %}
+/* Small devices (phones and tablets, up to 768px) */
+/* No media query since this is the default  */
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) { ... }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) { ... }
+{% endhighlight %}
+<p>We occasionally expand on these media queries to include a max-width to limit CSS to a narrower set of devices.</p>
+{% highlight html %}
+@media (max-width: @screen-sm-max) { ... }
+@media (min-width: @screen-sm) and (max-width: @screen-sm-max) { ... }
+@media (min-width: @screen-md) and (max-width: @screen-md-max) { ... }
+@media (min-width: @screen-lg) { ... }
+{% endhighlight %}
+	<h3 id="grid-example-basic">Basic grid: Stacked-to-horizontal</h3>
+	<p>Strapit uses <code>box-sizing: border-box</code> so that borders and padding do not affect the overall width of the column, making the math dead-simple. Since Strapit is mobile-first, we'll stack content by default. You do have access to an entirely separate small grid to use up to the 768px breakpoint. This means you can create some pretty complex layouts and even drop columns if you want.</p>
+		<div class="row show-grid">
+		  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+		  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+		  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+		  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+		  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+		  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+		  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+		  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+		  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+		  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+		  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+		  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+		</div>
+		<div class="row show-grid">
+		  <div class="col md-4"><span class="visible-sm">full</span><span class="hidden-sm">4</span></div>
+		  <div class="col md-4"><span class="visible-sm">full</span><span class="hidden-sm">4</span></div>
+		  <div class="col md-4"><span class="visible-sm">full</span><span class="hidden-sm">4</span></div>
+		</div>
+		<div class="row show-grid">
+		  <div class="col md-8"><span class="visible-sm">full</span><span class="hidden-sm">8</span></div>
+		  <div class="col md-4"><span class="visible-sm">full</span><span class="hidden-sm">4</span></div>
+		</div>
+		<div class="row show-grid">
+		  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+		  <div class="col md-3"><span class="visible-sm">full</span><span class="hidden-sm">3</span></div>
+		  <div class="col md-3"><span class="visible-sm">full</span><span class="hidden-sm">3</span></div>
+		  <div class="col md-5"><span class="visible-sm">full</span><span class="hidden-sm">5</span></div>
+		</div>
+
+{% highlight html %}
+<div class="row">
+  <div class="col md-1">...</div>
+  <div class="col md-1">...</div>
+  <div class="col md-1">...</div>
+  <div class="col md-1">...</div>
+  <div class="col md-1">...</div>
+  <div class="col md-1">...</div>
+  <div class="col md-1">...</div>
+  <div class="col md-1">...</div>
+  <div class="col md-1">...</div>
+  <div class="col md-1">...</div>
+  <div class="col md-1">...</div>
+  <div class="col md-1">...</div>
+</div>
+<div class="row">
+  <div class="col md-4">...</div>
+  <div class="col md-4">...</div>
+  <div class="col md-4">...</div>
+</div>
+<div class="row">
+  <div class="col md-8">...</div>
+  <div class="col md-4">...</div>
+</div>
+<div class="row">
+  <div class="col md-1">...</div>
+  <div class="col md-3">...</div>
+  <div class="col md-3">...</div>
+  <div class="col md-5">...</div>
+</div>
+{% endhighlight %}
+
+	<h3 id="grid-small">Small Grid: Mobile and tablet</h3>
+	<p>In addition to the medium grid, you also have access to a small grid. If you know that your grid structure will be the same for small devices as it will be on medium devices, just use the small grid. You can override your small grid classes by adding <code>.md</code> or <code>.lg</code> grid classes to it.</p>
+	<div class="row show-grid">
+	  <div class="col sm-2">2</div>
+	  <div class="col sm-10">10, last</div>
+	</div>
+	<div class="row show-grid">
+	  <div class="col sm-3">3</div>
+	  <div class="col sm-9">9, last</div>
+	</div>
+	<div class="row show-grid">
+	  <div class="col sm-6 md-8"><span class="visible-sm">6</span><span class="hidden-sm">8</span></div>
+	  <div class="col sm-6 md-4"><span class="visible-sm">6</span><span class="hidden-sm">4</span></div>
+	</div>
+	<div class="row show-grid">
+	  <div class="col sm-4 md-2"><span class="visible-sm">4</span><span class="hidden-sm">2</span></div>
+	  <div class="col sm-8 md-10"><span class="visible-sm">8</span><span class="hidden-sm">10</span></div>
+	</div>
+{% highlight html %}
+<div class="row">
+  <div class="col sm-2">2</div>
+  <div class="col sm-10">10, last</div>
+</div>
+<div class="row">
+  <div class="col sm-3">3</div>
+  <div class="col sm-9">9, last</div>
+</div>
+<div class="row">
+  <div class="col sm-6 md-8">...</div>
+  <div class="col sm-6 md-4">...</div>
+</div>
+<div class="row">
+  <div class="col sm-4 md-2">...</div>
+  <div class="col sm-8 md-10">...</div>
+</div>
+{% endhighlight %}
+
+	<h3 id="grid-large">Large Grid: Mobile, tablet and desktop</h3>
+	<p>Build on the previous examples by creating even more dynamic and powerful layouts with desktop <code>.lg</code> classes.</p>
+	<div class="row show-grid">
+	  <div class="col sm-12 md-6 lg-8"><span class="visible-sm">full</span><span class="visible-md">6</span><span class="visible-lg">8</span></div>
+	  <div class="col sm-6 md-6 lg-4"><span class="visible-sm">6 - stacks below!</span><span class="visible-md">6</span><span class="visible-lg">4</span></div>
+	</div>
+	<div class="row show-grid">
+	  <div class="col sm-3 md-4 lg-6"><span class="visible-sm">3</span><span class="visible-md">4</span><span class="visible-lg">6</span></div>
+	  <div class="col sm-9 md-8 lg-6"><span class="visible-sm">9</span><span class="visible-md">8</span><span class="visible-lg">6</span></div>
+	</div>
+	<div class="row show-grid">
+	  <div class="col sm-6 md-8 lg-10"><span class="visible-sm">6</span><span class="visible-md">8</span><span class="visible-lg">10</span></div>
+	  <div class="col sm-6 md-4 lg-2"><span class="visible-sm">6</span><span class="visible-md">4</span><span class="visible-lg">2</span></div>
+	</div>
+{% highlight html %}
+<div class="row">
+  <div class="col sm-12 md-6 lg-8">...</div>
+  <div class="col sm-6 md-6 lg-4">...</div>
+</div>
+<div class="row">
+  <div class="col sm-3 md-4 lg-6">...</div>
+  <div class="col sm-9 md-8 lg-6">...</div>
+</div>
+<div class="row">
+  <div class="col sm-6 md-8 lg-10">...</div>
+  <div class="col sm-6 md-4 lg-2">...</div>
+</div>
+{% endhighlight %}
+
+	<h3 id="grid-nesting">Infinitely Nest Your Grid</h3>
+	<p>The grid allows for nesting down as far as you'd like, though at a certain point it will get absurd. You can use this nesting to create quite complex layouts, as well as some other tricks like form layouts or visual elements.</p>
+
+	<div class="row show-grid">
+	  <div class="col md-8"><span class="visible-sm">full</span><span class="hidden-sm">8</span>
+	    <div class="row">
+	      <div class="col md-8"><span class="visible-sm">full</span><span class="hidden-sm">8 Nested</span>
+	        <div class="row">
+	          <div class="col md-8"><span class="visible-sm">full</span><span class="hidden-sm">8 Nested Again</span></div>
+	          <div class="col md-4"><span class="visible-sm">full</span><span class="hidden-sm">4</span></div>
+	        </div>
+	      </div>
+	      <div class="col md-4"><span class="visible-sm">full</span><span class="hidden-sm">4</span></div>
+	    </div>
+	  </div>
+	  <div class="col md-4"><span class="visible-sm">full</span><span class="hidden-sm">4</span></div>
+	</div>
+
+{% highlight html %}
+<div class="row">
+  <div class="col md-8">8
+    <div class="row">
+      <div class="col md-8">8 Nested
+        <div class="row">
+          <div class="col md-8">8 Nested Again</div>
+          <div class="col md-4">4</div>
+        </div>
+      </div>
+      <div class="col md-4">4</div>
+    </div>
+  </div>
+  <div class="col md-4">4</div>
+</div>
+{% endhighlight %}
+
+	<h3 id="grid-offsetting">Offsets</h3>
+	<p>Offsets allow you to create additional space between col in a row. Like the rest of the grid, they're nestable. You can use classes like <code>.md-offset-1</code> and <code>.sm-offset-3</code> to manipulate your column positions in different ways. You can offset up to 11 since you wouldn't ever offset a full-width column.</p>
+
+
+	<div class="row show-grid">
+	  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+	  <div class="col md-11"><span class="visible-sm">full</span><span class="hidden-sm">11</span></div>
+	</div>
+	<div class="row show-grid">
+	  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+	  <div class="col md-10 md-offset-1"><span class="visible-sm">full</span><span class="hidden-sm">10, offset 1</span></div>
+	</div>
+	<div class="row show-grid">
+	  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+	  <div class="col md-9 md-offset-2"><span class="visible-sm">full</span><span class="hidden-sm">9, offset 2</span></div>
+	</div>
+	<div class="row show-grid">
+	  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+	  <div class="col md-8 md-offset-3"><span class="visible-sm">full</span><span class="hidden-sm">8, offset 3</span></div>
+	</div>
+
+{% highlight html %}
+<div class="row">
+  <div class="col md-1">1</div>
+  <div class="col md-11">11</div>
+</div>
+<div class="row">
+  <div class="col md-1">1</div>
+  <div class="col md-10 md-offset-1">10, offset 1</div>
+</div>
+<div class="row">
+  <div class="col md-1">1</div>
+  <div class="col md-9 md-offset-2">9, offset 2</div>
+</div>
+<div class="rows">
+  <div class="col md-1">1</div>
+  <div class="col md-8 md-offset-3">8, offset 3</div>
+</div>
+{% endhighlight %}
+
+	<h3 id="grid-centering">Centered columns</h3>
+	<p>Centered columns are placed in the middle of the row. This does not center their content, but centers the grid element, itself. This is accomplished by adding a class of <code>.md-centered</code> or <code>.sm-centered</code> depending on which breakpoint you want the column to center on. Small versions will carry through all breakpoints if not overridden by a medium version. You can center any number of columns you have. To have a column not carry it's small-centered to medium, add a class of <code>.md-uncentered</code>.</p>
+	<div class="row show-grid">
+	  <div class="col sm-3 sm-centered">3 centered</div>
+	</div>
+	<div class="row show-grid">
+	  <div class="col sm-6 md-centered">6 centered, md</div>
+	</div>
+	<div class="row show-grid">
+	  <div class="col sm-9 sm-centered md-uncentered">9 centered sm</div>
+	</div>
+	<div class="row show-grid">
+	  <div class="col sm-11 sm-centered">11 centered</div>
+	</div>
+{% highlight html %}
+<div class="row">
+  <div class="col sm-3 sm-centered">3 centered</div>
+</div>
+<div class="row">
+  <div class="col sm-6 md-centered">6 centered, md</div>
+</div>
+<div class="row">
+  <div class="col sm-9 sm-centered md-uncentered">9 centered sm</div>
+</div>
+<div class="row">
+  <div class="col sm-11 sm-centered">11 centered</div>
+</div>
+{% endhighlight %}
+
+	<h3 id="grid-column-ordering">Column Ordering</h3>
+	<p>Using these source ordering classes, you can shift columns around between our breakpoints. This means you can have a sub-nav on the left on medium show-grids, but go below on small ones. <code>.push-#</code> is the syntax you'll use.</p>
+	<div class="row show-grid">
+	  <div class="col md-2 push-10"><span class="visible-sm">full</span><span class="hidden-sm">2</span></div>
+	  <div class="col md-10 pull-2"><span class="visible-sm">full</span><span class="hidden-sm">10, last</span></div>
+	</div>
+	<div class="row show-grid">
+	  <div class="col md-3 push-9"><span class="visible-sm">full</span><span class="hidden-sm">3</span></div>
+	  <div class="col md-9 pull-3"><span class="visible-sm">full</span><span class="hidden-sm">9, last</span></div>
+	</div>
+	<div class="row show-grid">
+	  <div class="col md-4 push-8"><span class="visible-sm">full</span><span class="hidden-sm">4</span></div>
+	  <div class="col md-8 pull-4"><span class="visible-sm">full</span><span class="hidden-sm">8, last</span></div>
+	</div>
+	<div class="row show-grid">
+	  <div class="col md-5 push-7"><span class="visible-sm">full</span><span class="hidden-sm">5</span></div>
+	  <div class="col md-7 pull-5"><span class="visible-sm">full</span><span class="hidden-sm">7, last</span></div>
+	</div>
+	<div class="row show-grid">
+	  <div class="col md-6 push-6"><span class="visible-sm">full</span><span class="hidden-sm">6</span></div>
+	  <div class="col md-6 pull-6"><span class="visible-sm">full</span><span class="hidden-sm">6, last</span></div>
+	</div>
+
+
+{% highlight html %}
+<div class="row">
+  <div class="col md-2 push-10">2</div>
+  <div class="col md-10 pull-2">10, last</div>
+</div>
+<div class="row">
+  <div class="col md-3 push-9">3</div>
+  <div class="col md-9 pull-3">9, last</div>
+</div>
+<div class="row">
+  <div class="col md-4 push-8">4</div>
+  <div class="col md-8 pull-4">8, last</div>
+</div>
+<div class="row">
+  <div class="col md-5 push-7">5</div>
+  <div class="col md-7 pull-5">5, last</div>
+</div>
+<div class="row">
+  <div class="col md-6 push-6">6</div>
+  <div class="col md-6 pull-6">6, last</div>
+</div>
+{% endhighlight %}
+  </div>
+
+
+
+  <!-- Block grid
+  ================================================== -->
+<div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="grid-block">Block Grid</h2>
+    </div>
+    <p class="lead">Block grids give you a way to evenly split contents of a list within the grid. If you wanted to create a row of 5 images or paragraphs that need to stay evenly spaced no matter the screen size, the block grid is for you.</h4>
+	<div class="bs-docs-example">
+	    <ul class="sm-block-grid-2 lg-block-grid-4">
+	      <li><img class="thumbnail" src="../assets/img/demo1.jpg"></li>
+	      <li><img class="thumbnail" src="../assets/img/demo2.jpg"></li>
+	      <li><img class="thumbnail" src="../assets/img/demo3.jpg"></li>
+	      <li><img class="thumbnail" src="../assets/img/demo4.jpg"></li>
+	    </ul>
+	</div>
+
+{% highlight html %}
+<!-- Using only the small-block-grid -->
+<ul class="sm-block-grid-2">
+  <li><img src="..."></li>
+  <li><img src="..."></li>
+  <li><img src="..."></li>
+  <li><img src="..."></li>
+</ul>
+
+<!-- Using only the large-block-grid -->
+<ul class="sm-block-grid-4">
+  <li><img src="..."></li>
+  <li><img src="..."></li>
+  <li><img src="..."></li>
+  <li><img src="..."></li>
+</ul>
+
+<!-- Using both block grids together for different layouts -->
+<ul class="sm-block-grid-2 lg-block-grid-4">
+  <li><img src="..."></li>
+  <li><img src="..."></li>
+  <li><img src="..."></li>
+  <li><img src="..."></li>
+</ul>
+{% endhighlight %}
+        <h3>Building With Predefined HTML Classes</h3>
+        <p>Block grids are made from a <code>ul.sm-block-grid-#</code> or <code>ul.lg-block-grid-#</code>. These are ideal for blocked-in content generated by an application, as they do not require rows or even numbers of elements to display correctly.</p>
+        <p>These have a bit of flexibility since you have access to two separate grids between our built-in 768px breakpoint. If you use the <code>sm-block-grid</code> only, the grid will keep its spacing and configuration no matter the screen size. If you use <code>lg-block-grid</code> only, the list items will stack on top of each other for small devices. If you use both of those classes combined, you can control the configuration and layout separately for each breakpoint.</p>
+
+        <h3>Clearing Block Grid Rows</h3>
+        <p>We have this built into the CSS, but you'll need to add a bit of code if you want your block grid to change layout between breakpoints. If you don't use this, it will inherit whatever you put in the smallest media query. This code looks for the <code>n+1</code> of the grid so that it clears properly. That code looks like this:</p>
+{% highlight html %}
+.your-small-class-name > li { clear: none !important; }
+{% endhighlight %}
+        <p><strong>Note:</strong> If you are using the same class across breakpoints, your mixin should override this and you won't need it. If you want to control the layout using different classes, use the above snippet.</p>
+</div>
+
+
+
+  <!-- Typography
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="type">Typography</h1>
+    </div>
+
+    <!-- Headings -->
+    <h2 id="type-headings">Headings</h2>
+    <p>All HTML headings, <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code> are available.</p>
+    <div class="bs-example bs-example-type">
+      <table class="table">
+        <tbody>
+          <tr>
+            <td><h1>h1. Strapit heading</h1></td>
+            <td class="info">Semibold 36px</td>
+          </tr>
+          <tr>
+            <td><h2>h2. Strapit heading</h2></td>
+            <td class="info">Semibold 30px</td>
+          </tr>
+          <tr>
+            <td><h3>h3. Strapit heading</h3></td>
+            <td class="info">Semibold 24px</td>
+          </tr>
+          <tr>
+            <td><h4>h4. Strapit heading</h4></td>
+            <td class="info">Semibold 18px</td>
+          </tr>
+          <tr>
+            <td><h4>h4. Strapit heading</h4></td>
+            <td class="info">Semibold 14px</td>
+          </tr>
+          <tr>
+            <td><h6>h6. Strapit heading</h6></td>
+            <td class="info">Semibold 12px</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+{% highlight html %}
+<h1>h1. Strapit heading</h1>
+<h2>h2. Strapit heading</h2>
+<h3>h3. Strapit heading</h3>
+<h4>h4. Strapit heading</h4>
+<h4>h4. Strapit heading</h4>
+<h6>h6. Strapit heading</h6>
+{% endhighlight %}
+
+    <p>Also included with headings is an autoscaling <code>&lt;small&gt;</code> element. Use it for smaller, gray secondary text in any heading.</p>
+    <div class="bs-example bs-example-type">
+      <table class="table">
+        <tbody>
+          <tr>
+            <td><h1>h1. Strapit heading <small>Secondary text</small></h1></td>
+          </tr>
+          <tr>
+            <td><h2>h2. Strapit heading <small>Secondary text</small></h2></td>
+          </tr>
+          <tr>
+            <td><h3>h3. Strapit heading <small>Secondary text</small></h3></td>
+          </tr>
+          <tr>
+            <td><h4>h4. Strapit heading <small>Secondary text</small></h4></td>
+          </tr>
+          <tr>
+            <td><h4>h4. Strapit heading <small>Secondary text</small></h4></td>
+          </tr>
+          <tr>
+            <td><h6>h6. Strapit heading <small>Secondary text</small></h6></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+{% highlight html %}
+<h1>h1. Strapit heading <small>Secondary text</small></h1>
+<h2>h2. Strapit heading <small>Secondary text</small></h2>
+<h3>h3. Strapit heading <small>Secondary text</small></h3>
+<h4>h4. Strapit heading <small>Secondary text</small></h4>
+<h4>h4. Strapit heading <small>Secondary text</small></h4>
+<h6>h6. Strapit heading <small>Secondary text</small></h6>
+{% endhighlight %}
+    <h2 id="sub-headings">Subheads</h2>
+    <p>Add <code>.subhead</code> to a paragraph tag.</p>
+    <div class="bs-example">
+      <h2>A headline goes here</h2>
+      <p class="subhead">Subheads are intended to be brief statements that support a main headline.</h1>
+    </div>
+{% highlight html %}
+<h2>A headline goes here</h2>
+<p class="subhead">Subheads are intended to be brief statements that support a main headline.</h1>
+{% endhighlight %}
+
+
+    <!-- Body copy -->
+    <h2 id="type-body-copy">Body copy</h2>
+    <p>Strapit's global default <code>font-size</code> is <strong>14px</strong>, with a <code>line-height</code> of <strong>1.618</strong>. This is applied to the <code>&lt;body&gt;</code> and all paragraphs. In addition, <code>&lt;p&gt;</code> (paragraphs) receive a bottom margin of half their computed line-height (10px by default).</p>
+    <div class="bs-example">
+      <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+      <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+      <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+    </div>
+{% highlight html %}
+<p>...</p>
+{% endhighlight %}
+
+    <!-- Body copy .lead -->
+    <h3>Lead body copy</h3>
+    <p>Make a paragraph stand out by adding <code>.lead</code>.</p>
+    <div class="bs-example">
+      <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</p>
+    </div>
+{% highlight html %}
+<p class="lead">...</p>
+{% endhighlight %}
+
+    <!-- Using LESS -->
+    <h3>Built with Less</h3>
+    <p>The typographic scale is based on two LESS variables in <strong>variables.less</strong>: <code>@font-size-base</code> and <code>@line-height-base</code>. The first is the base font-size used throughout and the second is the base line-height. We use those variables and some simple math to create the margins, paddings, and line-heights of all our type and more. Customize them and Strapit adapts.</p>
+
+
+    <!-- Emphasis -->
+    <h2 id="type-emphasis">Emphasis</h2>
+    <p>Make use of HTML's default emphasis tags with lightweight styles.</p>
+
+    <h3>Small text</h3>
+    <p>For de-emphasizing inline or blocks of text, use the <code>&lt;small&gt;</code> tag to set text at 85% the size of the parent. Heading elements receive their own <code>font-size</code> for nested <code>&lt;small&gt;</code> elements.</p>
+    <div class="bs-example">
+      <p><small>This line of text is meant to be treated as fine print.</small></p>
+    </div>
+{% highlight html %}
+<small>This line of text is meant to be treated as fine print.</small>
+{% endhighlight %}
+
+
+    <h3>Bold</h3>
+    <p>For emphasizing a snippet of text with a heavier font-weight.</p>
+    <div class="bs-example">
+      <p>The following snippet of text is <strong>rendered as bold text</strong>.</p>
+    </div>
+{% highlight html %}
+<strong>rendered as bold text</strong>
+{% endhighlight %}
+
+    <h3>Italics</h3>
+    <p>For emphasizing a snippet of text with italics.</p>
+    <div class="bs-example">
+      <p>The following snippet of text is <em>rendered as italicized text</em>.</p>
+    </div>
+{% highlight html %}
+<em>rendered as italicized text</em>
+{% endhighlight %}
+
+    <div class="callout info">
+      <h4>Alternate elements</h4>
+      <p>Feel free to use <code>&lt;b&gt;</code> and <code>&lt;i&gt;</code> in HTML5. <code>&lt;b&gt;</code> is meant to highlight words or phrases without conveying additional importance while <code>&lt;i&gt;</code> is mostly for voice, technical terms, etc.</p>
+    </div>
+
+    <h3>Alignment classes</h3>
+    <p>Easily realign text to components with text alignment classes.</p>
+    <div class="bs-example">
+      <p class="text-left">Left aligned text.</p>
+      <p class="text-center">Center aligned text.</p>
+      <p class="text-right">Right aligned text.</p>
+    </div>
+{% highlight html %}
+<p class="text-left">Left aligned text.</p>
+<p class="text-center">Center aligned text.</p>
+<p class="text-right">Right aligned text.</p>
+{% endhighlight %}
+
+    <h3>Emphasis classes</h3>
+    <p>Convey meaning through color with a handful of emphasis utility classes.</p>
+    <div class="bs-example">
+      <p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+      <p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+      <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+      <p class="text-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+      <p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
+      <p class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
+    </div>
+{% highlight html %}
+<p class="text-muted">...</p>
+<p class="text-primary">...</p>
+<p class="text-success">...</p>
+<p class="text-info">...</p>
+<p class="text-warning">...</p>
+<p class="text-danger">...</p>
+{% endhighlight %}
+
+    <!-- Lists -->
+    <h2 id="type-lists">Lists</h2>
+
+    <h3>Unordered</h3>
+    <p>A list of items in which the order does <em>not</em> explicitly matter. These are unstyled by default in Strapit.</p>
+    <div class="bs-example">
+      <ul>
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Consectetur adipiscing elit</li>
+        <li>Integer molestie lorem at massa</li>
+        <li>Facilisis in pretium nisl aliquet</li>
+        <li>Nulla volutpat aliquam velit
+          <ul>
+            <li>Phasellus iaculis neque</li>
+            <li>Purus sodales ultricies</li>
+            <li>Vestibulum laoreet porttitor sem</li>
+            <li>Ac tristique libero volutpat at</li>
+          </ul>
+        </li>
+        <li>Faucibus porta lacus fringilla vel</li>
+        <li>Aenean sit amet erat nunc</li>
+        <li>Eget porttitor lorem</li>
+      </ul>
+    </div>
+{% highlight html %}
+<ul>
+  <li>...</li>
+</ul>
+{% endhighlight %}
+
+    <h3>Ordered</h3>
+    <p>A list of items in which the order <em>does</em> explicitly matter. These are styled by default because these are usually used for their intended purposes, unlike <code>ul</code> tags, which are (at least in our experience) used for navs and such.</p>
+    <div class="bs-example">
+      <ol>
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Consectetur adipiscing elit</li>
+        <li>Integer molestie lorem at massa</li>
+        <li>Facilisis in pretium nisl aliquet</li>
+        <li>Nulla volutpat aliquam velit</li>
+        <li>Faucibus porta lacus fringilla vel</li>
+        <li>Aenean sit amet erat nunc</li>
+        <li>Eget porttitor lorem</li>
+      </ol>
+    </div>
+{% highlight html %}
+<ol>
+  <li>...</li>
+</ol>
+{% endhighlight %}
+
+    <h3>OK, but what if I do want an actual unordered list?</h3>
+    <p>Very simple. Just add <code>class="list"</code> to your <code>ul</code> and it will behave as the Internet intended.</p>
+    <div class="bs-example">
+      <ul class="list">
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Consectetur adipiscing elit</li>
+        <li>Integer molestie lorem at massa</li>
+        <li>Facilisis in pretium nisl aliquet</li>
+        <li>Nulla volutpat aliquam velit
+          <ul>
+            <li>Phasellus iaculis neque</li>
+            <li>Purus sodales ultricies</li>
+            <li>Vestibulum laoreet porttitor sem</li>
+            <li>Ac tristique libero volutpat at</li>
+          </ul>
+        </li>
+        <li>Faucibus porta lacus fringilla vel</li>
+        <li>Aenean sit amet erat nunc</li>
+        <li>Eget porttitor lorem</li>
+      </ul>
+    </div>
+{% highlight html %}
+<ul class="list">
+  <li>...</li>
+</ul>
+{% endhighlight %}
+
+    <h3>Square and circle versions available, too</h3>
+    <p>Add the <code>.square</code> or <code>.circle</code> classes to your <code>ul class="list"</code> to generate those options.</p>
+    <div class="bs-example">
+      <ul class="list square">
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Consectetur adipiscing elit</li>
+        <li>Integer molestie lorem at massa</li>
+        <li>Facilisis in pretium nisl aliquet</li>
+        <li>Nulla volutpat aliquam velit
+          <ul>
+            <li>Phasellus iaculis neque</li>
+            <li>Purus sodales ultricies</li>
+            <li>Vestibulum laoreet porttitor sem</li>
+            <li>Ac tristique libero volutpat at</li>
+          </ul>
+        </li>
+        <li>Faucibus porta lacus fringilla vel</li>
+        <li>Aenean sit amet erat nunc</li>
+        <li>Eget porttitor lorem</li>
+      </ul>
+      <ul class="list circle">
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Consectetur adipiscing elit</li>
+        <li>Integer molestie lorem at massa</li>
+        <li>Facilisis in pretium nisl aliquet</li>
+        <li>Nulla volutpat aliquam velit
+          <ul>
+            <li>Phasellus iaculis neque</li>
+            <li>Purus sodales ultricies</li>
+            <li>Vestibulum laoreet porttitor sem</li>
+            <li>Ac tristique libero volutpat at</li>
+          </ul>
+        </li>
+        <li>Faucibus porta lacus fringilla vel</li>
+        <li>Aenean sit amet erat nunc</li>
+        <li>Eget porttitor lorem</li>
+      </ul>
+    </div>
+{% highlight html %}
+<ul class="list square">
+  <li>...</li>
+</ul>
+<ul class="list circle">
+  <li>...</li>
+</ul>
+{% endhighlight %}
+
+    <h3>Inline</h3>
+    <p>Place all list items on a single line with <code>show-grid: inline-block;</code> and some light padding.</p>
+    <div class="bs-example">
+      <ul class="list-inline">
+        <li>Lorem ipsum</li>
+        <li>Phasellus iaculis</li>
+        <li>Nulla volutpat</li>
+      </ul>
+    </div>
+{% highlight html %}
+<ul class="list-inline">
+  <li>...</li>
+</ul>
+{% endhighlight %}
+   <h3>Description</h3>
+    <p>A list of terms with their associated descriptions.</p>
+    <div class="bs-example">
+      <dl>
+        <dt>Description lists</dt>
+        <dd>A description list is perfect for defining terms.</dd>
+        <dt>Euismod</dt>
+        <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+        <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+        <dt>Malesuada porta</dt>
+        <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+      </dl>
+    </div>
+{% highlight html %}
+<dl>
+  <dt>...</dt>
+  <dd>...</dd>
+</dl>
+{% endhighlight %}
+
+    <h4>Horizontal description</h4>
+    <p>Make terms and descriptions in <code>&lt;dl&gt;</code> line up side-by-side. Starts off stacked like default <code>&lt;dl&gt;</code>s, but when the navbar expands, so do these.</p>
+    <div class="bs-example">
+      <dl class="dl-horizontal">
+        <dt>Description lists</dt>
+        <dd>A description list is perfect for defining terms.</dd>
+        <dt>Euismod</dt>
+        <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+        <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+        <dt>Malesuada porta</dt>
+        <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+        <dt>Felis euismod semper eget lacinia</dt>
+        <dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+      </dl>
+    </div>
+{% highlight html %}
+<dl class="dl-horizontal">
+  <dt>...</dt>
+  <dd>...</dd>
+</dl>
+{% endhighlight %}
+
+    <div class="callout info">
+      <h4>Auto-truncating</h4>
+      <p>Horizontal description lists will truncate terms that are too long to fit in the left column with <code>text-overflow</code>. In narrower viewports, they will change to the default stacked layout.</p>
+    </div>
+  </div>
+
+   <!-- Blockquotes -->
+    <h2 id="type-blockquotes">Blockquotes</h2>
+    <p>For quoting blocks of content from another source within your document.</p>
+
+    <h3>Default blockquote</h3>
+    <p>Wrap <code>&lt;blockquote&gt;</code> around any <abbr title="HyperText Markup Language">HTML</abbr> as the quote. For straight quotes, we recommend a <code>&lt;p&gt;</code>.</p>
+    <div class="bs-example">
+      <blockquote>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+      </blockquote>
+    </div>
+{% highlight html %}
+<blockquote>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+</blockquote>
+{% endhighlight %}
+
+    <h3>Blockquote options</h3>
+    <p>Style and content changes for simple variations on a standard <code>&lt;blockquote&gt;</code>.</p>
+
+    <h4>Naming a source</h4>
+    <p>Add <code>&lt;small&gt;</code> tag for identifying the source. Wrap the name of the source work in <code>&lt;cite&gt;</code>.</p>
+    <div class="bs-example">
+      <blockquote>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+      </blockquote>
+    </div>
+{% highlight html %}
+<blockquote>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+  <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+</blockquote>
+{% endhighlight %}
+
+    <h4>Alternate show-grids</h4>
+    <p>Use <code>.pull-right</code> for a floated, right-aligned blockquote.</p>
+    <div class="bs-example" style="overflow: hidden;">
+      <blockquote class="pull-right">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+      </blockquote>
+    </div>
+{% highlight html %}
+<blockquote class="pull-right">
+  ...
+</blockquote>
+{% endhighlight %}
+
+
+
+    <!-- Abbreviations -->
+    <h2 id="type-abbreviations">Abbreviations</h2>
+    <p>Stylized implementation of HTML's <code>&lt;abbr&gt;</code> element for abbreviations and acronyms to show the expanded version on hover. Abbreviations with a <code>title</code> attribute have a light dotted bottom border and a help cursor on hover, providing additional context on hover.</p>
+    <div class="callout info">
+      <h4>Located in type-rare.less</h4>
+      <p>Abbreviations and the style shown here afterward are kind of rarely used. Because of that, we separated these styles into another LESS stylesheet named <code>type-rare.less</code> just in case yuou'd like to turn these off in final complication.'</p>
+    </div>
+    <h3>Basic abbreviation</h3>
+    <p>For expanded text on long hover of an abbreviation, include the <code>title</code> attribute with the <code>&lt;abbr&gt;</code> element.</p>
+    <div class="bs-example">
+      <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
+    </div>
+{% highlight html %}
+<abbr title="attribute">attr</abbr>
+{% endhighlight %}
+
+    <h3>Initialism</h3>
+    <p>Add <code>.initialism</code> to an abbreviation for a slightly smaller font-size.</p>
+    <div class="bs-example">
+      <p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr> is the best thing since sliced bread.</p>
+    </div>
+{% highlight html %}
+<abbr title="HyperText Markup Language" class="initialism">HTML</abbr>
+{% endhighlight %}
+
+
+    <!-- Addresses -->
+    <h2 id="type-addresses">Addresses</h2>
+    <p>Present contact information for the nearest ancestor or the entire body of work. Preserve formatting by ending all lines with <code>&lt;br&gt;</code>.</p>
+    <div class="bs-example">
+      <address>
+        <strong>Twitter, Inc.</strong><br>
+        795 Folsom Ave, Suite 600<br>
+        San Francisco, CA 94107<br>
+        <abbr title="Phone">P:</abbr> (123) 456-7890
+      </address>
+      <address>
+        <strong>Full Name</strong><br>
+        <a href="mailto:#">first.last@example.com</a>
+      </address>
+    </div>
+{% highlight html %}
+<address>
+  <strong>Twitter, Inc.</strong><br>
+  795 Folsom Ave, Suite 600<br>
+  San Francisco, CA 94107<br>
+  <abbr title="Phone">P:</abbr> (123) 456-7890
+</address>
+
+<address>
+  <strong>Full Name</strong><br>
+  <a href="mailto:#">first.last@example.com</a>
+</address>
+{% endhighlight %}
+    <h2 id="type-keystrokes">Keystrokes</h2>
+    <p>If you have keyboard affordances, you might need to explain them. To that end, there's a simple keystroke character affordance.
+<div class="bs-example">
+  </p>For example, to close your browser hit <kbd>Cmd + Q</kbd>. Don't actually do it. There's more docs to read.</p>
+</div>
+{% highlight html %}
+</p>For example, to close your browser hit <kbd>Cmd + Q</kbd>. Don't actually do it. There's more docs to read.</p>
+{% endhighlight %}
+
+
+ 
+
+ 
+
+  <!-- Code
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="code">Code</h1>
+    </div>
+
+    <h2>Inline</h2>
+    <p>Wrap inline snippets of code with <code>&lt;code&gt;</code>.</p>
+<div class="bs-example">
+  For example, <code>&lt;section&gt;</code> should be wrapped as inline.
+</div>
+{% highlight html %}
+For example, <code>&lt;section&gt;</code> should be wrapped as inline.
+{% endhighlight %}
+
+    <h2>Basic block</h2>
+    <p>Use <code>&lt;pre&gt;</code> for multiple lines of code. Be sure to escape any angle brackets in the code for proper rendering.</p>
+<div class="bs-example">
+  <pre>&lt;p&gt;Sample text here...&lt;/p&gt;</pre>
+</div>
+{% highlight html %}
+<pre>&lt;p&gt;Sample text here...&lt;/p&gt;</pre>
+{% endhighlight %}
+
+    <p>You may optionally add the <code>.pre-scrollable</code> class, which will set a max-height of 350px and provide a y-axis scrollbar.</p>
+  </div>
+
+
+
+  <!-- Tables
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="tables">Tables</h1>
+    </div>
+
+    <h2 id="tables-example">Basic example</h2>
+    <p>For basic styling&mdash;light padding and only horizontal dividers&mdash;add the base class <code>.table</code> to any <code>&lt;table&gt;</code>. It may seem super redundant, but given the widespread use of tables for other plugins like calendars and date pickers, we've opted to isolate our custom table styles.</p>
+    <div class="bs-example">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!-- /example -->
+{% highlight html %}
+<table class="table">
+  ...
+</table>
+{% endhighlight %}
+
+
+    <h2 id="tables-striped">Striped rows</h2>
+    <p>Use <code>.striped</code> to add zebra-striping to any table row within the <code>&lt;tbody&gt;</code>.</p>
+    <div class="callout danger">
+      <h4>Cross-browser compatibility</h4>
+      <p>Striped tables are styled via the <code>:nth-child</code> CSS selector, which is not available in Internet Explorer 8.</p>
+    </div>
+    <div class="bs-example">
+      <table class="table striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!-- /example -->
+{% highlight html %}
+<table class="table striped">
+  ...
+</table>
+{% endhighlight %}
+
+
+    <h2 id="tables-bordered">Bordered table</h2>
+    <p>Add <code>.bordered</code> for borders on all sides of the table and cells.</p>
+    <div class="bs-example">
+      <table class="table bordered">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="2">1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@TwStrapit</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!-- /example -->
+{% highlight html %}
+<table class="table bordered">
+  ...
+</table>
+{% endhighlight %}
+
+
+    <h2 id="tables-hover-rows">Hover rows</h2>
+    <p>Add <code>.hover</code> to enable a hover state on table rows within a <code>&lt;tbody&gt;</code>.</p>
+    <div class="bs-example">
+      <table class="table hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!-- /example -->
+{% highlight html %}
+<table class="table hover">
+  ...
+</table>
+{% endhighlight %}
+
+
+    <h2 id="tables-condensed">Condensed table</h2>
+    <p>Add <code>.condensed</code> to make tables more compact by cutting cell padding in half.</p>
+    <div class="bs-example">
+      <table class="table condensed">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!-- /example -->
+{% highlight html %}
+<table class="table condensed">
+  ...
+</table>
+{% endhighlight %}
+
+
+    <h2 id="tables-contextual-classes">Contextual classes</h2>
+    <p>Use contextual classes to color table rows or individual cells.</p>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <colgroup>
+          <col class="col lg-1">
+          <col class="col lg-7">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <code>.active</code>
+            </td>
+            <td>Applies the hover color to a particular row or cell</td>
+          </tr>
+          <tr>
+            <td>
+              <code>.success</code>
+            </td>
+            <td>Indicates a successful or positive action</td>
+          </tr>
+          <tr>
+            <td>
+              <code>.warning</code>
+            </td>
+            <td>Indicates a warning that might need attention</td>
+          </tr>
+          <tr>
+            <td>
+              <code>.danger</code>
+            </td>
+            <td>Indicates a dangerous or potentially negative action</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="bs-example">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Column heading</th>
+            <th>Column heading</th>
+            <th>Column heading</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="active">
+            <td>1</td>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+          </tr>
+          <tr class="success">
+            <td>3</td>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+          </tr>
+          <tr class="warning">
+            <td>5</td>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+          </tr>
+          <tr class="danger">
+            <td>7</td>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!-- /example -->
+{% highlight html %}
+<!-- On rows -->
+<tr class="active">...</tr>
+<tr class="success">...</tr>
+<tr class="warning">...</tr>
+<tr class="danger">...</tr>
+
+<!-- On cells (`td` or `th`) -->
+<tr>
+  <td class="active">...</td>
+  <td class="success">...</td>
+  <td class="warning">...</td>
+  <td class="danger">...</td>
+</tr>
+{% endhighlight %}
+
+
+    <h2 id="tables-responsive">Responsive tables</h2>
+    <p>There are two ways to create responsive tables in Strapit. Both require the file <code>tables-responsive.less</code>.</p>
+    <p>The first option requires no Javascript. Create responsive tables by wrapping any <code>.table</code> in <code>.table-responsive</code> to make them scroll horizontally up to small devices (under 768px). When viewing on anything larger than 768px wide, you will not see any difference in these tables.</p>
+    <div class="bs-example">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Table heading</th>
+              <th>Table heading</th>
+              <th>Table heading</th>
+              <th>Table heading</th>
+              <th>Table heading</th>
+              <th>Table heading</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+            </tr>
+          </tbody>
+        </table>
+      </div><!-- /.table-responsive -->
+
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Table heading</th>
+              <th>Table heading</th>
+              <th>Table heading</th>
+              <th>Table heading</th>
+              <th>Table heading</th>
+              <th>Table heading</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+              <td>Table cell</td>
+            </tr>
+          </tbody>
+        </table>
+      </div><!-- /.table-responsive -->
+    </div><!-- /example -->
+{% highlight html %}
+<div class="table-responsive">
+  <table class="table">
+    ...
+  </table>
+</div>
+{% endhighlight %}
+  <h3>Advanced JS solution</h3>
+  <p>This CSS/JS solution allows tables to shrink on small devices without sacrificing the value of tables, comparison of columns.</p>
+  <p>This requires an additional js file: <code>responsive-tables.js</code>. This file helps us create some new elements on small devices, so we don't have to modify our table markup on the page. The CSS applies the requisite positioning and overflow styles to make the new elements work.</p>
+  <p>Just attach <code>.responsive</code> to your table to make this work.</p>
+    <div class="bs-example">
+		<table class="table responsive">
+			<thead>
+				<tr>
+					<th>Header 1</th>
+					<th>Header 2</th>
+					<th>Header 3</th>
+					<th>Header 4</th>
+					<th>Header 5</th>
+					<th>Header 6</th>
+					<th>Header 7</th>
+					<th>Header 8</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>row 1, cell 1</td>
+					<td>row 1, cell 2</td>
+					<td>row 1, cell 3</td>
+					<td>row 1, cell 4</td>
+					<td>row 1, cell 5</td>
+					<td>row 1, cell 6</td>
+					<td>row 1, cell 7</td>
+					<td>row 1, cell 8</td>
+				</tr>
+				<tr>
+					<td>row 2, cell 1</td>
+					<td>row 2, cell 2</td>
+					<td>row 2, cell 3</td>
+					<td>row 2, cell 4</td>
+					<td>row 2, cell 5</td>
+					<td>row 2, cell 6</td>
+					<td>row 2, cell 7</td>
+					<td>row 2, cell 8</td>
+				</tr>
+				<tr>
+					<td>row 3, cell 1</td>
+					<td>row 3, cell 2</td>
+					<td>row 3, cell 3</td>
+					<td>row 3, cell 4</td>
+					<td>row 3, cell 5</td>
+					<td>row 3, cell 6</td>
+					<td>row 3, cell 7</td>
+					<td>row 3, cell 8</td>
+				</tr>
+				<tr>
+					<td>row 4, cell 1</td>
+					<td>row 4, cell 2</td>
+					<td>row 4, cell 3</td>
+					<td>row 4, cell 4</td>
+					<td>row 4, cell 5</td>
+					<td>row 4, cell 6</td>
+					<td>row 4, cell 7</td>
+					<td>row 4, cell 8</td>
+				</tr>
+			</tbody>
+		</table>
+    </div><!-- /example -->
+{% highlight html %}
+<table class="table responsive">
+  ...
+</table>
+{% endhighlight %}
+	</div>
+
+  <!-- Forms
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="forms">Forms</h1>
+    </div>
+
+    <h2 id="forms-example">Basic example</h2>
+    <p>Individual form controls automatically receive some global styling. All textual <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements with <code>.form-control</code> are set to <code>width: 100%;</code> by default. Wrap labels and controls in <code>.form-group</code> for optimum spacing.</p>
+    <div class="bs-example">
+      <form role="form">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputFile">File input</label>
+          <input type="file" id="exampleInputFile">
+          <p class="help-block">Example block-level help text here.</p>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Check me out
+          </label>
+        </div>
+        <button type="submit" class="btn default">Submit</button>
+      </form>
+    </div><!-- /example -->
+{% highlight html %}
+<form role="form">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">File input</label>
+    <input type="file" id="exampleInputFile">
+    <p class="help-block">Example block-level help text here.</p>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Check me out
+    </label>
+  </div>
+  <button type="submit" class="btn default">Submit</button>
+</form>
+{% endhighlight %}
+
+
+    <h2 id="forms-inline">Inline form</h2>
+    <p>Add <code>.form-inline</code> for left-aligned and inline-block controls for a compact layout.</p>
+    <div class="callout danger">
+      <h4>Requires custom widths</h4>
+      <p>Inputs, selects, and textareas are 100% wide by default in Strapit. To use the inline form, you'll have to set a width on the form controls used within.</p>
+    </div>
+    <div class="callout danger">
+      <h4>Always add labels</h4>
+      <p>Screen readers will have trouble with your forms if you don't include a label for every input. For these inline forms, you can hide the labels using the <code>.sr-only</code> class.</p>
+    </div>
+    <div class="bs-example">
+      <form class="form-inline" role="form">
+        <div class="form-group">
+          <label class="sr-only" for="exampleInputEmail2">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="exampleInputPassword2">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Remember me
+          </label>
+        </div>
+        <button type="submit" class="btn default">Sign in</button>
+      </form>
+    </div><!-- /example -->
+{% highlight html %}
+<form class="form-inline" role="form">
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputEmail2">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputPassword2">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Remember me
+    </label>
+  </div>
+  <button type="submit" class="btn default">Sign in</button>
+</form>
+{% endhighlight %}
+
+
+    <h2 id="forms-horizontal">Horizontal form</h2>
+    <p>Use Strapit's predefined grid classes to align labels and groups of form controls in a horizontal layout by adding <code>.form-horizontal</code> to the form. Doing so changes <code>.form-group</code>s to behave as grid rows, so no need for <code>.row</code>.</p>
+    <div class="bs-example">
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label for="inputEmail1" class="col lg-2 control-label">Email</label>
+          <div class="col lg-10">
+            <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword1" class="col lg-2 control-label">Password</label>
+          <div class="col lg-10">
+            <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col lg-offset-2 col lg-10">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Remember me
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col lg-offset-2 col lg-10">
+            <button type="submit" class="btn default">Sign in</button>
+          </div>
+        </div>
+      </form>
+    </div><!-- /.bs-example -->
+{% highlight html %}
+<form class="form-horizontal" role="form">
+  <div class="form-group">
+    <label for="inputEmail1" class="col lg-2 control-label">Email</label>
+    <div class="col lg-10">
+      <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword1" class="col lg-2 control-label">Password</label>
+    <div class="col lg-10">
+      <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col lg-offset-2 col lg-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Remember me
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col lg-offset-2 col lg-10">
+      <button type="submit" class="btn default">Sign in</button>
+    </div>
+  </div>
+</form>
+{% endhighlight %}
+
+
+    <h2 id="forms-controls">Supported controls</h2>
+    <p>Examples of standard form controls supported in an example form layout.</p>
+
+    <h3>Inputs</h3>
+    <p>Most common form control, text-based input fields. Includes support for all HTML5 types: <code>text</code>, <code>password</code>, <code>datetime</code>, <code>datetime-local</code>, <code>date</code>, <code>month</code>, <code>time</code>, <code>week</code>, <code>number</code>, <code>email</code>, <code>url</code>, <code>search</code>, <code>tel</code>, and <code>color</code>.</p>
+    <div class="callout danger">
+      <h4>Type declaration required</h4>
+      <p>Inputs will only be fully styled if their <code>type</code> is properly declared.</p>
+    </div>
+    <div class="bs-example">
+      <form role="form">
+        <input type="text" class="form-control" placeholder="Text input">
+      </form>
+    </div><!-- /.bs-example -->
+{% highlight html %}
+<input type="text" class="form-control" placeholder="Text input">
+{% endhighlight %}
+
+    <h3>Textarea</h3>
+    <p>Form control which supports multiple lines of text. Change <code>rows</code> attribute as necessary.</p>
+    <div class="bs-example">
+      <form role="form">
+        <textarea class="form-control" rows="3"></textarea>
+      </form>
+    </div><!-- /.bs-example -->
+{% highlight html %}
+<textarea class="form-control" rows="3"></textarea>
+{% endhighlight %}
+
+    <h3>Checkboxes and radios</h3>
+    <p>Checkboxes are for selecting one or several options in a list while radios are for selecting one option from many.</p>
+    <h4>Default (stacked)</h4>
+    <div class="bs-example">
+      <form role="form">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="">
+            Option one is this and that&mdash;be sure to include why it's great
+          </label>
+        </div>
+        <br>
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+            Option one is this and that&mdash;be sure to include why it's great
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            Option two can be something else and selecting it will deselect option one
+          </label>
+        </div>
+      </form>
+    </div><!-- /.bs-example -->
+{% highlight html %}
+<div class="checkbox">
+  <label>
+    <input type="checkbox" value="">
+    Option one is this and that&mdash;be sure to include why it's great
+  </label>
+</div>
+
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+    Option one is this and that&mdash;be sure to include why it's great
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+    Option two can be something else and selecting it will deselect option one
+  </label>
+</div>
+{% endhighlight %}
+
+    <h4>Inline checkboxes</h4>
+    <p>Use <code>.checkbox-inline</code> or <code>.radio-inline</code> class to a series of checkboxes or radios for controls appear on the same line.</p>
+    <div class="bs-example">
+      <form role="form">
+        <label class="checkbox-inline">
+          <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+        </label>
+      </form>
+    </div><!-- /.bs-example -->
+{% highlight html %}
+<label class="checkbox-inline">
+  <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+</label>
+<label class="checkbox-inline">
+  <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+</label>
+<label class="checkbox-inline">
+  <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+</label>
+{% endhighlight %}
+
+    <h3>Selects</h3>
+    <p>Use the default option, or add <code>multiple</code> to show multiple options at once.</p>
+    <div class="bs-example">
+      <form role="form">
+        <select class="form-control">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <br>
+        <select multiple class="form-control">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </form>
+    </div><!-- /.bs-example -->
+{% highlight html %}
+<select class="form-control">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+</select>
+
+<select multiple class="form-control">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+</select>
+{% endhighlight %}
+
+
+    <h2 id="forms-controls-static">Static control</h2>
+    <p>When you need to place plain text next to a form label within a horizontal form, use the <code>.form-control-static</code> class on a <code>&lt;p&gt;</code>.</p>
+    <div class="bs-example">
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label class="col lg-2 control-label">Email</label>
+          <div class="col lg-10">
+            <p class="form-control-static">email@example.com</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword" class="col lg-2 control-label">Password</label>
+          <div class="col lg-10">
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+          </div>
+        </div>
+      </form>
+    </div><!-- /.bs-example -->
+{% highlight html %}
+<form class="form-horizontal" role="form">
+  <div class="form-group">
+    <label class="col lg-2 control-label">Email</label>
+    <div class="col lg-10">
+      <p class="form-control-static">email@example.com</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword" class="col lg-2 control-label">Password</label>
+    <div class="col lg-10">
+      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+    </div>
+  </div>
+</form>
+{% endhighlight %}
+
+
+    <h2 id="forms-control-states">Form states</h2>
+    <p>Provide feedback to users or visitors with basic feedback states on form controls and labels.</p>
+
+    <h3 id="forms-input-focus">Input focus</h3>
+    <p>We remove the default <code>outline</code> styles on some form controls and apply a <code>box-shadow</code> in its place for <code>:focus</code>.</p>
+    <div class="bs-example">
+      <form role="form">
+        <input class="form-control" id="focusedInput" type="text" value="This is focused...">
+      </form>
+    </div>
+{% highlight html %}
+<input class="form-control" id="focusedInput" type="text" value="This is focused...">
+{% endhighlight %}
+
+    <h3 id="forms-disabled-inputs">Disabled inputs</h3>
+    <p>Add the <code>disabled</code> attribute on an input to prevent user input and trigger a slightly different look.</p>
+    <div class="bs-example">
+      <form role="form">
+        <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here…" disabled>
+      </form>
+    </div><!-- /.bs-example -->
+{% highlight html %}
+<input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
+{% endhighlight %}
+
+    <h3 id="forms-disabled-fieldsets">Disabled fieldsets</h3>
+    <p>Add the <code>disabled</code> attribute to a <code>&lt;fieldset&gt;</code> to disable all the controls within the <code>&lt;fieldset&gt;</code> at once.</p>
+
+    <div class="callout warning">
+      <h4>Link functionality of <code>&lt;a&gt;</code> not impacted</h4>
+      <p>This class will only change the appearance of <code>&lt;a class="btn default"&gt;</code> buttons, not their functionality. Use custom JavaScript to disable links here.</p>
+    </div>
+
+    <div class="callout danger">
+      <h4>Cross-browser compatibility</h4>
+      <p>While Strapit will apply these styles in all browsers, Internet Explorer 9 and below don't actually support the <code>disabled</code> attribute on a <code>&lt;fieldset&gt;</code>. Use custom JavaScript to disable the fieldset in these browsers.</p>
+    </div>
+
+    <div class="bs-example">
+      <form role="form">
+        <fieldset disabled>
+          <div class="form-group">
+            <label for="disabledTextInput">Disabled input</label>
+            <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+          </div>
+          <div class="form-group">
+            <label for="disabledSelect">Disabled select menu</label>
+            <select id="disabledSelect" class="form-control">
+              <option>Disabled select</option>
+            </select>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"> Can't check this
+            </label>
+          </div>
+          <button type="submit" class="btn primary">Submit</button>
+        </fieldset>
+      </form>
+    </div><!-- /.bs-example -->
+{% highlight html %}
+<form role="form">
+  <fieldset disabled>
+    <div class="form-group">
+      <label for="disabledTextInput">Disabled input</label>
+      <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+    </div>
+    <div class="form-group">
+      <label for="disabledSelect">Disabled select menu</label>
+      <select id="disabledSelect" class="form-control">
+        <option>Disabled select</option>
+      </select>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"> Can't check this
+      </label>
+    </div>
+    <button type="submit" class="btn primary">Submit</button>
+  </fieldset>
+</form>
+{% endhighlight %}
+
+    <h3 id="forms-validation">Validation states</h3>
+    <p>Strapit includes validation styles for error, warning, and success states on form controls. To use, add <code>.has-warning</code>, <code>.has-error</code>, or <code>.has-success</code> to the parent element. Any <code>.control-label</code>, <code>.form-control</code>, and <code>.help-block</code> within that element will receive the validation styles.</p>
+
+    <div class="bs-example">
+      <form role="form">
+        <div class="form-group has-success">
+          <label class="control-label" for="inputSuccess">Input with success</label>
+          <input type="text" class="form-control" id="inputSuccess">
+        </div>
+        <div class="form-group has-warning">
+          <label class="control-label" for="inputWarning">Input with warning</label>
+          <input type="text" class="form-control" id="inputWarning">
+        </div>
+        <div class="form-group has-error">
+          <label class="control-label" for="inputError">Input with error</label>
+          <input type="text" class="form-control" id="inputError">
+        </div>
+      </form>
+    </div><!-- /.bs-example -->
+{% highlight html %}
+<div class="form-group has-success">
+  <label class="control-label" for="inputSuccess">Input with success</label>
+  <input type="text" class="form-control" id="inputSuccess">
+</div>
+<div class="form-group has-warning">
+  <label class="control-label" for="inputWarning">Input with warning</label>
+  <input type="text" class="form-control" id="inputWarning">
+</div>
+<div class="form-group has-error">
+  <label class="control-label" for="inputError">Input with error</label>
+  <input type="text" class="form-control" id="inputError">
+</div>
+{% endhighlight %}
+
+
+    <h2 id="forms-control-sizes">Control sizing</h2>
+    <p>Set heights using classes like <code>.input-lg</code>, and set widths using grid column classes like <code>.col lg-*</code>.</p>
+
+    <h3>Height sizing</h3>
+    <p>Create larger or smaller form controls that match button sizes.</p>
+    <div class="bs-example bs-example-control-sizing">
+      <form role="form">
+        <div class="controls">
+          <input class="form-control input-lg" type="text" placeholder=".input-lg">
+          <input type="text" class="form-control" placeholder="Default input">
+          <input class="form-control input-sm" type="text" placeholder=".input-sm">
+
+          <select class="form-control input-lg">
+            <option value="">.input-lg</option>
+          </select>
+          <select class="form-control">
+            <option value="">Default select</option>
+          </select>
+          <select class="form-control input-sm">
+            <option value="">.input-sm</option>
+          </select>
+        </div>
+      </form>
+    </div><!-- /.bs-example -->
+{% highlight html %}
+<input class="form-control input-lg" type="text" placeholder=".input-lg">
+<input class="form-control" type="text" placeholder="Default input">
+<input class="form-control input-sm" type="text" placeholder=".input-sm">
+
+<select class="form-control input-lg">...</select>
+<select class="form-control">...</select>
+<select class="form-control input-sm">...</select>
+{% endhighlight %}
+
+    <h3>Column sizing</h3>
+    <p>Wrap inputs in grid columns, or any custom parent element, to easily enforce desired widths.</p>
+    <div class="bs-example">
+      <form role="form">
+        <div class="row">
+          <div class="col lg-2">
+            <input type="text" class="form-control" placeholder="lg-2">
+          </div>
+          <div class="col lg-3">
+            <input type="text" class="form-control" placeholder="lg-3">
+          </div>
+          <div class="col lg-4">
+            <input type="text" class="form-control" placeholder="lg-4">
+          </div>
+        </div>
+      </form>
+    </div><!-- /.bs-example -->
+{% highlight html %}
+<div class="row">
+  <div class="col lg-2">
+    <input type="text" class="form-control" placeholder="lg-2">
+  </div>
+  <div class="col lg-3">
+    <input type="text" class="form-control" placeholder="lg-3">
+  </div>
+  <div class="col lg-4">
+    <input type="text" class="form-control" placeholder="lg-4">
+  </div>
+</div>
+{% endhighlight %}
+
+    <h2 id="forms-help-text">Help text</h2>
+    <p>Block level help text for form controls.</p>
+    <div class="bs-example">
+      <form role="form">
+        <input type="text" class="form-control">
+        <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+      </form>
+    </div><!-- /.bs-example -->
+{% highlight html %}
+<span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+{% endhighlight %}
+
+    <h2 id="forms-switches">Switches</h2>
+    <p>Switches can be used instead of regular radio buttons to switch between two options. They are customizable and use styles that won't show on phones that don't support media queries. On these devices, they will appear as regular radio buttons. Requires the file <code>switches.less</code>.</p>
+    <div class="bs-example">
+		<div class="switch sm">
+          <input id="b" name="switch-b" type="radio" checked="">
+          <label for="b" onclick="">Off</label>
+          <input id="b1" name="switch-b" type="radio">
+          <label for="b1" onclick="">On</label>
+          <span></span>
+        </div>
+		<div class="switch">
+          <input id="c" name="switch-c" type="radio" checked="">
+          <label for="c" onclick="">Off</label>
+          <input id="c1" name="switch-c" type="radio">
+          <label for="c1" onclick="">On</label>
+          <span></span>
+        </div>
+		<div class="switch lg rounded">
+          <input id="d" name="switch-d" type="radio" checked="">
+          <label for="d" onclick="">Off</label>
+          <input id="d1" name="switch-d" type="radio">
+          <label for="d1" onclick="">On</label>
+          <span></span>
+        </div>
+    </div><!-- /.bs-example -->
+{% highlight html %}
+<div class="switch">
+  <input id="c" name="switch-c" type="radio" checked="">
+  <label for="c" onclick="">Off</label>
+  <input id="c1" name="switch-c" type="radio">
+  <label for="c1" onclick="">On</label>
+  <span></span>
+</div>
+{% endhighlight %}
+
+  </div>
+
+
+
+  <!-- Buttons
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="buttons">Buttons</h1>
+    </div>
+
+    <h2 id="buttons-options">Options</h2>
+    <p>Use any of the available button classes to quickly create a styled button.</p>
+    <div class="bs-example">
+      <button type="button" class="btn default">Default</button>
+      <button type="button" class="btn primary">Primary</button>
+      <button type="button" class="btn success">Success</button>
+      <button type="button" class="btn info">Info</button>
+      <button type="button" class="btn warning">Warning</button>
+      <button type="button" class="btn danger">Danger</button>
+      <button type="button" class="btn link">Link</button>
+    </div>
+{% highlight html %}
+<!-- Standard button -->
+<button type="button" class="btn default">Default</button>
+
+<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+<button type="button" class="btn primary">Primary</button>
+
+<!-- Indicates a successful or positive action -->
+<button type="button" class="btn success">Success</button>
+
+<!-- Contextual button for informational alert messages -->
+<button type="button" class="btn info">Info</button>
+
+<!-- Indicates caution should be taken with this action -->
+<button type="button" class="btn warning">Warning</button>
+
+<!-- Indicates a dangerous or potentially negative action -->
+<button type="button" class="btn danger">Danger</button>
+
+<!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+<button type="button" class="btn link">Link</button>
+{% endhighlight %}
+
+    <h2 id="buttons-sizes">Sizes</h2>
+    <p>Fancy larger or smaller buttons? Add <code>.lg</code>, <code>.sm</code>, or <code>.xs</code> for additional sizes.</p>
+    <div class="bs-example">
+      <p>
+        <button type="button" class="btn primary lg">Large button</button>
+        <button type="button" class="btn default lg">Large button</button>
+      </p>
+      <p>
+        <button type="button" class="btn primary">Default button</button>
+        <button type="button" class="btn default">Default button</button>
+      </p>
+      <p>
+        <button type="button" class="btn primary sm">Small button</button>
+        <button type="button" class="btn default sm">Small button</button>
+      </p>
+      <p>
+        <button type="button" class="btn primary xs">Extra small button</button>
+        <button type="button" class="btn default xs">Extra small button</button>
+      </p>
+    </div>
+{% highlight html %}
+<p>
+  <button type="button" class="btn primary lg">Large button</button>
+  <button type="button" class="btn default lg">Large button</button>
+</p>
+<p>
+  <button type="button" class="btn primary">Default button</button>
+  <button type="button" class="btn default">Default button</button>
+</p>
+<p>
+  <button type="button" class="btn primary sm">Small button</button>
+  <button type="button" class="btn default sm">Small button</button>
+</p
+<p>
+  <button type="button" class="btn primary xs">Extra small button</button>
+  <button type="button" class="btn default xs">Extra small button</button>
+</p>
+{% endhighlight %}
+
+    <p>Create block level buttons&mdash;those that span the full width of a parent&mdash; by adding <code>.block</code>.</p>
+    <div class="bs-example">
+      <div class="well" style="max-width: 400px; margin: 0 auto 10px;">
+        <button type="button" class="btn primary lg block">Block level button</button>
+        <button type="button" class="btn default lg block">Block level button</button>
+      </div>
+    </div>
+{% highlight html %}
+<button type="button" class="btn primary lg block">Block level button</button>
+<button type="button" class="btn default lg block">Block level button</button>
+{% endhighlight %}
+
+
+    <h2 id="buttons-disabled">Disabled state</h2>
+    <p>Make buttons look unclickable by fading them back 50%.</p>
+
+    <h3>Button element</h3>
+    <p>Add the <code>disabled</code> attribute to <code>&lt;button&gt;</code> buttons.</p>
+    <p class="bs-example">
+      <button type="button" class="btn primary lg" disabled="disabled">Primary button</button>
+      <button type="button" class="btn default lg" disabled="disabled">Button</button>
+    </p>
+{% highlight html %}
+<button type="button" class="btn primary lg" disabled="disabled">Primary button</button>
+<button type="button" class="btn default lg" disabled="disabled">Button</button>
+{% endhighlight %}
+
+    <div class="callout danger">
+      <h4>Cross-browser compatibility</h4>
+      <p>If you add the <code>disabled</code> attribute to a <code>&lt;button&gt;</code>, Internet Explorer 9 and below will render text gray with a nasty text-shadow that we cannot fix.</p>
+    </div>
+
+    <h3>Anchor element</h3>
+    <p>Add the <code>.disabled</code> class to <code>&lt;a&gt;</code> buttons.</p>
+    <p class="bs-example">
+      <a href="#" class="btn primary lg disabled" role="button">Primary link</a>
+      <a href="#" class="btn default lg disabled" role="button">Link</a>
+    </p>
+{% highlight html %}
+<a href="#" class="btn primary lg disabled" role="button">Primary link</a>
+<a href="#" class="btn default lg disabled" role="button">Link</a>
+{% endhighlight %}
+    <p>
+      We use <code>.disabled</code> as a utility class here, similar to the common <code>.active</code> class, so no prefix is required.
+    </p>
+    <div class="callout warning">
+      <h4>Link functionality not impacted</h4>
+      <p>This class will only change the <code>&lt;a&gt;</code>'s appearance, not its functionality. Use custom JavaScript to disable links here.</p>
+    </div>
+
+
+    <h2 id="buttons-tags">Button tags</h2>
+    <p>Use the button classes on an <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code>, or <code>&lt;input&gt;</code> element.</p>
+    <form class="bs-example">
+      <a class="btn default" href="#" role="button">Link</a>
+      <button class="btn default" type="submit">Button</button>
+      <input class="btn default" type="button" value="Input">
+      <input class="btn default" type="submit" value="Submit">
+    </form>
+{% highlight html %}
+<a class="btn default" href="#" role="button">Link</a>
+<button class="btn default" type="submit">Button</button>
+<input class="btn default" type="button" value="Input">
+<input class="btn default" type="submit" value="Submit">
+{% endhighlight %}
+
+    <div class="callout warning">
+      <h4>Cross-browser rendering</h4>
+      <p>As a best practice, <strong>we highly recommend using the <code>&lt;button&gt;</code> element whenever possible</strong> to ensure matching cross-browser rendering.</p>
+      <p>Among other things, there's <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=697451">a Firefox bug</a> that prevents us from setting the <code>line-height</code> of <code>&lt;input&gt;</code>-based buttons, causing them to not exactly match the height of other buttons on Firefox.</p>
+    </div>
+
+  </div>
+
+
+
+  <!-- Images
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="images">Images</h1>
+    </div>
+
+    <p>Add classes to an <code>&lt;img&gt;</code> element to easily style images in any project.</p>
+    <div class="callout danger">
+      <h4>Cross-browser compatibility</h4>
+      <p>Keep in mind that Internet Explorer 8 lacks support for rounded corners.</p>
+    </div>
+    <div class="bs-example bs-example-images">
+      <img data-src="holder.js/140x140" src="data:image/png;base64," class="img-rounded" alt="A generic square placeholder image with rounded corners">
+      <img data-src="holder.js/140x140" src="data:image/png;base64," class="img-circle" alt="A generic square placeholder image where only the portion within the circle circumscribed about said square is visible">
+      <img data-src="holder.js/140x140" src="data:image/png;base64," class="img-thumbnail" alt="A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera">
+    </div>
+{% highlight html %}
+<img src="..." alt="..." class="img-rounded">
+<img src="..." alt="..." class="img-circle">
+<img src="..." alt="..." class="img-thumbnail">
+{% endhighlight %}
+
+    <div class="callout warning">
+      <h4>Responsive images</h4>
+      <p>Looking for how to make images more responsive? <a href="../css#overview-responsive-images">Check out the responsive images section</a> up top.</p>
+    </div>
+
+  </div>
+
+
+  <!-- Helpers
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="helper-classes">Helper classes</h1>
+    </div>
+
+
+    <h3 id="helper-classes-close">Close icon</h3>
+    <p>Use the generic close icon for dismissing content like modals and alerts.</p>
+    <div class="bs-example">
+      <p><button type="button" class="close" aria-hidden="true">&times;</button></p>
+    </div>
+{% highlight html %}
+<button type="button" class="close" aria-hidden="true">&times;</button>
+{% endhighlight %}
+
+
+    <h3 id="helper-classes-floats">Quick floats</h3>
+    <p>Float an element to the left or right with a class. <code>!important</code> is included to avoid specificity issues. Classes can also be used as mixins.</p>
+{% highlight html %}
+<div class="pull-left">...</div>
+<div class="pull-right">...</div>
+{% endhighlight %}
+{% highlight css %}
+// Classes
+.pull-left {
+  float: left !important;
+}
+.pull-right {
+  float: right !important;
+}
+
+// Usage as mixins
+.element {
+  .pull-left();
+}
+.another-element {
+  .pull-right();
+}
+{% endhighlight %}
+
+    <div class="callout warning">
+      <h4>Not for use in navbars</h4>
+      <p>To align components in navbars with utility classes, use <code>.navbar-left</code> or <code>.navbar-right</code> instead. <a href="../components/#navbar-component-alignment">See the navbar docs</a> for details.</p>
+    </div>
+
+
+    <h3 id="helper-classes-clearfix">Clearfix</h3>
+    <p>Clear the <code>float</code> on any element with the <code>.clearfix</code> class. Utilizes <a href="http://nicolasgallagher.com/micro-clearfix-hack/">the micro clearfix</a> as popularized by Nicolas Gallagher. Can also be used as a mixin.</p>
+{% highlight html %}
+<!-- Usage as a class -->
+<div class="clearfix">...</div>
+{% endhighlight %}
+{% highlight css %}
+// Mixin itself
+.clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    show-grid: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Usage as a Mixin
+.element {
+  .clearfix();
+}
+{% endhighlight %}
+
+
+    <h3 id="helper-classes-show-hide">Showing and hiding content</h3>
+    <p>Force an element to be shown or hidden via <code>show-grid</code> with the use of <code>.show</code> and <code>.hide</code> classes. These classes use <code>!important</code> to avoid specificity conflicts, just like the <a href="../css/#helper-classes-floats">quick floats</a>. They are only available for block level toggling. They can also be used as mixins.</p>
+{% highlight html %}
+<div class="show">...</div>
+<div class="hide">...</div>
+{% endhighlight %}
+{% highlight css %}
+// Classes
+.show {
+  show-grid: block !important;
+}
+.hide {
+  show-grid: none !important;
+}
+
+// Usage as mixins
+.element {
+  .show();
+}
+.another-element {
+  .hide();
+}
+{% endhighlight %}
+
+
+    <h3 id="helper-classes-screen-readers">Screen reader content</h3>
+    <p>Hide an element to all users <em>except</em> screen readers with <code>.sr-only</code>. Necessary for following <a href="{{ page.base_url }}getting-started#accessibility">accessibility best practices</a>. Can also be used as a mixin.</p>
+{% highlight html %}
+<a class="sr-only" href="#content">Skip to content</a>
+{% endhighlight %}
+{% highlight css %}
+// Usage as a Mixin
+.skip-navigation {
+  .sr-only();
+}
+{% endhighlight %}
+
+
+    <h3 id="helper-classes-image-replacement">Image replacement</h3>
+    <p>Use the <code>.text-hide</code> class or mixin to help replace an element's text content with a background image.</p>
+{% highlight html %}
+<h1 class="text-hide">Custom heading</h1>
+{% endhighlight %}
+  {% highlight css %}
+// Usage as a Mixin
+.heading {
+  .text-hide();
+}
+{% endhighlight %}
+
+    <h3 id="helper-classes-shapes">Shapes</h3>
+    <p>If you want more rounded edges, or no rounded edges, use the <code>.rounded</code> or <code>.square classes</code> to shape those elements individually.</p>
+    <div class="bs-example">
+      <p><button type="button" style="margin-right:10px;" class="btn primary square">Square button</button><button type="button" class="btn success rounded">Rounded button</button></p>
+      <p><div class="label danger square" style="margin-right:10px;">Square label</div><div class="label warning rounded">Rounded label</div></p>
+    </div>
+{% highlight html %}
+<button type="button" class="btn primary square">Square button</button>
+<button type="button" class="btn success rounded">Rounded button</button>
+<div class="label danger square">Square label</div>
+<div class="label warning rounded">Rounded label</div>
+{% endhighlight %}
+  </div>
+
+
+
+  <!-- Responsive utilities
+  ================================================== -->
+  <div class="bs-docs-section" id="responsive-utilities">
+    <div class="page-header">
+      <h1>Responsive utilities</h1>
+    </div>
+    <p class="lead">For faster mobile-friendly development, use these utility classes for showing and hiding content by device via media query. Also included are utility classes for toggling content when printed.</p>
+    <p>Try to use these on a limited basis and avoid creating entirely different versions of the same site. Instead, use them to complement each device's presentation. <strong>Responsive utilities are currently only available for block and table toggling.</strong> Use with inline and table elements is currently not supported.</p>
+
+
+    <h2 id="responsive-utilities-classes">Available classes</h2>
+    <p>Use a single or combination of the available classes for toggling content across viewport breakpoints.</p>
+    <div class="table-responsive">
+      <table class="table bordered striped responsive-utilities">
+        <thead>
+          <tr>
+            <th></th>
+            <th>
+              Small devices
+              <small>Tablets (&ge;768px)</small>
+            </th>
+            <th>
+              Medium devices
+              <small>Desktops (&ge;992px)</small>
+            </th>
+            <th>
+              Large devices
+              <small>Desktops (&ge;1200px)</small>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><code>.visible-sm</code></th>
+            <td class="is-visible">Visible</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+          </tr>
+          <tr>
+            <th><code>.visible-md</code></th>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-hidden">Hidden</td>
+          </tr>
+          <tr>
+            <th><code>.visible-lg</code></th>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-visible">Visible</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <th><code>.hidden-sm</code></th>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+          </tr>
+          <tr>
+            <th><code>.hidden-md</code></th>
+            <td class="is-visible">Visible</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-visible">Visible</td>
+          </tr>
+          <tr>
+            <th><code>.hidden-lg</code></th>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-hidden">Hidden</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <h2 id="responsive-utilities-print">Print classes</h2>
+    <p>Similar to the regular responsive classes, use these for toggling content for print.</p>
+    <div class="table-responsive">
+      <table class="table bordered striped responsive-utilities">
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>Browser</th>
+            <th>Print</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><code>.visible-print</code></th>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-visible">Visible</td>
+          </tr>
+          <tr>
+            <th><code>.hidden-print</code></th>
+            <td class="is-visible">Visible</td>
+            <td class="is-hidden">Hidden</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <h2 id="responsive-utilities-tests">Test cases</h2>
+    <p>Resize your browser or load on different devices to test the responsive utility classes.</p>
+	<div>
+        <h4>Screen Size Visibility Control (Show)</h4>
+        <p>The following text should describe the screen size you're using:</p>
+        <div class="well">
+          <strong class="visible-sm">You are on a small screen.</strong>
+          <strong class="visible-md">You are on a medium screen.</strong>
+          <strong class="visible-md-up">You are on a medium, large or xlarge screen.</strong>
+          <strong class="visible-md-down">You are on a medium or small screen.</strong>
+          <strong class="visible-lg">You are on a large screen.</strong>
+          <strong class="visible-lg-up">You are on a large or xlarge screen.</strong>
+          <strong class="visible-lg-down">You are on a large, medium or small screen.</strong>
+          <strong class="visible-xlarge">You are on a xlarge screen.</strong>
+        </div>
+
+        <h4>Screen Size Visibility Control (Hide)</h4>
+        <p>The following text should describe the screen size you aren't using:</p>
+        <div class="well">
+          <strong class="hidden-sm">You are <em>not</em> on a small screen.</strong>
+          <strong class="hidden-md">You are <em>not</em> on a medium screen.</strong>
+          <strong class="hidden-md-up">You are <em>not</em> on a medium, large or xlarge screen.</strong>
+          <strong class="hidden-md-down">You are <em>not</em> on a medium or small screen.</strong>
+          <strong class="hidden-lg">You are <em>not</em> on a large screen.</strong>
+          <strong class="hidden-lg-up">You are <em>not</em> on a large or xlarge screen.</strong>
+          <strong class="hidden-lg-down">You are <em>not</em> on a large, medium or small screen.</strong>
+          <strong class="hidden-xlarge">You are <em>not</em> on a xlarge screen.</strong>
+        </div>
+
+        <h4>Orientation Detection</h4>
+        <p>The following text should describe the device orientation you're using:</p>
+        <div class="well">
+          <strong class="visible-landscape">You are in landscape orientation.</strong>
+          <strong class="visible-portrait">You are in portrait orientation.</strong>
+        </div>
+
+        <h4>Touch Detection</h4>
+        <p>The following text should describe if you're using a touch device:</p>
+        <div class="well">
+          <strong class="visible-touch">You are on a touch-enabled device.</strong>
+          <strong class="hidden-touch">You are not on a touch-enabled device.</strong>
+        </div>
+   </div>
+
+  </div>

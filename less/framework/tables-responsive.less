@@ -1,0 +1,122 @@
+// Responsive tables
+// --------------------------------------------------
+//
+// NOTE: There are TWO different types of responsive tables here, one is the
+// Bootstrap solution, the other the Foundation solution.
+
+// BOOTSTRAP
+// Wrap your tables in `.table-responsive` and we'll make them mobile friendly
+// by enabling horizontal scrolling. Only applies <768px. Everything above that
+// will display normally. Pros -- no JS required. Cons -- add extra div, moves
+// whole table so it's hard to see where you are once you are scrolling.
+
+@media (max-width: @screen-sm-min) {
+  .table-responsive {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid @table-border-color;
+    -webkit-overflow-scrolling: touch;
+
+    // Tighten up spacing and give a background color
+    > .table {
+      margin-bottom: 0;
+      background-color: #fff;
+
+      // Ensure the content doesn't wrap
+      > thead,
+      > tbody,
+      > tfoot {
+        > tr {
+          > th,
+          > td {
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+
+    // Special overrides for the bordered tables
+    > .table.bordered {
+      border: 0;
+
+      // Nuke the appropriate borders so that the parent can handle them
+      > thead,
+      > tbody,
+      > tfoot {
+        > tr {
+          > th:first-child,
+          > td:first-child {
+            border-left: 0;
+          }
+          > th:last-child,
+          > td:last-child {
+            border-right: 0;
+          }
+        }
+        > tr:last-child {
+          > th,
+          > td {
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// FOUNDATION
+// Add .responsive class to any table and it will pin header column of the table and
+// let you scroll the rest of the table. Pros -- Easier to read, simple markup change.
+// Cons -- requires resp-tables.js to work
+
+.table.responsive { 
+  margin-bottom: 0;
+  td, th {
+    position: relative;
+    white-space: nowrap;
+    &:first-child {
+      display: none;
+    }
+  }
+}
+.pinned { 
+  position:absolute;
+  top:0;
+  left: 0;
+  width: 35%;
+  overflow: scroll;
+  overflow-y: hidden;
+  border-right: 1px solid @table-border-color;
+  border-left: 1px solid @table-border-color;
+  table {
+    margin-bottom: 0;
+    width:100%;
+    white-space:no-wrap;
+    // Cells
+    th,
+    td {
+      position: relative;
+      white-space: nowrap;
+      padding: 8px;
+      line-height: @line-height-base;
+      text-align: left;
+      vertical-align: top;
+    }
+    td {
+      border-top: 1px solid @table-border-color;
+    }
+  }
+}
+div.table-wrapper { 
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-right: 1px solid @table-border-color;
+  div.scrollable {
+    margin-left: 35%;
+    overflow: scroll;
+    overflow-y: hidden;
+  }
+}

@@ -1,0 +1,25 @@
+{
+    "name": "jboho/strapit"
+  , "description": "A CSS framework mashup of Twitter's Bootstrap and ZURB's Foundation."
+  , "keywords": ["strapit", "bootstrap", "css", "foundation", "framework"]
+  , "homepage": "https://github.com/jboho/strapit"
+  , "bootstrap-authors": [
+      {
+        "name": "Mark Otto",
+        "email": "markdotto@gmail.com"
+      },
+      {
+        "name": "Jacob Thornton",
+        "email": "jacobthornton@gmail.com"
+      }
+    ]
+  , "foundation-authors": [
+      {
+        "name": "ZURB -- need individual's names",
+        "email": "???"
+      }
+    ]
+  ,"support": {
+      "issues": "https://github.com/jboho/strapit/issues"
+    }
+}

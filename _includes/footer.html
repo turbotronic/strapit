@@ -1,0 +1,38 @@
+<footer class="bs-footer" role="contentinfo">
+  <div class="container">
+	<p>Brought to you by the good folks at Twitter and Zurb and cobbled together by the UX team at Digital First Media.</p>
+	<p>Original project links:<span class="divider"></span><a href="http://getbootstrap.com/">Bootstrap</a> <span class="divider">|</span> <a href="http://foundation.zurb.com/">Foundation</a></p>
+	<p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+    <ul class="footer-links">
+      <li>Currently v{{ site.current_version }}</li>
+      <!-- <li class="muted">&middot;</li>
+      <li><a href="{{ site.repo }}/issues?state=open">Issues</a></li>
+      <li class="muted">&middot;</li>
+      <li><a href="{{ site.repo }}/releases">Releases</a></li> -->
+    </ul>
+  </div>
+</footer>
+
+<!-- Strapit core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{{ page.base_url }}assets/js/jquery.js"></script>
+<script src="{{ page.base_url }}dist/js/bootstrap.js"></script>
+<script src="http://platform.twitter.com/widgets.js"></script>
+<script src="{{ page.base_url }}assets/js/holder.js"></script>
+<script src="{{ page.base_url }}assets/js/application.js"></script>
+
+<!-- Analytics
+================================================== -->
+<script>
+  var _gauges = _gauges || [];
+  // (function() {
+  //   var t   = document.createElement('script');
+  //   t.async = true;
+  //   t.id    = 'gauges-tracker';
+  //   t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
+  //   t.src = '//secure.gaug.es/track.js';
+  //   var s = document.getElementsByTagName('script')[0];
+  //   s.parentNode.insertBefore(t, s);
+  })();
+</script>

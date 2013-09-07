@@ -1,0 +1,25 @@
+//
+// Mixins -- custom and candidate mixins
+// --------------------------------------------------
+
+// Font size rem to px converter: Converts px to rems with px fallback
+// 
+.font-size(@value) {
+  @pxValue: ~`function(){var a='@{value}'.split("px");return parseInt(a[0])+'px'}()`;
+  @remValue: ~`function(){var a='@{value}'.split("px");return parseInt(a[0])/10+'rem'}()`;
+  font-size: ~"@{pxValue}"; 
+  font-size: ~"@{remValue}";
+}
+
+// Callout
+// -------------------------
+.callout-variant(@border; @bg-color;) {
+  border-left-color: @border;
+  background-color: @bg-color;
+}
+
+// Radius
+// -------------------------
+.radius(@radius) {
+	border-radius: @radius;
+}
