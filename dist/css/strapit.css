@@ -136,6 +136,11 @@ svg:not(:root) {
 .pull-left {
   float: left !important;
 }
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
 .hide {
   display: none !important;
 }
