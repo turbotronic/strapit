@@ -2119,12 +2119,6 @@ textarea {
   vertical-align: middle;
 }
 button,
-input,
-select[multiple],
-textarea {
-  background-image: none;
-}
-button,
 input {
   line-height: normal;
 }
@@ -2248,6 +2242,7 @@ output {
   color: #808080;
   vertical-align: middle;
   background-color: #ffffff;
+  background-image: none;
   border: 1px solid #cccccc;
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -2526,6 +2521,7 @@ textarea.input-lg {
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
+  background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
   white-space: nowrap;
