@@ -5879,14 +5879,14 @@ a.thumbnail:focus {
 .list-group-item > .badge + .badge {
   margin-right: 5px;
 }
-a.list-group-item {
+.list-group-item a {
   color: #555555;
 }
-a.list-group-item .list-group-item-heading {
+.list-group-item a .list-group-item-heading {
   color: #333333;
 }
-a.list-group-item:hover,
-a.list-group-item:focus {
+.list-group-item a:hover,
+.list-group-item a:focus {
   text-decoration: none;
   background-color: #f5f5f5;
 }
