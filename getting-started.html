@@ -280,7 +280,7 @@ bootstrap/
     <div class="page-header">
       <h1 id="browsers">Browser support</h1>
     </div>
-    <p class="lead">Strapit is built to work best in the latest desktop and mobile browsers, meaning older and less advanced browsers might receive a less stylized, though fully functional, version of certain components.</p>
+    <p class="lead">This framework is built to work best in the latest desktop and mobile browsers, meaning older and less advanced browsers might receive a less stylized, though fully functional, version of certain components.</p>
 
     <h3>Supported browsers</h3>
     <p>Specifically, we support the latest versions of the following:</p>
@@ -291,11 +291,54 @@ bootstrap/
       <li>Internet Explorer</li>
       <li>Opera (Mac, Windows)</li>
     </ul>
-    <p>Unofficially, Strapit should look and behave well enough in Chromium for Linux and Internet Explorer 7, though they are not officially supported.</p>
 
     <h3>Internet Explorer 8 and 9</h3>
-    <p>Internet Explorer 8 and 9 are also supported, however, please be aware that many CSS3 properties—e.g., rounded corners and shadows—are not supported by IE8. The <code>placeholder</code> attribute is also not supported in either of these versions.</p>
-    <p>In addition, <strong>Internet Explorer 8 requires the use of <a href="https://github.com/scottjehl/Respond">respond.js</a> to enable media query support.</strong></p>
+    <p>Internet Explorer 8 and 9 are also supported, however, please be aware that some CSS3 properties and HTML5 elements are not fully supported by these browsers. In addition, <strong>Internet Explorer 8 requires the use of <a href="https://github.com/scottjehl/Respond">respond.js</a> to enable media query support.</strong></p>
+    <div class="table-responsive">
+      <table class="table bordered striped">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Internet Explorer 8</th>
+            <th>Internet Explorer 9</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row"><code>border-radius</code></td>
+            <td class="danger">No</td>
+            <td class="success">Yes</td>
+          </tr>
+          <tr>
+            <td scope="row"><code>box-shadow</code></td>
+            <td class="danger">No</td>
+            <td class="success">Yes</td>
+          </tr>
+          <tr>
+            <td scope="row"><code>transform</code></td>
+            <td class="danger">No</td>
+            <td class="success">Yes, with <code>-ms</code> vendor prefix</td>
+          </tr>
+          <tr>
+            <td scope="row"><code>transition</code></td>
+            <td class="danger">No</td>
+            <td class="danger">No</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td scope="row"><code>placeholder</code></td>
+            <td class="danger">No</td>
+            <td class="danger">No</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Visit <a href="http://caniuse.com/">Can I use...</a> for details on browser support of CSS3 and HTML5 features.</p>
+
+    <h3>Internet Explorer 8 and box-sizing</h3>
+    <p>IE8 does not fully support <code>box-sizing: border-box;</code> when combined with <code>min-width</code>, <code>max-width</code>, <code>min-height</code>, or <code>max-height</code>. For that reason, we do not use <code>max-width</code> on <code>.container</code>s.</p>
 
     <h3>IE Compatibility modes</h3>
     <p>Strapit is not supported in the old Internet Explorer compatibility modes. To be sure you're using the latest rendering mode for IE, consider including the appropriate <code>&lt;meta&gt;</code> tag in your pages:</p>
@@ -328,7 +371,7 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
     <p>For more information and usage guidelines, read <a href="http://timkadlec.com/2013/01/windows-phone-8-and-device-width/">Windows Phone 8 and Device-Width</a>.</p>
 
     <h3>Safari percent rounding</h3>
-    <p>In the latest Safari for Mac, its rendering engine has a little trouble with the long decimal places of our <code>.col *-1</code> grid classes, meaning if you have 12 individual columns you'll notice they come up short compared to other rows of columns. There's not much we can do here (<a href="https://github.com/twbs/bootstrap/issues/9282">see #9282</a>) but you do have some options:</p>
+    <p>In the latest Safari for Mac, its rendering engine has a little trouble with the long decimal places of our <code>.col *-1</code> grid classes, meaning if you have 12 individual columns you'll notice they come up short compared to other rows of columns. We can't do much here (<a href="https://github.com/twbs/bootstrap/issues/9282">see #9282</a>) but you do have some options:</p>
     <ul>
       <li>Add <code>.pull-right</code> to your last grid column to get the hard-right alignment</li>
       <li>Tweak your percentages manually to get the perfect rounding for Safari (more difficult than the first option)</li>
@@ -339,11 +382,12 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
     <h4>Overflow and scrolling</h4>
     <p>Support for <code>overflow: hidden</code> on the <code>&lt;body&gt;</code> element is quite limited in iOS and Android. To that end, when you scroll past the top or bottom of a modal in either of those devices' browsers, the <code>&lt;body&gt;</code> content will begin to scroll.</p>
     <h4>Virtual keyboards</h4>
-    <p>Also, note that if you're using inputs in your modal – iOS has a rendering bug which doesn't update the position of fixed elements when the virtual keyboard is triggered. There are a few work arounds for this, including transforming your elements to <code>position: absolute</code> or invoking a timer on focus to try to correct the positioning manually. This is not handled by Strapit, so it is up to you to decide which solution is best for your application.</p>
+    <p>Also, note that if you're using inputs in your modal – iOS has a rendering bug that doesn't update the position of fixed elements when the virtual keyboard is triggered. A few work arounds for this include transforming your elements to <code>position: absolute</code> or invoking a timer on focus to try to correct the positioning manually. This is not handled by Strapit, so it is up to you to decide which solution is best for your application.</p>
 
     <h3>Browser zooming</h3>
     <p>Page zooming inevitably presents rendering artifacts in some components, both in Strapit and the rest of the web. Depending on the issue, we may be able to fix it (search first and then open an issue if need be). However, we tend to ignore these as they often have no direct solution other than hacky workarounds.</p>
   </div>
+
 
 
 
