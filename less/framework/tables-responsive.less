@@ -10,6 +10,12 @@
 // will display normally. Pros -- no JS required. Cons -- add extra div, moves
 // whole table so it's hard to see where you are once you are scrolling.
 
+// Responsive tables
+//
+// Wrap your tables in `.table-responsive` and we'll make them mobile friendly
+// by enabling horizontal scrolling. Only applies <768px. Everything above that
+// will display normally.
+
 @media (max-width: @screen-sm-min) {
   .table-responsive {
     width: 100%;
@@ -23,7 +29,6 @@
     // Tighten up spacing and give a background color
     > .table {
       margin-bottom: 0;
-      background-color: #fff;
 
       // Ensure the content doesn't wrap
       > thead,
@@ -42,7 +47,7 @@
     > .table.bordered {
       border: 0;
 
-      // Nuke the appropriate borders so that the parent can handle them
+     // Nuke the appropriate borders so that the parent can handle them
       > thead,
       > tbody,
       > tfoot {
@@ -56,6 +61,13 @@
             border-right: 0;
           }
         }
+      }
+
+      // Only nuke the last row's bottom-border in `tbody` and `tfoot` since
+      // chances are there will be only one `tr` in a `thead` and that would
+      // remove the border altogether.
+      > tbody,
+      > tfoot {
         > tr:last-child {
           > th,
           > td {
@@ -66,7 +78,6 @@
     }
   }
 }
-
 // FOUNDATION
 // Add .responsive class to any table and it will pin header column of the table and
 // let you scroll the rest of the table. Pros -- Easier to read, simple markup change.
