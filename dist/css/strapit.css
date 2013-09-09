@@ -5487,6 +5487,9 @@ textarea.input-group.sm > .input-group-btn > .btn {
   vertical-align: baseline;
   border-radius: .25em;
 }
+.label + .label {
+  margin-left: .2em;
+}
 .label[href]:hover,
 .label[href]:focus {
   color: #ffffff;
@@ -5559,6 +5562,9 @@ textarea.input-group.sm > .input-group-btn > .btn {
   text-align: center;
   background-color: #aaaaaa;
   border-radius: 10px;
+}
+.badge + .badge {
+  margin-left: .2em;
 }
 .badge:empty {
   display: none;
