@@ -124,9 +124,6 @@
 
 
 @media (min-width: @screen-md-min) {
-//  .container {
-//    max-width: @container-desktop;
-//  }
   .lg-1 { width: round(percentage((1 / @grid-columns)), 5); }
   .lg-2 { width: round(percentage((2 / @grid-columns)), 5); }
   .lg-3 { width: round(percentage((3 / @grid-columns)), 5); }
@@ -155,10 +152,7 @@
 }
 
 @media (min-width: @screen-lg-min) {
-// .container {
-//    max-width: @container-lg-desktop;
-//  }
   .container {
-    max-width: @site-max-width;
+    width: @site-max-width;
   }
 }
