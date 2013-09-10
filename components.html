@@ -1447,6 +1447,39 @@ base_url: "../"
   <p>Be sure to add a <code>role="navigation"</code> to every navbar to help with accessibility.</p>
 </div>
 
+  <h2 id="navbar-forms">Forms</h2>
+    <p>Place form content within <code>.navbar-form</code> for proper vertical alignment and collapsed behavior in narrow viewports. Use the alignment options to decide where it resides within the navbar content.</p>
+    <p>As a heads up, <code>.navbar-form</code> shares much of it's code with <code>.form-inline</code> via mixin.</p>
+    <div class="bs-example">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex2-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Brand</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex2-collapse">
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn default">Submit</button>
+          </form>
+        </div>
+      </nav>
+    </div>
+{% highlight html %}
+<form class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Search">
+  </div>
+  <button type="submit" class="btn default">Submit</button>
+</form>
+{% endhighlight %}
+
 
     <h2 id="navbar-buttons">Buttons</h2>
     <p>For buttons not residing in a <code>&lt;form&gt;</code>, add this class to vertically center buttons within a navbar.</p>
