@@ -3,9 +3,9 @@
 
 @media only screen {
   .switch {
-    border-radius: @border-radius-base;
-    background: white;
+    background: #fff;
     border: 1px solid @border-color;
+    .border-radius(@border-radius-base);
     margin-bottom: @line-height-computed;
     overflow: hidden;
     height: @switch-height;
@@ -69,7 +69,7 @@
     }
     span {
       &:last-child {
-        border-radius: @border-radius-base;
+        .border-radius(@border-radius-base);
         width: @switch-height - 2;
         height: @switch-height - 2;
         position: absolute;
@@ -91,7 +91,7 @@
     }
   }
   .switch.sm {
-    border-radius: @border-radius-base;
+    .border-radius(@border-radius-base);
     height: @switch-height * .75;
     label {
       padding: 0 @padding-base-horizontal;
@@ -105,14 +105,14 @@
     }
     span {
       &:last-child {
-        border-radius: @border-radius-base;
+        .border-radius(@border-radius-base);
         width: (@switch-height * .75) - 2;
         height: (@switch-height * .75) - 2;
       }
     }
   }
   .switch.lg {
-    border-radius: @border-radius-large;
+    .border-radius(@border-radius-large);
     height: @switch-height * 1.5;
     label {
       padding: 0 @padding-base-horizontal;
@@ -126,7 +126,7 @@
     }
     span {
       &:last-child {
-        border-radius: @border-radius-large;
+        .border-radius(@border-radius-large);
         width: (@switch-height * 1.5) - 2;
         height: (@switch-height * 1.5) - 2;
       }

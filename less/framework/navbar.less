@@ -19,7 +19,7 @@
   .clearfix();
 
   @media (min-width: @grid-float-breakpoint) {
-    border-radius: @navbar-border-radius;
+    .border-radius(@navbar-border-radius);
   }
 }
 
@@ -118,7 +118,7 @@
 .navbar-static-top {
   border-width: 0 0 1px;
   @media (min-width: @grid-float-breakpoint) {
-    border-radius: 0;
+    border-radius: 0!important;
   }
 }
 
@@ -132,7 +132,7 @@
 
   // Undo the rounded corners
   @media (min-width: @grid-float-breakpoint) {
-    border-radius: 0;
+    border-radius: 0!important;
   }
 }
 .navbar-fixed-top {
@@ -178,7 +178,7 @@
   .navbar-vertical-align(34px);
   background-color: transparent;
   border: 1px solid transparent;
-  border-radius: @border-radius-base;
+  .border-radius(@border-radius-base);
 
   // Bars
   .icon-bar {

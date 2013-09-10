@@ -80,7 +80,7 @@
       margin-right: 2px;
       line-height: @line-height-base;
       border: 1px solid transparent;
-      border-radius: @border-radius-base @border-radius-base 0 0;
+      .border-radius(@border-radius-base @border-radius-base 0 0);
       &:hover {
         border-color: @nav-tabs-link-hover-border-color @nav-tabs-link-hover-border-color @nav-tabs-border-color;
       }
@@ -115,7 +115,7 @@
 
     // Links rendered as pills
     > a {
-      border-radius: 5px;
+      .border-radius(@border-radius-base);
     }
     + li {
       margin-left: 2px;
@@ -186,7 +186,7 @@
   > li > a {
     // Override margin from .nav-tabs
     margin-right: 0;
-    border-radius: @border-radius-base;
+    .border-radius(@border-radius-base);
   }
 
   > .active > a,
@@ -198,7 +198,7 @@
   @media (min-width: @screen-sm-min) {
     > li > a {
       border-bottom: 1px solid @nav-tabs-justified-link-border-color;
-      border-radius: @border-radius-base @border-radius-base 0 0;
+      .border-radius(@border-radius-base @border-radius-base 0 0);
     }
     > .active > a,
     > .active > a:hover,
@@ -246,7 +246,7 @@
       margin-top: -1px;
       margin-bottom: 0;
       > a {
-        border-radius: 0 0 4px 4px;
+        border-radius: 0 0 @border-radius-base @border-radius-base;
         &:hover,
         &:focus {
           border-bottom-color: transparent;
@@ -294,7 +294,7 @@
     > li {
       > a {
         margin-right: -1px;
-        border-radius: 4px 0 0 4px;
+        border-radius: @border-radius-base 0 0 @border-radius-base;
         &:hover,
         &:focus {
           border-color: @nav-tabs-border-color;
@@ -319,7 +319,7 @@
     > li {
       > a {
         margin-left: -1px;
-        border-radius: 0 4px 4px 0;
+        border-radius: 0 @border-radius-base @border-radius-base 0;
         &:hover,
         &:focus {
           border-color: @nav-tabs-border-color;
@@ -380,7 +380,7 @@
       }
     }
     &.active a {
-      border-radius: @border-radius-base;
+      .border-radius(@border-radius-base);
       font-weight: @font-weight-bold;
       background: @brand-primary;
       padding: 0.1875em 0.5625em;

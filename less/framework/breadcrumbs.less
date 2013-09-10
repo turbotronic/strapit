@@ -9,7 +9,7 @@
   margin: 0 0 @line-height-computed; // overide default margin if there
   list-style: none; // overide default list styles if there
   background-color: @breadcrumb-bg;
-  border-radius: @border-radius-base;
+  .border-radius(@border-radius-base);
   > li {
     display: inline-block;
     &+li:before {
