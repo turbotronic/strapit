@@ -16,3 +16,16 @@ All deviations are detailed in the docs. In addition, we will be keeping up with
 We really like Bootstrap and we really like Foundation. We wished we could use the best of both at once, so we took the things we really liked about each and put them together. We prefer Bootstrap's clean, turn-key look and it's abundance of UI options to Foundation's rather basic offerings.
 
 However, Foundation is really strong in the way it works under the hood, both with it's simple, lightweight grid and extensible Javascript library. We like that Foundation works with Zepto, and ZURB's experiments and subsequent solutions for things like responsive tables and off-canvas layouts are elegant and worth using.
+
+## Documentation
+
+Strapit's documentation, included in this repo in the root directory, is built with [Jekyll](http://jekyllrb.com) and publicly hosted at [http://sandbox.digitalfirstmedia.com/strapit/](http://sandbox.digitalfirstmedia.com/strapit/). The docs may also be run locally.
+
+### Running documentation locally
+
+1. If necessary, [install Jekyll](http://jekyllrb.com/docs/installation) (requires v1.x).
+2. From the root `/strapit` directory, run `jekyll serve` in the command line.
+  - **Windows users:** run `chcp 65001` first to change the command prompt's character encoding ([code page](http://en.wikipedia.org/wiki/Windows_code_page)) to UTF-8 so Jekyll runs without errors.
+3. Open [http://localhost:9001](http://localhost:9001) in your browser, and voilà.
+
+Learn more about using Jekyll by reading their [documentation](http://jekyllrb.com/docs/home/).
