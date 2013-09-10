@@ -13,10 +13,10 @@ base_url: "../"
     <div class="page-header">
       <h1 id="download">Download Strapit</h1>
     </div>
-    <p class="lead">There are a few easy ways to quickly get started with Strapit, each one appealing to a different skill level and use case. Read through to see what suits your particular needs.</p>
+    <p class="lead">There are a few easy ways to quickly get started with Strapit, each one appealing to a different skill level and use case.</p>
 
     <h3 id="download-compiled">Compiled CSS, JS, and fonts</h3>
-    <p>The fastest way to get Strapit is to download the compiled and minified versions of our CSS and JavaScript, along with the included fonts. No documentation or original source files are included.</p>
+    <p>The fastest way to get Strapit is to download the compiled and minified versions of the CSS and JavaScript, along with the included fonts. No documentation or original source files are included.</p>
     <p><a class="btn lg primary" href="{{ site.download_dist }}" role="button">Download precompiled Strapit</a></p>
 
     <h3 id="download-additional">Additional downloads</h3>
@@ -28,15 +28,23 @@ base_url: "../"
       <h4>
         <a href="{{ site.repo }}">Clone or fork via GitHub</a>
       </h4>
-      <p>Clone the entire project or fork your own version of Strapit to make it your own by visiting us on GitHub.</p>
+      <p>Clone the entire project or fork your own version of Strapit on GitHub.</p>
     </div>
-    <div class="callout warning" id="callout-less-compilation">
-      <h4>LESS compilation</h4>
-      <p>If you download the original files, you need to compile Strapit's LESS files into usable CSS. To do that, Strapit only officially supports <a href="http://twitter.github.io/recess/">Recess</a>, Twitter's CSS hinter built on top of <a href="http://lesscss.org">less.js</a>.</p>
+
+  <!-- LESS compilation
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="less-compilation">LESS compilation</h1>
     </div>
+    <p class="lead">If you download the original files, you need to compile Strapit's LESS files into usable CSS. To do that, you will need a complier. Here are some options:</p>
+      <h3>Third party compliers</h3>
+      <p>Compliers run alongside your browser and recomplie your LESS files per save. For Mac users, <a href="http://incident57.com/codekit/">CodeKit</a> or <a href="http://livereload.com/">LiveReload</a> are good options. If you have a Windows machine, <a href="http://wearekiss.com/simpless">Simpless</a> is an option (it's also available for Mac users) and so is <a href="http://winless.org/">WinLess</a>.</p>
+      <h3>Command-line compliers</h3>
+      <p>If you are comfortable with the command-line, then some optoins for you are <a href="https://npmjs.org/package/lesswatcher">LESS Watcher (requires npm)</a>, <a href="https://github.com/mynyml/watchr">Watchr (requires Ruby Gems)</a>, or <a href="http://lesscss.org/#usage/">you can do it by hand</a> (scroll down to Server-side usage).</p>
+      <h3>Client-side usage</h3>
+      <p>We do not recommend this for many, many reasons, but it's an option. <a href="http://lesscss.org/#usage">Read the documentation</a> on how to do it this way.</p>
   </div>
-
-
 
   <!-- File structure
   ================================================== -->
