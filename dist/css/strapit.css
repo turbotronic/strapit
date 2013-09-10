@@ -1041,6 +1041,10 @@ samp {
   margin-left: auto;
   padding: 0 15px;
   width: 100%;
+  /*  > .row {
+	margin: 0 -@grid-gutter-width / 2;
+  }*/
+
 }
 .container:before,
 .container:after {
@@ -1065,9 +1069,6 @@ samp {
 }
 .container:after {
   clear: both;
-}
-.container > .row {
-  margin: 0 -15px;
 }
 .container.collapse .col {
   padding-left: 0;
@@ -1077,6 +1078,7 @@ samp {
 .row {
   width: auto;
   max-width: none;
+  margin: 0 -15px;
 }
 .row:before,
 .row:after {
@@ -2459,6 +2461,7 @@ textarea.input-lg {
 .form-horizontal .form-group {
   width: auto;
   max-width: none;
+  margin: 0 -15px;
 }
 .form-horizontal .form-group:before,
 .form-horizontal .form-group:after {
