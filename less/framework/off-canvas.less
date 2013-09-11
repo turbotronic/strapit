@@ -1,4 +1,9 @@
-/* Off canvas layout CSS/JS provided by or adapted from work by Jason Weaver and Luke Wroblewski Requires globals.css grid.css */
+//
+// Off canvas layout
+// CSS/JS provided by or adapted from work by Jason Weaver 
+// and Luke Wroblewski Requires globals.css grid.css
+// ----------------------------------------------------------------
+
 body.off-canvas { padding: 0; margin: 0; }
 
 .container { width: 100%; }
@@ -49,7 +54,7 @@ body.active.hide-extras { overflow:hidden; }
 	//color:@navbarInverseText;
 	font-weight:100;
 	letter-spacing:1px;
-	font-size:@font-size-large;
+	.font-size(@font-size-large);
 	border-bottom:1px solid #444;
 }
 .mobile-sidenav .nav li a:hover {

@@ -484,7 +484,7 @@
 // -------------------------
 .button-size(@padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
   padding: @padding-vertical @padding-horizontal;
-  font-size: @font-size;
+  .font-size(@font-size);
   line-height: @line-height;
   border-radius: @border-radius;
 }
@@ -496,7 +496,7 @@
     > a,
     > span {
       padding: @padding-vertical @padding-horizontal;
-      font-size: @font-size;
+      .font-size(@font-size);
     }
     &:first-child {
       > a,
@@ -765,7 +765,7 @@
 .input-size(@input-height; @padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
   height: @input-height;
   padding: @padding-vertical @padding-horizontal;
-  font-size: @font-size;
+  .font-size(@font-size);
   line-height: @line-height;
   border-radius: @border-radius;
 

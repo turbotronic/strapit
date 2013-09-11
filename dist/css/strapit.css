@@ -2184,6 +2184,7 @@ legend {
   padding: 0;
   margin-bottom: 22px;
   font-size: 21px;
+  font-size: 2.1rem;
   line-height: inherit;
   color: #555555;
   border: 0;
@@ -2221,6 +2222,7 @@ output {
   display: block;
   padding-top: 7px;
   font-size: 14px;
+  font-size: 1.4rem;
   line-height: 1.618;
   color: #808080;
   vertical-align: middle;
@@ -2243,6 +2245,7 @@ output {
   height: 36px;
   padding: 6px 12px;
   font-size: 14px;
+  font-size: 1.4rem;
   line-height: 1.618;
   color: #808080;
   vertical-align: middle;
@@ -2332,6 +2335,7 @@ fieldset[disabled] .checkbox-inline {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
+  font-size: 1.2rem;
   line-height: 1.5;
   border-radius: 3px;
 }
@@ -2346,6 +2350,7 @@ textarea.input-sm {
   height: 45px;
   padding: 10px 16px;
   font-size: 18px;
+  font-size: 1.8rem;
   line-height: 1.33;
   border-radius: 6px;
 }
@@ -2522,6 +2527,7 @@ textarea.input-lg {
   padding: 6px 12px;
   margin-bottom: 0;
   font-size: 14px;
+  font-size: 1.4rem;
   font-weight: normal;
   line-height: 1.618;
   text-align: center;
@@ -2821,6 +2827,7 @@ fieldset[disabled] .btn.link:focus {
 .btn.lg {
   padding: 10px 16px;
   font-size: 18px;
+  font-size: 1.8rem;
   line-height: 1.33;
   border-radius: 6px;
 }
@@ -2828,6 +2835,7 @@ fieldset[disabled] .btn.link:focus {
 .btn.xs {
   padding: 5px 10px;
   font-size: 12px;
+  font-size: 1.2rem;
   line-height: 1.5;
   border-radius: 3px;
 }
@@ -2881,6 +2889,7 @@ input[type="button"].btn.block {
   margin: 2px 0 0;
   list-style: none;
   font-size: 14px;
+  font-size: 1.4rem;
   background-color: #ffffff;
   border: 1px solid #cccccc;
   border: 1px solid rgba(0, 0, 0, 0.15);
@@ -2945,6 +2954,7 @@ input[type="button"].btn.block {
   display: block;
   padding: 3px 20px;
   font-size: 12px;
+  font-size: 1.2rem;
   line-height: 1.618;
   color: #aaaaaa;
 }
@@ -3105,6 +3115,7 @@ input[type="button"].btn.block {
 .btn-group.xs > .btn {
   padding: 5px 10px;
   font-size: 12px;
+  font-size: 1.2rem;
   line-height: 1.5;
   border-radius: 3px;
   padding: 1px 5px;
@@ -3112,12 +3123,14 @@ input[type="button"].btn.block {
 .btn-group.sm > .btn {
   padding: 5px 10px;
   font-size: 12px;
+  font-size: 1.2rem;
   line-height: 1.5;
   border-radius: 3px;
 }
 .btn-group.lg > .btn {
   padding: 10px 16px;
   font-size: 18px;
+  font-size: 1.8rem;
   line-height: 1.33;
   border-radius: 6px;
 }
@@ -3255,6 +3268,7 @@ input[type="button"].btn.block {
   height: 45px;
   padding: 10px 16px;
   font-size: 18px;
+  font-size: 1.8rem;
   line-height: 1.33;
   border-radius: 6px;
 }
@@ -3275,6 +3289,7 @@ textarea.input-group.lg > .input-group-btn > .btn {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
+  font-size: 1.2rem;
   line-height: 1.5;
   border-radius: 3px;
 }
@@ -3308,6 +3323,7 @@ textarea.input-group.sm > .input-group-btn > .btn {
 .input-group-addon {
   padding: 6px 12px;
   font-size: 14px;
+  font-size: 1.4rem;
   font-weight: normal;
   line-height: 1;
   color: #808080;
@@ -3319,11 +3335,13 @@ textarea.input-group.sm > .input-group-btn > .btn {
 .input-group-addon.input.sm {
   padding: 5px 10px;
   font-size: 12px;
+  font-size: 1.2rem;
   border-radius: 3px;
 }
 .input-group-addon.input.lg {
   padding: 10px 16px;
   font-size: 18px;
+  font-size: 1.8rem;
   border-radius: 6px;
 }
 .input-group-addon input[type="radio"],
@@ -4056,6 +4074,7 @@ textarea.input-group.sm > .input-group-btn > .btn {
   float: left;
   padding: 14px 15px;
   font-size: 18px;
+  font-size: 1.8rem;
   line-height: 22px;
 }
 .navbar-brand:hover,
@@ -4737,6 +4756,7 @@ textarea.input-group.sm > .input-group-btn > .btn {
 .pagination-lg > li > span {
   padding: 10px 16px;
   font-size: 18px;
+  font-size: 1.8rem;
 }
 .pagination-lg > li:first-child > a,
 .pagination-lg > li:first-child > span {
@@ -4752,6 +4772,7 @@ textarea.input-group.sm > .input-group-btn > .btn {
 .pagination-sm > li > span {
   padding: 5px 10px;
   font-size: 12px;
+  font-size: 1.2rem;
 }
 .pagination-sm > li:first-child > a,
 .pagination-sm > li:first-child > span {
@@ -5553,6 +5574,7 @@ textarea.input-group.sm > .input-group-btn > .btn {
   min-width: 10px;
   padding: 3px 7px;
   font-size: 12px;
+  font-size: 1.2rem;
   font-weight: bold;
   color: #ffffff;
   line-height: 1;
@@ -5590,6 +5612,7 @@ a.list-group-item.active > .badge,
   padding: 30px;
   margin-bottom: 30px;
   font-size: 21px;
+  font-size: 2.1rem;
   font-weight: 200;
   line-height: 2.427;
   color: inherit;
@@ -5616,6 +5639,7 @@ a.list-group-item.active > .badge,
   }
   .jumbotron h1 {
     font-size: 63px;
+    font-size: 6.3rem;
   }
 }
 .thumbnail {
@@ -5768,6 +5792,7 @@ a.thumbnail:focus {
   width: 0%;
   height: 100%;
   font-size: 12px;
+  font-size: 1.2rem;
   line-height: 22px;
   color: #ffffff;
   text-align: center;
@@ -5986,6 +6011,7 @@ a.thumbnail:focus {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 16px;
+  font-size: 1.6rem;
 }
 .panel-title > a {
   color: inherit;
@@ -6126,6 +6152,7 @@ a.thumbnail:focus {
 .close {
   float: right;
   font-size: 21px;
+  font-size: 2.1rem;
   font-weight: bold;
   line-height: 1;
   color: #000000;
@@ -6231,7 +6258,6 @@ button.close {
   background-color: #f5f5f5;
   padding: 1.25em 0;
 }
-/* Video - Mad props to http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/ ---------------------- */
 .flex-video {
   position: relative;
   padding-top: 25px;
@@ -6399,6 +6425,7 @@ body.modal-open,
   display: block;
   visibility: visible;
   font-size: 12px;
+  font-size: 1.2rem;
   line-height: 1.4;
   opacity: 0;
   filter: alpha(opacity=0);
@@ -6526,6 +6553,7 @@ body.modal-open,
   margin: 0;
   padding: 8px 14px;
   font-size: 14px;
+  font-size: 1.4rem;
   font-weight: normal;
   line-height: 18px;
   background-color: #f7f7f7;
@@ -6670,6 +6698,7 @@ body.modal-open,
   opacity: 0.5;
   filter: alpha(opacity=50);
   font-size: 20px;
+  font-size: 2rem;
   color: #ffffff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
@@ -6781,6 +6810,7 @@ body.modal-open,
     margin-top: -15px;
     margin-left: -15px;
     font-size: 30px;
+    font-size: 3rem;
   }
   .carousel-caption {
     left: 20%;
