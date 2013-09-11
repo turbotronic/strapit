@@ -23,3 +23,11 @@
 .radius(@radius) {
 	border-radius: @radius;
 }
+
+// Border radius
+// If the @border-radius-base (or -small or -large) is set to 0, we do not
+// want a bunch of declarations where border-radius:0; everywhere. 
+// Wrapping the bortder-radius property in this mixin prevents that.
+.border-radius(@radius) when (isnumber(@radius)) and not (@radius = 0) {
+  border-radius: @radius;
+}
