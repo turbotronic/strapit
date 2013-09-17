@@ -587,9 +587,8 @@ a:focus {
 img {
   border: 0;
   vertical-align: middle;
-}
-.img-responsive {
-  display: block;
+  -ms-interpolation-mode: bicubic;
+  display: inline-block;
   max-width: 100%;
   height: auto;
 }
@@ -604,15 +603,34 @@ img {
   border-radius: 3px;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  display: inline-block;
-  max-width: 100%;
-  height: auto;
 }
 .img-circle {
   border-radius: 50%;
 }
 figure {
   margin: 0;
+}
+/* Fix Google Maps canvas
+ *
+ * Wrap your Google Maps embed in a `.google-map-canvas` to reset Strapit's
+ * global `box-sizing` changes. You may optionally need to reset the `max-width`
+ * on images in case you've applied that anywhere else. (That shouldn't be as
+ * necessary with Strapit though as that behavior is relegated to the
+ * `.img-responsive` class.)
+ */
+.google-map-canvas,
+.google-map-canvas * {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  max-width: none !important;
+}
+.google-map-canvas img,
+.google-map-canvas * img {
+  display: inline;
+}
+.no-max {
+  max-width: none !important;
 }
 hr {
   -moz-box-sizing: content-box;
@@ -5650,9 +5668,6 @@ a.list-group-item.active > .badge,
   border-radius: 3px;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  display: inline-block;
-  max-width: 100%;
-  height: auto;
   display: block;
   margin-bottom: 22px;
 }
