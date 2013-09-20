@@ -1466,7 +1466,7 @@ samp {
     margin-left: 91.66667%;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1200px + 30px / 2) {
   .container {
     width: 1280px;
   }
