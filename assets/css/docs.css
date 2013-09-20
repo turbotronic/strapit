@@ -405,7 +405,7 @@ h4[id] {
 .bs-example > .list-group:last-child,
 .bs-example > .well:last-child,
 .bs-example > .progress:last-child,
-.bs-example > .table-responsive:last-child > .table {
+.bs-example > .table-responsive-example:last-child > .table {
   margin-bottom: 0;
 }
 .bs-example > p > .close {
@@ -441,7 +441,7 @@ h4[id] {
 }
 
 /* Tables */
-.bs-example > .table-responsive > .table {
+.bs-example > .table-responsive-example > .table {
   background-color: #fff;
 }
 
@@ -647,7 +647,7 @@ h4[id] {
  */
 
 /* Responsive (scrollable) doc tables */
-.table-responsive .highlight pre {
+.table-responsive-example .highlight pre {
   white-space: normal;
 }
 
@@ -779,4 +779,51 @@ h4[id] {
 .bs-docs-dl-options h4 {
   margin-top: 15px;
   margin-bottom: 5px;
+}
+
+/*Responsive table example w/o js*/
+.table-responsive-example {
+  margin-bottom: 22px;
+  overflow-y: hidden;
+  overflow-x: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  border: 1px solid #dddddd;
+  -webkit-overflow-scrolling: touch;
+}
+.table-responsive-example table {
+  margin-bottom: 0;
+}
+.table-responsive-example table > thead > tr > th,
+.table-responsive-example table > tbody > tr > th,
+.table-responsive-example table > tfoot > tr > th,
+.table-responsive-example table > thead > tr > td,
+.table-responsive-example table > tbody > tr > td,
+.table-responsive-example table > tfoot > tr > td {
+  position: relative;
+  white-space: nowrap;
+}
+.table-responsive-example .table.bordered {
+  border: 0;
+}
+.table-responsive-example .table.bordered > thead > tr > th:first-child,
+.table-responsive-example .table.bordered > tbody > tr > th:first-child,
+.table-responsive-example .table.bordered > tfoot > tr > th:first-child,
+.table-responsive-example .table.bordered > thead > tr > td:first-child,
+.table-responsive-example .table.bordered > tbody > tr > td:first-child,
+.table-responsive-example .table.bordered > tfoot > tr > td:first-child {
+  border-left: 0;
+}
+.table-responsive-example .table.bordered > thead > tr > th:last-child,
+.table-responsive-example .table.bordered > tbody > tr > th:last-child,
+.table-responsive-example .table.bordered > tfoot > tr > th:last-child,
+.table-responsive-example .table.bordered > thead > tr > td:last-child,
+.table-responsive-example .table.bordered > tbody > tr > td:last-child,
+.table-responsive-example .table.bordered > tfoot > tr > td:last-child {
+  border-right: 0;
+}
+.table-responsive-example .table.bordered > tbody > tr:last-child > th,
+.table-responsive-example .table.bordered > tfoot > tr:last-child > th,
+.table-responsive-example .table.bordered > tbody > tr:last-child > td,
+.table-responsive-example .table.bordered > tfoot > tr:last-child > td {
+  border-bottom: 0;
 }
