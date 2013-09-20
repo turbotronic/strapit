@@ -1089,6 +1089,9 @@ samp {
   padding-right: 0;
   float: left;
 }
+.container .container {
+  width: auto;
+}
 .row {
   width: auto;
   max-width: none;
