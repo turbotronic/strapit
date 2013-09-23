@@ -31,3 +31,137 @@
 .border-radius(@radius) when (isnumber(@radius)) and not (@radius = 0) {
   border-radius: @radius;
 }
+
+
+// Centered container element
+// ------------------------------------------
+// Head's up! Make sure maximum width is set later in a media query.
+// IE8 box model will break if min- and max- widths are set on this element.
+.make-container(@class-name: container) {
+  position: relative;
+  padding: 0 @grid-gutter-width / 2;
+  margin: 0 auto;
+  .clearfix();
+  // Fix for nested containers
+  > .@{class-name} {
+    width: auto !important;
+  }
+}
+
+// Create a row
+.make-rows(@gutter-width: @grid-gutter-width) {
+  position: relative;
+  width: auto;
+  margin: 0 -@gutter-width / 2;
+  .clearfix();
+}
+
+// Grid generator
+// ------------------
+
+// Create custom columns
+.make-columns(@columns: @grid-columns; @size: md;) {
+  .colX (@index) when (@index > 0) {
+     .@{size}-@{index} {
+       width: round(percentage(((@index) / @columns)), 5);
+     }
+     .colX(@index - 1);
+   }
+   .colX (0) {}
+   .colX (@columns);
+}
+// Generate offsets & source ordering
+.make-offsets(@columns: @grid-columns;) {
+  .offsetX (@index) when (@index > 0) {
+    .offset-@{index} {
+      margin-left: round(percentage(((@index) / @columns)), 5);
+    }
+    .offsetX(@index - 1);
+  }
+  .offsetX (0) {}
+  .offsetX (@columns - 1);
+  .pushpullX (@index) when (@index > 1) {
+    .push-@{index} {
+      left: round(percentage(((@index) / @columns)), 5);
+    }
+    .pull-@{index} {
+      right: round(percentage(((@index) / @columns)), 5);
+    }
+    .pushpullX(@index - 1);
+  }
+  .pushpullX (0) {}
+  .pushpullX (@columns - 1);
+}
+
+// Create the whole thing in one mixin
+#grid {
+  .make-grid (@columns: @grid-columns; @size: md) {
+    .colX (@index) when (@index > 0) {
+       .@{size}-@{index} {
+         width: round(percentage(((@index) / @columns)), 5);
+       }
+       .colX(@index - 1);
+     }
+     .colX (0) {}
+     
+     .offsetX (@index) when (@index > 0) {
+       .offset-@{index} {
+         margin-left: round(percentage(((@index) / @columns)), 5);
+       }
+       .offsetX(@index - 1);
+     }
+     .offsetX (0) {}
+ 
+     .pushpullX (@index) when (@index > 1) {
+       .push-@{index} {
+         left: round(percentage(((@index) / @columns)), 5);
+       }
+       .pull-@{index} {
+         right: round(percentage(((@index) / @columns)), 5);
+       }
+       .pushpullX(@index - 1);
+     }
+     .pushpullX (0) {}
+
+    // generate .colX, .offsetX, .pushX and .pullX
+    .colX (@columns);
+    .offsetX (@columns - 1);
+    .pushpullX (@columns - 1);
+   }
+
+  // This option changes the offsets and source ordering to
+  // be targeted by size 
+  .make-targeted-grid (@columns: @grid-columns; @size: md) {
+    .colX (@index) when (@index > 0) {
+       .@{size}-@{index} {
+         width: round(percentage(((@index) / @columns)), 5);
+       }
+       .colX(@index - 1);
+     }
+     .colX (0) {}
+
+     .offsetX (@index) when (@index > 0) {
+       .offset-@{size}-@{index} {
+         margin-left: round(percentage(((@index) / @columns)), 5);
+       }
+       .offsetX(@index - 1);
+     }
+     .offsetX (0) {}
+
+     .pushpullX (@index) when (@index > 1) {
+       .push-@{size}-@{index} {
+         left: round(percentage(((@index) / @columns)), 5);
+       }
+       .pull-@{size}-@{index} {
+         right: round(percentage(((@index) / @columns)), 5);
+       }
+       .pushpullX(@index - 1);
+     }
+     .pushpullX (0) {}
+
+    // generate .colX, .offsetX, .pushX and .pullX
+    .colX (@columns);
+    .offsetX (@columns - 1);
+    .pushpullX (@columns - 1);
+   }
+}

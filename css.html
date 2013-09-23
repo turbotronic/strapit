@@ -102,24 +102,118 @@ base_url: "../"
 		<p>Obviously this is tough to accommodate for in a framework. So, we feel the winning grid is the one that has the least code to change, which, as of today, is Foundation's. That said, we like Bootstrap's class names and conventions better, so we used those.</p>
 	</div>
 	<h3 id="grid-media-queries">Media queries</h3>
-	<p>We use the following media queries to create the key breakpoints in our grid system.</p>
+	<p>We use the following media queries to create the key breakpoints in our grid system. These are all optional and can be turned on and off as needed</p>
 {% highlight html %}
-/* Small devices (phones and tablets, up to 768px) */
-/* No media query since this is the default  */
+/* Extra-small devices (phones up to 479px) */
+@media screen and (min-width: @site-min-width) { ... }
 
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: @screen-sm-min) { ... }
+/* Small devices (large phonesn and small tables up to 639px) */
+@media screen and (min-width: @breakpoint-sm) { ... }
 
-/* Large devices (desktops, 992px and up) */
-@media (min-width: @screen-md-min) { ... }
+/* Medium devices (tablets to small desktops up to 959px) */
+@media screen and (min-width: @breakpoint-md) { ... }
+
+/* Large devices (laptops and desktops up to 1279px) */
+@media screen and (min-width: @breakpoint-lg) { ... }
+
+/* Extra large screens (screens up to 1480px) */
+@media screen and (min-width: @breakpoint-xl) { ... }
+
 {% endhighlight %}
 <p>We occasionally expand on these media queries to include a max-width to limit CSS to a narrower set of devices.</p>
 {% highlight html %}
-@media (max-width: @screen-sm-max) { ... }
-@media (min-width: @screen-sm) and (max-width: @screen-sm-max) { ... }
-@media (min-width: @screen-md) and (max-width: @screen-md-max) { ... }
-@media (min-width: @screen-lg) { ... }
+@media (max-width: @breakpoint-sm-max) { ... }
+@media (min-width: @breakpoint-sm) and (max-width: @breakpoint-sm-max) { ... }
+@media (min-width: @breakpoint-md) and (max-width: @breakpoint-md-max) { ... }
+@media (min-width: @breakpoint-lg) { ... }
 {% endhighlight %}
+
+
+<h3 id="grid-options">Grid options</h3>
+<p>See how aspects of the Strapit grid system work across multiple devices with a handy table.</p>
+<div class="table-responsive">
+  <table class="table bordered striped">
+    <thead>
+      <tr>
+        <th></th>
+        <th>
+          Extra small devices<br/>
+          <small>Phones (&lt;768px)</small>
+        </th>
+        <th>
+          Small devices<br/>
+          <small>Tablets (&ge;768px)</small>
+        </th>
+        <th>
+          Medium devices<br/>
+          <small>Desktops (&ge;992px)</small>
+        </th>
+        <th>
+          Large devices<br/>
+          <small>Desktops (&ge;1200px)</small>
+        </th>
+        <th>
+          Extra large devices<br/>
+          <small>Desktops (&ge;1200px)</small>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Grid behavior</th>
+        <td colspan="2">Horizontal at all times</td>
+        <td colspan="3">Collapsed to start, horizontal above breakpoints</td>
+      </tr>
+      <!-- <tr>
+        <th>Max container width</th>
+        <td colspan="3">None (auto)</td>
+        <td>750px</td>
+        <td>970px</td>
+        <td>1170px</td>
+        <td>1170px</td>
+      </tr> -->
+      <tr>
+        <th>Class prefix</th>
+        <td><code>.xs-</code></td>
+        <td><code>.sm-</code></td>
+        <td><code>.md-</code></td>
+        <td><code>.lg-</code></td>
+        <td><code>.xl-</code></td>
+      </tr>
+      <tr>
+        <th># of columns</th>
+        <td colspan="2">4</td>
+        <td colspan="3">12</td>
+      </tr>
+      <!-- <tr>
+        <th>Max column width</th>
+        <td class="text-muted">Auto</td>
+        <td>60px</td>
+        <td>78px</td>
+        <td>95px</td>
+        <td>95px</td>
+      </tr> -->
+      <tr>
+        <th>Gutter width</th>
+        <td colspan="5">30px (15px on each side of a column)</td>
+      </tr>
+      <tr>
+        <th>Nestable</th>
+        <td colspan="5">Yes</td>
+      </tr>
+      <tr>
+        <th>Offsets</th>
+        <td colspan="2" class="text-muted">N/A</td>
+        <td colspan="3">Yes</td>
+      </tr>
+      <tr>
+        <th>Column ordering</th>
+        <td colspan="2" class="text-muted">N/A</td>
+        <td colspan="3">Yes</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 	<h3 id="grid-example-basic">Basic grid: Stacked-to-horizontal</h3>
 	<p>Strapit uses <code>box-sizing: border-box</code> so that borders and padding do not affect the overall width of the column, making the math dead-simple. Since Strapit is mobile-first, we'll stack content by default. You do have access to an entirely separate small grid to use up to the 768px breakpoint. This means you can create some pretty complex layouts and even drop columns if you want.</p>
 		<div class="row show-grid">

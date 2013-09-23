@@ -252,11 +252,38 @@
 @grid-columns:              12;
 // Padding, to be divided by two and applied to the left and right of all columns
 @grid-gutter-width:         30px;
-// Point at which the navbar stops collapsing
-@grid-float-breakpoint:     @screen-sm-min;
-// Max width for site
-@site-max-width:            1280px;
 
+// Columns and gutters
+@grid-columns-xs:         4;
+@grid-columns-sm:         @grid-columns-xs;
+@grid-columns-md:         @grid-columns;
+@grid-columns-lg:         @grid-columns-md;
+@grid-columns-xl:         @grid-columns-lg;
+
+@grid-gutter-width-xs:    @grid-gutter-width;
+@grid-gutter-width-sm:    @grid-gutter-width;
+@grid-gutter-width-md:    @grid-gutter-width;
+@grid-gutter-width-lg:    @grid-gutter-width;
+@grid-gutter-width-xl:    @grid-gutter-width;
+
+// Minimum widths
+@site-min-width:          320px;
+@breakpoint-sm:           @site-min-width;
+@breakpoint-md:           768px;
+@breakpoint-lg:           992px;
+@breakpoint-xl:           1200px;
+
+// Maximum widths
+@site-max-width:          @breakpoint-xl;
+@breakpoint-sm-max:       @breakpoint-md - 1;
+@breakpoint-md-max:       @breakpoint-lg - 1;
+@breakpoint-lg-max:       @breakpoint-xl - 1;
+@breakpoint-xl-max:       @site-max-width - 1;
+
+// Point at which the navbar stops collapsing
+@grid-float-breakpoint:     @breakpoint-md;
+// Max width for site
+@site-max-width:            1480px;
 
 // Container sizes
 // For frozen containers at certain sizes

@@ -1,157 +1,73 @@
-//
 // Grid system
 // --------------------------------------------------
 
-// Set the container width, and override it for fixed navbars in media queries
 .container {
-  .container-fixed();
+  .make-container();
+}
+.row {
+  .make-rows();
 }
 
-// mobile first defaults
-.row { 
-  .make-row();
-}
-
+// Global column styles
 .col {
-  padding-left: @grid-gutter-width / 2;
-  padding-right: @grid-gutter-width / 2;
-  min-height: 1px; // Prevent columns from collapsing when empty
-  width: 100%;
+  position: relative;
   float: left;
-}
-
-@media only screen {
-  .sm-1 { width: round(percentage((1 / @grid-columns)), 5); }
-  .sm-2 { width: round(percentage((2 / @grid-columns)), 5); }
-  .sm-3 { width: round(percentage((3 / @grid-columns)), 5); }
-  .sm-4 { width: round(percentage((4 / @grid-columns)), 5); }
-  .sm-5 { width: round(percentage((5 / @grid-columns)), 5); }
-  .sm-6 { width: round(percentage((6 / @grid-columns)), 5); }
-  .sm-7 { width: round(percentage((7 / @grid-columns)), 5); }
-  .sm-8 { width: round(percentage((8 / @grid-columns)), 5); }
-  .sm-9 { width: round(percentage((9 / @grid-columns)), 5); }
-  .sm-10 { width: round(percentage((10 / @grid-columns)), 5); }
-  .sm-11 { width: round(percentage((11 / @grid-columns)), 5); }
-  .sm-12 { width: 100%; }
-
-  .sm-offset-0 { margin-left: 0%; }
-  .sm-offset-1 { margin-left: round(percentage((1 / @grid-columns)), 5); }
-  .sm-offset-2 { margin-left: round(percentage((2 / @grid-columns)), 5); }
-  .sm-offset-3 { margin-left: round(percentage((3 / @grid-columns)), 5); }
-  .sm-offset-4 { margin-left: round(percentage((4 / @grid-columns)), 5); }
-  .sm-offset-5 { margin-left: round(percentage((5 / @grid-columns)), 5); }
-  .sm-offset-6 { margin-left: round(percentage((6 / @grid-columns)), 5); }
-  .sm-offset-7 { margin-left: round(percentage((7 / @grid-columns)), 5); }
-  .sm-offset-8 { margin-left: round(percentage((8 / @grid-columns)), 5); }
-  .sm-offset-9 { margin-left: round(percentage((9 / @grid-columns)), 5); }
-  .sm-offset-10 { margin-left: round(percentage((10 / @grid-columns)), 5); }
-
-  //[class*="col"] + [class*="col"]:last-child { float: right; } // may bring this back
-  [class*="col"] + [class*="col"].end { float: left; }
-
-  .col.sm-centered { margin-left: auto; margin-right: auto; float: none !important; }
-}
-
-// medium screens and above (typically tablets)
-@media only screen and (min-width: @screen-sm-min) {
-//  .container {
-//    max-width: @container-tablet;
-//  }
-  .md-1 { width: round(percentage((1 / @grid-columns)), 5); }
-  .md-2 { width: round(percentage((2 / @grid-columns)), 5); }
-  .md-3 { width: round(percentage((3 / @grid-columns)), 5); }
-  .md-4 { width: round(percentage((4 / @grid-columns)), 5); }
-  .md-5 { width: round(percentage((5 / @grid-columns)), 5); }
-  .md-6 { width: round(percentage((6 / @grid-columns)), 5); }
-  .md-7 { width: round(percentage((7 / @grid-columns)), 5); }
-  .md-8 { width: round(percentage((8 / @grid-columns)), 5); }
-  .md-9 { width: round(percentage((9 / @grid-columns)), 5); }
-  .md-10 { width: round(percentage((10 / @grid-columns)), 5); }
-  .md-11 { width: round(percentage((11 / @grid-columns)), 5); }
-  .md-12 { width: 100%; }
-
-  .row .md-offset-0 { margin-left: 0%; }
-  .row .md-offset-1 { margin-left: round(percentage((1 / @grid-columns)), 5); }
-  .row .md-offset-2 { margin-left: round(percentage((2 / @grid-columns)), 5); }
-  .row .md-offset-3 { margin-left: round(percentage((3 / @grid-columns)), 5); }
-  .row .md-offset-4 { margin-left: round(percentage((4 / @grid-columns)), 5); }
-  .row .md-offset-5 { margin-left: round(percentage((5 / @grid-columns)), 5); }
-  .row .md-offset-6 { margin-left: round(percentage((6 / @grid-columns)), 5); }
-  .row .md-offset-7 { margin-left: round(percentage((7 / @grid-columns)), 5); }
-  .row .md-offset-8 { margin-left: round(percentage((8 / @grid-columns)), 5); }
-  .row .md-offset-9 { margin-left: round(percentage((9 / @grid-columns)), 5); }
-  .row .md-offset-10 { margin-left: round(percentage((10 / @grid-columns)), 5); }
-  .row .md-offset-11 { margin-left: round(percentage((11 / @grid-columns)), 5); }
-  
-  [class*="push"] { right: auto; }
-  .push-1 { left: round(percentage((1 / @grid-columns)), 5);}
-  .push-2 { left: round(percentage((2 / @grid-columns)), 5);}
-  .push-3 { left: round(percentage((3 / @grid-columns)), 5);}
-  .push-4 { left: round(percentage((4 / @grid-columns)), 5);}
-  .push-5 { left: round(percentage((5 / @grid-columns)), 5);}
-  .push-6 { left: round(percentage((6 / @grid-columns)), 5);}
-  .push-7 { left: round(percentage((7 / @grid-columns)), 5);}
-  .push-8 { left: round(percentage((8 / @grid-columns)), 5);}
-  .push-9 { left: round(percentage((9 / @grid-columns)), 5);}
-  .push-10 { left: round(percentage((10 / @grid-columns)), 5);}
-  .push-11 { left: round(percentage((11 / @grid-columns)), 5);}
-
-  [class*="pull"] { left: auto; } 
-  .pull-1 { right: round(percentage((1 / @grid-columns)), 5); }
-  .pull-2 { right: round(percentage((2 / @grid-columns)), 5); }
-  .pull-3 { right: round(percentage((3 / @grid-columns)), 5); }
-  .pull-4 { right: round(percentage((4 / @grid-columns)), 5); }
-  .pull-5 { right: round(percentage((5 / @grid-columns)), 5); }
-  .pull-6 { right: round(percentage((6 / @grid-columns)), 5); }
-  .pull-7 { right: round(percentage((7 / @grid-columns)), 5); }
-  .pull-8 { right: round(percentage((8 / @grid-columns)), 5); }
-  .pull-9 { right: round(percentage((9 / @grid-columns)), 5); }
-  .pull-10 { right: round(percentage((10 / @grid-columns)), 5); }
-  .pull-11 { right: round(percentage((11 / @grid-columns)), 5); }
-
-  .col.centered { 
-    margin-left: auto; 
-    margin-right: auto; 
-    float: none !important; 
+  width: 100%;
+  padding: 0 @grid-gutter-width / 2; // default
+  min-height: 1px; // Prevent columns from collapsing when empty
+  &.centered {
+    float: none !important;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .col.uncentered { 
+  &.uncentered {
+    float: left !important;
     margin-left: 0;
     margin-right: 0;
-    float: left !important; 
+    &.opposite {
+      float: right !important;
+    }
   }
-  .col.uncentered.opposite { float: right !important; }
+  // If you want to float that last column to go to the edge
+  // of the row, you can add the class '.last' to the last column
+  + .col {
+    &.last {
+      float: right!important;
+    }
+  }
 }
 
 
-@media (min-width: @screen-md-min) {
-  .lg-1 { width: round(percentage((1 / @grid-columns)), 5); }
-  .lg-2 { width: round(percentage((2 / @grid-columns)), 5); }
-  .lg-3 { width: round(percentage((3 / @grid-columns)), 5); }
-  .lg-4 { width: round(percentage((4 / @grid-columns)), 5); }
-  .lg-5 { width: round(percentage((5 / @grid-columns)), 5); }
-  .lg-6 { width: round(percentage((6 / @grid-columns)), 5); }
-  .lg-7 { width: round(percentage((7 / @grid-columns)), 5); }
-  .lg-8 { width: round(percentage((8 / @grid-columns)), 5); }
-  .lg-9 { width: round(percentage((9 / @grid-columns)), 5); }
-  .lg-10 { width: round(percentage((10 / @grid-columns)), 5); }
-  .lg-11 { width: round(percentage((11 / @grid-columns)), 5); }
-  .lg-12 { width: 100%; }
+// Grid
+// ---------------------------------------
+// Generate only the parts you need; comment out the parts you don't
 
-  .row .lg-offset-0 { margin-left: 0%; }
-  .row .lg-offset-1 { margin-left: round(percentage((1 / @grid-columns)), 5); }
-  .row .lg-offset-2 { margin-left: round(percentage((2 / @grid-columns)), 5); }
-  .row .lg-offset-3 { margin-left: round(percentage((3 / @grid-columns)), 5); }
-  .row .lg-offset-4 { margin-left: round(percentage((4 / @grid-columns)), 5); }
-  .row .lg-offset-5 { margin-left: round(percentage((5 / @grid-columns)), 5); }
-  .row .lg-offset-6 { margin-left: round(percentage((6 / @grid-columns)), 5); }
-  .row .lg-offset-7 { margin-left: round(percentage((7 / @grid-columns)), 5); }
-  .row .lg-offset-8 { margin-left: round(percentage((8 / @grid-columns)), 5); }
-  .row .lg-offset-9 { margin-left: round(percentage((9 / @grid-columns)), 5); }
-  .row .lg-offset-10 { margin-left: round(percentage((10 / @grid-columns)), 5); }
-  .row .lg-offset-11 { margin-left: round(percentage((11 / @grid-columns)), 5); }
+@media screen and (min-width: @site-min-width) {
+  // make xs grid
+  .make-columns(@columns: @grid-columns-xs; @size: xs);
 }
 
-@media (min-width: @screen-lg-min + (@grid-gutter-width / 2)) {
+@media screen and (min-width: @breakpoint-sm) {
+  // make sm grid
+  .make-columns(@columns: @grid-columns-sm; @size: sm);
+}
+
+@media screen and (min-width: @breakpoint-md) {
+  // make md grid (default)
+  #grid > .make-grid(@columns: @grid-columns-md; @size: md);
+}
+
+@media screen and (min-width: @breakpoint-lg) {
+  // make lg grid
+  .make-columns(@columns: @grid-columns-lg; @size: lg);
+}
+
+@media screen and (min-width: @breakpoint-xl) {
+  //make xl grid
+  .make-columns(@columns: @grid-columns-xl; @size: xl);
+}
+
+@media screen and (min-width: (@site-max-width + @grid-gutter-width / 2)) {
   .container {
     width: @site-max-width;
   }
