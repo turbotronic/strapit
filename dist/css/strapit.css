@@ -1152,7 +1152,7 @@ samp {
     width: 25%;
   }
 }
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 480px) {
   .sm-4 {
     width: 100%;
   }
@@ -1297,7 +1297,7 @@ samp {
     right: 16.66667%;
   }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 960px) {
   .lg-12 {
     width: 100%;
   }
@@ -1335,7 +1335,7 @@ samp {
     width: 8.33333%;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .xl-12 {
     width: 100%;
   }
@@ -1373,9 +1373,9 @@ samp {
     width: 8.33333%;
   }
 }
-@media screen and (min-width: 1495px) {
+@media screen and (min-width: 1615px) {
   .container {
-    width: 1480px;
+    width: 1600px;
   }
 }
 @media only screen {
