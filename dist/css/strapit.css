@@ -4814,7 +4814,7 @@ textarea.input-group.sm > .input-group-btn > .btn {
   src: url('../fonts/glyphicons-halflings-regular.eot');
   src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
 }
-.glyphicon:before {
+.glyphicon {
   position: relative;
   top: 1px;
   display: inline-block;
@@ -4824,7 +4824,7 @@ textarea.input-group.sm > .input-group-btn > .btn {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
 }
-.glyphicon:before:empty {
+.glyphicon:empty {
   width: 1em;
 }
 .glyphicon-asterisk:before {
