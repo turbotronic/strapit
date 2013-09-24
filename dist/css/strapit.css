@@ -4578,6 +4578,12 @@ textarea.input-group.sm > .input-group-btn > .btn {
   background-color: #eeeeee;
   border-color: #428bca;
 }
+.nav .open > a .caret,
+.nav .open > a:hover .caret,
+.nav .open > a:focus .caret {
+  border-top-color: #2a6496;
+  border-bottom-color: #2a6496;
+}
 .nav .nav-divider {
   height: 1px;
   margin: 10px 0;
@@ -4664,6 +4670,12 @@ textarea.input-group.sm > .input-group-btn > .btn {
 .pills > li.active > a:focus {
   color: #ffffff;
   background-color: #428bca;
+}
+.pills > li.active > a .caret,
+.pills > li.active > a:hover .caret,
+.pills > li.active > a:focus .caret {
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
 }
 .pills.justified {
   width: 100%;
@@ -5497,6 +5509,12 @@ textarea.input-group.sm > .input-group-btn > .btn {
 .side-nav .open > a:focus {
   background-color: #eeeeee;
   border-color: #428bca;
+}
+.side-nav .open > a .caret,
+.side-nav .open > a:hover .caret,
+.side-nav .open > a:focus .caret {
+  border-top-color: #2a6496;
+  border-bottom-color: #2a6496;
 }
 .side-nav .nav-divider {
   height: 1px;
