@@ -165,3 +165,39 @@
     .pushpullX (@columns - 1);
    }
 }
+
+// Block grid mixins
+// ---------------------
+
+.make-block-grid(@columns: @grid-columns; @size: sm;) {
+  .blockGrid (@index) when (@index > 0) {
+     .@{size}-block-grid-@{index} {
+	   > li {
+         width: round(percentage((1 / @index)), 5);
+         padding: 0 0.625em 1.25em;
+         &:nth-of-type(n) {
+          clear: none; 
+         }
+         &:nth-of-type(@{index}n+1) {
+          clear: both; 
+         }
+       }
+     }
+     .blockGrid(@index - 1);
+   }
+   .blockGrid (0) {}
+   .blockGrid (@columns);
+}
+
+.remove-block-grid-clearing(@columns: @grid-columns; @size: sm;) {
+  .clearing (@index) when (@index > 0) {
+     .@{size}-block-grid-@{index} {
+	   > li:nth-of-type(@{index}n+1) {
+         clear: none; 
+       }
+     }
+     .clearing(@index - 1);
+   }
+   .clearing (0) {}
+   .clearing (@columns);
+}
