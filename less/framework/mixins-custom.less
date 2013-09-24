@@ -201,3 +201,30 @@
    .clearing (0) {}
    .clearing (@columns);
 }
+
+
+
+// Responsive utilities -- REWRITE 
+// Accounts for tables on non-block-level elements
+// ---------------------------------
+// More easily include all the states for responsive-utilities.less.
+
+.responsive-visibility() {
+  display: inherit !important;
+  table { display: table !important; }
+  thead { display: table-header-group !important; }
+  tbody { display: table-row-group !important; }
+  tr& { display: table-row !important; }
+  th&,
+  td& { display: table-cell !important; }
+}
+
+.responsive-invisibility() {
+    &,
+  table,
+  thead,
+  tbody,
+  tr&,
+  th&,
+  td& { display: none !important; }
+}
