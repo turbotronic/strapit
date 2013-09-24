@@ -55,16 +55,21 @@
 @media screen and (min-width: @breakpoint-md) {
   // make md grid (default)
   #grid > .make-grid(@columns: @grid-columns-md; @size: md);
+  .make-targeted-offsets-only(@columns: @grid-columns-md; @size: md);
 }
 
 @media screen and (min-width: @breakpoint-lg) {
   // make lg grid
   .make-columns(@columns: @grid-columns-lg; @size: lg);
+  .make-targeted-centering(@size: lg);
+  .make-targeted-offsets-only(@columns: @grid-columns-lg; @size: lg);
 }
 
 @media screen and (min-width: @breakpoint-xl) {
   //make xl grid
   .make-columns(@columns: @grid-columns-xl; @size: xl);
+  .make-targeted-centering(@size: xl);
+  .make-targeted-offsets-only(@columns: @grid-columns-xl; @size: xl);
 }
 
 @media screen and (min-width: (@site-max-width + @grid-gutter-width / 2)) {

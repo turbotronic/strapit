@@ -281,20 +281,20 @@ base_url: "../"
 	<h3 id="grid-small">Small Grid: Mobile and tablet</h3>
 	<p>In addition to the medium grid, you also have access to a small grid. If you know that your grid structure will be the same for small devices as it will be on medium devices, just use the small grid. You can override your small grid classes by adding <code>.md</code> or <code>.lg</code> grid classes to it.</p>
 	<div class="row show-grid">
-	  <div class="col sm-2">2</div>
-	  <div class="col sm-10">10, last</div>
-	</div>
-	<div class="row show-grid">
+	  <div class="col sm-1">1</div>
 	  <div class="col sm-3">3</div>
-	  <div class="col sm-9">9, last</div>
 	</div>
 	<div class="row show-grid">
-	  <div class="col sm-6 md-8"><span class="visible-sm">6</span><span class="hidden-sm">8</span></div>
-	  <div class="col sm-6 md-4"><span class="visible-sm">6</span><span class="hidden-sm">4</span></div>
+	  <div class="col sm-2">2</div>
+	  <div class="col sm-2">2</div>
 	</div>
 	<div class="row show-grid">
-	  <div class="col sm-4 md-2"><span class="visible-sm">4</span><span class="hidden-sm">2</span></div>
-	  <div class="col sm-8 md-10"><span class="visible-sm">8</span><span class="hidden-sm">10</span></div>
+	  <div class="col sm-2 md-8"><span class="visible-sm">2</span><span class="hidden-sm">8</span></div>
+	  <div class="col sm-2 md-4"><span class="visible-sm">2</span><span class="hidden-sm">4</span></div>
+	</div>
+	<div class="row show-grid">
+	  <div class="col sm-1 md-2"><span class="visible-sm">1</span><span class="hidden-sm">2</span></div>
+	  <div class="col sm-3 md-10"><span class="visible-sm">3</span><span class="hidden-sm">10</span></div>
 	</div>
 {% highlight html %}
 <div class="row">
@@ -302,8 +302,8 @@ base_url: "../"
   <div class="col sm-10">10, last</div>
 </div>
 <div class="row">
-  <div class="col sm-3">3</div>
-  <div class="col sm-9">9, last</div>
+  <div class="col sm-1">1</div>
+  <div class="col sm-3">3, last</div>
 </div>
 <div class="row">
   <div class="col sm-6 md-8">...</div>
@@ -318,29 +318,29 @@ base_url: "../"
 	<h3 id="grid-large">Large Grid: Mobile, tablet and desktop</h3>
 	<p>Build on the previous examples by creating even more dynamic and powerful layouts with desktop <code>.lg</code> classes.</p>
 	<div class="row show-grid">
-	  <div class="col sm-12 md-6 lg-8"><span class="visible-sm">full</span><span class="visible-md">6</span><span class="visible-lg">8</span></div>
-	  <div class="col sm-6 md-6 lg-4"><span class="visible-sm">6 - stacks below!</span><span class="visible-md">6</span><span class="visible-lg">4</span></div>
+	  <div class="col sm-4 md-6 lg-8"><span class="visible-sm">full</span><span class="visible-md">6</span><span class="visible-lg">8</span></div>
+	  <div class="col sm-2 md-6 lg-4"><span class="visible-sm">6 - stacks below!</span><span class="visible-md">6</span><span class="visible-lg">4</span></div>
 	</div>
 	<div class="row show-grid">
 	  <div class="col sm-3 md-4 lg-6"><span class="visible-sm">3</span><span class="visible-md">4</span><span class="visible-lg">6</span></div>
-	  <div class="col sm-9 md-8 lg-6"><span class="visible-sm">9</span><span class="visible-md">8</span><span class="visible-lg">6</span></div>
+	  <div class="col sm-1 md-8 lg-6"><span class="visible-sm">9</span><span class="visible-md">8</span><span class="visible-lg">6</span></div>
 	</div>
 	<div class="row show-grid">
-	  <div class="col sm-6 md-8 lg-10"><span class="visible-sm">6</span><span class="visible-md">8</span><span class="visible-lg">10</span></div>
-	  <div class="col sm-6 md-4 lg-2"><span class="visible-sm">6</span><span class="visible-md">4</span><span class="visible-lg">2</span></div>
+	  <div class="col sm-2 md-8 lg-10"><span class="visible-sm">6</span><span class="visible-md">8</span><span class="visible-lg">10</span></div>
+	  <div class="col sm-2 md-4 lg-2"><span class="visible-sm">6</span><span class="visible-md">4</span><span class="visible-lg">2</span></div>
 	</div>
 {% highlight html %}
 <div class="row">
-  <div class="col sm-12 md-6 lg-8">...</div>
-  <div class="col sm-6 md-6 lg-4">...</div>
+  <div class="col sm-4 md-6 lg-8">...</div>
+  <div class="col sm-2 md-6 lg-4">...</div>
 </div>
 <div class="row">
   <div class="col sm-3 md-4 lg-6">...</div>
-  <div class="col sm-9 md-8 lg-6">...</div>
+  <div class="col sm-1 md-8 lg-6">...</div>
 </div>
 <div class="row">
-  <div class="col sm-6 md-8 lg-10">...</div>
-  <div class="col sm-6 md-4 lg-2">...</div>
+  <div class="col sm-2 md-8 lg-10">...</div>
+  <div class="col sm-2 md-4 lg-2">...</div>
 </div>
 {% endhighlight %}
 
@@ -380,7 +380,7 @@ base_url: "../"
 {% endhighlight %}
 
 	<h3 id="grid-offsetting">Offsets</h3>
-	<p>Offsets allow you to create additional space between col in a row. Like the rest of the grid, they're nestable. You can use classes like <code>.md-offset-1</code> and <code>.sm-offset-3</code> to manipulate your column positions in different ways. You can offset up to 11 since you wouldn't ever offset a full-width column.</p>
+	<p>Offsets allow you to create additional space between col in a row. Like the rest of the grid, they're nestable. You can use classes like <code>.md-offset-1</code> and <code>.lg-offset-3</code> to manipulate your column positions in different ways. You can offset up to 11 since you wouldn't ever offset a full-width column.</p>
 
 
 	<div class="row show-grid">
@@ -420,18 +420,18 @@ base_url: "../"
 {% endhighlight %}
 
 	<h3 id="grid-centering">Centered columns</h3>
-	<p>Centered columns are placed in the middle of the row. This does not center their content, but centers the grid element, itself. This is accomplished by adding a class of <code>.md-centered</code> or <code>.sm-centered</code> depending on which breakpoint you want the column to center on. Small versions will carry through all breakpoints if not overridden by a medium version. You can center any number of columns you have. To have a column not carry it's small-centered to medium, add a class of <code>.md-uncentered</code>.</p>
+	<p>Centered columns are placed in the middle of the row. This does not center their content, but centers the grid element, itself. This is accomplished by adding a class of <code>.md-centered</code> or <code>.lg-centered</code> depending on which breakpoint you want the column to center on. Items with the class <code>.centered</code> will carry through all breakpoints if not overridden by another version. You can center any number of columns you have. To have a column not carry it's centering to medium, add a class of <code>.md-uncentered</code>.</p>
 	<div class="row show-grid">
-	  <div class="col sm-3 sm-centered">3 centered</div>
+	  <div class="col md-3 centered">3 centered</div>
 	</div>
 	<div class="row show-grid">
-	  <div class="col sm-6 md-centered">6 centered, md</div>
+	  <div class="col md-6 lg-centered">6 centered lg</div>
 	</div>
 	<div class="row show-grid">
-	  <div class="col sm-9 sm-centered md-uncentered">9 centered sm</div>
+	  <div class="col sm-3 md-6 lg-8 md-centered lg-uncentered">9 centered sm</div>
 	</div>
 	<div class="row show-grid">
-	  <div class="col sm-11 sm-centered">11 centered</div>
+	  <div class="col md-11 centered">11 centered</div>
 	</div>
 {% highlight html %}
 <div class="row">

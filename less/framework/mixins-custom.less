@@ -21,7 +21,7 @@
 // Radius
 // -------------------------
 .radius(@radius) {
-	border-radius: @radius;
+  border-radius: @radius;
 }
 
 // Border radius
@@ -92,6 +92,59 @@
   .pushpullX (0) {}
   .pushpullX (@columns - 1);
 }
+// Generate targeted offsets & source ordering
+.make-targeted-offsets(@columns: @grid-columns; @size: md;) {
+  .offsetX (@index) when (@index > 0) {
+    .@{size}-offset-@{index} {
+      margin-left: round(percentage(((@index) / @columns)), 5);
+    }
+    .offsetX(@index - 1);
+  }
+  .offsetX (0) {}
+  .offsetX (@columns - 1);
+  .pushpullX (@index) when (@index > 1) {
+    .@{size}-push-@{index} {
+      left: round(percentage(((@index) / @columns)), 5);
+    }
+    .@{size}-pull-@{index} {
+      right: round(percentage(((@index) / @columns)), 5);
+    }
+    .pushpullX(@index - 1);
+  }
+  .pushpullX (0) {}
+  .pushpullX (@columns - 1);
+}
+// Generate targeted offsets only
+.make-targeted-offsets-only(@columns: @grid-columns; @size: md;) {
+  .offsetX (@index) when (@index > 0) {
+    .@{size}-offset-@{index} {
+      margin-left: round(percentage(((@index) / @columns)), 5);
+    }
+    .offsetX(@index - 1);
+  }
+  .offsetX (0) {}
+  .offsetX (@columns - 1);
+}
+
+// Targeted centering
+.make-targeted-centering(@size: md;) {
+  .col {
+    &.@{size}-centered {
+      float: none !important;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &.@{size}-uncentered {
+      float: left !important;
+      margin-left: 0;
+      margin-right: 0;
+      &.opposite {
+        float: right !important;
+      }
+    }  
+  }
+}
+
 
 // Create the whole thing in one mixin
 #grid {
@@ -127,6 +180,21 @@
     .colX (@columns);
     .offsetX (@columns - 1);
     .pushpullX (@columns - 1);
+
+    // Centered columns
+    .col .@{size}-centered {
+       float: none !important;
+       margin-left: auto;
+       margin-right: auto;
+     }
+    .col .@{size}-uncentered  {
+      float: left !important;
+      margin-left: 0;
+      margin-right: 0;
+      &.opposite {
+        float: right !important;
+      }
+   }
    }
 
   // This option changes the offsets and source ordering to
@@ -141,7 +209,7 @@
      .colX (0) {}
 
      .offsetX (@index) when (@index > 0) {
-       .offset-@{size}-@{index} {
+       .@{size}-offset-@{index} {
          margin-left: round(percentage(((@index) / @columns)), 5);
        }
        .offsetX(@index - 1);
@@ -149,10 +217,10 @@
      .offsetX (0) {}
 
      .pushpullX (@index) when (@index > 1) {
-       .push-@{size}-@{index} {
+       @{size}-push-@{index} {
          left: round(percentage(((@index) / @columns)), 5);
        }
-       .pull-@{size}-@{index} {
+       .@{size}-pull-@{index} {
          right: round(percentage(((@index) / @columns)), 5);
        }
        .pushpullX(@index - 1);
@@ -163,6 +231,23 @@
     .colX (@columns);
     .offsetX (@columns - 1);
     .pushpullX (@columns - 1);
+
+    // Centered columns 
+    .col {
+      .@{size}-centered {
+         float: none !important;
+         margin-left: auto;
+         margin-right: auto;
+       }
+      .@{size}-uncentered  {
+        float: left !important;
+        margin-left: 0;
+        margin-right: 0;
+        &.opposite {
+          float: right !important;
+        }
+      }
+    }
    }
 }
 
@@ -172,7 +257,7 @@
 .make-block-grid(@columns: @grid-columns; @size: sm;) {
   .blockGrid (@index) when (@index > 0) {
      .@{size}-block-grid-@{index} {
-	   > li {
+     > li {
          width: round(percentage((1 / @index)), 5);
          padding: 0 0.625em 1.25em;
          &:nth-of-type(n) {
@@ -192,7 +277,7 @@
 .remove-block-grid-clearing(@columns: @grid-columns; @size: sm;) {
   .clearing (@index) when (@index > 0) {
      .@{size}-block-grid-@{index} {
-	   > li:nth-of-type(@{index}n+1) {
+       > li:nth-of-type(@{index}n+1) {
          clear: none; 
        }
      }
