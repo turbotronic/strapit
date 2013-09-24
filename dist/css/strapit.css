@@ -1942,10 +1942,6 @@ abbr.initialism {
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
-q:before,
-q:after {
-  content: "";
-}
 address {
   display: block;
   margin-bottom: 22px;
