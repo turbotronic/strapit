@@ -1,12 +1,3 @@
-/**
-* Bootstrap v3.0.0 by @fat and @mdo
-* Copyright 2013 Twitter Inc.
-* Licensed under http://www.apache.org/licenses/LICENSE-2.0.
-*
-* Designed and built with all the love in the world by @mdo and @fat.
-*/
-if (!Zepto || !jQuery) { throw new Error("Bootstrap requires either jQuery or Zepto") }
-
 /* ========================================================================
  * Bootstrap: transition.js v3.0.0
  * http://twbs.github.com/bootstrap/javascript.html#transitions
