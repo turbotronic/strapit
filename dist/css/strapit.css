@@ -3098,7 +3098,12 @@ textarea {
   font-size: inherit;
   line-height: inherit;
   margin: 0;
-  vertical-align: middle;
+}
+button,
+input,
+select[multiple],
+textarea {
+  background-image: none;
 }
 button,
 input {
