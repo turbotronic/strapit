@@ -2001,7 +2001,7 @@ samp {
 .container:after {
   clear: both;
 }
-.container > .container {
+.container .container {
   width: auto !important;
 }
 .row {
