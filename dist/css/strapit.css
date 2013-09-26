@@ -25,10 +25,8 @@ summary {
   display: block;
   position: relative;
 }
-body,
 div,
-ul,
-li {
+ul {
   position: relative;
 }
 audio,
