@@ -30,7 +30,7 @@
   Tab.prototype.show = function () {
     var $this    = this.element
     var $ul      = $this.closest('ul:not(.dropdown-menu)')
-    var selector = $this.data('target')
+    var selector = $this.attr('data-target')
 
     if (!selector) {
       selector = $this.attr('href')
@@ -39,7 +39,7 @@
 
     if ($this.parent('li').hasClass('active')) return
 
-    var previous = $ul.find('.active:last a')[0]
+    var previous = $ul.find('.active:last-child a')[0]
     var e        = $.Event('show.bs.tab', {
       relatedTarget: previous
     })
@@ -132,4 +132,4 @@
     $(this).tab('show')
   })
 
-}(window.jQuery);
+}(window.Zepto || window.jQuery);

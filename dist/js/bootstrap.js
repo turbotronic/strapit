@@ -5,7 +5,7 @@
 *
 * Designed and built with all the love in the world by @mdo and @fat.
 */
-if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
+if (!Zepto || !jQuery) { throw new Error("Bootstrap requires either jQuery or Zepto") }
 
 /* ========================================================================
  * Bootstrap: transition.js v3.0.0
@@ -62,7 +62,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     $.support.transition = transitionEnd()
   })
 
-}(window.jQuery);
+}(window.Zepto || window.jQuery);
 
 /* ========================================================================
  * Bootstrap: alert.js v3.0.0
@@ -161,7 +161,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
 
   $(document).on('click.bs.alert.data-api', dismiss, Alert.prototype.close)
 
-}(window.jQuery);
+}(window.Zepto || window.jQuery);
 
 /* ========================================================================
  * Bootstrap: button.js v3.0.0
@@ -271,7 +271,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     e.preventDefault()
   })
 
-}(window.jQuery);
+}(window.Zepto || window.jQuery);
 
 /* ========================================================================
  * Bootstrap: carousel.js v3.0.0
@@ -489,7 +489,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     })
   })
 
-}(window.jQuery);
+}(window.Zepto || window.jQuery);
 
 /* ========================================================================
  * Bootstrap: collapse.js v3.0.0
@@ -669,7 +669,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     $target.collapse(option)
   })
 
-}(window.jQuery);
+}(window.Zepto || window.jQuery);
 
 /* ========================================================================
  * Bootstrap: dropdown.js v3.0.0
@@ -824,7 +824,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     .on('click.bs.dropdown.data-api'  , toggle, Dropdown.prototype.toggle)
     .on('keydown.bs.dropdown.data-api', toggle + ', [role=menu]' , Dropdown.prototype.keydown)
 
-}(window.jQuery);
+}(window.Zepto || window.jQuery);
 
 /* ========================================================================
  * Bootstrap: modal.js v3.0.0
@@ -1071,7 +1071,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     .on('show.bs.modal',  '.modal', function () { $(document.body).addClass('modal-open') })
     .on('hidden.bs.modal', '.modal', function () { $(document.body).removeClass('modal-open') })
 
-}(window.jQuery);
+}(window.Zepto || window.jQuery);
 
 /* ========================================================================
  * Bootstrap: tooltip.js v3.0.0
@@ -1458,7 +1458,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     return this
   }
 
-}(window.jQuery);
+}(window.Zepto || window.jQuery);
 
 /* ========================================================================
  * Bootstrap: popover.js v3.0.0
@@ -1576,7 +1576,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     return this
   }
 
-}(window.jQuery);
+}(window.Zepto || window.jQuery);
 
 /* ========================================================================
  * Bootstrap: scrollspy.js v3.0.0
@@ -1735,7 +1735,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     })
   })
 
-}(window.jQuery);
+}(window.Zepto || window.jQuery);
 
 /* ========================================================================
  * Bootstrap: tab.js v3.0.0
@@ -1778,7 +1778,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
 
     if ($this.parent('li').hasClass('active')) return
 
-    var previous = $ul.find('.active:last a')[0]
+    var previous = $ul.find('.active:last-child a')[0]
     var e        = $.Event('show.bs.tab', {
       relatedTarget: previous
     })
@@ -1871,7 +1871,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     $(this).tab('show')
   })
 
-}(window.jQuery);
+}(window.Zepto || window.jQuery);
 
 /* ========================================================================
  * Bootstrap: affix.js v3.0.0
@@ -1998,7 +1998,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     })
   })
 
-}(window.jQuery);
+}(window.Zepto || window.jQuery);
 
 // RESPONSIVE TABLES
 // ==============
