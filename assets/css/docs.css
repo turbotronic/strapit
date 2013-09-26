@@ -561,11 +561,6 @@ h4[id] {
   margin-bottom: 5px;
 }
 
-/* Example tabbable tabs */
-.bs-example-tabs .nav.tabs {
-  margin-bottom: 15px;
-}
-
 /* Tooltips */
 .bs-example-tooltips {
   text-align: center;
