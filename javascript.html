@@ -24,7 +24,7 @@ base_url: "../"
 
     <div class="callout danger">
       <h4>Plugin dependencies</h4>
-      <p>Some plugins and CSS components depend on other plugins. If you include plugins individually, make sure to check for these dependencies in the docs. Also note that all plugins depend on jQuery (this means jQuery must be included <strong>before</strong> the plugin files).</p>
+      <p>Some plugins and CSS components depend on other plugins. If you include plugins individually, make sure to check for these dependencies in the docs. Also note that all plugins depend on either jQuery or Zepto being present (this means either library &#8212; but not both! &#8212; must be included <strong>before</strong> the plugin files).</p>
     </div>
 
     <h3 id="js-data-attrs">Data attributes</h3>
@@ -61,6 +61,10 @@ $("#myModal").modal('show')                // initializes and invokes show immed
 var bootstrapButton = $.fn.button.noConflict() // return $.fn.button to previously assigned value
 $.fn.bootstrapBtn = bootstrapButton            // give $().bootstrapBtn the Strapit functionality
 {% endhighlight %}
+     <div class="callout warning">
+     	<h4>Zepto and .noConflict</h4>
+		Zepto does <strong>not</strong> support the <code>.noConflict</code> functionality, so if that becomes an issue for you, you should use jQuery exclusively.
+     </div>
 
     <h3 id="js-events">Events</h3>
     <p>Strapit provides custom events for most plugin's unique actions. Generally, these come in an infinitive and past participle form - where the infinitive (ex. <code>show</code>) is triggered at the start of an event, and its past participle form (ex. <code>shown</code>) is trigger on the completion of an action.</p>
@@ -74,7 +78,7 @@ $('#myModal').on('show.bs.modal', function (e) {
 
     <div class="callout warning" id="callout-third-party-libs">
       <h4>Third-party libraries</h4>
-      <p><strong>Strapit does not officially support third-party JavaScript libraries</strong> like Prototype or jQuery UI. Despite <code>.noConflict</code> and namespaced events, there may be compatibility problems that you need to fix on your own. Ask on the <a href="http://groups.google.com/group/twitter-bootstrap">mailing list</a> if you need help.</p>
+      <p><strong>Strapit does not officially support third-party JavaScript libraries</strong> like Prototype or jQuery UI. Despite <code>.noConflict</code> and namespaced events, there may be compatibility problems that you need to fix on your own.</p>
     </div>
   </div>
 
