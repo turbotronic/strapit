@@ -1974,7 +1974,8 @@ samp {
 .container {
   position: relative;
   padding: 0 15px;
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 .container:before,
 .container:after {
@@ -2006,7 +2007,8 @@ samp {
 .row {
   position: relative;
   width: auto;
-  margin: 0 -15px;
+  margin-right: -15px;
+  margin-left: -15px;
 }
 .row:before,
 .row:after {
@@ -3455,9 +3457,10 @@ textarea.input-lg {
   padding-top: 7px;
 }
 .form-horizontal .form-group {
+  position: relative;
   width: auto;
-  max-width: none;
-  margin: 0 -15px;
+  margin-right: -15px;
+  margin-left: -15px;
 }
 .form-horizontal .form-group:before,
 .form-horizontal .form-group:after {
@@ -3481,35 +3484,6 @@ textarea.input-lg {
 
 }
 .form-horizontal .form-group:after {
-  clear: both;
-}
-.form-horizontal .form-group.collapse {
-  width: auto;
-  margin: 0;
-  max-width: none;
-}
-.form-horizontal .form-group.collapse:before,
-.form-horizontal .form-group.collapse:after {
-  content: " ";
-  /* 1 */
-
-  display: table;
-  /* 2 */
-
-}
-.form-horizontal .form-group.collapse:after {
-  clear: both;
-}
-.form-horizontal .form-group.collapse:before,
-.form-horizontal .form-group.collapse:after {
-  content: " ";
-  /* 1 */
-
-  display: table;
-  /* 2 */
-
-}
-.form-horizontal .form-group.collapse:after {
   clear: both;
 }
 @media (min-width: 768px) {

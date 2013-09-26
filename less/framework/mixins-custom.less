@@ -39,8 +39,9 @@
 // IE8 box model will break if min- and max- widths are set on this element.
 .make-container(@class-name: container) {
   position: relative;
-  padding: 0 @grid-gutter-width / 2;
-  margin: 0 auto;
+  padding: 0 (@grid-gutter-width / 2);
+  margin-right: auto;
+  margin-left: auto;
   .clearfix();
   // Fix for nested containers
   > .@{class-name} {
@@ -49,10 +50,11 @@
 }
 
 // Create a row
-.make-rows(@gutter-width: @grid-gutter-width) {
+.make-rows(@gutter: @grid-gutter-width) {
   position: relative;
   width: auto;
-  margin: 0 -@gutter-width / 2;
+  margin-right: -(@gutter / 2);
+  margin-left: -(@gutter / 2);
   .clearfix();
 }
 
