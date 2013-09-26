@@ -1795,7 +1795,7 @@ em {
   font-weight: 200;
   line-height: 1.618;
 }
-@media (min-width: 992px) {
+@media (min-width: 960px) {
   .lead {
     font-size: 21px;
     font-size: 2.1rem;
@@ -1860,7 +1860,7 @@ blockquote.pull-right small:after {
   line-height: 1.618;
   color: #a2a2a2;
 }
-@media (min-width: 992px) {
+@media (min-width: 960px) {
   .subhead {
     font-size: 21px;
     font-size: 2.1rem;
@@ -5564,7 +5564,7 @@ textarea.input-group.sm > .input-group-btn > .btn {
   height: 0;
   padding: 0;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 960px) {
   .side-nav > .active > ul {
     display: block;
   }
