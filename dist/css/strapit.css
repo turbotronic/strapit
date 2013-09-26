@@ -5579,6 +5579,7 @@ textarea.input-group.sm > .input-group-btn > .btn {
 }
 .breadcrumb > li {
   display: inline-block;
+  position: relative;
 }
 .breadcrumb > li + li:before {
   content: "/\00a0";
