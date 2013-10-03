@@ -553,11 +553,14 @@ h4[id] {
   bottom: auto;
   z-index: 1;
   display: block;
+  overflow: visible;
+  
 }
 .bs-example-modal .modal-dialog {
   left: auto;
   margin-left: auto;
   margin-right: auto;
+  width: auto;
 }
 
 /* Example dropdowns */
