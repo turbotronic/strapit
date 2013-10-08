@@ -185,8 +185,8 @@ svg:not(:root) {
   width: device-width;
 }
 .hidden {
-  display: none !important;
-  visibility: hidden !important;
+  display: none;
+  visibility: hidden;
 }
 .visible-xs,
 .visible-xs table,
