@@ -2001,8 +2001,8 @@ if(!window.Zepto && !window.jQuery) {
 
 }(window.Zepto || window.jQuery);
 
-// RESPONSIVE TABLES
-// ==============
+// Responsive tables
+// ---------------------------------
 (function($) {
   // determine if table-responsive is present
   if($('.table-responsive').length) {
@@ -2013,11 +2013,11 @@ if(!window.Zepto && !window.jQuery) {
   
   function init(table) {
     table.addClass('js'); // activates CSS for the table
-    var $childTable = table.find('table'),
-        breakpoint = $childTable.width(),
+    var $childTable = table.find('.table'),
+        breakpoint = ($childTable.width() == undefined) ? $(window).width() : $childTable.width(),
         switched = false,
         updateTable = function() {
-          if ((table.width() < breakpoint) && !switched ) {
+          if ((table.width() <= breakpoint) && !switched ) {
             switched = true;
             $childTable.each(function(i, element) {
               splitTable($(element));
