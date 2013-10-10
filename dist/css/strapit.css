@@ -299,10 +299,10 @@ th.hidden-xl {
   .visible-sm-up {
     display: inherit !important;
   }
-  .visible-sm {
+  .visible-xs {
     display: none !important;
   }
-  .hidden-sm {
+  .hidden-xs {
     display: inherit !important;
   }
   .hidden-sm,
@@ -343,10 +343,12 @@ th.hidden-xl {
   .visible-md-up {
     display: inherit !important;
   }
-  .visible-sm {
+  .visible-sm,
+  .visible-sm-down {
     display: none !important;
   }
-  .hidden-sm {
+  .hidden-sm,
+  .hidden-sm-down {
     display: inherit !important;
   }
   .hidden-md,
