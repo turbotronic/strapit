@@ -16,13 +16,13 @@
   }
   .title {
     background-color: @border-color;
-    padding: 0.9375em 1.25em;
+    padding: @padding-base-vertical @padding-base-horizontal;
     font-weight: @headings-font-weight;
     .font-size(16);
   }
   .price {
     background-color: #eee;
-    padding: 0.9375em 1.25em;
+    padding: @padding-base-horizontal;
     .font-size(20); 
   }
   .description {
@@ -35,12 +35,12 @@
   }
   .bullet-item {
     background-color: #fff;
-    padding: 0.9375em;
+    padding: @padding-base-vertical;
     .font-size(12);
     border-bottom: dotted 1px @border-color;
   }
   .cta-btn {
     background-color: @gray-lightest;
-    padding: 1.25em 0;
+    padding: @padding-base-horizontal;
   }
 }

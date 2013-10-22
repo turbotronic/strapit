@@ -5749,14 +5749,14 @@ button.close {
 }
 .pricing-table .title {
   background-color: #dddddd;
-  padding: 0.9375em 1.25em;
+  padding: 6px 12px;
   font-weight: 500;
   font-size: 16px;
   font-size: 1.6rem;
 }
 .pricing-table .price {
   background-color: #eee;
-  padding: 0.9375em 1.25em;
+  padding: 12px;
   font-size: 20px;
   font-size: 2rem;
 }
@@ -5771,14 +5771,14 @@ button.close {
 }
 .pricing-table .bullet-item {
   background-color: #fff;
-  padding: 0.9375em;
+  padding: 6px;
   font-size: 12px;
   font-size: 1.2rem;
   border-bottom: dotted 1px #dddddd;
 }
 .pricing-table .cta-btn {
   background-color: #f5f5f5;
-  padding: 1.25em 0;
+  padding: 12px;
 }
 .flex-video {
   position: relative;
