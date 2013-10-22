@@ -712,10 +712,7 @@ figure {
 /* Fix Google Maps canvas
  *
  * Wrap your Google Maps embed in a `.google-map-canvas` to reset Strapit's
- * global `box-sizing` changes. You may optionally need to reset the `max-width`
- * on images in case you've applied that anywhere else. (That shouldn't be as
- * necessary with Strapit though as that behavior is relegated to the
- * `.img-responsive` class.)
+ * global `box-sizing` changes.
  */
 .google-map-canvas,
 .google-map-canvas * {
@@ -6191,9 +6188,6 @@ body.modal-open,
 }
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
-  display: block;
-  max-width: 100%;
-  height: auto;
   line-height: 1;
 }
 .carousel-inner > .active,
