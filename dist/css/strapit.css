@@ -45,6 +45,9 @@ template {
 svg:not(:root) {
   overflow: hidden;
 }
+.print-only {
+  display: none !important;
+}
 @media print {
   * {
     text-shadow: none !important;
@@ -83,7 +86,7 @@ svg:not(:root) {
     max-width: 100% !important;
   }
   @page  {
-    margin: 2cm .5cm;
+    margin: 0.5cm;
   }
   p,
   h2,
@@ -95,33 +98,14 @@ svg:not(:root) {
   h3 {
     page-break-after: avoid;
   }
+  .hidden-print {
+    display: none !important;
+  }
   .visible-print {
     display: inherit !important;
   }
-  .visible-print table {
-    display: table !important;
-  }
-  .visible-print thead {
-    display: table-header-group !important;
-  }
-  .visible-print tbody {
-    display: table-row-group !important;
-  }
-  tr.visible-print {
-    display: table-row !important;
-  }
-  th.visible-print,
-  td.visible-print {
-    display: table-cell !important;
-  }
-  .hidden-print,
-  .hidden-print table,
-  .hidden-print thead,
-  .hidden-print tbody,
-  tr.hidden-print,
-  th.hidden-print,
-  td.hidden-print {
-    display: none !important;
+  .print-only {
+    display: block !important;
   }
 }
 .clearfix:before,

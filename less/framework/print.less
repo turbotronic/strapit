@@ -3,6 +3,9 @@
 // --------------------------------------------------
 // Source: https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css
 
+.print-only {
+  display: none !important; 
+}
 @media print {
   * {
     text-shadow: none !important;
@@ -20,7 +23,6 @@
   abbr[title]:after {
     content: " (" attr(title) ")"; 
   }
-  // Don't show links for images, or javascript/internal links
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
@@ -32,8 +34,8 @@
     page-break-inside: avoid; 
   }
   thead {
-    display: table-header-group; 
-  } // h5bp.com/t
+    display: table-header-group; // h5bp.com/t */ 
+  }
   tr,
   img {
     page-break-inside: avoid; 
@@ -42,7 +44,7 @@
     max-width: 100% !important; 
   }
   @page {
-    margin: 2cm .5cm; 
+    margin: 0.5cm; 
   }
   p,
   h2,
@@ -54,10 +56,13 @@
   h3 {
     page-break-after: avoid; 
   }
-  .visible-print {
-    .responsive-visibility();
-  }
   .hidden-print {
-    .responsive-invisibility();
+    display: none !important; 
   }
+  .visible-print {
+    display: inherit !important;
+  }
+  .print-only {
+    display: block !important; 
+  } 
 }
