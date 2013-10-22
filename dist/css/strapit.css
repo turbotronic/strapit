@@ -2145,7 +2145,7 @@ table th[class*="col"] {
   }
   .table.bordered th,
   .table.bordered td {
-    border: 1px solid #ddd !important;
+    border: 1px solid #dddddd !important;
   }
 }
 .table-responsive {
@@ -2257,8 +2257,8 @@ table th[class*="col"] {
   position: relative;
   height: 0;
   overflow: hidden;
-  -webkit-transition: height 0.35s ease;
-  transition: height 0.35s ease;
+  -webkit-transition: height 0.35s ease-in;
+  transition: height 0.35s ease-in;
 }
 label,
 select,
@@ -5198,11 +5198,6 @@ a.list-group-item.active > .badge,
   transition: all 0.2s ease-in-out;
   display: block;
   margin-bottom: 22px;
-}
-.thumbnail > img {
-  display: block;
-  max-width: 100%;
-  height: auto;
 }
 a.thumbnail:hover,
 a.thumbnail:focus {
