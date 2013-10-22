@@ -1083,6 +1083,9 @@ blockquote.pull-right small:after {
 .text-center {
   text-align: center;
 }
+.text-justify {
+  text-align: justify;
+}
 .caps {
   text-transform: uppercase;
 }
