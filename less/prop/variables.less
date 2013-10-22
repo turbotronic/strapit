@@ -225,27 +225,6 @@
 @zindex-modal-background:  1040;
 @zindex-modal:             1050;
 
-// Media queries breakpoints
-// --------------------------------------------------
-
-// Extra small screen / phone
-@screen-xs-min:              480px;
-
-// Small screen / tablet
-@screen-sm-min:              768px;
-
-// Medium screen / desktop
-// Note: Deprecated @screen-md and @screen-desktop as of v3.0.1
-@screen-md-min:              992px;
-
-// Large screen / wide desktop
-@screen-lg-min:              1200px;
-
-// So media queries don't overlap when required, provide a maximum
-@screen-xs-max:              (@screen-sm-min - 1);
-@screen-sm-max:              (@screen-md-min - 1);
-@screen-md-max:              (@screen-lg-min - 1);
-
 
 // Grid system
 // --------------------------------------------------
@@ -286,23 +265,6 @@
 
 // Point at which the navbar stops collapsing
 @grid-float-breakpoint:     @breakpoint-md;
-
-
-// Container sizes
-// For frozen containers at certain sizes
-// --------------------------------------------------
-
-// Small screen / tablet
-// Depreciated due to adoptions of new grid????
-@container-tablet:            ((720px + @grid-gutter-width));
-
-// Medium screen / desktop
-// Depreciated due to adoptions of new grid????
-@container-desktop:           ((940px + @grid-gutter-width));
-
-// Large screen / wide desktop
-// Depreciated due to adoptions of new grid????
-@container-lg-desktop:        ((1140px + @grid-gutter-width));
 
 
 // Navbar
