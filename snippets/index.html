@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta, title, CSS, favicons, etc. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow"/>
+<title>Strapit :: Snippets</title>
+<!-- Strapit core CSS -->
+<link href="../dist/css/strapit.css" rel="stylesheet">
+<!-- Documentation extras -->
+<link href="../assets/css/docs.css" rel="stylesheet">
+<link href="../assets/css/pygments-manni.css" rel="stylesheet">
+<!-- Modernizr for touch detection and IE support of HTML5 elements -->
+<script src="../assets/js/modernizr.js"></script>
+<!-- Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src=".assets/js/respond.min.js"></script>
+<![endif]-->
+<!-- Favicons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+<link rel="shortcut icon" href="assets/ico/favicon.png">
+<!-- Place anything custom after this. -->
+</head>
+<body class="bs-docs-home">
+<a class="sr-only" href="#content">Skip navigation</a>
+<!-- Docs master nav -->
+<header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+<div class="container">
+	<div class="navbar-header">
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		</button>
+		<a href="index.php" class="navbar-brand">Strapit</a>
+	</div>
+	<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+	<ul class="nav navbar-nav">
+		<li class="active">
+		<a href="getting-started.php">Getting started</a>
+		</li>
+		<li>
+		<a href="css.php">CSS</a>
+		</li>
+		<li>
+		<a href="components.php">Components: Input &amp; Navigation</a>
+		</li>
+		<li>
+		<a href="components2.php">Components: UI Elements</a>
+		</li>
+		<li>
+		<a href="javascript.php">JavaScript</a>
+		</li>
+	</ul>
+	</nav>
+</div>
+</header>
+<!-- Docs page layout -->
+<div class="bs-header" id="content">
+	<div class="container">
+		<h1>Snippets</h1>
+		<p>
+			Release candidates and testing page for experimental snippets.
+		</p>
+	</div>
+</div>
+<div class="container bs-docs-container">
+	<div class="row">
+		<div class="col md-3">
+			<div class="bs-sidebar hidden-print" role="complementary">
+				<ul class="nav bs-sidenav">
+					<li>
+						<a href="#chat-widget">Chat Widget</a>
+					</li>
+					<li>
+						<a href="#buttons-labels">Buttons with labels</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col md-9" role="main">
+
+
+
+			<div class="bs-docs-section">
+				<div class="page-header">
+					<h1 id="chat-widget">Chat widget</h1>
+				</div>
+				<p class="lead">Leader text here explaining this widget</p>
+				<div class="bs-example">
+					<div class="chat-widget" style="width:50%;">
+						<div class="panel panel-primary">
+			                <div class="panel-heading">
+			                    <span class="glyphicon glyphicon-comment"></span> Chat
+			                    <div class="btn-group pull-right">
+			                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+			                            <span class="glyphicon glyphicon-chevron-down"></span>
+			                        </button>
+			                        <ul class="dropdown-menu slidedown">
+			                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-refresh">
+			                            </span>Refresh</a></li>
+			                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-ok-sign">
+			                            </span>Available</a></li>
+			                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-remove">
+			                            </span>Busy</a></li>
+			                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-time"></span>
+			                                Away</a></li>
+			                            <lspan class="divider"></li>
+			                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-off"></span>
+			                                Sign Out</a></li>
+			                        </ul>
+			                    </div>
+			                </div>
+			                <div class="panel-body">
+			                    <ul class="chat">
+			                        <lspan class="left clearfix"><span class="chat-img pull-left">
+			                            <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
+			                        </span>
+			                            <div class="chat-body clearfix">
+			                                <div class="header">
+			                                    <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
+			                                        <span class="glyphicon glyphicon-time"></span>12 mins ago</small>
+			                                </div>
+			                                <p>
+			                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+			                                    dolor, quis ullamcorper ligula sodales.
+			                                </p>
+			                            </div>
+			                        </li>
+			                        <lspan class="right clearfix"><span class="chat-img pull-right">
+			                            <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
+			                        </span>
+			                            <div class="chat-body clearfix">
+			                                <div class="header">
+			                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
+			                                    <strong class="pull-right primary-font">Bhaumik Patel</strong>
+			                                </div>
+			                                <p>
+			                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+			                                    dolor, quis ullamcorper ligula sodales.
+			                                </p>
+			                            </div>
+			                        </li>
+			                        <lspan class="left clearfix"><span class="chat-img pull-left">
+			                            <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
+			                        </span>
+			                            <div class="chat-body clearfix">
+			                                <div class="header">
+			                                    <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
+			                                        <span class="glyphicon glyphicon-time"></span>14 mins ago</small>
+			                                </div>
+			                                <p>
+			                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+			                                    dolor, quis ullamcorper ligula sodales.
+			                                </p>
+			                            </div>
+			                        </li>
+			                        <lspan class="right clearfix"><span class="chat-img pull-right">
+			                            <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
+			                        </span>
+			                            <div class="chat-body clearfix">
+			                                <div class="header">
+			                                    <small class="text-muted"><span class="glyphicon glyphicon-time"></span>15 mins ago</small>
+			                                    <strong class="pull-right primary-font">Bhaumik Patel</strong>
+			                                </div>
+			                                <p>
+			                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+			                                    dolor, quis ullamcorper ligula sodales.
+			                                </p>
+			                            </div>
+			                        </li>
+			                    </ul>
+			                </div>
+			                <div class="panel-footer">
+			                    <div class="input-group">
+			                        <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+			                        <span class="input-group-btn">
+			                            <button class="btn warning sm" id="btn-chat">
+			                                Send</button>
+			                        </span>
+			                    </div>
+			                </div>
+					</div>
+				</div>
+				<div class="highlight">
+				<!-- code goes here -->
+				</div>
+			</div>
+			
+			
+			<div class="bs-docs-section">
+				<div class="page-header">
+					<h1 id="buttons-labels">Cool Buttons With Labels</h1>
+				</div>
+				<p class="lead">Leader text here explaining this widget</p>
+				<div class="bs-example">
+					<button type="button" class="btn btn-labeled success">
+		                <span class="btn-label"><span class="glyphicon glyphicon-ok"></span></span>Success</button>
+		            <button type="button" class="btn btn-labeled danger">
+		                <span class="btn-label"><span class="glyphicon glyphicon-remove"></span></span>Cancel</button>
+		            <br />
+		            <button type="button" class="btn btn-labeled warning">
+		                <span class="btn-label"><span class="glyphicon glyphicon-bookmark"></span></span>Bookmark</button>
+		            <button type="button" class="btn btn-labeled btn-primary">
+		                <span class="btn-label"><span class="glyphicon glyphicon-camera"></span></span>Camera</button>
+		            <br />
+		            <button type="button" class="btn btn-labeled default">
+		                <span class="btn-label"><span class="glyphicon glyphicon-chevron-left"></span></span>Left</button>
+		            <button type="button" class="btn btn-labeled default">
+		                <span class="btn-label"><span class="glyphicon glyphicon-chevron-right"></span></span>
+		                Right</button>
+		            <br />
+		            <button type="button" class="btn btn-labeled success">
+		                <span class="btn-label"><span class="glyphicon glyphicon-thumbs-up"></span></span>Thumbs
+		                Up</button>
+		            <button type="button" class="btn btn-labeled danger">
+		                <span class="btn-label"><span class="glyphicon glyphicon-thumbs-down"></span></span>Thumbs
+		                Down</button>
+		            <br />
+		            <button type="button" class="btn btn-labeled info">
+		                <span class="btn-label"><span class="glyphicon glyphicon-refresh"></span></span>Refresh</button>
+		            <button type="button" class="btn btn-labeled danger">
+		                <span class="btn-label"><span class="glyphicon glyphicon-trash"></span></span>Trash</button>
+		            <br />
+		            <a class="btn success btn-labeled" href="http://www.jquery2dotnet.com" role="button">
+		                <span class="btn-label"><span class="glyphicon glyphicon-info-sign"></span></span>Info Web</a>
+					
+				</div>
+				<div class="highlight">
+				<!-- code goes here -->
+				</div>
+			</div>
+			
+			
+			
+			<div class="bs-docs-section">
+				<div class="page-header">
+					<h1 id="chat-widget">Chat widget</h1>
+				</div>
+				<p class="lead">Leader text here explaining this widget</p>
+				<div class="bs-example">
+					
+					
+				</div>
+				<div class="highlight">
+				<!-- code goes here -->
+				</div>
+			</div>
+			
+			
+			
+			<div class="bs-docs-section">
+				<div class="page-header">
+					<h1 id="chat-widget">Chat widget</h1>
+				</div>
+				<p class="lead">Leader text here explaining this widget</p>
+				<div class="bs-example">
+					
+					
+				</div>
+				<div class="highlight">
+				<!-- code goes here -->
+				</div>
+			</div>
+			
+			
+
+			<div class="bs-docs-section">
+				<div class="page-header">
+					<h1 id="chat-widget">Chat widget</h1>
+				</div>
+				<p class="lead">Leader text here explaining this widget</p>
+				<div class="bs-example">
+					
+					
+				</div>
+				<div class="highlight">
+				<!-- code goes here -->
+				</div>
+			</div>
+				
+
+			</div>
+		</div>
+	</div>
+	<footer class="bs-footer" role="contentinfo">
+	<div class="container">
+		<p>
+			Brought to you by the good folks at Twitter and Zurb and cobbled together by the UX team at Digital First Media.
+		</p>
+		<p>
+			Original project links:<span class="divider"></span><a href="http://getbootstrap.com/">Bootstrap</a><span class="divider">|</span><a href="http://foundation.zurb.com/">Foundation</a>
+		</p>
+		<p>
+			Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+		</p>
+		<ul class="footer-links">
+			<li>Currently v2.0.0</li>
+			<li class="muted">&middot;</li>
+			<li><a href="https://github.com/jboho/strapit/">Github project</a></li>
+			<li class="muted">&middot;</li>
+			<li><a href="https://github.com/jboho/strapit/issues?state=open">Issues</a></li>
+		</ul>
+	</div>
+	</footer>
+	<!-- Strapit core JavaScript
+================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="./assets/js/jquery.js"></script>
+	<script src="./dist/js/bootstrap.js"></script>
+	<script src="http://platform.twitter.com/widgets.js"></script>
+	<script src="./assets/js/holder.js"></script>
+	<script src="./assets/js/application.js"></script>
+	</body>
+	</html>
