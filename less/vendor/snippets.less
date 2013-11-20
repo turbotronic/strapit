@@ -1,92 +1,179 @@
-/*chat widget*/
+// Chat widget
+// Take from Bootsnipp :: http://bootsnipp.com/snippets/featured/chat-widgets
+.chat-widget {
+  .chat {
+    li {
+      margin-bottom: (@line-height-computed / 2);
+      padding-bottom: @padding-base-vertical;
+      border-bottom: 1px dotted @border-color;
 
-.chat
-{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.chat li
-{
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-    border-bottom: 1px dotted #B3A9A9;
-}
-
-.chat li.left .chat-body
-{
-    margin-left: 60px;
-}
-
-.chat li.right .chat-body
-{
-    margin-right: 60px;
-}
-
-
-.chat li .chat-body p
-{
-    margin: 0;
-    color: #777777;
-}
-
-.panel .slidedown .glyphicon, .chat .glyphicon
-{
-    margin-right: 5px;
-}
-
-.panel-body
-{
+      &:nth-child(n+1) { // right
+        .chat-body {
+          margin-right: ( @grid-gutter-width * 2 );
+        }
+        .img-circle {
+          .pull-right();
+        }
+      }
+      &:nth-child(2n+1) { //left
+        .chat-body {
+          margin-left: ( @grid-gutter-width * 2 );
+        }
+        .img-circle {
+          .pull-left();
+        }
+      }
+    }
+  }
+  .chat-body {
+    p {
+      margin:0;
+      color: @gray;
+    }
+  }
+  .panel-body {
     overflow-y: scroll;
     height: 250px;
-}
-
-::-webkit-scrollbar-track
-{
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    background-color: #F5F5F5;
-}
-
-::-webkit-scrollbar
-{
-    width: 12px;
-    background-color: #F5F5F5;
-}
-
-::-webkit-scrollbar-thumb
-{
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-    background-color: #555;
+  }
+  .panel .slidedown .glyphicon, .chat .glyphicon {
+    margin-right: 5px;
+  }
+  ::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+      background-color: #F5F5F5;
+  }
+  ::-webkit-scrollbar {
+      width: 12px;
+      background-color: #F5F5F5;
+  }
+  ::-webkit-scrollbar-thumb {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+      background-color: #555;
+  }
 }
 
 
-/*buttons with labels*/
-.btn-label {
-  margin-right: 0.4em;
+
+// Buttons with labels
+// Taken from Bootsnipp :: http://bootsnipp.com/snippets/featured/buttons-with-labels
+.btn.labeled {
+  padding-top: 0;
+  padding-bottom: 0;
+  .btn-label {
+    position: relative;
+    left: -@padding-base-horizontal;
+    display: inline-block;
+    padding: @padding-base-vertical  @padding-base-horizontal;
+    background: rgba(0,0,0,0.15);
+    border-radius: @border-radius-base 0 0 @border-radius-base;
+  }
 }
+.btn.lg.labeled {
+  .btn-label {
+    left: -@padding-large-horizontal;
+    padding: @padding-large-vertical  @padding-large-horizontal;
+    border-radius: @border-radius-large 0 0 @border-radius-large;
+  }
+}
+.btn.sm.labeled {
+  .btn-label {
+    left: -@padding-small-horizontal;
+    padding: @padding-small-vertical  @padding-small-horizontal;
+    border-radius: @border-radius-small 0 0 @border-radius-small;
+  }
+}
+.btn.xs.labeled {
+  .btn-label {
+    left: -5px;
+    padding: 1px  5px;
+    border-radius: @border-radius-small 0 0 @border-radius-small;
+  }
+}
+
+// Google style login widget
+// Taken from Bootsnipp :: http://bootsnipp.com/snippets/featured/google-style-login
+.login-widget {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+    h3 {
+      text-align: center;
+    color: @gray-dark;
+    .font-size(18px);
+    font-weight: @font-weight-base;
+     margin-bottom: 10px;
+    }
+  img {
+      .square(96px);
+      margin: 0 auto 10px;
+      display: block;
+      .border-radius(50%);
+  }
+  form {
+    .clearfix();
+  }
+  input[type="text"] {
+      margin-bottom: -1px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+  }
+  input[type="password"] {
+      margin-bottom: 10px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+  }
+    .checkbox {
+      font-weight: @font-weight-base;
+      .pull-left();
+  }
+  .form-control {
+      position: relative;
+      font-size: 16px;
+      height: auto;
+      padding: 10px;
+      &:focus {
+        z-index: 2;
+      }
+  }
+  .account-wall {
+      margin-top: @line-height-computed;
+      padding: (@line-height-computed * 2) @line-height-computed @line-height-computed;
+      background-color: @gray-lightest;
+      .box-shadow(0px 2px 2px rgba(0, 0, 0, 0.3));
+  }
+  .need-help {
+      margin-top: 10px;
+      .pull-right();
+  }
+  .new-account {
+      display: block;
+      margin-top: 10px;
+      .text-center();
+  }
+}
+
 
 /*user profile */
 .user-profile {
-	background: #f3f3f3;
-	border-radius: 3px;
-	border: 1px solid #ddd;
-	padding: 20px;
+  background: #f3f3f3;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  padding: 20px;
 }
 .user-image {
-	width: 18%
-	float:left;
-	margin: 0 15px;
+  width: 18%
+  float:left;
+  margin: 0 15px;
 }
 .user-info {
-	width: 18%;
-	float:left;	
-		margin: 0 15px;
+  width: 18%;
+  float:left;  
+    margin: 0 15px;
 }
 .user-action {
-		width: 18%;
-			float:left;
-				margin: 0 15px;
+    width: 18%;
+      float:left;
+        margin: 0 15px;
 }
 
 /*media-slider-carousel*/
@@ -147,81 +234,7 @@
 /* End carousel */
 
 /*login form*/
-.form-signin
-{
-    max-width: 330px;
-    padding: 15px;
-    margin: 0 auto;
-}
-.form-signin .form-signin-heading, .form-signin .checkbox
-{
-    margin-bottom: 10px;
-}
-.form-signin .checkbox
-{
-    font-weight: normal;
-}
-.form-signin .form-control
-{
-    position: relative;
-    font-size: 16px;
-    height: auto;
-    padding: 10px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-.form-signin .form-control:focus
-{
-    z-index: 2;
-}
-.form-signin input[type="text"]
-{
-    margin-bottom: -1px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-.form-signin input[type="password"]
-{
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
-.account-wall
-{
-    margin-top: 20px;
-    padding: 40px 0px 20px 0px;
-    background-color: #f7f7f7;
-    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-}
-.login-title
-{
-    color: #555;
-    font-size: 18px;
-    font-weight: 400;
-    display: block;
-}
-.profile-img
-{
-    width: 96px;
-    height: 96px;
-    margin: 0 auto 10px;
-    display: block;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-}
-.need-help
-{
-    margin-top: 10px;
-}
-.new-account
-{
-    display: block;
-    margin-top: 10px;
-}
+
 
 /*circle buttons*/
 .btn-circle {
@@ -253,25 +266,25 @@
 
 #thumbnail-carousel .carousel {
     margin-bottom: 0;
-	padding: 0 40px 30px 40px;
+  padding: 0 40px 30px 40px;
 }
 /* Reposition the controls slightly */
 #thumbnail-carousel .carousel-control {
-	left: -12px;
+  left: -12px;
 }
 #thumbnail-carousel .carousel-control.right {
-	right: -12px;
+  right: -12px;
 }
 /* Changes the position of the indicators */
 #thumbnail-carousel .carousel-indicators {
-	right: 50%;
-	top: auto;
-	bottom: 0px;
-	margin-right: -19px;
+  right: 50%;
+  top: auto;
+  bottom: 0px;
+  margin-right: -19px;
 }
 /* Changes the colour of the indicators */
 #thumbnail-carousel .carousel-indicators li {
-	background: #c0c0c0;
+  background: #c0c0c0;
 }
 #thumbnail-carousel .carousel-indicators .active {
 background: #333333;

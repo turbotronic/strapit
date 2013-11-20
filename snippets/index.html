@@ -65,7 +65,7 @@
 	<div class="container">
 		<h1>Snippets</h1>
 		<p>
-			Release candidates and testing page for experimental snippets.
+			Testing page for experimental snippets.
 		</p>
 	</div>
 </div>
@@ -94,34 +94,33 @@
 				<p class="lead">Leader text here explaining this widget</p>
 				<div class="bs-example">
 					<div class="chat-widget" style="width:50%;">
-						<div class="panel panel-primary">
+						<div class="panel primary">
 			                <div class="panel-heading">
 			                    <span class="glyphicon glyphicon-comment"></span> Chat
 			                    <div class="btn-group pull-right">
-			                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+			                        <button type="button" id="dropToggle" class="btn default xs dropdown-toggle" data-toggle="dropdown">
 			                            <span class="glyphicon glyphicon-chevron-down"></span>
 			                        </button>
-			                        <ul class="dropdown-menu slidedown">
-			                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-refresh">
+			                        <ul class="dropdown-menu slidedown" aria-labelledby="dropToggle">
+			                            <li><a role="menuitem" tabindex="-1" href=""><span class="glyphicon glyphicon-refresh">
 			                            </span>Refresh</a></li>
-			                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-ok-sign">
+			                            <li><a role="menuitem" tabindex="-1" href=""><span class="glyphicon glyphicon-ok-sign">
 			                            </span>Available</a></li>
-			                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-remove">
+			                            <li><a role="menuitem" tabindex="-1" href=""><span class="glyphicon glyphicon-remove">
 			                            </span>Busy</a></li>
-			                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-time"></span>
+			                            <li><a role="menuitem" tabindex="-1" href=""><span class="glyphicon glyphicon-time"></span>
 			                                Away</a></li>
-			                            <lspan class="divider"></li>
-			                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-off"></span>
+										<li role="presentation" class="divider"></li>
+			                            <li><a role="menuitem" tabindex="-1" href=""><span class="glyphicon glyphicon-off"></span>
 			                                Sign Out</a></li>
 			                        </ul>
 			                    </div>
 			                </div>
 			                <div class="panel-body">
 			                    <ul class="chat">
-			                        <lspan class="left clearfix"><span class="chat-img pull-left">
-			                            <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
-			                        </span>
-			                            <div class="chat-body clearfix">
+									<li>
+										<img src="http://placehold.it/50/55C1E7/fff&amp;text=U" alt="User Avatar" class="img-circle" />
+			                            <div class="chat-body">
 			                                <div class="header">
 			                                    <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
 			                                        <span class="glyphicon glyphicon-time"></span>12 mins ago</small>
@@ -132,12 +131,11 @@
 			                                </p>
 			                            </div>
 			                        </li>
-			                        <lspan class="right clearfix"><span class="chat-img pull-right">
-			                            <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
-			                        </span>
-			                            <div class="chat-body clearfix">
+									<li>
+			                            <img src="http://placehold.it/50/FA6F57/fff&amp;text=ME" alt="User Avatar" class="img-circle" />
+			                            <div class="chat-body">
 			                                <div class="header">
-			                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
+			                                    <small class="text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
 			                                    <strong class="pull-right primary-font">Bhaumik Patel</strong>
 			                                </div>
 			                                <p>
@@ -146,10 +144,9 @@
 			                                </p>
 			                            </div>
 			                        </li>
-			                        <lspan class="left clearfix"><span class="chat-img pull-left">
-			                            <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
-			                        </span>
-			                            <div class="chat-body clearfix">
+									<li>
+										<img src="http://placehold.it/50/55C1E7/fff&amp;text=U" alt="User Avatar" class="img-circle" />
+			                            <div class="chat-body">
 			                                <div class="header">
 			                                    <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
 			                                        <span class="glyphicon glyphicon-time"></span>14 mins ago</small>
@@ -160,10 +157,9 @@
 			                                </p>
 			                            </div>
 			                        </li>
-			                        <lspan class="right clearfix"><span class="chat-img pull-right">
-			                            <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
-			                        </span>
-			                            <div class="chat-body clearfix">
+									<li>
+			                            <img src="http://placehold.it/50/FA6F57/fff&amp;text=ME" alt="User Avatar" class="img-circle" />
+			                            <div class="chat-body">
 			                                <div class="header">
 			                                    <small class="text-muted"><span class="glyphicon glyphicon-time"></span>15 mins ago</small>
 			                                    <strong class="pull-right primary-font">Bhaumik Patel</strong>
@@ -180,8 +176,7 @@
 			                    <div class="input-group">
 			                        <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
 			                        <span class="input-group-btn">
-			                            <button class="btn warning sm" id="btn-chat">
-			                                Send</button>
+			                            <button class="btn warning sm" id="btn-chat">Send</button>
 			                        </span>
 			                    </div>
 			                </div>
@@ -199,35 +194,35 @@
 				</div>
 				<p class="lead">Leader text here explaining this widget</p>
 				<div class="bs-example">
-					<button type="button" class="btn btn-labeled success">
+					<button type="button" class="btn labeled success">
 		                <span class="btn-label"><span class="glyphicon glyphicon-ok"></span></span>Success</button>
-		            <button type="button" class="btn btn-labeled danger">
+		            <button type="button" class="btn labeled danger">
 		                <span class="btn-label"><span class="glyphicon glyphicon-remove"></span></span>Cancel</button>
 		            <br />
-		            <button type="button" class="btn btn-labeled warning">
+		            <button type="button" class="btn labeled warning">
 		                <span class="btn-label"><span class="glyphicon glyphicon-bookmark"></span></span>Bookmark</button>
-		            <button type="button" class="btn btn-labeled btn-primary">
+		            <button type="button" class="btn labeled btn-primary">
 		                <span class="btn-label"><span class="glyphicon glyphicon-camera"></span></span>Camera</button>
 		            <br />
-		            <button type="button" class="btn btn-labeled default">
+		            <button type="button" class="btn labeled default">
 		                <span class="btn-label"><span class="glyphicon glyphicon-chevron-left"></span></span>Left</button>
-		            <button type="button" class="btn btn-labeled default">
+		            <button type="button" class="btn labeled default">
 		                <span class="btn-label"><span class="glyphicon glyphicon-chevron-right"></span></span>
 		                Right</button>
 		            <br />
-		            <button type="button" class="btn btn-labeled success">
+		            <button type="button" class="btn lg labeled success">
 		                <span class="btn-label"><span class="glyphicon glyphicon-thumbs-up"></span></span>Thumbs
 		                Up</button>
-		            <button type="button" class="btn btn-labeled danger">
+		            <button type="button" class="btn sm labeled danger">
 		                <span class="btn-label"><span class="glyphicon glyphicon-thumbs-down"></span></span>Thumbs
 		                Down</button>
 		            <br />
-		            <button type="button" class="btn btn-labeled info">
+		            <button type="button" class="btn labeled info">
 		                <span class="btn-label"><span class="glyphicon glyphicon-refresh"></span></span>Refresh</button>
-		            <button type="button" class="btn btn-labeled danger">
+		            <button type="button" class="btn labeled danger">
 		                <span class="btn-label"><span class="glyphicon glyphicon-trash"></span></span>Trash</button>
 		            <br />
-		            <a class="btn success btn-labeled" href="http://www.jquery2dotnet.com" role="button">
+		            <a class="btn success labeled" href="http://www.jquery2dotnet.com" role="button">
 		                <span class="btn-label"><span class="glyphicon glyphicon-info-sign"></span></span>Info Web</a>
 					
 				</div>
@@ -240,11 +235,21 @@
 			
 			<div class="bs-docs-section">
 				<div class="page-header">
-					<h1 id="chat-widget">Chat widget</h1>
+					<h1 id="chat-widget">Working Star Ratings</h1>
 				</div>
-				<p class="lead">Leader text here explaining this widget</p>
+				<p class="lead">Hover and click on a star. Required Javascript.</p>
 				<div class="bs-example">
 					
+				    <div class="star-ratings">
+				        <div id="stars" class="starrr"></div>
+				        You gave a rating of <span id="count">0</span> star(s)
+					</div>
+
+				    <div class="star-ratings">
+				        <p>Also you can give a default rating by adding attribute data-rating</p>
+				        <div id="stars-existing" class="starrr" data-rating='4'></div>
+				        You gave a rating of <span id="count-existing">4</span> star(s)
+				    </div>
 					
 				</div>
 				<div class="highlight">
@@ -256,12 +261,30 @@
 			
 			<div class="bs-docs-section">
 				<div class="page-header">
-					<h1 id="chat-widget">Chat widget</h1>
+					<h1 id="chat-widget">Login screen/Gmail style</h1>
 				</div>
 				<p class="lead">Leader text here explaining this widget</p>
 				<div class="bs-example">
 					
-					
+					<div class="login-widget">
+			            <h3>Sign in to continue to Gmail</h3>
+			            <div class="account-wall">
+			                <img src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120" alt="">
+			                <form>
+			                  <input type="text" class="form-control" placeholder="Email" required autofocus>
+			                  <input type="password" class="form-control" placeholder="Password" required>
+			                  <button class="btn lg primary block" type="submit">
+			                    Sign in</button>
+			                  <label class="checkbox">
+			                      <input type="checkbox" value="remember-me">
+			                    Remember me
+			                  </label>
+			                <a href="#" class="need-help">Need help? </a>
+			                </form>
+			            </div>
+			            <a href="#" class="new-account">Create an account </a>
+			        </div>
+			
 				</div>
 				<div class="highlight">
 				<!-- code goes here -->
@@ -311,10 +334,11 @@
 	<!-- Strapit core JavaScript
 ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="./assets/js/jquery.js"></script>
-	<script src="./dist/js/bootstrap.js"></script>
+	<script src="../assets/js/jquery.js"></script>
+	<script src="../dist/js/bootstrap.js"></script>
 	<script src="http://platform.twitter.com/widgets.js"></script>
-	<script src="./assets/js/holder.js"></script>
-	<script src="./assets/js/application.js"></script>
+	<script src="../assets/js/holder.js"></script>
+	<script src="../assets/js/application.js"></script>
+	<script src="js/snippets.js"></script>
 	</body>
 	</html>
