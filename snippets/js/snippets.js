@@ -135,7 +135,6 @@ $( document ).ready(function() {
 	 */
 	
 	$.fn.charCounter = function (max, settings) {
-		max = max || 100;
 		settings = $.extend({
 			container: "<span></span>",
 			classname: "charcounter",
@@ -143,6 +142,7 @@ $( document ).ready(function() {
 			pulse: true,
 			delay: 0
 		}, settings);
+		max = max || 100;
 		var p, timeout;
 		
 		function count(el, container) {

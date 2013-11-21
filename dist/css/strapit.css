@@ -8129,29 +8129,82 @@ body.modal-open,
 }
 /* End carousel */
 /*login form*/
-/*circle buttons*/
-.btn-circle {
+.message-counter {
+  margin-bottom: 22px;
+  background-color: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.message-counter > .list-group {
+  margin-bottom: 0;
+}
+.message-counter > .list-group .list-group-item {
+  border-width: 1px 0;
+}
+.message-counter > .list-group .list-group-item:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.message-counter > .list-group .list-group-item:last-child {
+  border-bottom: 0;
+}
+.message-counter > .table {
+  margin-bottom: 0;
+}
+.message-counter > .panel-body + .table {
+  border-top: 1px solid #dddddd;
+}
+.message-counter .message-body {
+  padding: 15px;
+}
+.message-counter .message-body:before,
+.message-counter .message-body:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.message-counter .message-body:after {
+  clear: both;
+}
+.message-counter .message-body:before,
+.message-counter .message-body:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.message-counter .message-body:after {
+  clear: both;
+}
+.message-counter textarea {
+  margin-bottom: 11px;
+}
+.message-counter .counter {
+  float: right !important;
+}
+.btn.circle {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px 16px;
+  line-height: 1.33;
+  border-radius: 50%;
+}
+.btn.circle.lg {
+  width: 70px;
+  height: 70px;
+  font-size: 24px;
+}
+.btn.circle.sm {
   width: 30px;
   height: 30px;
-  text-align: center;
   padding: 6px 0;
   font-size: 12px;
   line-height: 1.428571429;
-  border-radius: 50%;
-}
-.btn-circle.lg {
-  width: 50px;
-  height: 50px;
-  padding: 10px 16px;
-  font-size: 18px;
-  line-height: 1.33;
-}
-.btn-circle.xl {
-  width: 70px;
-  height: 70px;
-  padding: 10px 16px;
-  font-size: 24px;
-  line-height: 1.33;
 }
 /*thumbnail-carousel*/
 /* Removes the default 20px margin and creates some padding space for the indicators and controls */

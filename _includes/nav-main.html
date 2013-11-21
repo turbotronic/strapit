@@ -17,11 +17,13 @@
         <li{% if page.slug == "css" %} class="active"{% endif %}>
           <a href="{{ page.base_url }}css">CSS</a>
         </li>
-        <li{% if page.slug == "components" %} class="active"{% endif %}>
-          <a href="{{ page.base_url }}components">Components: Input &amp; Navigation</a>
-        </li>
-        <li{% if page.slug == "components2" %} class="active"{% endif %}>
-          <a href="{{ page.base_url }}components2">Components: UI Elements</a>
+        <li class="dropdown{% if page.slug == "components" %} active{% endif %}{% if page.slug == "components2" %} active{% endif %}{% if page.slug == "extras" %} active{% endif %}">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Components <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ page.base_url }}components">Input &amp; Navigation</a></li>
+            <li><a href="{{ page.base_url }}components2">UI Elements</a></li>
+            <li><a href="{{ page.base_url }}extras">Extras</a></li>
+          </ul>
         </li>
         <li{% if page.slug == "js" %} class="active"{% endif %}>
           <a href="{{ page.base_url }}javascript">JavaScript</a>

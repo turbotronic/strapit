@@ -78,7 +78,19 @@
 						<a href="#chat-widget">Chat Widget</a>
 					</li>
 					<li>
+						<a href="#login-widget">Login Widget/Google style</a>
+					</li>
+					<li>
+						<a href="#star-ratings">Working star ratings</a>
+					</li>
+					<li>
 						<a href="#buttons-labels">Buttons with labels</a>
+					</li>
+					<li>
+						<a href="#round-buttons">Round buttons</a>
+					</li>
+					<li>
+						<a href="#message-counter">Message counter</a>
 					</li>
 				</ul>
 			</div>
@@ -188,6 +200,70 @@
 			</div>
 			
 			
+
+			
+			
+			
+
+			
+			
+			
+			<div class="bs-docs-section">
+				<div class="page-header">
+					<h1 id="login-widget">Login screen/Gmail style</h1>
+				</div>
+				<p class="lead">Leader text here explaining this widget</p>
+				<div class="bs-example">
+					
+					<div class="login-widget">
+			            <h3>Sign in to continue to Gmail</h3>
+			            <div class="account-wall">
+			                <img src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120" alt="">
+			                <form>
+			                  <input type="text" class="form-control" placeholder="Email" required autofocus>
+			                  <input type="password" class="form-control" placeholder="Password" required>
+			                  <button class="btn lg primary block" type="submit">
+			                    Sign in</button>
+			                  <label class="checkbox">
+			                      <input type="checkbox" value="remember-me">
+			                    Remember me
+			                  </label>
+			                <a href="#" class="need-help">Need help? </a>
+			                </form>
+			            </div>
+			            <a href="#" class="new-account">Create an account </a>
+			        </div>
+			
+				</div>
+				<div class="highlight">
+				<!-- code goes here -->
+				</div>
+			</div>
+			
+			<div class="bs-docs-section">
+				<div class="page-header">
+					<h1 id="star-ratings">Working Star Ratings</h1>
+				</div>
+				<p class="lead">Hover and click on a star. Required Javascript.</p>
+				<div class="bs-example">
+					
+				    <div class="star-ratings">
+				        <div id="stars" class="starrr"></div>
+				        You gave a rating of <span id="count">0</span> star(s)
+					</div>
+
+				    <div class="star-ratings">
+				        <p>Also you can give a default rating by adding attribute data-rating</p>
+				        <div id="stars-existing" class="starrr" data-rating='4'></div>
+				        You gave a rating of <span id="count-existing">4</span> star(s)
+				    </div>
+					
+				</div>
+				<div class="highlight">
+				<!-- code goes here -->
+				</div>
+			</div>
+			
 			<div class="bs-docs-section">
 				<div class="page-header">
 					<h1 id="buttons-labels">Cool Buttons With Labels</h1>
@@ -232,81 +308,124 @@
 			</div>
 			
 			
+			<div class="bs-docs-section">
+				<div class="page-header">
+					<h1 id="round-buttons">Round buttons</h1>
+				</div>
+				<p class="lead">Leader text here explaining this widget</p>
+				<div class="bs-example">
+						<button type="button" class="btn default circle"><span class="glyphicon glyphicon-ok"></span></button>
+						<button type="button" class="btn circle"><span class="glyphicon glyphicon-list"></span></button>
+						<button type="button" class="btn success circle"><span class="glyphicon glyphicon-link"></span></button>
+						<button type="button" class="btn info circle"><span class="glyphicon glyphicon-ok"></span></button>
+						<button type="button" class="btn warning circle"><span class="glyphicon glyphicon-remove"></span></button>
+						<button type="button" class="btn danger circle"><span class="glyphicon glyphicon-heart"></span></button>
+
+						<h2>Small</h2>
+						<button type="button" class="btn default circle sm"><span class="glyphicon glyphicon-ok"></span></button>
+						<button type="button" class="btn primary circle sm"><span class="glyphicon glyphicon-list"></span></button>
+						<button type="button" class="btn success circle sm"><span class="glyphicon glyphicon-link"></span></button>
+						<button type="button" class="btn info circle sm"><span class="glyphicon glyphicon-ok"></span></button>
+						<button type="button" class="btn circle sm"><span class="glyphicon glyphicon-remove"></span></button>
+						<button type="button" class="btn danger circle sm"><span class="glyphicon glyphicon-heart"></span></button>
+
+						<h2>Large</h2>
+						<button type="button" class="btn default circle lg"><span class="glyphicon glyphicon-ok"></span></button>
+						<button type="button" class="btn primary circle lg"><span class="glyphicon glyphicon-list"></span></button>
+						<button type="button" class="btn success circle lg"><span class="glyphicon glyphicon-link"></span></button>
+						<button type="button" class="btn info circle lg"><span class="glyphicon glyphicon-ok"></span></button>
+						<button type="button" class="btn warning circle lg"><span class="glyphicon glyphicon-remove"></span></button>
+						<button type="button" class="btn danger circle lg"><span class="glyphicon glyphicon-heart"></span></button>
+					
+				</div>
+				<div class="highlight">
+				<!-- code goes here -->
+				</div>
+			</div>
+			
+			
 			
 			<div class="bs-docs-section">
 				<div class="page-header">
-					<h1 id="chat-widget">Working Star Ratings</h1>
+					<h1 id="message-box">Message box with counter</h1>
 				</div>
-				<p class="lead">Hover and click on a star. Required Javascript.</p>
+				<p>A Twitter-style, Javascript fueled message counter. Add the character limit into the <code>data-counter</code> tag.</p>
 				<div class="bs-example">
-					
-				    <div class="star-ratings">
-				        <div id="stars" class="starrr"></div>
-				        You gave a rating of <span id="count">0</span> star(s)
+					<div class="message-counter">
+		                <div class="message-body">
+		                    <form action="">
+		                        <textarea class="form-control counted" name="message" placeholder="Type in your message" rows="5" data-counter="320"></textarea>
+		                        <h6 class="counter" id="counter">320 characters remaining</h6>
+		                        <button class="btn info" type="submit">Post New Message</button>
+		                    </form>
+		                </div>
 					</div>
-
-				    <div class="star-ratings">
-				        <p>Also you can give a default rating by adding attribute data-rating</p>
-				        <div id="stars-existing" class="starrr" data-rating='4'></div>
-				        You gave a rating of <span id="count-existing">4</span> star(s)
-				    </div>
-					
-				</div>
-				<div class="highlight">
-				<!-- code goes here -->
-				</div>
-			</div>
-			
-			
-			
-			<div class="bs-docs-section">
-				<div class="page-header">
-					<h1 id="chat-widget">Login screen/Gmail style</h1>
-				</div>
-				<p class="lead">Leader text here explaining this widget</p>
-				<div class="bs-example">
-					
-					<div class="login-widget">
-			            <h3>Sign in to continue to Gmail</h3>
-			            <div class="account-wall">
-			                <img src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120" alt="">
-			                <form>
-			                  <input type="text" class="form-control" placeholder="Email" required autofocus>
-			                  <input type="password" class="form-control" placeholder="Password" required>
-			                  <button class="btn lg primary block" type="submit">
-			                    Sign in</button>
-			                  <label class="checkbox">
-			                      <input type="checkbox" value="remember-me">
-			                    Remember me
-			                  </label>
-			                <a href="#" class="need-help">Need help? </a>
-			                </form>
-			            </div>
-			            <a href="#" class="new-account">Create an account </a>
-			        </div>
-			
-				</div>
-				<div class="highlight">
-				<!-- code goes here -->
-				</div>
-			</div>
-			
-			
-
-			<div class="bs-docs-section">
-				<div class="page-header">
-					<h1 id="chat-widget">Chat widget</h1>
-				</div>
-				<p class="lead">Leader text here explaining this widget</p>
-				<div class="bs-example">
-					
-					
 				</div>
 				<div class="highlight">
 				<!-- code goes here -->
 				</div>
 			</div>
 				
+				
+				
+				
+				
+				
+			<div class="bs-docs-section">
+				<div class="page-header">
+					<h1 id="">Headline</h1>
+				</div>
+				<p class="lead">Leader text here explaining this widget</p>
+				<div class="bs-example">
+					
+					
+				</div>
+				<div class="highlight">
+				<!-- code goes here -->
+				</div>
+			</div>
+
+			<div class="bs-docs-section">
+				<div class="page-header">
+					<h1 id="">Headline</h1>
+				</div>
+				<p class="lead">Leader text here explaining this widget</p>
+				<div class="bs-example">
+					
+					
+				</div>
+				<div class="highlight">
+				<!-- code goes here -->
+				</div>
+			</div>
+
+			<div class="bs-docs-section">
+				<div class="page-header">
+					<h1 id="">Headline</h1>
+				</div>
+				<p class="lead">Leader text here explaining this widget</p>
+				<div class="bs-example">
+					
+					
+				</div>
+				<div class="highlight">
+				<!-- code goes here -->
+				</div>
+			</div>
+
+			<div class="bs-docs-section">
+				<div class="page-header">
+					<h1 id="">Headline</h1>
+				</div>
+				<p class="lead">Leader text here explaining this widget</p>
+				<div class="bs-example">
+					
+					
+				</div>
+				<div class="highlight">
+				<!-- code goes here -->
+				</div>
+			</div>
 
 			</div>
 		</div>
