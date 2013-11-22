@@ -5453,17 +5453,68 @@ a.list-group-item.active:focus .list-group-item-text {
 .panel-heading + .list-group .list-group-item:first-child {
   border-top-width: 0;
 }
-.panel > .table {
+.panel > .table,
+.panel > .table-responsive {
   margin-bottom: 0;
 }
-.panel > .panel-body + .table {
+.panel > .panel-body + .table,
+.panel > .panel-body + .table-responsive {
   border-top: 1px solid #dddddd;
+}
+.panel > .table.bordered,
+.panel > .table-responsive > .table.bordered {
+  border: 0;
+}
+.panel > .table.bordered > thead > tr > th:first-child,
+.panel > .table-responsive > .table.bordered > thead > tr > th:first-child,
+.panel > .table.bordered > tbody > tr > th:first-child,
+.panel > .table-responsive > .table.bordered > tbody > tr > th:first-child,
+.panel > .table.bordered > tfoot > tr > th:first-child,
+.panel > .table-responsive > .table.bordered > tfoot > tr > th:first-child,
+.panel > .table.bordered > thead > tr > td:first-child,
+.panel > .table-responsive > .table.bordered > thead > tr > td:first-child,
+.panel > .table.bordered > tbody > tr > td:first-child,
+.panel > .table-responsive > .table.bordered > tbody > tr > td:first-child,
+.panel > .table.bordered > tfoot > tr > td:first-child,
+.panel > .table-responsive > .table.bordered > tfoot > tr > td:first-child {
+  border-left: 0;
+}
+.panel > .table.bordered > thead > tr > th:last-child,
+.panel > .table-responsive > .table.bordered > thead > tr > th:last-child,
+.panel > .table.bordered > tbody > tr > th:last-child,
+.panel > .table-responsive > .table.bordered > tbody > tr > th:last-child,
+.panel > .table.bordered > tfoot > tr > th:last-child,
+.panel > .table-responsive > .table.bordered > tfoot > tr > th:last-child,
+.panel > .table.bordered > thead > tr > td:last-child,
+.panel > .table-responsive > .table.bordered > thead > tr > td:last-child,
+.panel > .table.bordered > tbody > tr > td:last-child,
+.panel > .table-responsive > .table.bordered > tbody > tr > td:last-child,
+.panel > .table.bordered > tfoot > tr > td:last-child,
+.panel > .table-responsive > .table.bordered > tfoot > tr > td:last-child {
+  border-right: 0;
+}
+.panel > .table.bordered > thead > tr:last-child > th,
+.panel > .table-responsive > .table.bordered > thead > tr:last-child > th,
+.panel > .table.bordered > tbody > tr:last-child > th,
+.panel > .table-responsive > .table.bordered > tbody > tr:last-child > th,
+.panel > .table.bordered > tfoot > tr:last-child > th,
+.panel > .table-responsive > .table.bordered > tfoot > tr:last-child > th,
+.panel > .table.bordered > thead > tr:last-child > td,
+.panel > .table-responsive > .table.bordered > thead > tr:last-child > td,
+.panel > .table.bordered > tbody > tr:last-child > td,
+.panel > .table-responsive > .table.bordered > tbody > tr:last-child > td,
+.panel > .table.bordered > tfoot > tr:last-child > td,
+.panel > .table-responsive > .table.bordered > tfoot > tr:last-child > td {
+  border-bottom: 0;
 }
 .panel-heading {
   padding: 10px 15px;
   border-bottom: 1px solid transparent;
   border-top-right-radius: 2px;
   border-top-left-radius: 2px;
+}
+.panel-heading > .dropdown .dropdown-toggle {
+  color: inherit;
 }
 .panel-title {
   margin-top: 0;
