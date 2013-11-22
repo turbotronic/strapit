@@ -4106,7 +4106,6 @@ textarea.input-group.sm > .input-group-btn > .btn {
 }
 .navbar {
   position: relative;
-  z-index: 1000;
   min-height: 50px;
   margin-bottom: 22px;
   border: 1px solid transparent;
@@ -4206,7 +4205,7 @@ textarea.input-group.sm > .input-group-btn > .btn {
     overflow: visible !important;
   }
   .navbar-collapse.in {
-    overflow-y: visible;
+    overflow-y: auto;
   }
   .navbar-collapse .navbar-nav.navbar-left:first-child {
     margin-left: -15px;
@@ -4231,11 +4230,12 @@ textarea.input-group.sm > .input-group-btn > .btn {
   }
 }
 .navbar-static-top {
+  z-index: 1000;
   border-width: 0 0 1px;
 }
 @media (min-width: 768px) {
   .navbar-static-top {
-    border-radius: 0!important;
+    border-radius: 0;
   }
 }
 .navbar-fixed-top,
@@ -4243,21 +4243,22 @@ textarea.input-group.sm > .input-group-btn > .btn {
   position: fixed;
   right: 0;
   left: 0;
-  border-width: 0 0 1px;
+  z-index: 1030;
 }
 @media (min-width: 768px) {
   .navbar-fixed-top,
   .navbar-fixed-bottom {
-    border-radius: 0!important;
+    border-radius: 0;
   }
 }
 .navbar-fixed-top {
-  z-index: 1030;
   top: 0;
+  border-width: 0 0 1px;
 }
 .navbar-fixed-bottom {
   bottom: 0;
   margin-bottom: 0;
+  border-width: 1px 0 0;
 }
 .navbar-brand {
   float: left;
@@ -4420,12 +4421,12 @@ textarea.input-group.sm > .input-group-btn > .btn {
   margin-bottom: 7px;
 }
 .navbar-text {
-  float: left;
   margin-top: 14px;
   margin-bottom: 14px;
 }
 @media (min-width: 768px) {
   .navbar-text {
+    float: left;
     margin-left: 15px;
     margin-right: 15px;
   }
