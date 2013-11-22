@@ -6290,6 +6290,7 @@ body.modal-open,
   font-weight: normal;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .glyphicon:empty {
   width: 1em;
