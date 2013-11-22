@@ -65,7 +65,6 @@ svg:not(:root) {
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
-  .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
     content: "";
@@ -86,7 +85,7 @@ svg:not(:root) {
     max-width: 100% !important;
   }
   @page {
-    margin: 0.5cm;
+    margin: 2cm .5cm;
   }
   p,
   h2,
@@ -97,6 +96,9 @@ svg:not(:root) {
   h2,
   h3 {
     page-break-after: avoid;
+  }
+  select {
+    background: #fff !important;
   }
   .hidden-print {
     display: none !important;
