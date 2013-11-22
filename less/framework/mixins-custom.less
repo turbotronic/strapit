@@ -82,6 +82,9 @@
   }
   .offsetX (0) {}
   .offsetX (@columns - 1);
+  .offset-0 {
+    margin-left: 0;
+  }
   .pushpullX (@index) when (@index > 1) {
     .push-@{index} {
       left: round(percentage(((@index) / @columns)), 5);
@@ -104,6 +107,9 @@
   }
   .offsetX (0) {}
   .offsetX (@columns - 1);
+  .@{size}-offset-0 {
+    margin-left: 0;
+  }
   .pushpullX (@index) when (@index > 1) {
     .@{size}-push-@{index} {
       left: round(percentage(((@index) / @columns)), 5);
@@ -126,6 +132,9 @@
   }
   .offsetX (0) {}
   .offsetX (@columns - 1);
+  .@{size}-offset-0 {
+    margin-left: 0;
+  }
 }
 
 // Targeted centering
@@ -166,6 +175,7 @@
        .offsetX(@index - 1);
      }
      .offsetX (0) {}
+
  
      .pushpullX (@index) when (@index > 1) {
        .push-@{index} {
@@ -181,6 +191,9 @@
     // generate .colX, .offsetX, .pushX and .pullX
     .colX (@columns);
     .offsetX (@columns - 1);
+      .offset-0 {
+        margin-left: 0;
+      }
     .pushpullX (@columns - 1);
 
     // Centered columns
@@ -217,7 +230,9 @@
        .offsetX(@index - 1);
      }
      .offsetX (0) {}
-
+     .@{size}-offset-0 {
+       margin-left: 0;
+     }
      .pushpullX (@index) when (@index > 1) {
        @{size}-push-@{index} {
          left: round(percentage(((@index) / @columns)), 5);

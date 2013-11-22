@@ -1303,6 +1303,9 @@ samp {
   .offset-1 {
     margin-left: 8.33333%;
   }
+  .offset-0 {
+    margin-left: 0;
+  }
   .push-11 {
     left: 91.66667%;
   }
@@ -1409,6 +1412,9 @@ samp {
   .md-offset-1 {
     margin-left: 8.33333%;
   }
+  .md-offset-0 {
+    margin-left: 0;
+  }
 }
 @media screen and (min-width: 960px) {
   .lg-12 {
@@ -1492,6 +1498,9 @@ samp {
   }
   .lg-offset-1 {
     margin-left: 8.33333%;
+  }
+  .lg-offset-0 {
+    margin-left: 0;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -1577,10 +1586,13 @@ samp {
   .xl-offset-1 {
     margin-left: 8.33333%;
   }
+  .xl-offset-0 {
+    margin-left: 0;
+  }
 }
-@media screen and (min-width: 1310px) {
+@media screen and (min-width: 1470px) {
   .container {
-    width: 1280px;
+    width: 1440px;
   }
 }
 [class*="block-grid-"] {
