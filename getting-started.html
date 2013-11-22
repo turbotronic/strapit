@@ -489,8 +489,8 @@ document.write('<script src=' + ('__proto__' in {} ? '//cdnjs.cloudflare.com/aja
 
     <h3>Customizing components</h3>
     <p>There are varying degrees to customizing components, but most fall into two camps: light customizations and complete visual overhauls. Luckily, there are plenty of examples of both.</p>
-    <p>We define light customizations as mostly surface layer changes, things like a color and font changes to existing Strapit components. A great example of this is the the <a href="http://translate.twitter.com">Twitter Translation Center</a> (coded by @mdo). Let's look at how to implement the custom button we wrote for this site, <code>.btn-ttc</code>.</p>
-    <p>Instead of using the provided Strapit buttons, which only require just one class to start, <code>.btn</code>, we'll add our own modifier class, <code>.btn-ttc</code>. This will give us a slightly custom look with minimal effort.</p>
+    <p>Light customizations are defined as mostly surface layer changes, things like a color and font changes to existing Strapit components. As an example, look at how to implement the custom button written for the <a href="http://translate.twitter.com">Twitter Translation Center</a> (coded by @mdo).</p>
+    <p>Instead of using the provided Strapit buttons, which only require just one class to start, <code>.btn</code>, we add a modifier class, <code>.btn-ttc</code>. This will give us a slightly custom look with minimal effort.</p>
 {% highlight html %}
 <button type="button" class="btn btn-ttc">Save changes</button>
 {% endhighlight %}
@@ -527,11 +527,19 @@ document.write('<script src=' + ('__proto__' in {} ? '//cdnjs.cloudflare.com/aja
 {% endhighlight %}
 
     <p>Customizing Strapit components takes time, but should be straightforward. <strong>Look to the source code often and duplicate the selectors you need for your modifications.</strong> Placing them after the Strapit source makes for easy overriding without complication. <strong>To recap, here's the basic workflow:</strong></p>
-    <ul>
-      <li>For each element you want to customize, find its code in the compiled Strapit CSS. Copy and paste the selector for a component as-is. For instance, to customize the navbar background, just snag <code>.navbar</code>.</li>
-      <li>Add all your custom CSS in a separate stylesheet using the selectors you just copied from the Strapit source. No need for prefacing with additional classes or using <code>!important</code> here.</li>
+    <ul class="list">
+      <li>For each element you want to customize, find its code in the compiled Strapit CSS or, if you are working with LESS files, from the LESS source in the <code>framework</code> folder. Copy and paste the selector for a component as-is. For instance, to customize the navbar background, just snag <code>.navbar</code>.</li>
+      <li>Add all your custom CSS in a separate stylesheet or LESS file using the selectors you just copied from the Strapit source. No need for prefacing with additional classes or using <code>!important</code> here.</li>
       <li>Rinse and repeat until you're happy with your customizations.</li>
     </ul>
+
+	<div class="callout danger">
+	      <h4>But why can't I just modify the LESS code in the framework and recompile?</h4>
+	      <p>A fair question. For example say you know want your <code>.navbar</code> to always look and act a certain way. Why not just change the original <code>.navbar</code> file in the LESS folder rather than copy and paste, which may duplicate code?</p>
+	      <p>The answer is you want to be thinking long-term. If you alter the source code, a copuple of things happen: 1) updates will break and 2) suppose you want the original <code>.navbar</code> at some point? This is why it's generally better to override or extend existing code than to alter the framework.</p>
+	<p>An exception to the override method might just be the example given above. But the optimal solution would be to comment out the original <code>.navbar.less</code> file in your <code>style.less</code> file and recreate the code in a new LESS file in the <code>prop</code> folder.</p>
+	<p>In addition, Strapit contains numerous plugins for making your own custom components through mixins. You can create an entire button set or grid system using just the mixins available in the <code>mixins.less</code> and <code>mixins-custom.less</code>files without needing any code from either <code>grid.less</code> or <code>buttons.less</code>.</p>
+	    </div>
 
     <h3>Removing potential bloat</h3>
     <p>Not all sites and applications need to make use of everything Strapit has to offer, especially in production environments where bandwidth literally becomes a financial issue. We encourage folks to remove whatever is unused within the <code>style.less</code> contained within the LESS folders and recompile the LESS as needed.</p>

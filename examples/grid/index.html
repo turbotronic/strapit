@@ -79,17 +79,17 @@
       <p>The Strapit grid system has four tiers of classes: xs (phones), sm (tablets), md (desktops), and lg (larger desktops). You can use nearly any combination of these classes to create more dynamic and flexible layouts.</p>
       <p>Each tier of classes scales up, meaning if you plan on setting the same widths for xs and sm, you only need to specify xs.</p>
       <div class="row">
-        <div class="col sm-12 col md-8">.col sm-12 .col md-8</div>
-        <div class="col sm-6 col md-4">.col sm-6 .col md-4</div>
+        <div class="col xs-4 md-8">.col .xs-4 .md-8</div>
+        <div class="col xs-2 md-4">.col .xs-2 .md-4</div>
       </div>
       <div class="row">
-        <div class="col sm-6 col md-4">.col sm-6 .col md-4</div>
-        <div class="col sm-6 col md-4">.col sm-6 .col md-4</div>
-        <div class="col sm-6 col md-4">.col sm-6 .col md-4</div>
+        <div class="col xs-1 md-4">.col .xs-1 .md-4</div>
+        <div class="col xs-2 md-4">.col .xs-2 .md-4</div>
+        <div class="col xs-1 md-4">.col .xs-1 .md-4</div>
       </div>
       <div class="row">
-        <div class="col sm-6 col md-6">.col sm-6 .col md-6</div>
-        <div class="col sm-6 col md-6">.col sm-6 .col md-6</div>
+        <div class="col xs-4 md-6">.col .xs-6 .md-6</div>
+        <div class="col xs-4 md-6">.col .xs-6 .md-6</div>
       </div>
 
       <hr>
@@ -97,32 +97,31 @@
       <h3>Mixed: mobile, tablet, and desktop</h3>
       <p></p>
       <div class="row">
-        <div class="col sm-12 col md-8 col lg-8">.col sm-12 .col lg-8</div>
-        <div class="col sm-6 col md-4 col lg-4">.col sm-6 .col lg-4</div>
+        <div class="col xs-2 md-4 lg-2">.col .xs-6 .md-4 .lg-2</div>
+        <div class="col xs-2 md-4 lg-4">.col .xs-6 .md-4 .lg-4</div>
+        <div class="col xs-4 md-4 lg-6">.col .xs-6 .md-4 .lg-6</div>
       </div>
       <div class="row">
-        <div class="col sm-6 col md-4 col lg-4">.col sm-6 .col md-4 .col lg-4</div>
-        <div class="col sm-6 col md-4 col lg-4">.col sm-6 .col md-4 .col lg-4</div>
-        <div class="col sm-6 col md-4 col lg-4">.col sm-6 .col md-4 .col lg-4</div>
+        <div class="col sm-4 md-6 lg-4">.col .sm-4 .md-6 .lg-4</div>
+        <div class="col sm-4 md-6 lg-8">.col .sm-4 .md-6 .lg-8</div>
       </div>
       <div class="row">
-        <div class="col sm-6 col md-6 col lg-6">.col sm-6 .col md-6 .col lg-6</div>
-        <div class="col sm-6 col md-6 col lg-6">.col sm-6 .col md-6 .col lg-6</div>
+        <div class="col xs-2 sm-4 md-8 lg-6 xl-4">.col .xs-2 .sm-4 .md-8 .lg-6 .xl-4</div>
+        <div class="col xs-2 sm-4 md-4 lg-6 xl-8">.col .xs-2 .sm-4 .md-4 .lg-6 .xl-8</div>
       </div>
-
       <hr>
 
       <h3>Column clearing</h3>
       <p>Clear floats at specific breakpoints to prevent awkward wrapping with uneven content.</p>
       <div class="row">
-        <div class="col sm-6 col md-3">.col sm-6 .col md-3</div>
-        <div class="col sm-6 col md-3">.col sm-6 .col md-3</div>
+        <div class="col xs-4 md-3">.col .xs-4 .md-3</div>
+        <div class="col xs-4 md-3">.col .xs-4 .md-3</div>
 
         <!-- Add the extra clearfix for only the required viewport -->
         <div class="clearfix visible-xs"></div>
 
-        <div class="col sm-6 col md-3">.col sm-6 .col md-3</div>
-        <div class="col sm-6 col md-3">.col sm-6 .col md-3</div>
+        <div class="col xs-4 md-3">.col .xs-4 .md-3</div>
+        <div class="col xs-4 md-3">.col .xs-4 .md-3</div>
       </div>
 
       <hr>
@@ -130,12 +129,12 @@
       <h3>Offset, push, and pull resets</h3>
       <p>Reset offsets, pushes, and pulls at specific breakpoints.</p>
       <div class="row">
-        <div class="col sm-5 md-6">.col sm-5 .col md-6</div>
-        <div class="col sm-5 sm-offset-2 md-6 md-offset-0">.col sm-5 .col sm-offset-2 .col md-6 .col md-offset-0</div>
+        <div class="col md-5 lg-6">.col .md-5 .lg-6</div>
+        <div class="col md-6 md-offset-1 lg-6 lg-offset-0">.col md-5 .md-offset-1 .lg-6 .lg-offset-0</div>
       </div>
       <div class="row">
-        <div class="col sm-6 md-5 lg-6">.col sm-6 .col md-5 .col lg-6</div>
-        <div class="col sm-6 md-5 md-offset-2 lg-6 lg-offset-0">.col sm-6 .col md-5 .col md-offset-2 .col lg-6 .col lg-offset-0</div>
+        <div class="col md-5 lg-6">.col .md-5 .lg-6</div>
+        <div class="col md-5 md-offset-2 lg-6 lg-offset-0">.col .md-5 .md-offset-2 .lg-6 .lg-offset-0</div>
       </div>
 
 
