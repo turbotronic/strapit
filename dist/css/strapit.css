@@ -2366,18 +2366,6 @@ output {
   color: #808080;
   vertical-align: middle;
 }
-.form-control:-moz-placeholder {
-  color: #aaaaaa;
-}
-.form-control::-moz-placeholder {
-  color: #aaaaaa;
-}
-.form-control:-ms-input-placeholder {
-  color: #aaaaaa;
-}
-.form-control::-webkit-input-placeholder {
-  color: #aaaaaa;
-}
 .form-control {
   display: block;
   width: 100%;
@@ -2402,6 +2390,18 @@ output {
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.form-control:-moz-placeholder {
+  color: #aaaaaa;
+}
+.form-control::-moz-placeholder {
+  color: #aaaaaa;
+}
+.form-control:-ms-input-placeholder {
+  color: #aaaaaa;
+}
+.form-control::-webkit-input-placeholder {
+  color: #aaaaaa;
 }
 .form-control[disabled],
 .form-control[readonly],
@@ -2559,7 +2559,6 @@ textarea.input-lg {
 }
 .form-control-static {
   margin-bottom: 0;
-  padding-top: 7px;
 }
 .help-block {
   display: block;
@@ -2623,6 +2622,9 @@ textarea.input-lg {
 }
 .form-horizontal .form-group:after {
   clear: both;
+}
+.form-horizontal .form-control-static {
+  padding-top: 7px;
 }
 @media (min-width: 768px) {
   .form-horizontal .control-label {
