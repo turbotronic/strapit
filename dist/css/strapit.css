@@ -5777,6 +5777,7 @@ body.modal-open,
   transform: translate(0, 0);
 }
 .modal-dialog {
+  position: relative;
   margin-left: auto;
   margin-right: auto;
   width: auto;
