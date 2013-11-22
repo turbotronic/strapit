@@ -55,10 +55,12 @@
 // Placeholder text
 .placeholder(@color: @input-color-placeholder) {
   &:-moz-placeholder            { color: @color; } // Firefox 4-18
-  &::-moz-placeholder           { color: @color; } // Firefox 19+
+  &::-moz-placeholder           { color: @color;   // Firefox 19+
+                                  opacity: 1; } // See https://github.com/twbs/bootstrap/pull/11526
   &:-ms-input-placeholder       { color: @color; } // Internet Explorer 10+
   &::-webkit-input-placeholder  { color: @color; } // Safari and Chrome
 }
+
 
 // Text overflow
 // Requires inline-block or block for proper styling
@@ -186,11 +188,15 @@
      -moz-transform-origin: @origin;
           transform-origin: @origin;
 }
+// Animations
+.animation(@animation) {
+  -webkit-animation: @animation;
+          animation: @animation;
+}
 
 // Backface visibility
 // Prevent browsers from flickering when using CSS 3D transforms.
 // Default value is `visible`, but can be changed to `hidden`
-// See git pull https://github.com/dannykeane/bootstrap.git backface-visibility for examples
 .backface-visibility(@visibility){
   -webkit-backface-visibility: @visibility;
      -moz-backface-visibility: @visibility;
@@ -383,6 +389,9 @@
     + .panel-collapse .panel-body {
       border-top-color: @border;
     }
+    & > .dropdown .caret {
+      border-color: @heading-text-color transparent;
+    }
   }
   & > .panel-footer {
     + .panel-collapse .panel-body {
@@ -546,8 +555,8 @@
 }
 
 .responsive-invisibility() {
-  display: none !important;
-  tr& { display: none !important; }
+    &,
+  tr&,
   th&,
   td& { display: none !important; }
 }
@@ -727,6 +736,82 @@
   }
 }
 
+// Framework grid generation
+//
+// Used only by Bootstrap to generate the correct number of grid classes given
+// any value of `@grid-columns`. Included here only as reference -- these are 
+// not used in the Strapit framework. Refer to mixins-custom.less for the 
+// functional grid-creation tools.
+
+.make-grid-columns() {
+  // Common styles for all sizes of grid columns, widths 1-12
+  .col(@index) when (@index = 1) { // initial
+    @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
+    .col(@index + 1, @item);
+  }
+  .col(@index, @list) when (@index =< @grid-columns) { // general; "=<" isn't a typo
+    @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
+    .col(@index + 1, ~"@{list}, @{item}");
+  }
+  .col(@index, @list) when (@index > @grid-columns) { // terminal
+    @{list} {
+      position: relative;
+      // Prevent columns from collapsing when empty
+      min-height: 1px;
+      // Inner gutter via padding
+      padding-left:  (@grid-gutter-width / 2);
+      padding-right: (@grid-gutter-width / 2);
+    }
+  }
+  .col(1); // kickstart it
+}
+
+.make-grid-columns-float(@class) {
+  .col(@index) when (@index = 1) { // initial
+    @item: ~".col-@{class}-@{index}";
+    .col(@index + 1, @item);
+  }
+  .col(@index, @list) when (@index < @grid-columns) { // general
+    @item: ~".col-@{class}-@{index}";
+    .col(@index + 1, ~"@{list}, @{item}");
+  }
+  .col(@index, @list) when (@index = @grid-columns) { // terminal
+    @{list} {
+      float: left;
+    }
+  }
+  .col(1); // kickstart it
+}
+
+.calc-grid(@index, @class, @type) when (@type = width) and (@index > 0) {
+  .col-@{class}-@{index} {
+    width: percentage((@index / @grid-columns));
+  }
+}
+.calc-grid(@index, @class, @type) when (@type = push) {
+  .col-@{class}-push-@{index} {
+    left: percentage((@index / @grid-columns));
+  }
+}
+.calc-grid(@index, @class, @type) when (@type = pull) {
+  .col-@{class}-pull-@{index} {
+    right: percentage((@index / @grid-columns));
+  }
+}
+.calc-grid(@index, @class, @type) when (@type = offset) {
+  .col-@{class}-offset-@{index} {
+    margin-left: percentage((@index / @grid-columns));
+  }
+}
+
+// Basic looping in LESS
+.make-grid(@index, @class, @type) when (@index >= 0) {
+  .calc-grid(@index, @class, @type);
+  // next iteration
+  .make-grid(@index - 1, @class, @type);
+}
+
+
 
 // Form validation states
 //
@@ -736,7 +821,11 @@
 .form-control-validation(@text-color: #555; @border-color: #ccc; @background-color: #f5f5f5) {
   // Color the label and help text
   .help-block,
-  .control-label {
+  .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline  {
     color: @text-color;
   }
   // Set the border and box shadow on specific inputs to match
