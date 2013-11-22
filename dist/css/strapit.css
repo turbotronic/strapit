@@ -3809,6 +3809,10 @@ textarea.input-group.sm > .input-group-btn > .btn {
   text-align: center;
   margin-bottom: 5px;
 }
+.tabs.justified > .dropdown .dropdown-menu {
+  top: auto;
+  left: auto;
+}
 @media (min-width: 768px) {
   .tabs.justified > li {
     display: table-cell;
@@ -3868,6 +3872,10 @@ textarea.input-group.sm > .input-group-btn > .btn {
   text-align: center;
   margin-bottom: 5px;
 }
+.pills.justified > .dropdown .dropdown-menu {
+  top: auto;
+  left: auto;
+}
 @media (min-width: 768px) {
   .pills.justified > li {
     display: table-cell;
@@ -3897,6 +3905,11 @@ textarea.input-group.sm > .input-group-btn > .btn {
   text-align: center;
   margin-bottom: 5px;
 }
+.nav-justified > .dropdown .dropdown-menu,
+.nav.justified > .dropdown .dropdown-menu {
+  top: auto;
+  left: auto;
+}
 @media (min-width: 768px) {
   .nav-justified > li,
   .nav.justified > li {
@@ -3908,25 +3921,34 @@ textarea.input-group.sm > .input-group-btn > .btn {
     margin-bottom: 0;
   }
 }
-.tabs-justified {
+.tabs-justified,
+.tabs.justified {
   border-bottom: 0;
 }
-.tabs-justified > li > a {
+.tabs-justified > li > a,
+.tabs.justified > li > a {
   margin-right: 0;
   border-radius: 3px;
 }
 .tabs-justified > .active > a,
+.tabs.justified > .active > a,
 .tabs-justified > .active > a:hover,
-.tabs-justified > .active > a:focus {
+.tabs.justified > .active > a:hover,
+.tabs-justified > .active > a:focus,
+.tabs.justified > .active > a:focus {
   border: 1px solid #dddddd;
 }
 @media (min-width: 768px) {
-  .tabs-justified > li > a {
+  .tabs-justified > li > a,
+  .tabs.justified > li > a {
     border-bottom: 1px solid #dddddd;
   }
   .tabs-justified > .active > a,
+  .tabs.justified > .active > a,
   .tabs-justified > .active > a:hover,
-  .tabs-justified > .active > a:focus {
+  .tabs.justified > .active > a:hover,
+  .tabs-justified > .active > a:focus,
+  .tabs.justified > .active > a:focus {
     border-bottom-color: #ffffff;
   }
 }

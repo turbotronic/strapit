@@ -66,6 +66,7 @@
   }
 
   // Prevent IE8 from misplacing imgs
+  //
   // See https://github.com/h5bp/html5-boilerplate/issues/984#issuecomment-3985989
   > li > a > img {
     max-width: none;
@@ -182,6 +183,10 @@
       margin-bottom: 5px;
     }
   }
+  > .dropdown .dropdown-menu {
+    top: auto;
+    left: auto;
+  }
 
   @media (min-width: @breakpoint-md) {
     > li {
@@ -195,7 +200,10 @@
 }
 
 // Move borders to anchors instead of bottom of list
-.tabs-justified {
+//
+// Mixin for adding on top the shared `.nav-justified` styles for our tabs
+.tabs-justified,
+.tabs.justified {
   border-bottom: 0;
 
   > li > a {
