@@ -5139,13 +5139,14 @@ a.list-group-item.active > .badge,
   display: block;
   margin-bottom: 22px;
 }
-a.thumbnail:hover,
-a.thumbnail:focus {
-  border-color: #428bca;
-}
 .thumbnail > img {
   margin-left: auto;
   margin-right: auto;
+}
+a.thumbnail:hover,
+a.thumbnail:focus,
+a.thumbnail.active {
+  border-color: #428bca;
 }
 .thumbnail .caption {
   padding: 9px;
