@@ -6231,6 +6231,8 @@ body.modal-open,
   border: 1px solid #ffffff;
   border-radius: 10px;
   cursor: pointer;
+  background-color: #000 \9;
+  background-color: rgba(0, 0, 0, 0);
 }
 .carousel-indicators .active {
   margin: 0;
