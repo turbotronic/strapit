@@ -91,31 +91,31 @@ base_url: "../"
       <h1 id="grid">Grid system</h1>
     </div>
 <p class="lead">Strapit includes a responsive, mobile first fluid grid system that appropriately scales as the device or viewport size increases. It includes <a href="#grid-example-basic">predefined classes</a> for easy layout options, as well as powerful <a href="#grid-less">mixins for generating more semantic layouts</a>.</p>
-	<div class="callout info">
-		<h4>But first, a word on the evolving philosophies behind responsive design</h4>
-		<p>You may notice that we have gone with the Foundation grid (with some modifications, such as the addition of Foundation's currently "experimental" <code>.md</code> class) over Bootstrap 3.0. The reason for this is we feel the Foundation grid is simpler and subsequently easier to modify.</p>
-		<p>Bootstrap provides for four distinct sizes that resolve to phone, tablets, desktops and large desktops in practice. We don't think it is useful to think of breakpoints in this way.</p>
-		<p>Instead, breakpoints should apply when the design needs to change to accommodate the viewport within which it is contained. So the breakpoints could be as few as one or as many as 20, the important consideration is that the site is functional and viewable at all sizes from 320px and up.</p>
-		<p>Obviously this is tough to accommodate for in a framework. So, we feel the winning grid is the one that has the least code to change, which, as of today, is Foundation's. That said, we like Bootstrap's class names and conventions better, so we used those.</p>
-	</div>
-	<h3 id="grid-intro">How the grid works</h3>
-	<p>Grid systems are used for creating page layouts through a series of rows and columns that house your content. Here's how the Bootstrap grid system works:</p>
-	<ul class="list">
-		<li>Rows must be placed within a <code>.container</code> for proper alignment and padding.</li>
-		<li>Use rows to create horizontal groups of columns.</li>
-		<li>Content should be placed within columns, and only columns may be immediate children of rows. Columns are defined with the <code>.col</code> class.</li>
-		<li>Columns create gutters (gaps between column content) via <code>padding</code>. That padding is offset in rows for the first and last column via negative margin on <code>.row</code>s.</li>
-		<li>Grid columns are created by resizing the <code>.col</code> elements with screen size and column width modifiers (such as <code>.md-4</code> which reads "four columns on a medium-sized screen or more" or <code>.lg-6</code>, which reads "six columns on a large-screen screen or more" etc.).</li>
-		<li>LESS mixins can also be used for <a href="#grid-less">more semantic layouts</a>.</li>
-	</ul>
-	<div class="callout info">
-		<h4>Grids and full-width layouts</h4>
-		<p>If you are using the full width of the container, <strong>there is no need to define anything but the container class</strong>. However, if you want the content to go to the edges of your screen, the element must be put into either a element with a <code>.row</code> class or add to that element  <code>margin: 0 -15px</code> to offset the <code>padding: 0 15px;</code> defined on the <code>.container</code> element.</p>
-	</div>
-	
-	
-	<h3 id="grid-media-queries">Media queries</h3>
-	<p>We use the following media queries to create the key breakpoints in our grid system. These are all optional and can be turned on and off as needed</p>
+<div class="callout info">
+<h4>But first, a word on the evolving philosophies behind responsive design</h4>
+<p>You may notice that we have gone with the Foundation grid (with some modifications, such as the addition of Foundation's currently "experimental" <code>.md</code> class) over Bootstrap 3.0. The reason for this is we feel the Foundation grid is simpler and subsequently easier to modify.</p>
+<p>Bootstrap provides for four distinct sizes that resolve to phone, tablets, desktops and large desktops in practice. We don't think it is useful to think of breakpoints in this way.</p>
+<p>Instead, breakpoints should apply when the design needs to change to accommodate the viewport within which it is contained. So the breakpoints could be as few as one or as many as 20, the important consideration is that the site is functional and viewable at all sizes from 320px and up.</p>
+<p>Obviously this is tough to accommodate for in a framework. So, we feel the winning grid is the one that has the least code to change, which, as of today, is Foundation's. That said, we like Bootstrap's class names and conventions better, so we used those.</p>
+</div>
+<h3 id="grid-intro">How the grid works</h3>
+<p>Grid systems are used for creating page layouts through a series of rows and columns that house your content. Here's how the Bootstrap grid system works:</p>
+<ul class="list">
+<li>Rows must be placed within a <code>.container</code> for proper alignment and padding.</li>
+<li>Use rows to create horizontal groups of columns.</li>
+<li>Content should be placed within columns, and only columns may be immediate children of rows. Columns are defined with the <code>.col</code> class.</li>
+<li>Columns create gutters (gaps between column content) via <code>padding</code>. That padding is offset in rows for the first and last column via negative margin on <code>.row</code>s.</li>
+<li>Grid columns are created by resizing the <code>.col</code> elements with screen size and column width modifiers (such as <code>.md-4</code> which reads "four columns on a medium-sized screen or more" or <code>.lg-6</code>, which reads "six columns on a large-screen screen or more" etc.).</li>
+<li>LESS mixins can also be used for <a href="#grid-less">more semantic layouts</a>.</li>
+</ul>
+<div class="callout info">
+<h4>Grids and full-width layouts</h4>
+<p>If you are using the full width of the container, <strong>there is no need to define anything but the container class</strong>. However, if you want the content to go to the edges of your screen, the element must be put into either a element with a <code>.row</code> class or add to that element  <code>margin: 0 -15px</code> to offset the <code>padding: 0 15px;</code> defined on the <code>.container</code> element.</p>
+</div>
+
+
+<h3 id="grid-media-queries">Media queries</h3>
+<p>We use the following media queries to create the key breakpoints in our grid system. These are all optional and can be turned on and off as needed</p>
 {% highlight html %}
 /* Extra-small devices (phones up to 479px) */
 @media screen and (min-width: @site-min-width) { ... }
@@ -221,37 +221,37 @@ base_url: "../"
 </div>
 <p>By default, the <code>.xs</code> and <code>.sm</code> classes are set on a four-column grid, the rest are set on a 12-column grid. You are free to set a different grid for each screen size, or have them all be uniform. Or you can choose to not use anything but one screen size. It's completely up to you and what you need for your project.</p>
 
-	<h3 id="grid-example-basic">Basic grid: Stacked-to-horizontal</h3>
-	<p>Strapit uses <code>box-sizing: border-box</code> so that borders and padding do not affect the overall width of the column, making the math dead-simple. Since Strapit is mobile-first, we'll stack content by default. You do have access to an entirely separate small grid to use up to the 768px breakpoint. This means you can create some pretty complex layouts and even drop columns if you want.</p>
-		<div class="row show-grid">
-		  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
-		  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
-		  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
-		  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
-		  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
-		  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
-		  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
-		  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
-		  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
-		  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
-		  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
-		  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
-		</div>
-		<div class="row show-grid">
-		  <div class="col md-4"><span class="visible-sm">full</span><span class="hidden-sm">4</span></div>
-		  <div class="col md-4"><span class="visible-sm">full</span><span class="hidden-sm">4</span></div>
-		  <div class="col md-4"><span class="visible-sm">full</span><span class="hidden-sm">4</span></div>
-		</div>
-		<div class="row show-grid">
-		  <div class="col md-8"><span class="visible-sm">full</span><span class="hidden-sm">8</span></div>
-		  <div class="col md-4"><span class="visible-sm">full</span><span class="hidden-sm">4</span></div>
-		</div>
-		<div class="row show-grid">
-		  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
-		  <div class="col md-3"><span class="visible-sm">full</span><span class="hidden-sm">3</span></div>
-		  <div class="col md-3"><span class="visible-sm">full</span><span class="hidden-sm">3</span></div>
-		  <div class="col md-5"><span class="visible-sm">full</span><span class="hidden-sm">5</span></div>
-		</div>
+<h3 id="grid-example-basic">Basic grid: Stacked-to-horizontal</h3>
+<p>Strapit uses <code>box-sizing: border-box</code> so that borders and padding do not affect the overall width of the column, making the math dead-simple. Since Strapit is mobile-first, we'll stack content by default. You do have access to an entirely separate small grid to use up to the 768px breakpoint. This means you can create some pretty complex layouts and even drop columns if you want.</p>
+<div class="row show-grid">
+  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col md-4"><span class="visible-sm">full</span><span class="hidden-sm">4</span></div>
+  <div class="col md-4"><span class="visible-sm">full</span><span class="hidden-sm">4</span></div>
+  <div class="col md-4"><span class="visible-sm">full</span><span class="hidden-sm">4</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col md-8"><span class="visible-sm">full</span><span class="hidden-sm">8</span></div>
+  <div class="col md-4"><span class="visible-sm">full</span><span class="hidden-sm">4</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col md-1"><span class="visible-sm">full</span><span class="hidden-sm">1</span></div>
+  <div class="col md-3"><span class="visible-sm">full</span><span class="hidden-sm">3</span></div>
+  <div class="col md-3"><span class="visible-sm">full</span><span class="hidden-sm">3</span></div>
+  <div class="col md-5"><span class="visible-sm">full</span><span class="hidden-sm">5</span></div>
+</div>
 
 {% highlight html %}
 <div class="row">
@@ -285,24 +285,24 @@ base_url: "../"
 </div>
 {% endhighlight %}
 
-	<h3 id="grid-small">Small and Extra-small Grids: Mobile and tablet</h3>
-	<p>In addition to the medium grid, you also have access to a small and xtra-small grid. If you know that your grid structure will be the same for xtra-small devices as it will be on medium devices, just use the xtra-small grid. You can override your grid classes by adding <code>.sm</code>, <code>.md</code>, <code>.lg</code> or <code>.xl</code> grid classes to it.</p>
-	<div class="row show-grid">
-	  <div class="col xs-1">1</div>
-	  <div class="col xs-3">3</div>
-	</div>
-	<div class="row show-grid">
-	  <div class="col xs-4 sm-2"><span class="visible-xs">full</span><span class="visible-sm-up">2</span></div>
-	  <div class="col xs-4 sm-2"><span class="visible-xs">full</span><span class="visible-sm-up">2</span></div>
-	</div>
-	<div class="row show-grid">
-	  <div class="col xs-2 md-8"><span class="visible-sm-down">2</span><span class="hidden-sm-down">8</span></div>
-	  <div class="col xs-2 md-4"><span class="visible-sm-down">2</span><span class="hidden-sm-down">4</span></div>
-	</div>
-	<div class="row show-grid">
-	  <div class="col sm-1 md-2"><span class="visible-sm-down">1</span><span class="visible-md-up">2</span></div>
-	  <div class="col sm-3 md-10"><span class="visible-sm-down">3</span><span class="visible-md-up">10</span></div>
-	</div>
+<h3 id="grid-small">Small and Extra-small Grids: Mobile and tablet</h3>
+<p>In addition to the medium grid, you also have access to a small and xtra-small grid. If you know that your grid structure will be the same for xtra-small devices as it will be on medium devices, just use the xtra-small grid. You can override your grid classes by adding <code>.sm</code>, <code>.md</code>, <code>.lg</code> or <code>.xl</code> grid classes to it.</p>
+<div class="row show-grid">
+  <div class="col xs-1">1</div>
+  <div class="col xs-3">3</div>
+</div>
+<div class="row show-grid">
+  <div class="col xs-4 sm-2"><span class="visible-xs">full</span><span class="visible-sm-up">2</span></div>
+  <div class="col xs-4 sm-2"><span class="visible-xs">full</span><span class="visible-sm-up">2</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col xs-2 md-8"><span class="visible-sm-down">2</span><span class="hidden-sm-down">8</span></div>
+  <div class="col xs-2 md-4"><span class="visible-sm-down">2</span><span class="hidden-sm-down">4</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col sm-1 md-2"><span class="visible-sm-down">1</span><span class="visible-md-up">2</span></div>
+  <div class="col sm-3 md-10"><span class="visible-sm-down">3</span><span class="visible-md-up">10</span></div>
+</div>
 {% highlight html %}
 <div class="row">
   <div class="col xs-1">1</div>
@@ -322,20 +322,20 @@ base_url: "../"
 </div>
 {% endhighlight %}
 
-	<h3 id="grid-large">Large Grid: Mobile, tablet and desktop</h3>
-	<p>Build on the previous examples by creating even more dynamic and powerful layouts with desktop <code>.lg</code> classes.</p>
-	<div class="row show-grid">
-	  <div class="col sm-4 md-6 lg-8"><span class="visible-sm-down">full</span><span class="visible-md">6</span><span class="visible-lg-up">8</span></div>
-	  <div class="col sm-2 md-6 lg-4"><span class="visible-sm-down">6 - stacks below!</span><span class="visible-md">6</span><span class="visible-lg-up">4</span></div>
-	</div>
-	<div class="row show-grid">
-	  <div class="col sm-3 md-4 lg-6"><span class="visible-sm-down">3</span><span class="visible-md">4</span><span class="visible-lg-up">6</span></div>
-	  <div class="col sm-1 md-8 lg-6"><span class="visible-sm-down">9</span><span class="visible-md">8</span><span class="visible-lg-up">6</span></div>
-	</div>
-	<div class="row show-grid">
-	  <div class="col sm-2 md-8 lg-10"><span class="visible-sm-down">6</span><span class="visible-md">8</span><span class="visible-lg-up">10</span></div>
-	  <div class="col sm-2 md-4 lg-2"><span class="visible-sm-down">6</span><span class="visible-md">4</span><span class="visible-lg-up">2</span></div>
-	</div>
+<h3 id="grid-large">Large Grid: Mobile, tablet and desktop</h3>
+<p>Build on the previous examples by creating even more dynamic and powerful layouts with desktop <code>.lg</code> classes.</p>
+<div class="row show-grid">
+  <div class="col sm-4 md-6 lg-8"><span class="visible-sm-down">full</span><span class="visible-md">6</span><span class="visible-lg-up">8</span></div>
+  <div class="col sm-2 md-6 lg-4"><span class="visible-sm-down">6 - stacks below!</span><span class="visible-md">6</span><span class="visible-lg-up">4</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col sm-3 md-4 lg-6"><span class="visible-sm-down">3</span><span class="visible-md">4</span><span class="visible-lg-up">6</span></div>
+  <div class="col sm-1 md-8 lg-6"><span class="visible-sm-down">9</span><span class="visible-md">8</span><span class="visible-lg-up">6</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col sm-2 md-8 lg-10"><span class="visible-sm-down">6</span><span class="visible-md">8</span><span class="visible-lg-up">10</span></div>
+  <div class="col sm-2 md-4 lg-2"><span class="visible-sm-down">6</span><span class="visible-md">4</span><span class="visible-lg-up">2</span></div>
+</div>
 {% highlight html %}
 <div class="row">
   <div class="col sm-4 md-6 lg-8">...</div>
@@ -351,23 +351,23 @@ base_url: "../"
 </div>
 {% endhighlight %}
 
-	<h3 id="grid-nesting">Infinitely Nest Your Grid</h3>
-	<p>The grid allows for nesting down as far as you'd like, though at a certain point it will get absurd. You can use this nesting to create quite complex layouts, as well as some other tricks like form layouts or visual elements.</p>
+<h3 id="grid-nesting">Infinitely Nest Your Grid</h3>
+<p>The grid allows for nesting down as far as you'd like, though at a certain point it will get absurd. You can use this nesting to create quite complex layouts, as well as some other tricks like form layouts or visual elements.</p>
 
-	<div class="row show-grid">
-	  <div class="col md-8"><span class="visible-sm-down">full</span><span class="visible-sm-up">8</span>
-	    <div class="row">
-	      <div class="col md-8"><span class="visible-sm-down">full</span><span class="visible-sm-up">8 Nested</span>
-	        <div class="row">
-	          <div class="col md-8"><span class="visible-sm-down">full</span><span class="visible-sm-up">8 Nested Again</span></div>
-	          <div class="col md-4"><span class="visible-sm-down">full</span><span class="visible-sm-up">4</span></div>
-	        </div>
-	      </div>
-	      <div class="col md-4"><span class="visible-sm-down">full</span><span class="visible-sm-up">4</span></div>
-	    </div>
-	  </div>
-	  <div class="col md-4"><span class="visible-sm-down">full</span><span class="visible-sm-up">4</span></div>
-	</div>
+<div class="row show-grid">
+  <div class="col md-8"><span class="visible-sm-down">full</span><span class="visible-sm-up">8</span>
+    <div class="row">
+      <div class="col md-8"><span class="visible-sm-down">full</span><span class="visible-sm-up">8 Nested</span>
+        <div class="row">
+          <div class="col md-8"><span class="visible-sm-down">full</span><span class="visible-sm-up">8 Nested Again</span></div>
+          <div class="col md-4"><span class="visible-sm-down">full</span><span class="visible-sm-up">4</span></div>
+        </div>
+      </div>
+      <div class="col md-4"><span class="visible-sm-down">full</span><span class="visible-sm-up">4</span></div>
+    </div>
+  </div>
+  <div class="col md-4"><span class="visible-sm-down">full</span><span class="visible-sm-up">4</span></div>
+</div>
 
 {% highlight html %}
 <div class="row">
@@ -386,26 +386,26 @@ base_url: "../"
 </div>
 {% endhighlight %}
 
-	<h3 id="grid-offsetting">Offsets</h3>
-	<p>Offsets allow you to create additional space between col in a row. Like the rest of the grid, they're nestable. You can use classes like <code>.md-offset-1</code> and <code>.lg-offset-3</code> to manipulate your column positions in different ways. You can offset up to 11 since you wouldn't ever offset a full-width column.</p>
+<h3 id="grid-offsetting">Offsets</h3>
+<p>Offsets allow you to create additional space between col in a row. Like the rest of the grid, they're nestable. You can use classes like <code>.md-offset-1</code> and <code>.lg-offset-3</code> to manipulate your column positions in different ways. You can offset up to 11 since you wouldn't ever offset a full-width column.</p>
 
 
-	<div class="row show-grid">
-	  <div class="col md-1"><span class="visible-sm-down">full</span><span class="visible-sm-up">1</span></div>
-	  <div class="col md-11"><span class="visible-sm-down">full</span><span class="visible-sm-up">11</span></div>
-	</div>
-	<div class="row show-grid">
-	  <div class="col md-1"><span class="visible-sm-down">full</span><span class="visible-sm-up">1</span></div>
-	  <div class="col md-10 md-offset-1"><span class="visible-sm-down">full</span><span class="visible-sm-up">10, offset 1</span></div>
-	</div>
-	<div class="row show-grid">
-	  <div class="col md-1"><span class="visible-sm-down">full</span><span class="visible-sm-up">1</span></div>
-	  <div class="col md-9 md-offset-2"><span class="visible-sm-down">full</span><span class="visible-sm-up">9, offset 2</span></div>
-	</div>
-	<div class="row show-grid">
-	  <div class="col md-1"><span class="visible-sm-down">full</span><span class="visible-sm-up">1</span></div>
-	  <div class="col md-8 md-offset-3"><span class="visible-sm-down">full</span><span class="visible-sm-up">8, offset 3</span></div>
-	</div>
+<div class="row show-grid">
+  <div class="col md-1"><span class="visible-sm-down">full</span><span class="visible-sm-up">1</span></div>
+  <div class="col md-11"><span class="visible-sm-down">full</span><span class="visible-sm-up">11</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col md-1"><span class="visible-sm-down">full</span><span class="visible-sm-up">1</span></div>
+  <div class="col md-10 md-offset-1"><span class="visible-sm-down">full</span><span class="visible-sm-up">10, offset 1</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col md-1"><span class="visible-sm-down">full</span><span class="visible-sm-up">1</span></div>
+  <div class="col md-9 md-offset-2"><span class="visible-sm-down">full</span><span class="visible-sm-up">9, offset 2</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col md-1"><span class="visible-sm-down">full</span><span class="visible-sm-up">1</span></div>
+  <div class="col md-8 md-offset-3"><span class="visible-sm-down">full</span><span class="visible-sm-up">8, offset 3</span></div>
+</div>
 
 {% highlight html %}
 <div class="row">
@@ -426,20 +426,20 @@ base_url: "../"
 </div>
 {% endhighlight %}
 
-	<h3 id="grid-centering">Centered columns</h3>
-	<p>Centered columns are placed in the middle of the row. This does not center their content, but centers the grid element, itself. This is accomplished by adding a class of <code>.md-centered</code> or <code>.lg-centered</code> depending on which breakpoint you want the column to center on. Items with the class <code>.centered</code> will carry through all breakpoints if not overridden by another version. You can center any number of columns you have. To have a column not carry it's centering to medium, add a class of <code>.md-uncentered</code>.</p>
-	<div class="row show-grid">
-	  <div class="col md-3 centered">3 centered</div>
-	</div>
-	<div class="row show-grid">
-	  <div class="col md-6 lg-centered">6 centered lg</div>
-	</div>
-	<div class="row show-grid">
-	  <div class="col sm-3 md-6 lg-8 md-centered lg-uncentered">9 centered md</div>
-	</div>
-	<div class="row show-grid">
-	  <div class="col md-11 centered">11 centered</div>
-	</div>
+<h3 id="grid-centering">Centered columns</h3>
+<p>Centered columns are placed in the middle of the row. This does not center their content, but centers the grid element, itself. This is accomplished by adding a class of <code>.md-centered</code> or <code>.lg-centered</code> depending on which breakpoint you want the column to center on. Items with the class <code>.centered</code> will carry through all breakpoints if not overridden by another version. You can center any number of columns you have. To have a column not carry it's centering to medium, add a class of <code>.md-uncentered</code>.</p>
+<div class="row show-grid">
+  <div class="col md-3 centered">3 centered</div>
+</div>
+<div class="row show-grid">
+  <div class="col md-6 lg-centered">6 centered lg</div>
+</div>
+<div class="row show-grid">
+  <div class="col sm-3 md-6 lg-8 md-centered lg-uncentered">9 centered md</div>
+</div>
+<div class="row show-grid">
+  <div class="col md-11 centered">11 centered</div>
+</div>
 {% highlight html %}
 <div class="row">
   <div class="col sm-3 sm-centered">3 centered</div>
@@ -455,28 +455,28 @@ base_url: "../"
 </div>
 {% endhighlight %}
 
-	<h3 id="grid-column-ordering">Column Ordering</h3>
-	<p>Using these source ordering classes, you can shift columns around between our breakpoints. This means you can have a sub-nav on the left on medium show-grids, but go below on small ones. <code>.push-#</code> is the syntax you'll use.</p>
-	<div class="row show-grid">
-	  <div class="col md-2 push-10"><span class="visible-sm-down">full</span><span class="visible-sm-up">2</span></div>
-	  <div class="col md-10 pull-2"><span class="visible-sm-down">full</span><span class="visible-sm-up">10, last</span></div>
-	</div>
-	<div class="row show-grid">
-	  <div class="col md-3 push-9"><span class="visible-sm-down">full</span><span class="visible-sm-up">3</span></div>
-	  <div class="col md-9 pull-3"><span class="visible-sm-down">full</span><span class="visible-sm-up">9, last</span></div>
-	</div>
-	<div class="row show-grid">
-	  <div class="col md-4 push-8"><span class="visible-sm-down">full</span><span class="visible-sm-up">4</span></div>
-	  <div class="col md-8 pull-4"><span class="visible-sm-down">full</span><span class="visible-sm-up">8, last</span></div>
-	</div>
-	<div class="row show-grid">
-	  <div class="col md-5 push-7"><span class="visible-sm-down">full</span><span class="visible-sm-up">5</span></div>
-	  <div class="col md-7 pull-5"><span class="visible-sm-down">full</span><span class="visible-sm-up">7, last</span></div>
-	</div>
-	<div class="row show-grid">
-	  <div class="col md-6 push-6"><span class="visible-sm-down">full</span><span class="visible-sm-up">6</span></div>
-	  <div class="col md-6 pull-6"><span class="visible-sm-down">full</span><span class="visible-sm-up">6, last</span></div>
-	</div>
+<h3 id="grid-column-ordering">Column Ordering</h3>
+<p>Using these source ordering classes, you can shift columns around between our breakpoints. This means you can have a sub-nav on the left on medium show-grids, but go below on small ones. <code>.push-#</code> is the syntax you'll use.</p>
+<div class="row show-grid">
+  <div class="col md-2 push-10"><span class="visible-sm-down">full</span><span class="visible-sm-up">2</span></div>
+  <div class="col md-10 pull-2"><span class="visible-sm-down">full</span><span class="visible-sm-up">10, last</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col md-3 push-9"><span class="visible-sm-down">full</span><span class="visible-sm-up">3</span></div>
+  <div class="col md-9 pull-3"><span class="visible-sm-down">full</span><span class="visible-sm-up">9, last</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col md-4 push-8"><span class="visible-sm-down">full</span><span class="visible-sm-up">4</span></div>
+  <div class="col md-8 pull-4"><span class="visible-sm-down">full</span><span class="visible-sm-up">8, last</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col md-5 push-7"><span class="visible-sm-down">full</span><span class="visible-sm-up">5</span></div>
+  <div class="col md-7 pull-5"><span class="visible-sm-down">full</span><span class="visible-sm-up">7, last</span></div>
+</div>
+<div class="row show-grid">
+  <div class="col md-6 push-6"><span class="visible-sm-down">full</span><span class="visible-sm-up">6</span></div>
+  <div class="col md-6 pull-6"><span class="visible-sm-down">full</span><span class="visible-sm-up">6, last</span></div>
+</div>
 
 
 {% highlight html %}
@@ -504,8 +504,8 @@ base_url: "../"
   </div>
 
 <div class="callout info">
-	<h4>More grid examples</h4>
-	<p>If you are having a hard time viewing these examples here, or want to see more grid combinations, <a href="../examples/grid">this page</a> may help</p>
+<h4>More grid examples</h4>
+<p>If you are having a hard time viewing these examples here, or want to see more grid combinations, <a href="../examples/grid">this page</a> may help</p>
 </div>
 
 
@@ -634,14 +634,14 @@ base_url: "../"
       <h1 id="grid-block">Block Grid</h2>
     </div>
     <p class="lead">Block grids give you a way to evenly split contents of a list within the grid. If you wanted to create a row of 5 images or paragraphs that need to stay evenly spaced no matter the screen size, the block grid is for you.</h4>
-	<div class="bs-docs-example">
-	    <ul class="sm-block-grid-2 lg-block-grid-4">
-	      <li><img class="thumbnail" src="../assets/img/demo1.jpg"></li>
-	      <li><img class="thumbnail" src="../assets/img/demo2.jpg"></li>
-	      <li><img class="thumbnail" src="../assets/img/demo3.jpg"></li>
-	      <li><img class="thumbnail" src="../assets/img/demo4.jpg"></li>
-	    </ul>
-	</div>
+<div class="bs-docs-example">
+    <ul class="sm-block-grid-2 lg-block-grid-4">
+      <li><img class="thumbnail" src="../assets/img/demo1.jpg"></li>
+      <li><img class="thumbnail" src="../assets/img/demo2.jpg"></li>
+      <li><img class="thumbnail" src="../assets/img/demo3.jpg"></li>
+      <li><img class="thumbnail" src="../assets/img/demo4.jpg"></li>
+    </ul>
+</div>
 
 {% highlight html %}
 <!-- Using only the small-block-grid -->
@@ -1602,64 +1602,64 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
   <p>This CSS/JS solution allows tables to shrink on small devices without sacrificing the value of tables, comparison of columns.</p>
   <p>This requires an additional js file: <code>responsive-tables.js</code>. This file helps us create some new elements on small devices, so we don't have to modify our table markup on the page. The CSS applies the requisite positioning and overflow styles to make the new elements work.</p>
     <div class="bs-example">
-		<div class="table-responsive">
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Header 1</th>
-					<th>Header 2</th>
-					<th>Header 3</th>
-					<th>Header 4</th>
-					<th>Header 5</th>
-					<th>Header 6</th>
-					<th>Header 7</th>
-					<th>Header 8</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>row 1, cell 1</td>
-					<td>row 1, cell 2</td>
-					<td>row 1, cell 3</td>
-					<td>row 1, cell 4</td>
-					<td>row 1, cell 5</td>
-					<td>row 1, cell 6</td>
-					<td>row 1, cell 7</td>
-					<td>row 1, cell 8</td>
-				</tr>
-				<tr>
-					<td>row 2, cell 1</td>
-					<td>row 2, cell 2</td>
-					<td>row 2, cell 3</td>
-					<td>row 2, cell 4</td>
-					<td>row 2, cell 5</td>
-					<td>row 2, cell 6</td>
-					<td>row 2, cell 7</td>
-					<td>row 2, cell 8</td>
-				</tr>
-				<tr>
-					<td>row 3, cell 1</td>
-					<td>row 3, cell 2</td>
-					<td>row 3, cell 3</td>
-					<td>row 3, cell 4</td>
-					<td>row 3, cell 5</td>
-					<td>row 3, cell 6</td>
-					<td>row 3, cell 7</td>
-					<td>row 3, cell 8</td>
-				</tr>
-				<tr>
-					<td>row 4, cell 1</td>
-					<td>row 4, cell 2</td>
-					<td>row 4, cell 3</td>
-					<td>row 4, cell 4</td>
-					<td>row 4, cell 5</td>
-					<td>row 4, cell 6</td>
-					<td>row 4, cell 7</td>
-					<td>row 4, cell 8</td>
-				</tr>
-			</tbody>
-		</table>
-		</div>
+<div class="table-responsive">
+<table class="table">
+<thead>
+<tr>
+<th>Header 1</th>
+<th>Header 2</th>
+<th>Header 3</th>
+<th>Header 4</th>
+<th>Header 5</th>
+<th>Header 6</th>
+<th>Header 7</th>
+<th>Header 8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>row 1, cell 1</td>
+<td>row 1, cell 2</td>
+<td>row 1, cell 3</td>
+<td>row 1, cell 4</td>
+<td>row 1, cell 5</td>
+<td>row 1, cell 6</td>
+<td>row 1, cell 7</td>
+<td>row 1, cell 8</td>
+</tr>
+<tr>
+<td>row 2, cell 1</td>
+<td>row 2, cell 2</td>
+<td>row 2, cell 3</td>
+<td>row 2, cell 4</td>
+<td>row 2, cell 5</td>
+<td>row 2, cell 6</td>
+<td>row 2, cell 7</td>
+<td>row 2, cell 8</td>
+</tr>
+<tr>
+<td>row 3, cell 1</td>
+<td>row 3, cell 2</td>
+<td>row 3, cell 3</td>
+<td>row 3, cell 4</td>
+<td>row 3, cell 5</td>
+<td>row 3, cell 6</td>
+<td>row 3, cell 7</td>
+<td>row 3, cell 8</td>
+</tr>
+<tr>
+<td>row 4, cell 1</td>
+<td>row 4, cell 2</td>
+<td>row 4, cell 3</td>
+<td>row 4, cell 4</td>
+<td>row 4, cell 5</td>
+<td>row 4, cell 6</td>
+<td>row 4, cell 7</td>
+<td>row 4, cell 8</td>
+</tr>
+</tbody>
+</table>
+</div>
     </div><!-- /example -->
 {% highlight html %}
 <div class="table-responsive">
@@ -1668,7 +1668,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
   </table>
 </div>
 {% endhighlight %}
-	</div>
+</div>
 
   <!-- Forms
   ================================================== -->
@@ -1856,6 +1856,10 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 {% highlight html %}
 <input type="text" class="form-control" placeholder="Text input">
 {% endhighlight %}
+<div class="callout info">
+      <h4>Input groups</h4>
+      <p>To add integrated text or buttons before and/or after any text-based <code>&lt;input&gt;</code>, <a href="../components/#input-groups">check out the input group component</a>.</p>
+    </div>
 
     <h3>Textarea</h3>
     <p>Form control which supports multiple lines of text. Change <code>rows</code> attribute as necessary.</p>
@@ -2217,21 +2221,21 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <h2 id="forms-switches">Switches</h2>
     <p>Switches can be used instead of regular radio buttons to switch between two options. They are customizable and use styles that won't show on phones that don't support media queries. On these devices, they will appear as regular radio buttons. Requires the file <code>switches.less</code>.</p>
     <div class="bs-example">
-		<div class="switch sm">
+<div class="switch sm">
           <input id="b" name="switch-b" type="radio" checked="">
           <label for="b" onclick="">Off</label>
           <input id="b1" name="switch-b" type="radio">
           <label for="b1" onclick="">On</label>
           <span></span>
         </div>
-		<div class="switch">
+<div class="switch">
           <input id="c" name="switch-c" type="radio" checked="">
           <label for="c" onclick="">Off</label>
           <input id="c1" name="switch-c" type="radio">
           <label for="c1" onclick="">On</label>
           <span></span>
         </div>
-		<div class="switch lg rounded">
+<div class="switch lg rounded">
           <input id="d" name="switch-d" type="radio" checked="">
           <label for="d" onclick="">Off</label>
           <input id="d1" name="switch-d" type="radio">
@@ -2410,8 +2414,10 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
       <h4>Link functionality not impacted</h4>
       <p>This class will only change the <code>&lt;a&gt;</code>'s appearance, not its functionality. Use custom JavaScript to disable links here.</p>
     </div>
-
-
+    <div class="callout warning">
+      <h4>Context-specific usage</h4>
+      <p>While button classes can be used on <code>&lt;a&gt;</code> and <code>&lt;button&gt;</code> elements, only <code>&lt;button&gt;</code> elements are supported within our <code>.nav</code> and <code>.navbar</code> components.</p>
+    </div>
     <h2 id="buttons-tags">Button tags</h2>
     <p>Use the button classes on an <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code>, or <code>&lt;input&gt;</code> element.</p>
     <form class="bs-example">
@@ -2450,10 +2456,12 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
       <p>Keep in mind that Internet Explorer 8 lacks support for rounded corners.</p>
     </div>
     <div class="bs-example bs-example-images">
-      <img data-src="holder.js/140x140" src="data:image/png;base64," class="img-rounded" alt="A generic square placeholder image with rounded corners">
-      <img data-src="holder.js/140x140" src="data:image/png;base64," class="img-circle" alt="A generic square placeholder image where only the portion within the circle circumscribed about said square is visible">
-      <img data-src="holder.js/140x140" src="data:image/png;base64," class="img-thumbnail" alt="A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera">
+    <div class="bs-example bs-example-images">
+      <img data-src="holder.js/140x140" class="img-rounded" alt="A generic square placeholder image with rounded corners">
+      <img data-src="holder.js/140x140" class="img-circle" alt="A generic square placeholder image where only the portion within the circle circumscribed about said square is visible">
+      <img data-src="holder.js/140x140" class="img-thumbnail" alt="A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera">
     </div>
+
 {% highlight html %}
 <img src="..." alt="..." class="img-rounded">
 <img src="..." alt="..." class="img-circle">
@@ -2478,6 +2486,16 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 {% highlight html %}
 <button type="button" class="close" aria-hidden="true">&times;</button>
 {% endhighlight %}
+
+    <h3 id="helper-classes-carets">Carets</h3>
+    <p>Use carets to indicate dropdown functionality and direction. Note that the default caret will reverse automatically in <a href="../components/#btn-dropdowns-dropup">dropup menus</a>.</p>
+    <div class="bs-example">
+      <span class="caret"></span>
+    </div>
+{% highlight html %}
+<span class="caret"></span>
+{% endhighlight %}
+
 
 
     <h3 id="helper-classes-floats">Quick floats</h3>
@@ -2543,7 +2561,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
   &:before,
   &:after {
     content: " ";
-    show-grid: table;
+    display: table;
   }
   &:after {
     clear: both;
@@ -2557,11 +2575,13 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 {% endhighlight %}
 
 
-    <h3 id="helper-classes-show-hide">Showing and hiding content</h3>
-    <p>Force an element to be shown or hidden via <code>show-grid</code> with the use of <code>.show</code> and <code>.hide</code> classes. These classes use <code>!important</code> to avoid specificity conflicts, just like the <a href="../css/#helper-classes-floats">quick floats</a>. They are only available for block level toggling. They can also be used as mixins.</p>
+ <h3 id="helper-classes-show-hide">Showing and hiding content</h3>
+    <p>Force an element to be shown or hidden (<strong>including for screen readers</strong>) with the use of <code>.show</code> and <code>.hidden</code> classes. These classes use <code>!important</code> to avoid specificity conflicts, just like the <a href="#helper-classes-floats">quick floats</a>. They are only available for block level toggling. They can also be used as mixins.</p>
+    <p><code>.hide</code> is available, but it does not always affect screen readers and is <strong>deprecated</strong> as of v3.0.1. Use <code>.hidden</code> or <code>.sr-only</code> instead.</p>
+    <p>Furthermore, <code>.invisible</code> can be used to toggle only the visibility of an element, meaning its <code>display</code> is not modified and the element can still affect the flow of the document.</p>
 {% highlight html %}
 <div class="show">...</div>
-<div class="hide">...</div>
+<div class="hidden">...</div>
 {% endhighlight %}
 {% highlight css %}
 // Classes
@@ -2583,8 +2603,8 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 
 
     <h3 id="helper-classes-screen-readers">Screen reader content</h3>
-    <p>Hide an element everywhere, <strong>including screen readers</strong>, with <code>.hidden</code>. Can also be used as a mixin.</p>
-{% highlight html %}
+	    <p>Hide an element to all devices <strong>except screen readers</strong> with <code>.sr-only</code>. Necessary for following <a href="{{ page.base_url }}getting-started#accessibility">accessibility best practices</a>. Can also be used as a mixin.</p>
+	{% highlight html %}
 <div class="hidden"></div>
 {% endhighlight %}
 {% highlight css %}
@@ -2646,185 +2666,185 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 
     <h2 id="responsive-utilities-classes">Available classes</h2>
     <p>Use a single or combination of the available classes for toggling content across viewport breakpoints.</p>
-	<div class="table-responsive-example">
-	      <table class="table bordered striped responsive-utilities">
-	        <thead>
-	          <tr>
-	            <th>Classname</th>
-	            <th>
-	              Extra small devices
-	              <small>Phones (&lt;479px)</small>
-	            </th>
-	            <th>
-	              Small devices
-	              <small>Phones (≥480px)</small>
-	            </th>
-	            <th>
-	              Medium devices
-	              <small>Tablets (≥768px)</small>
-	            </th>
-	            <th>
-	              Large devices
-	              <small>Desktops (≥960px)</small>
-	            </th>
-	            <th>
-	              Extra large devices
-	              <small>Desktops (≥1200px)</small>
-	            </th>
-	          </tr>
-	        </thead>
-	        <tbody>
-	          <tr>
-	            <th><code>.visible-xs</code></th>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-hidden">Hidden</td>
-	          </tr>
-	          <tr>
-	            <th><code>.visible-sm</code></th>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-hidden">Hidden</td>
-	          </tr>
-	          <tr>
-	            <th><code>.visible-md</code></th>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-hidden">Hidden</td>
-	          </tr>
-	          <tr>
-	            <th><code>.visible-lg</code></th>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-hidden">Hidden</td>
-	          </tr>
-	          <tr>
-	            <th><code>.visible-xl</code></th>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-visible">Visible</td>
-	          </tr>
-	        </tbody>
-	        <tbody>
-	          <tr>
-	            <th><code>.hidden-xs</code></th>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-visible">Visible</td>
-	          </tr>
-	          <tr>
-	            <th><code>.hidden-sm</code></th>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-visible">Visible</td>
-	          </tr>
-	          <tr>
-	            <th><code>.hidden-md</code></th>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-visible">Visible</td>
-	          </tr>
-	          <tr>
-	            <th><code>.hidden-lg</code></th>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-visible">Visible</td>
-	          </tr>
-	          <tr>
-	            <th><code>.hidden-xl</code></th>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-hidden">Hidden</td>
-	          </tr>
-	        </tbody>
-	        <tbody>
-	          <tr>
-	            <th><code>.visible-md-up</code></th>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-visible">Visible</td>
-	          </tr>
-	          <tr>
-	            <th><code>.hidden-sm-down</code></th>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-visible">Visible</td>
-	          </tr>
-	          <tr>
-	            <th><code>.visible-lg-up</code></th>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-visible">Visible</td>
-	          </tr>
-	          <tr>
-	            <th><code>.hidden-md-down</code></th>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-visible">Visible</td>
-	          </tr>
-	          <tr>
-	            <th><code>.hidden-md-up</code></th>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-hidden">Hidden</td>
-	          </tr>
-	          <tr>
-	            <th><code>.visible-sm-down</code></th>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-hidden">Hidden</td>
-	          </tr>
-	          <tr>
-	            <th><code>.hidden-lg-up</code></th>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-hidden">Hidden</td>
-	          </tr>
-	          <tr>
-	            <th><code>.visible-md-down</code></th>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-visible">Visible</td>
-	            <td class="is-hidden">Hidden</td>
-	            <td class="is-hidden">Hidden</td>
-	          </tr>
-	        </tbody>
-	      </table>
-	    </div>
+<div class="table-responsive-example">
+      <table class="table bordered striped responsive-utilities">
+        <thead>
+          <tr>
+            <th>Classname</th>
+            <th>
+              Extra small devices
+              <small>Phones (&lt;479px)</small>
+            </th>
+            <th>
+              Small devices
+              <small>Phones (≥480px)</small>
+            </th>
+            <th>
+              Medium devices
+              <small>Tablets (≥768px)</small>
+            </th>
+            <th>
+              Large devices
+              <small>Desktops (≥960px)</small>
+            </th>
+            <th>
+              Extra large devices
+              <small>Desktops (≥1200px)</small>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><code>.visible-xs</code></th>
+            <td class="is-visible">Visible</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+          </tr>
+          <tr>
+            <th><code>.visible-sm</code></th>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+          </tr>
+          <tr>
+            <th><code>.visible-md</code></th>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+          </tr>
+          <tr>
+            <th><code>.visible-lg</code></th>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-hidden">Hidden</td>
+          </tr>
+          <tr>
+            <th><code>.visible-xl</code></th>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-visible">Visible</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <th><code>.hidden-xs</code></th>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+          </tr>
+          <tr>
+            <th><code>.hidden-sm</code></th>
+            <td class="is-visible">Visible</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+          </tr>
+          <tr>
+            <th><code>.hidden-md</code></th>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+          </tr>
+          <tr>
+            <th><code>.hidden-lg</code></th>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-visible">Visible</td>
+          </tr>
+          <tr>
+            <th><code>.hidden-xl</code></th>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-hidden">Hidden</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <th><code>.visible-md-up</code></th>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+          </tr>
+          <tr>
+            <th><code>.hidden-sm-down</code></th>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+          </tr>
+          <tr>
+            <th><code>.visible-lg-up</code></th>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+          </tr>
+          <tr>
+            <th><code>.hidden-md-down</code></th>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+          </tr>
+          <tr>
+            <th><code>.hidden-md-up</code></th>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+          </tr>
+          <tr>
+            <th><code>.visible-sm-down</code></th>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+          </tr>
+          <tr>
+            <th><code>.hidden-lg-up</code></th>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+          </tr>
+          <tr>
+            <th><code>.visible-md-down</code></th>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-visible">Visible</td>
+            <td class="is-hidden">Hidden</td>
+            <td class="is-hidden">Hidden</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <h2 id="responsive-utilities-print">Print classes</h2>
     <p>Similar to the regular responsive classes, use these for toggling content for print.</p>
@@ -2851,46 +2871,46 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
         </tbody>
       </table>
     </div>
-		<h2 id="responsive-utilities-tests">Test cases</h2>
-	    <p>Resize your browser or load on different devices to test the responsive utility classes.</p>
-		<div>
-	        <h4>Screen Size Visibility Control (Show)</h4>
-	        <p>The following text should describe the screen size you're using:</p>
-	        <div class="well">
-	          <p class="visible-xs"><strong>You are on an extra small screen.</strong></p>
-	          <p class="visible-sm"><strong>You are on a small screen.</strong></p>
-	          <p class="visible-md"><strong>You are on a medium screen.</strong></p>
-	          <p class="visible-lg"><strong>You are on a large screen.</strong></p>
-	          <p class="visible-xl"><strong>You are on a xlarge screen.</strong></p>
-	        </div>
+<h2 id="responsive-utilities-tests">Test cases</h2>
+    <p>Resize your browser or load on different devices to test the responsive utility classes.</p>
+<div>
+        <h4>Screen Size Visibility Control (Show)</h4>
+        <p>The following text should describe the screen size you're using:</p>
+        <div class="well">
+          <p class="visible-xs"><strong>You are on an extra small screen.</strong></p>
+          <p class="visible-sm"><strong>You are on a small screen.</strong></p>
+          <p class="visible-md"><strong>You are on a medium screen.</strong></p>
+          <p class="visible-lg"><strong>You are on a large screen.</strong></p>
+          <p class="visible-xl"><strong>You are on a xlarge screen.</strong></p>
+        </div>
 
-	        <h4>Screen Size Visibility Control (Hide)</h4>
-	        <p>The following text should describe the screen size you aren't using:</p>
-	        <div class="well">
-	          <p class="hidden-xs"><strong>You are <em>not</em> on an extra small screen.</strong></p>
-	          <p class="hidden-sm"><strong>You are <em>not</em> on a small screen.</strong></p>
-	          <p class="hidden-sm-down"><strong>You are <em>not</em> on a small or extra small screen.</strong></p>
-	          <p class="hidden-md"><strong>You are <em>not</em> on a medium screen.</strong></p>
-	          <p class="hidden-md-up"><strong>You are <em>not</em> on a medium, large or extra large screen.</strong></p>
-	          <p class="hidden-md-down"><strong>You are <em>not</em> on a medium, small or extra small screen.</strong></p>
-	          <p class="hidden-lg"><strong>You are <em>not</em> on a large screen.</strong></p>
+        <h4>Screen Size Visibility Control (Hide)</h4>
+        <p>The following text should describe the screen size you aren't using:</p>
+        <div class="well">
+          <p class="hidden-xs"><strong>You are <em>not</em> on an extra small screen.</strong></p>
+          <p class="hidden-sm"><strong>You are <em>not</em> on a small screen.</strong></p>
+          <p class="hidden-sm-down"><strong>You are <em>not</em> on a small or extra small screen.</strong></p>
+          <p class="hidden-md"><strong>You are <em>not</em> on a medium screen.</strong></p>
+          <p class="hidden-md-up"><strong>You are <em>not</em> on a medium, large or extra large screen.</strong></p>
+          <p class="hidden-md-down"><strong>You are <em>not</em> on a medium, small or extra small screen.</strong></p>
+          <p class="hidden-lg"><strong>You are <em>not</em> on a large screen.</strong></p>
            <p class="hidden-lg-up"><strong>You are <em>not</em> on a large or extra large screen.</strong></p>
-	          <p class="hidden-xl"><strong>You are <em>not</em> on a xlarge screen.</strong></p>
-	        </div>
+          <p class="hidden-xl"><strong>You are <em>not</em> on a xlarge screen.</strong></p>
+        </div>
 
-	        <h4>Orientation Detection</h4>
-	        <p>The following text should describe the device orientation you're using:</p>
-	        <div class="well">
-	          <p class="visible-landscape"><strong>You are in landscape orientation.</strong></p>
-	          <p class="visible-portrait"><strong>You are in portrait orientation.</strong></p>
-	        </div>
+        <h4>Orientation Detection</h4>
+        <p>The following text should describe the device orientation you're using:</p>
+        <div class="well">
+          <p class="visible-landscape"><strong>You are in landscape orientation.</strong></p>
+          <p class="visible-portrait"><strong>You are in portrait orientation.</strong></p>
+        </div>
 
-	        <h4>Touch Detection</h4>
-	        <p>The following text should describe if you're using a touch device:</p>
-	        <div class="well">
-	          <p class="visible-touch"><strong>You are on a touch-enabled device.</strong></p>
-	          <p class="hidden-touch"><strong>You are not on a touch-enabled device.</strong></p>
-	        </div>
-	   </div>
+        <h4>Touch Detection</h4>
+        <p>The following text should describe if you're using a touch device:</p>
+        <div class="well">
+          <p class="visible-touch"><strong>You are on a touch-enabled device.</strong></p>
+          <p class="hidden-touch"><strong>You are not on a touch-enabled device.</strong></p>
+        </div>
+   </div>
 
   </div>

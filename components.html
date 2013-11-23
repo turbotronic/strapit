@@ -605,9 +605,11 @@ base_url: "../"
     <p>Trigger dropdown menus above elements by adding <code>.dropup</code> to the parent.</p>
     <div class="bs-example">
       <div class="btn-toolbar" role="toolbar">
-        <div class="btn-group dropup">
           <button type="button" class="btn default">Dropup</button>
-          <button type="button" class="btn default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+          <button type="button" class="btn default dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Action</a></li>
             <li><a href="#">Another action</a></li>
@@ -618,7 +620,10 @@ base_url: "../"
         </div><!-- /btn-group -->
         <div class="btn-group dropup">
           <button type="button" class="btn primary">Right dropup</button>
-          <button type="button" class="btn primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+          <button type="button" class="btn primary dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
           <ul class="dropdown-menu pull-right" role="menu">
             <li><a href="#">Action</a></li>
             <li><a href="#">Another action</a></li>
@@ -634,6 +639,7 @@ base_url: "../"
   <button type="button" class="btn default">Dropup</button>
   <button type="button" class="btn default dropdown-toggle" data-toggle="dropdown">
     <span class="caret"></span>
+    <span class="sr-only">Toggle Dropdown</span>
   </button>
   <ul class="dropdown-menu">
     <!-- Dropdown menu links -->
@@ -658,6 +664,10 @@ base_url: "../"
     <div class="callout info">
       <h4>Tooltips &amp; popovers in input groups require special setting</h4>
       <p>When using tooltips or popovers on elements within an <code>.input-group</code>, you'll have to specify the option <code>container: 'body'</code> to avoid unwanted side effects (such as the element growing wider and/or losing its rounded corners when the tooltip or popover is triggered).</p>
+    </div>
+    <div class="callout info">
+      <h4>Don't mix with form groups</h4>
+      <p>Do not apply input group classes directly to form groups. An input group is an isolated component.</p>
     </div>
 
     <h2 id="input-groups-basic">Basic example</h2>
@@ -901,6 +911,7 @@ base_url: "../"
               <button type="button" class="btn default" tabindex="-1">Action</button>
               <button type="button" class="btn segmented default dropdown-toggle" data-toggle="dropdown" tabindex="-1">
                 <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
               </button>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="#">Action</a></li>
@@ -920,6 +931,7 @@ base_url: "../"
               <button type="button" class="btn segmented default" tabindex="-1">Action</button>
               <button type="button" class="btn default dropdown-toggle" data-toggle="dropdown" tabindex="-1">
                 <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
               </button>
               <ul class="dropdown-menu pull-right" role="menu">
                 <li><a href="#">Action</a></li>
@@ -939,6 +951,7 @@ base_url: "../"
     <button type="button" class="btn default" tabindex="-1">Action</button>
     <button type="button" class="btn segmented default dropdown-toggle" data-toggle="dropdown" tabindex="-1">
       <span class="caret"></span>
+      <span class="sr-only">Toggle Dropdown</span>
     </button>
     <ul class="dropdown-menu" role="menu">
       <li><a href="#">Action</a></li>
@@ -957,6 +970,7 @@ base_url: "../"
     <button type="button" class="btn segmented default" tabindex="-1">Action</button>
     <button type="button" class="btn default dropdown-toggle" data-toggle="dropdown" tabindex="-1">
       <span class="caret"></span>
+      <span class="sr-only">Toggle Dropdown</span>
     </button>
     <ul class="dropdown-menu pull-right" role="menu">
       <li><a href="#">Action</a></li>
@@ -998,6 +1012,11 @@ base_url: "../"
   <li><a href="#">Messages</a></li>
 </ul>
 {% endhighlight %}
+<div class="callout info">
+  <h4>Requires JavaScript tabs plugin</h4>
+  <p>For tabs with tabbable areas, you must use the <a href="../javascript/#tabs">tabs JavaScript plugin</a>.</p>
+</div>
+
 
     <h2 id="nav-pills">Pills</h2>
     <p>Take that same HTML, but use <code>.pills</code> instead:</p>
@@ -1033,8 +1052,8 @@ base_url: "../"
     <h2 id="nav-justified">Justified</h2>
     <p>Easily make tabs or pills equal widths of their parent at screens wider than 768px with <code>.justified</code>. On smaller screens, the nav links are stacked.</p>
     <div class="callout warning">
-      <h4>WebKit and responsive justified navs</h4>
-      <p>Chrome and Safari both exhibit a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing. This bug is also shown in the <a href="../examples/justified-nav/">justified nav example</a>.</p>
+      <h4>Safari and responsive justified navs</h4>
+      <p>Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing. This bug is also shown in the <a href="../examples/justified-nav/">justified nav example</a>.</p>
     </div>
     <div class="bs-example">
       <ul class="nav tabs justified">
@@ -1349,12 +1368,15 @@ base_url: "../"
       <h4>Customize the collapsing point</h4>
       <p>Depending on the content in your navbar, you might need to change the point at which your navbar switches between collapsed and horizontal mode. Customize the <code>@grid-float-breakpoint</code> variable or add your own media query.</p>
     </div>
-
+    <div class="callout danger">
+      <h4>Requires JavaScript</h4>
+      <p>If JavaScript is disabled and the viewport is narrow enough that the navbar collapses, it will be impossible to expand the navbar and view the content within the <code>.navbar-collapse</code>.</p>
+    </div>
     <div class="bs-example">
       <nav class="navbar navbar-default" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -1364,7 +1386,7 @@ base_url: "../"
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Link</a></li>
             <li><a href="#">Link</a></li>
@@ -1374,7 +1396,9 @@ base_url: "../"
                 <li><a href="#">Action</a></li>
                 <li><a href="#">Another action</a></li>
                 <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
                 <li><a href="#">Separated link</a></li>
+                <li class="divider"></li>
                 <li><a href="#">One more separated link</a></li>
               </ul>
             </li>
@@ -1393,6 +1417,7 @@ base_url: "../"
                 <li><a href="#">Action</a></li>
                 <li><a href="#">Another action</a></li>
                 <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
                 <li><a href="#">Separated link</a></li>
               </ul>
             </li>
@@ -1404,7 +1429,7 @@ base_url: "../"
 <nav class="navbar navbar-default" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
       <span class="sr-only">Toggle navigation</span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
@@ -1414,7 +1439,7 @@ base_url: "../"
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Link</a></li>
       <li><a href="#">Link</a></li>
@@ -1424,7 +1449,9 @@ base_url: "../"
           <li><a href="#">Action</a></li>
           <li><a href="#">Another action</a></li>
           <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
           <li><a href="#">Separated link</a></li>
+          <li class="divider"></li>
           <li><a href="#">One more separated link</a></li>
         </ul>
       </li>
@@ -1443,6 +1470,7 @@ base_url: "../"
           <li><a href="#">Action</a></li>
           <li><a href="#">Another action</a></li>
           <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
           <li><a href="#">Separated link</a></li>
         </ul>
       </li>
@@ -1467,7 +1495,7 @@ base_url: "../"
     <div class="bs-example">
       <nav class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex2-collapse">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -1475,7 +1503,7 @@ base_url: "../"
           </button>
           <a class="navbar-brand" href="#">Brand</a>
         </div>
-        <div class="collapse navbar-collapse navbar-ex2-collapse">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
           <form class="navbar-form navbar-left" role="search">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Search">
@@ -1493,14 +1521,18 @@ base_url: "../"
   <button type="submit" class="btn default">Submit</button>
 </form>
 {% endhighlight %}
+<div class="callout danger">
+  <h4>Always add labels</h4>
+  <p>Screen readers will have trouble with your forms if you don't include a label for every input. For these inline navbar forms, you can hide the labels using the <code>.sr-only</code> class.</p>
+</div>
 
 
-    <h2 id="navbar-buttons">Buttons</h2>
-    <p>For buttons not residing in a <code>&lt;form&gt;</code>, add this class to vertically center buttons within a navbar.</p>
+   <h2 id="navbar-buttons">Buttons</h2>
+    <p>Add the <code>.navbar-btn</code> class to <code>&lt;button&gt;</code> elements not residing in a <code>&lt;form&gt;</code> to vertically center them in the navbar.</p>
     <div class="bs-example">
       <nav class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex2-collapse">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -1508,7 +1540,7 @@ base_url: "../"
           </button>
           <a class="navbar-brand" href="#">Brand</a>
         </div>
-        <div class="collapse navbar-collapse navbar-ex2-collapse">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-3">
           <button type="button" class="btn default navbar-btn">Sign in</button>
         </div>
       </nav>
@@ -1517,13 +1549,17 @@ base_url: "../"
 <button type="button" class="btn default navbar-btn">Sign in</button>
 {% endhighlight %}
 
+    <div class="callout warning">
+      <h4>Context-specific usage</h4>
+      <p>Like the standard <a href="{{ page.base_url }}css#buttons">button classes</a>, <code>.navbar-btn</code> can be used on <code>&lt;a&gt;</code> and <code>&lt;input&gt;</code> elements. However, neither <code>.navbar-btn</code> nor the standard button classes should be used on <code>&lt;a&gt;</code> elements within <code>.navbar-nav</code>.</p>
+    </div>
 
     <h2 id="navbar-text">Text</h2>
     <p>Wrap strings of text in an element with <code>.navbar-text</code>, usually on a <code>&lt;p&gt;</code> tag for proper leading and color.</p>
     <div class="bs-example">
       <nav class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex3-collapse">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-4">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -1531,7 +1567,7 @@ base_url: "../"
           </button>
           <a class="navbar-brand" href="#">Brand</a>
         </div>
-        <div class="collapse navbar-collapse navbar-ex3-collapse">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-4">
           <p class="navbar-text">Signed in as Mark Otto</p>
         </div>
       </nav>
@@ -1546,7 +1582,7 @@ base_url: "../"
     <div class="bs-example">
       <nav class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex4-collapse">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-5">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -1554,13 +1590,13 @@ base_url: "../"
           </button>
           <a class="navbar-brand" href="#">Brand</a>
         </div>
-        <div class="collapse navbar-collapse navbar-ex4-collapse">
-          <p class="navbar-text pull-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-5">
+          <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p>
         </div>
       </nav>
     </div>
 {% highlight html %}
-<p class="navbar-text pull-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p>
+<p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p>
 {% endhighlight %}
 
 
@@ -1575,7 +1611,7 @@ base_url: "../"
       <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex5-collapse">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -1585,7 +1621,7 @@ base_url: "../"
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex5-collapse">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
             <li><a href="#">Link</a></li>
@@ -1606,7 +1642,7 @@ base_url: "../"
 {% highlight css %}
 body { padding-top: 70px; }
 {% endhighlight %}
-      <p>Make sure to include this <strong>after</strong> the core Strapit CSS.</p>
+      <p>Make sure to include this <strong>after</strong> the core Bootstrap CSS.</p>
     </div>
 
 
@@ -1616,7 +1652,7 @@ body { padding-top: 70px; }
       <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex6-collapse">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-7">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -1626,7 +1662,7 @@ body { padding-top: 70px; }
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex6-collapse">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-7">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
             <li><a href="#">Link</a></li>
@@ -1647,7 +1683,7 @@ body { padding-top: 70px; }
 {% highlight css %}
 body { padding-bottom: 70px; }
 {% endhighlight %}
-      <p>Make sure to include this <strong>after</strong> the core Strapit CSS.</p>
+      <p>Make sure to include this <strong>after</strong> the core Bootstrap CSS.</p>
     </div>
 
 
@@ -1657,7 +1693,7 @@ body { padding-bottom: 70px; }
       <nav class="navbar navbar-default navbar-static-top" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex7-collapse">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-8">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -1667,7 +1703,7 @@ body { padding-bottom: 70px; }
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex7-collapse">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-8">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
             <li><a href="#">Link</a></li>
@@ -1689,7 +1725,7 @@ body { padding-bottom: 70px; }
       <nav class="navbar navbar-inverse" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex8-collapse">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -1699,7 +1735,7 @@ body { padding-bottom: 70px; }
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex8-collapse">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
             <li><a href="#">Link</a></li>
@@ -1715,6 +1751,7 @@ body { padding-bottom: 70px; }
 {% endhighlight %}
 
   </div>
+
 
 
 
