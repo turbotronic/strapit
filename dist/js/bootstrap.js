@@ -5,9 +5,9 @@
  *
  * Designed and built with all the love in the world by @mdo and @fat.
  */
-if(!window.Zepto && !window.jQuery) {
-  throw new TypeError('Boostrap requires either Zepto or jQuery to work')
-}
+
+if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery") }
+
 /* ========================================================================
  * Bootstrap: transition.js v3.0.2
  * http://getbootstrap.com/javascript/#transitions
@@ -63,7 +63,7 @@ if(!window.Zepto && !window.jQuery) {
     $.support.transition = transitionEnd()
   })
 
-}(window.Zepto || window.jQuery);
+}(jQuery);
 
 /* ========================================================================
  * Bootstrap: alert.js v3.0.2
@@ -162,7 +162,7 @@ if(!window.Zepto && !window.jQuery) {
 
   $(document).on('click.bs.alert.data-api', dismiss, Alert.prototype.close)
 
-}(window.Zepto || window.jQuery);
+}(jQuery);
 
 /* ========================================================================
  * Bootstrap: button.js v3.0.2
@@ -220,21 +220,15 @@ if(!window.Zepto && !window.jQuery) {
 
   Button.prototype.toggle = function () {
     var $parent = this.$element.closest('[data-toggle="buttons"]')
-    var changed = true
 
     if ($parent.length) {
       var $input = this.$element.find('input')
-      if ($input.prop('type') === 'radio') {
-        // see if clicking on current one
-        if ($input.prop('checked') && this.$element.hasClass('active'))
-          changed = false
-        else
-          $parent.find('.active').removeClass('active')
-      }
-      if (changed) $input.prop('checked', !this.$element.hasClass('active')).trigger('change')
+        .prop('checked', !this.$element.hasClass('active'))
+        .trigger('change')
+      if ($input.prop('type') === 'radio') $parent.find('.active').removeClass('active')
     }
 
-    if (changed) this.$element.toggleClass('active')
+    this.$element.toggleClass('active')
   }
 
 
@@ -278,7 +272,7 @@ if(!window.Zepto && !window.jQuery) {
     e.preventDefault()
   })
 
-}(window.Zepto || window.jQuery);
+}(jQuery);
 
 /* ========================================================================
  * Bootstrap: carousel.js v3.0.2
@@ -351,7 +345,7 @@ if(!window.Zepto && !window.jQuery) {
 
     if (pos > (this.$items.length - 1) || pos < 0) return
 
-    if (this.sliding)       return this.$element.one('slid.bs.carousel', function () { that.to(pos) })
+    if (this.sliding)       return this.$element.one('slid', function () { that.to(pos) })
     if (activeIndex == pos) return this.pause().cycle()
 
     return this.slide(pos > activeIndex ? 'next' : 'prev', $(this.$items[pos]))
@@ -403,7 +397,7 @@ if(!window.Zepto && !window.jQuery) {
 
     if (this.$indicators.length) {
       this.$indicators.find('.active').removeClass('active')
-      this.$element.one('slid.bs.carousel', function () {
+      this.$element.one('slid', function () {
         var $nextIndicator = $(that.$indicators.children()[that.getActiveIndex()])
         $nextIndicator && $nextIndicator.addClass('active')
       })
@@ -421,7 +415,7 @@ if(!window.Zepto && !window.jQuery) {
           $next.removeClass([type, direction].join(' ')).addClass('active')
           $active.removeClass(['active', direction].join(' '))
           that.sliding = false
-          setTimeout(function () { that.$element.trigger('slid.bs.carousel') }, 0)
+          setTimeout(function () { that.$element.trigger('slid') }, 0)
         })
         .emulateTransitionEnd(600)
     } else {
@@ -430,7 +424,7 @@ if(!window.Zepto && !window.jQuery) {
       $active.removeClass('active')
       $next.addClass('active')
       this.sliding = false
-      this.$element.trigger('slid.bs.carousel')
+      this.$element.trigger('slid')
     }
 
     isCycling && this.cycle()
@@ -496,7 +490,7 @@ if(!window.Zepto && !window.jQuery) {
     })
   })
 
-}(window.Zepto || window.jQuery);
+}(jQuery);
 
 /* ========================================================================
  * Bootstrap: collapse.js v3.0.2
@@ -676,7 +670,7 @@ if(!window.Zepto && !window.jQuery) {
     $target.collapse(option)
   })
 
-}(window.Zepto || window.jQuery);
+}(jQuery);
 
 /* ========================================================================
  * Bootstrap: dropdown.js v3.0.2
@@ -831,7 +825,7 @@ if(!window.Zepto && !window.jQuery) {
     .on('click.bs.dropdown.data-api'  , toggle, Dropdown.prototype.toggle)
     .on('keydown.bs.dropdown.data-api', toggle + ', [role=menu]' , Dropdown.prototype.keydown)
 
-}(window.Zepto || window.jQuery);
+}(jQuery);
 
 /* ========================================================================
  * Bootstrap: modal.js v3.0.2
@@ -1078,7 +1072,7 @@ if(!window.Zepto && !window.jQuery) {
     .on('show.bs.modal',  '.modal', function () { $(document.body).addClass('modal-open') })
     .on('hidden.bs.modal', '.modal', function () { $(document.body).removeClass('modal-open') })
 
-}(window.Zepto || window.jQuery);
+}(jQuery);
 
 /* ========================================================================
  * Bootstrap: tooltip.js v3.0.2
@@ -1465,7 +1459,7 @@ if(!window.Zepto && !window.jQuery) {
     return this
   }
 
-}(window.Zepto || window.jQuery);
+}(jQuery);
 
 /* ========================================================================
  * Bootstrap: popover.js v3.0.2
@@ -1583,7 +1577,7 @@ if(!window.Zepto && !window.jQuery) {
     return this
   }
 
-}(window.Zepto || window.jQuery);
+}(jQuery);
 
 /* ========================================================================
  * Bootstrap: scrollspy.js v3.0.2
@@ -1700,7 +1694,7 @@ if(!window.Zepto && !window.jQuery) {
         .addClass('active')
     }
 
-    active.trigger('activate.bs.scrollspy')
+    active.trigger('activate')
   }
 
 
@@ -1742,7 +1736,7 @@ if(!window.Zepto && !window.jQuery) {
     })
   })
 
-}(window.Zepto || window.jQuery);
+}(jQuery);
 
 /* ========================================================================
  * Bootstrap: tab.js v3.0.2
@@ -1776,7 +1770,7 @@ if(!window.Zepto && !window.jQuery) {
   Tab.prototype.show = function () {
     var $this    = this.element
     var $ul      = $this.closest('ul:not(.dropdown-menu)')
-    var selector = $this.attr('data-target')
+    var selector = $this.data('target')
 
     if (!selector) {
       selector = $this.attr('href')
@@ -1785,7 +1779,7 @@ if(!window.Zepto && !window.jQuery) {
 
     if ($this.parent('li').hasClass('active')) return
 
-    var previous = $ul.find('.active:last-child a')[0]
+    var previous = $ul.find('.active:last a')[0]
     var e        = $.Event('show.bs.tab', {
       relatedTarget: previous
     })
@@ -1878,7 +1872,7 @@ if(!window.Zepto && !window.jQuery) {
     $(this).tab('show')
   })
 
-}(window.Zepto || window.jQuery);
+}(jQuery);
 
 /* ========================================================================
  * Bootstrap: affix.js v3.0.2
@@ -2005,10 +1999,11 @@ if(!window.Zepto && !window.jQuery) {
     })
   })
 
-}(window.Zepto || window.jQuery);
+}(jQuery);
 
 // Responsive tables
 // ---------------------------------
+
 (function($) {
   // determine if table-responsive is present
   if($('.table-responsive').length) {
@@ -2052,4 +2047,4 @@ if(!window.Zepto && !window.jQuery) {
     updateTable();
     $(window).bind('resize', updateTable);
   }
-})(window.Zepto || window.jQuery);
+})(jQuery);

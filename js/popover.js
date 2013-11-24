@@ -114,4 +114,4 @@
     return this
   }
 
-}(window.Zepto || window.jQuery);
+}(jQuery);
