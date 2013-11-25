@@ -59,8 +59,8 @@ strapit/
 
     <p>This is the most basic form of Strapit: compiled files for quick drop-in usage in nearly any web project. We provide compiled CSS and JS (<code>bootstrap.*</code>), as well as compiled and minified CSS and JS (<code>bootstrap.min.*</code>). Fonts from Glyphicons are included and images from Fairfield Creative's FC Webicons.</p>
     <div class="callout danger">
-      <h4>jQuery or Zepto required</h4>
-      <p>Please note that <strong>all JavaScript plugins require either <a href="http://jquery.com/">jQuery</a> or <a href="http://zeptojs.com/">Zepto</a></strong> to be included, as shown in the <a href="#template">starter template</a>. Note that <strong>Zepto is not supported in IE</strong>, so if you wish to use it, you will need to load jQuery as an IE fallback <span class="text-muted">(see example below)</span>.</p>
+      <h4>jQuery required</h4>
+      <p>Please note that <strong>all JavaScript plugins require <a href="http://jquery.com/">jQuery</a> to be included, as shown in the <a href="#template">starter template</a>.</p>
     </div>
   </div>
 
@@ -418,34 +418,11 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
 
   <!-- Third party support
   ================================================== -->
-  <div class="bs-docs-section">
+  <!-- <div class="bs-docs-section">
     <div class="page-header">
       <h1 id="third-parties">Third party support</h1>
     </div>
-    <h3 id="zepto">Zepto</h3>
-    <p class="lead"><a href="http://zeptojs.com/">Zepto</a> is a lightweight jQuery alternative that is gaining traction among mobile-web developers for its lightweight footprint (about one-quarter the size of jQuery in a minified state).</p>
-    <p>We have refactored the original Bootstrap plugins to work with either jQuery or Zepto. It is recommended that you use jQuery for your project, but you do have the option of using Zepto if you choose. If you do, there are a couple of things you should know:</p>
-    <ul class="list">
-      <li>Zepto is <strong>not</strong> supported in any version of IE. For IE support, you will need to provide a jQuery fallback. Because conditional comments will not longer be supported in IE10, you should place the following snippet somewhere in the <code>&lt;head&gt;</code> tag of your code.</li>
-	</ul>
-	
-{% highlight html %}
-<!-- Zepto or JQuery (necessary for the JavaScript plugins :: with IE fallback) -->
-<script>
-document.write('<script src=' + ('__proto__' in {} ? '//cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js' : '//code.jquery.com/jquery.js') + '><\/script>')
-</script>
-{% endhighlight %}
-
-<div class="callout warning">
-	<h4>Beware of the snippet's placement</h4>
-	<p>This snippet cannot be in the footer under the closing <code>&lt;body&gt;</code> tag where you might normally put your Javascript. It will work only in the <code>&lt;head&gt;</code> tag.</p>
-</div>
-    <ul class="list">
-	<li>There is no <code>noConflict();</code> method in Zepto. That means that Zepto will only set the <code>$</code> global to itself if it is not yet defined. You cannot override jQuery with a Zepto installation, nor should you try to use both concurrently.</li>
-	<li>It may not be possible to use popular jQuery plugins with Zepto. Although the Bootstrap plugins in Strapit have been configured to work with Zepto, there is no guarantee that others will work similarly well. We will do our best to make any additional Javascript plugins we add to Strapit work with Zepto, but we will not sacrifice essential functionality to serve that goal.</li>
-    </ul>
-    <div class="callout info"><p>More details on Zepto can be found in their <a href="http://zeptojs.com/">documentation</a> or their <a href="https://github.com/madrobby/zepto">GitHub</a> page.</p></div>
-  </div>
+  </div> -->
 
 
   <!-- Accessibility

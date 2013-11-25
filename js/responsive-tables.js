@@ -1,5 +1,6 @@
 // Responsive tables
 // ---------------------------------
+
 (function($) {
   // determine if table-responsive is present
   if($('.table-responsive').length) {
@@ -43,4 +44,4 @@
     updateTable();
     $(window).bind('resize', updateTable);
   }
-})(window.Zepto || window.jQuery);
+})(jQuery);
