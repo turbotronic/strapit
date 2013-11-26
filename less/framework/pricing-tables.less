@@ -2,7 +2,6 @@
 // Pricing tables -- from Foundation
 // --------------------------------------------------
 
-
 .pricing-table {
   margin-left: 0;
   margin-bottom: @line-height-computed;
@@ -12,31 +11,31 @@
     line-height: 1;
     text-align: center;
     color: inherit;
-    font-weight: 300;
+    font-weight: @font-weight-light;
   }
   .title {
     background-color: @border-color;
     padding: @padding-base-vertical @padding-base-horizontal;
     font-weight: @headings-font-weight;
-    .font-size(16);
+    .font-size(16px);
   }
   .price {
     background-color: #eee;
     padding: @padding-base-horizontal;
-    .font-size(20); 
+    .font-size(20px); 
   }
   .description {
     background-color: #fff;
     padding: @padding-base-horizontal;
     color: lighten(@text-color, 35%);
-    .font-size(12);
+    .font-size(12px);
     line-height: 1.4;
     border-bottom: dotted 1px @border-color; 
   }
   .bullet-item {
     background-color: #fff;
     padding: @padding-base-vertical;
-    .font-size(12);
+    .font-size(12px);
     border-bottom: dotted 1px @border-color;
   }
   .cta-btn {
