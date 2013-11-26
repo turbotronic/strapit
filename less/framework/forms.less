@@ -253,8 +253,10 @@ output {
 }
 .radio input[type="radio"],
 .radio-inline input[type="radio"],
+.radio.inline input[type="radio"],
 .checkbox input[type="checkbox"],
-.checkbox-inline input[type="checkbox"] {
+.checkbox-inline input[type="checkbox"],
+.checkbox.inline input[type="checkbox"] {
   float: left;
   margin-left: -20px;
 }
@@ -265,7 +267,9 @@ output {
 
 // Radios and checkboxes on same line
 .radio-inline,
-.checkbox-inline {
+.radio.inline,
+.checkbox-inline,
+.checkbox.inline {
   display: inline-block;
   padding-left: 20px;
   margin-bottom: 0;
@@ -274,7 +278,9 @@ output {
   cursor: pointer;
 }
 .radio-inline + .radio-inline,
-.checkbox-inline + .checkbox-inline {
+.radio.inline + .radio.inline,
+.checkbox-inline + .checkbox-inline,
+.checkbox.inline + .checkbox.inline {
   margin-top: 0;
   margin-left: 10px; // space out consecutive inline controls
 }
@@ -286,6 +292,7 @@ input[type="radio"],
 input[type="checkbox"],
 .radio,
 .radio-inline,
+.radio.inline,
 .checkbox,
 .checkbox-inline {
   &[disabled],
@@ -295,11 +302,13 @@ input[type="checkbox"],
 }
 
 // Form control sizing
-.input-sm {
+.input-sm,
+.input.sm {
   .input-size(@input-height-small; @padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
 }
 
-.input-lg {
+.input-lg,
+.input.lg {
   .input-size(@input-height-large; @padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @border-radius-large);
 }
 
@@ -327,7 +336,8 @@ input[type="checkbox"],
 // Apply class to a `p` element to make any string of text align with labels in
 // a horizontal form layout.
 
-.form-control-static {
+.form-control-static,
+.form-control.static {
   margin-bottom: 0; // Remove default margin from `p`
 }
 
@@ -357,7 +367,8 @@ input[type="checkbox"],
 //
 // Heads up! This is mixin-ed into `.navbar-form` in navbars.less.
 
-.form-inline {
+.form-inline,
+.form.inline {
 
   // Kick in the inline
   @media (min-width: @breakpoint-md) {
@@ -397,7 +408,8 @@ input[type="checkbox"],
 // Horizontal forms are built on grid classes and allow you to create forms with
 // labels on the left and inputs on the right.
 
-.form-horizontal {
+.form-horizontal,
+.form.horizontal {
 
   // Consistent vertical alignment of labels, radios, and checkboxes
   .control-label,
@@ -414,7 +426,8 @@ input[type="checkbox"],
   .form-group {
     .make-rows();
   }
-  .form-control-static {
+  .form-control-static,
+  .form-control.static {
     padding-top: (@padding-base-vertical + 1);
   }
 
