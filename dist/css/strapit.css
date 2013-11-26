@@ -2554,6 +2554,10 @@ textarea.input-lg,
 textarea.input.lg {
   height: auto;
 }
+input.square {
+  -webkit-appearance: none;
+  border-radius: 0 !important;
+}
 .has-warning .help-block,
 .has-warning .control-label,
 .has-warning .radio,
