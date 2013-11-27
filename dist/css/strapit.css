@@ -2473,10 +2473,8 @@ textarea.form-control {
 }
 .radio input[type="radio"],
 .radio-inline input[type="radio"],
-.radio.inline input[type="radio"],
 .checkbox input[type="checkbox"],
-.checkbox-inline input[type="checkbox"],
-.checkbox.inline input[type="checkbox"] {
+.checkbox-inline input[type="checkbox"] {
   float: left;
   margin-left: -20px;
 }
@@ -2485,9 +2483,7 @@ textarea.form-control {
   margin-top: -5px;
 }
 .radio-inline,
-.radio.inline,
-.checkbox-inline,
-.checkbox.inline {
+.checkbox-inline {
   display: inline-block;
   padding-left: 20px;
   margin-bottom: 0;
@@ -2496,9 +2492,7 @@ textarea.form-control {
   cursor: pointer;
 }
 .radio-inline + .radio-inline,
-.radio.inline + .radio.inline,
-.checkbox-inline + .checkbox-inline,
-.checkbox.inline + .checkbox.inline {
+.checkbox-inline + .checkbox-inline {
   margin-top: 0;
   margin-left: 10px;
 }
@@ -2506,20 +2500,17 @@ input[type="radio"][disabled],
 input[type="checkbox"][disabled],
 .radio[disabled],
 .radio-inline[disabled],
-.radio.inline[disabled],
 .checkbox[disabled],
 .checkbox-inline[disabled],
 fieldset[disabled] input[type="radio"],
 fieldset[disabled] input[type="checkbox"],
 fieldset[disabled] .radio,
 fieldset[disabled] .radio-inline,
-fieldset[disabled] .radio.inline,
 fieldset[disabled] .checkbox,
 fieldset[disabled] .checkbox-inline {
   cursor: not-allowed;
 }
-.input-sm,
-.input.sm {
+.input-sm {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
@@ -2527,17 +2518,14 @@ fieldset[disabled] .checkbox-inline {
   line-height: 1.5;
   border-radius: 3px;
 }
-select.input-sm,
-select.input.sm {
+select.input-sm {
   height: 30px;
   line-height: 30px;
 }
-textarea.input-sm,
-textarea.input.sm {
+textarea.input-sm {
   height: auto;
 }
-.input-lg,
-.input.lg {
+.input-lg {
   height: 45px;
   padding: 10px 16px;
   font-size: 18px;
@@ -2545,13 +2533,11 @@ textarea.input.sm {
   line-height: 1.33;
   border-radius: 6px;
 }
-select.input-lg,
-select.input.lg {
+select.input-lg {
   height: 45px;
   line-height: 45px;
 }
-textarea.input-lg,
-textarea.input.lg {
+textarea.input-lg {
   height: auto;
 }
 input.square {
@@ -2638,89 +2624,68 @@ input.square {
   color: #959595;
 }
 @media (min-width: 768px) {
-  .form-inline .form-group,
-  .form.inline .form-group {
+  .form-inline .form-group {
     display: inline-block;
     margin-bottom: 0;
     vertical-align: middle;
   }
-  .form-inline .form-control,
-  .form.inline .form-control {
+  .form-inline .form-control {
     display: inline-block;
   }
   .form-inline .radio,
-  .form.inline .radio,
-  .form-inline .checkbox,
-  .form.inline .checkbox {
+  .form-inline .checkbox {
     display: inline-block;
     margin-top: 0;
     margin-bottom: 0;
     padding-left: 0;
   }
   .form-inline .radio input[type="radio"],
-  .form.inline .radio input[type="radio"],
-  .form-inline .checkbox input[type="checkbox"],
-  .form.inline .checkbox input[type="checkbox"] {
+  .form-inline .checkbox input[type="checkbox"] {
     float: none;
     margin-left: 0;
   }
 }
 .form-horizontal .control-label,
-.form.horizontal .control-label,
 .form-horizontal .radio,
-.form.horizontal .radio,
 .form-horizontal .checkbox,
-.form.horizontal .checkbox,
 .form-horizontal .radio-inline,
-.form.horizontal .radio-inline,
-.form-horizontal .checkbox-inline,
-.form.horizontal .checkbox-inline {
+.form-horizontal .checkbox-inline {
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 7px;
 }
-.form-horizontal .form-group,
-.form.horizontal .form-group {
+.form-horizontal .form-group {
   position: relative;
   width: auto;
   margin-right: -15px;
   margin-left: -15px;
 }
 .form-horizontal .form-group:before,
-.form.horizontal .form-group:before,
-.form-horizontal .form-group:after,
-.form.horizontal .form-group:after {
+.form-horizontal .form-group:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */
 }
-.form-horizontal .form-group:after,
-.form.horizontal .form-group:after {
+.form-horizontal .form-group:after {
   clear: both;
 }
 .form-horizontal .form-group:before,
-.form.horizontal .form-group:before,
-.form-horizontal .form-group:after,
-.form.horizontal .form-group:after {
+.form-horizontal .form-group:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */
 }
-.form-horizontal .form-group:after,
-.form.horizontal .form-group:after {
+.form-horizontal .form-group:after {
   clear: both;
 }
 .form-horizontal .form-control-static,
-.form.horizontal .form-control-static,
-.form-horizontal .form-control.static,
-.form.horizontal .form-control.static {
+.form-horizontal .form-control.static {
   padding-top: 7px;
 }
 @media (min-width: 768px) {
-  .form-horizontal .control-label,
-  .form.horizontal .control-label {
+  .form-horizontal .control-label {
     text-align: right;
   }
 }
@@ -4538,20 +4503,20 @@ textarea.input-group.sm > .input-group-btn > .btn {
   }
 }
 .navbar-static-top,
-.navbar.static.top {
+.navbar.static-top {
   z-index: 1000;
   border-width: 0 0 1px;
 }
 @media (min-width: 768px) {
   .navbar-static-top,
-  .navbar.static.top {
+  .navbar.static-top {
     border-radius: 0;
   }
 }
 .navbar-fixed-top,
-.navbar.fixed.top,
+.navbar.fixed-top,
 .navbar-fixed-bottom,
-.navbar.fixed.bottom {
+.navbar.fixed-bottom {
   position: fixed;
   right: 0;
   left: 0;
@@ -4559,19 +4524,19 @@ textarea.input-group.sm > .input-group-btn > .btn {
 }
 @media (min-width: 768px) {
   .navbar-fixed-top,
-  .navbar.fixed.top,
+  .navbar.fixed-top,
   .navbar-fixed-bottom,
-  .navbar.fixed.bottom {
+  .navbar.fixed-bottom {
     border-radius: 0;
   }
 }
 .navbar-fixed-top,
-.navbar.fixed.top {
+.navbar.fixed-top {
   top: 0;
   border-width: 0 0 1px;
 }
 .navbar-fixed-bottom,
-.navbar.fixed.bottom {
+.navbar.fixed-bottom {
   bottom: 0;
   margin-bottom: 0;
   border-width: 1px 0 0;
@@ -4661,12 +4626,10 @@ textarea.input-group.sm > .input-group-btn > .btn {
   }
 }
 @media (min-width: 768px) {
-  .navbar-left,
-  .navbar.left {
+  .navbar-left {
     float: left !important;
   }
-  .navbar-right,
-  .navbar.right {
+  .navbar-right {
     float: right !important;
   }
 }
@@ -4726,7 +4689,7 @@ textarea.input-group.sm > .input-group-btn > .btn {
   border-top-left-radius: 0;
 }
 .navbar-fixed-bottom .navbar-nav > li > .dropdown-menu,
-.navbar.fixed.bottom .navbar-nav > li > .dropdown-menu {
+.navbar.fixed-bottom .navbar-nav > li > .dropdown-menu {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
