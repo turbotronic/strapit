@@ -4399,16 +4399,16 @@ textarea.input-group.sm > .input-group-btn > .btn {
     overflow: visible !important;
   }
   .navbar-collapse.in {
-    overflow-y: auto;
+    overflow-y: visible;
   }
-  .navbar-collapse .navbar-nav.navbar-left:first-child {
-    margin-left: -15px;
-  }
-  .navbar-collapse .navbar-nav.navbar-right:last-child {
-    margin-right: -15px;
-  }
-  .navbar-collapse .navbar-text:last-child {
-    margin-right: 0;
+  .navbar-fixed-top .navbar-collapse,
+  .navbar.fixed-top .navbar-collapse,
+  .navbar-static-top .navbar-collapse,
+  .navbar.static-top .navbar-collapse,
+  .navbar-fixed-bottom .navbar-collapse,
+  .navbar.fixed-bottom .navbar-collapse {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 .container > .navbar-header,
@@ -4486,6 +4486,7 @@ textarea.input-group.sm > .input-group-btn > .btn {
   margin-top: 8px;
   margin-bottom: 8px;
   background-color: transparent;
+  background-image: none;
   border: 1px solid transparent;
   border-radius: 3px;
 }
@@ -4544,6 +4545,9 @@ textarea.input-group.sm > .input-group-btn > .btn {
   .navbar-nav > li > a {
     padding-top: 14px;
     padding-bottom: 14px;
+  }
+  .navbar-nav.navbar-right:last-child {
+    margin-right: -15px;
   }
 }
 @media (min-width: 768px) {
@@ -4606,6 +4610,9 @@ textarea.input-group.sm > .input-group-btn > .btn {
     -webkit-box-shadow: none;
     box-shadow: none;
   }
+  .navbar-form.navbar-right:last-child {
+    margin-right: -15px;
+  }
 }
 .navbar-nav > li > .dropdown-menu {
   margin-top: 0;
@@ -4626,6 +4633,16 @@ textarea.input-group.sm > .input-group-btn > .btn {
   margin-top: 7px;
   margin-bottom: 7px;
 }
+.navbar-btn.btn-sm,
+.navbar-btn.btn.sm {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.navbar-btn.btn-xs,
+.navbar-btn.btn.xs {
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
 .navbar-text {
   margin-top: 14px;
   margin-bottom: 14px;
@@ -4635,6 +4652,9 @@ textarea.input-group.sm > .input-group-btn > .btn {
     float: left;
     margin-left: 15px;
     margin-right: 15px;
+  }
+  .navbar-text.navbar-right:last-child {
+    margin-right: 0;
   }
 }
 .navbar-default,
@@ -4836,6 +4856,10 @@ textarea.input-group.sm > .input-group-btn > .btn {
   .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header,
   .navbar.inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
     border-color: #080808;
+  }
+  .navbar-inverse .navbar-nav .open .dropdown-menu .divider,
+  .navbar.inverse .navbar-nav .open .dropdown-menu .divider {
+    background-color: #080808;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a,
   .navbar.inverse .navbar-nav .open .dropdown-menu > li > a {

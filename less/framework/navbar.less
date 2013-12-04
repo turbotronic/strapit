@@ -74,18 +74,19 @@
     }
 
     &.in {
-      overflow-y: auto;
+      overflow-y: visible;
     }
 
-    // Account for first and last children spacing
-    .navbar-nav.navbar-left:first-child {
-      margin-left: -@navbar-padding-horizontal;
-    }
-    .navbar-nav.navbar-right:last-child {
-      margin-right: -@navbar-padding-horizontal;
-    }
-    .navbar-text:last-child {
-      margin-right: 0;
+    // Undo the collapse side padding for navbars with containers to ensure
+    // alignment of right-aligned contents.
+    .navbar-fixed-top &,
+    .navbar.fixed-top &,
+    .navbar-static-top &,
+    .navbar.static-top &,
+    .navbar-fixed-bottom &,
+    .navbar.fixed-bottom & {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 }
@@ -185,6 +186,7 @@
   padding: 9px 10px;
   .navbar-vertical-align(34px);
   background-color: transparent;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: 1px solid transparent;
   .border-radius(@border-radius-base);
 
@@ -255,6 +257,9 @@
         padding-bottom: ((@navbar-height - @line-height-computed) / 2);
       }
     }
+    &.navbar-right:last-child {
+      margin-right: -@navbar-padding-horizontal;
+    }
   }
 
 }
@@ -307,6 +312,11 @@
     padding-top: 0;
     padding-bottom: 0;
     .box-shadow(none);
+
+    // Outdent the form if last child to line up with content down the page
+    &.navbar-right:last-child {
+      margin-right: -@navbar-padding-horizontal;
+    }
   }
 }
 
@@ -338,6 +348,14 @@
 
 .navbar-btn {
   .navbar-vertical-align(@input-height-base);
+  &.btn-sm,
+  &.btn.sm {
+    .navbar-vertical-align(@input-height-small);
+  }
+  &.btn-xs,
+  &.btn.xs {
+    .navbar-vertical-align(22);
+  }
 }
 
 
@@ -352,6 +370,11 @@
     float: left;
     margin-left: @navbar-padding-horizontal;
     margin-right: @navbar-padding-horizontal;
+
+    // Outdent the form if last child to line up with content down the page
+    &.navbar-right:last-child {
+      margin-right: 0;
+    }
   }
 }
 
@@ -560,6 +583,9 @@
       .open .dropdown-menu {
         > .dropdown-header {
           border-color: @navbar-inverse-border;
+        }
+        .divider {
+          background-color: @navbar-inverse-border;
         }
         > li > a {
           color: @navbar-inverse-link-color;
