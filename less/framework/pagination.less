@@ -71,43 +71,40 @@
       cursor: not-allowed;
     }
   }
+  &.plain {
+    > li {
+      > a,
+      > span {
+        border: 0;
+      }
+      &:first-child {
+        > a,
+        > span {
+          border-left-width: 0;
+          .border-left-radius(0);
+        }
+      }
+      &:last-child {
+        > a,
+        > span {
+          .border-right-radius(0);
+        }
+      }
+    }
+  }
 }
 
 // Sizing
 // --------------------------------------------------
 
 // Large
-.pagination-lg {
+.pagination-lg,
+.pagination.lg  {
   .pagination-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @border-radius-large);
 }
 
 // Small
-.pagination-sm {
+.pagination-sm,
+.pagination.sm {
   .pagination-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @border-radius-small);
-}
-
-// Unadorned pagination (no borders)
-// --------------------------------------------------
-
-.pagination.plain {
-  > li {
-    > a,
-    > span {
-      border: 0;
-    }
-    &:first-child {
-      > a,
-      > span {
-        border-left-width: 0;
-        .border-left-radius(0);
-      }
-    }
-    &:last-child {
-      > a,
-      > span {
-        .border-right-radius(0);
-      }
-    }
-
-  }
 }

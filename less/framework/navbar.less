@@ -114,7 +114,8 @@
 // bottom of the page.
 
 // Static top (unfixed, but 100% wide) navbar
-.navbar-static-top {
+.navbar-static-top,
+.navbar.static-top {
   z-index: @zindex-navbar;
   border-width: 0 0 1px;
 
@@ -125,7 +126,9 @@
 
 // Fix the top/bottom navbars when screen real estate supports it
 .navbar-fixed-top,
-.navbar-fixed-bottom {
+.navbar.fixed-top,
+.navbar-fixed-bottom,
+.navbar.fixed-bottom {
   position: fixed;
   right: 0;
   left: 0;
@@ -136,11 +139,13 @@
     border-radius: 0;
   }
 }
-.navbar-fixed-top {
+.navbar-fixed-top,
+.navbar.fixed-top {
   top: 0;
   border-width: 0 0 1px;
 }
-.navbar-fixed-bottom {
+.navbar-fixed-bottom,
+.navbar.fixed-bottom {
   bottom: 0;
   margin-bottom: 0; // override .navbar defaults
   border-width: 1px 0 0;
@@ -262,7 +267,7 @@
 // though so that navbar contents properly stack and align in mobile.
 
 @media (min-width: @grid-float-breakpoint) {
-  .navbar-left  { .pull-left(); }
+  .navbar-left { .pull-left(); }
   .navbar-right { .pull-right(); }
 }
 
@@ -314,7 +319,8 @@
   .border-top-radius(0);
 }
 // Menu position and menu caret support for dropups via extra dropup class
-.navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {
+.navbar-fixed-bottom .navbar-nav > li > .dropdown-menu,
+.navbar.fixed-bottom .navbar-nav > li > .dropdown-menu {
   .border-bottom-radius(0);
 }
 
@@ -354,7 +360,8 @@
 // --------------------------------------------------
 
 // Default navbar
-.navbar-default {
+.navbar-default,
+.navbar.default {
   background-color: @navbar-default-bg;
   border-color: @navbar-default-border;
 
@@ -490,7 +497,8 @@
 
 // Inverse navbar
 
-.navbar-inverse {
+.navbar-inverse,
+.navbar.inverse  {
   background-color: @navbar-inverse-bg;
   border-color: @navbar-inverse-border;
 

@@ -13,6 +13,9 @@
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: .25em;
+  &.square {
+    border-radius: 0;
+  }
 
   // for adjacent labels, some spacing is needed
   + .label {
@@ -38,30 +41,38 @@
 // Colors
 // Contextual variations (linked labels get darker on :hover)
 
+
+.label-default,
 .label.default {
   .label-variant(@label-default-bg);
 }
 
+.label-primary,
 .label.primary {
   .label-variant(@label-primary-bg);
 }
 
+.label-success,
 .label.success {
   .label-variant(@label-success-bg);
 }
 
+.label-info,
 .label.info {
   .label-variant(@label-info-bg);
 }
 
+.label-warning,
 .label.warning {
   .label-variant(@label-warning-bg);
 }
 
+.label-danger,
 .label.danger {
   .label-variant(@label-danger-bg);
 }
 
+.label-rounded,
 .label.rounded {
   .radius(10px);
 }

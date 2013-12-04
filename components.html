@@ -604,7 +604,7 @@ base_url: "../"
     <h3 id="btn-dropdowns-dropup">Dropup variation</h3>
     <p>Trigger dropdown menus above elements by adding <code>.dropup</code> to the parent.</p>
     <div class="bs-example">
-      <div class="btn-toolbar" role="toolbar">
+      <div class="btn-group dropup">
           <button type="button" class="btn default">Dropup</button>
           <button type="button" class="btn default dropdown-toggle" data-toggle="dropdown">
             <span class="caret"></span>
@@ -646,8 +646,6 @@ base_url: "../"
   </ul>
 </div>
 {% endhighlight %}
-
-  </div>
 
   <!-- Input groups
   ================================================== -->
@@ -1373,7 +1371,7 @@ base_url: "../"
       <p>If JavaScript is disabled and the viewport is narrow enough that the navbar collapses, it will be impossible to expand the navbar and view the content within the <code>.navbar-collapse</code>.</p>
     </div>
     <div class="bs-example">
-      <nav class="navbar navbar-default" role="navigation">
+      <nav class="navbar default" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -1426,7 +1424,7 @@ base_url: "../"
       </nav>
     </div>
 {% highlight html %}
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar default" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -1493,7 +1491,7 @@ base_url: "../"
     <p>Place form content within <code>.navbar-form</code> for proper vertical alignment and collapsed behavior in narrow viewports. Use the alignment options to decide where it resides within the navbar content.</p>
     <p>As a heads up, <code>.navbar-form</code> shares much of it's code with <code>.form-inline</code> via mixin.</p>
     <div class="bs-example">
-      <nav class="navbar navbar-default" role="navigation">
+      <nav class="navbar default" role="navigation">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
             <span class="sr-only">Toggle navigation</span>
@@ -1530,7 +1528,7 @@ base_url: "../"
    <h2 id="navbar-buttons">Buttons</h2>
     <p>Add the <code>.navbar-btn</code> class to <code>&lt;button&gt;</code> elements not residing in a <code>&lt;form&gt;</code> to vertically center them in the navbar.</p>
     <div class="bs-example">
-      <nav class="navbar navbar-default" role="navigation">
+      <nav class="navbar default" role="navigation">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3">
             <span class="sr-only">Toggle navigation</span>
@@ -1557,7 +1555,7 @@ base_url: "../"
     <h2 id="navbar-text">Text</h2>
     <p>Wrap strings of text in an element with <code>.navbar-text</code>, usually on a <code>&lt;p&gt;</code> tag for proper leading and color.</p>
     <div class="bs-example">
-      <nav class="navbar navbar-default" role="navigation">
+      <nav class="navbar default" role="navigation">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-4">
             <span class="sr-only">Toggle navigation</span>
@@ -1606,9 +1604,9 @@ base_url: "../"
 
 
     <h2 id="navbar-fixed-top">Fixed to top</h2>
-    <p>Add <code>.navbar-fixed-top</code>.</p>
+    <p>Add <code>.fixed-top</code>.</p>
     <div class="bs-example bs-navbar-top-example">
-      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <nav class="navbar default fixed-top" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6">
@@ -1631,7 +1629,7 @@ base_url: "../"
       </nav>
     </div><!-- /example -->
 {% highlight html %}
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar default fixed-top" role="navigation">
   ...
 </nav>
 {% endhighlight %}
@@ -1647,9 +1645,9 @@ body { padding-top: 70px; }
 
 
     <h2 id="navbar-fixed-bottom">Fixed to bottom</h2>
-    <p>Add <code>.navbar-fixed-bottom</code> instead.</p>
+    <p>Add <code>.fixed-bottom</code> instead.</p>
     <div class="bs-example bs-navbar-bottom-example">
-      <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+      <nav class="navbar default fixed-bottom" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-7">
@@ -1672,7 +1670,7 @@ body { padding-top: 70px; }
       </nav>
     </div><!-- /example -->
 {% highlight html %}
-<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+<nav class="navbar default fixed-bottom" role="navigation">
   ...
 </nav>
 {% endhighlight %}
@@ -1688,9 +1686,9 @@ body { padding-bottom: 70px; }
 
 
     <h2 id="navbar-static-top">Static top</h2>
-    <p>Create a full-width navbar that scrolls away with the page by adding <code>.navbar-static-top</code>. Unlike the <code>.navbar-fixed-*</code> classes, you do not need to change any padding on the <code>body</code>.</p>
+    <p>Create a full-width navbar that scrolls away with the page by adding <code>.static-top</code>. Unlike the <code>.fixed-*</code> classes, you do not need to change any padding on the <code>body</code>.</p>
     <div class="bs-example bs-navbar-top-example">
-      <nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <nav class="navbar default static-top" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-8">
@@ -1713,16 +1711,16 @@ body { padding-bottom: 70px; }
       </nav>
     </div><!-- /example -->
 {% highlight html %}
-<nav class="navbar navbar-default navbar-static-top" role="navigation">
+<nav class="navbar default static-top" role="navigation">
   ...
 </nav>
 {% endhighlight %}
 
 
     <h2 id="navbar-inverted">Inverted navbar</h2>
-    <p>Modify the look of the navbar by adding <code>.navbar-inverse</code>.</p>
+    <p>Modify the look of the navbar by adding <code>.inverse</code>.</p>
     <div class="bs-example">
-      <nav class="navbar navbar-inverse" role="navigation">
+      <nav class="navbar inverse" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9">
@@ -1745,7 +1743,7 @@ body { padding-bottom: 70px; }
       </nav>
     </div><!-- /example -->
 {% highlight html %}
-<nav class="navbar navbar-inverse" role="navigation">
+<nav class="navbar inverse" role="navigation">
   ...
 </nav>
 {% endhighlight %}
@@ -1904,10 +1902,10 @@ body { padding-bottom: 70px; }
 </ul>
 {% endhighlight %}
     <h3>Sizing</h3>
-    <p>Fancy larger or smaller pagination? Add <code>.pagination-lg</code> or <code>.pagination-sm</code> for additional sizes.</p>
+    <p>Fancy larger or smaller pagination? Add <code>.lg</code> or <code>.sm</code> for additional sizes.</p>
     <div class="bs-example">
       <div>
-        <ul class="pagination pagination-lg">
+        <ul class="pagination lg">
           <li><a href="#">&laquo;</a></li>
           <li><a href="#">1</a></li>
           <li><a href="#">2</a></li>
@@ -1929,7 +1927,7 @@ body { padding-bottom: 70px; }
         </ul>
       </div>
       <div>
-        <ul class="pagination pagination-sm">
+        <ul class="pagination sm">
           <li><a href="#">&laquo;</a></li>
           <li><a href="#">1</a></li>
           <li><a href="#">2</a></li>
@@ -1941,9 +1939,9 @@ body { padding-bottom: 70px; }
       </div>
     </div>
 {% highlight html %}
-<ul class="pagination pagination-lg">...</ul>
+<ul class="pagination lg">...</ul>
 <ul class="pagination">...</ul>
-<ul class="pagination pagination-sm">...</ul>
+<ul class="pagination sm">...</ul>
 {% endhighlight %}
 
 

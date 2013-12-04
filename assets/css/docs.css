@@ -492,8 +492,8 @@ h4[id] {
 .bs-navbar-bottom-example .navbar-header {
   margin-left: 0;
 }
-.bs-navbar-top-example .navbar-fixed-top,
-.bs-navbar-bottom-example .navbar-fixed-bottom {
+.bs-navbar-top-example .navbar.fixed-top,
+.bs-navbar-bottom-example .navbar.fixed-bottom {
   position: relative;
   margin-left: 0;
   margin-right: 0;
@@ -505,21 +505,21 @@ h4[id] {
   top: auto;
   bottom: 15px;
 }
-.bs-navbar-top-example .navbar-fixed-top {
+.bs-navbar-top-example .navbar.fixed-top {
   top: -1px;
 }
 .bs-navbar-bottom-example {
   padding-top: 45px;
 }
-.bs-navbar-bottom-example .navbar-fixed-bottom {
+.bs-navbar-bottom-example .navbar.fixed-bottom {
   bottom: -1px;
 }
 .bs-navbar-bottom-example .navbar {
   margin-bottom: 0;
 }
 @media (min-width: 768px) {
-  .bs-navbar-top-example .navbar-fixed-top,
-  .bs-navbar-bottom-example .navbar-fixed-bottom {
+  .bs-navbar-top-example .navbar.fixed-top,
+  .bs-navbar-bottom-example .navbar.fixed-bottom {
     position: absolute;
   }
   .bs-navbar-top-example {

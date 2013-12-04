@@ -78,6 +78,7 @@
 // -------------------------
 
 // Give the tabs something to sit on
+.nav-tabs,
 .tabs {
   border-bottom: 1px solid @nav-tabs-border-color;
   > li {
@@ -110,7 +111,7 @@
     }
   }
   // pulling this in mainly for less shorthand
-  &.justified {
+  &.justified{
     .nav-justified();
     .tabs-justified();
   }
@@ -119,6 +120,7 @@
 
 // Pills
 // -------------------------
+.nav-pills,
 .pills {
   > li {
     float: left;
@@ -262,6 +264,7 @@
 // -------------------------
 
 .tabs-below {
+  > .nav-tabs,
   > .tabs {
     border-top: 1px solid @nav-tabs-border-color;
     border-bottom: 0;
@@ -292,6 +295,7 @@
 
 .tabs-left,
 .tabs-right {
+  .nav-tabs,
   .tabs {
     border-bottom: 0;
     > li {
@@ -310,6 +314,7 @@
 }
 
 .tabs-left {
+   > .nav-tabs,
    > .tabs {
     float: left;
     margin-right: 19px;
@@ -335,6 +340,7 @@
 }
 
 .tabs-right {
+   > .nav-tabs,
    > .tabs {
     float: right;
     margin-left: 19px;
@@ -374,41 +380,10 @@
 }
 
 // Specific dropdowns
+.nav-tabs .dropdown-menu,
 .tabs .dropdown-menu {
   // make dropdown border overlap tab border
   margin-top: -1px;
   // Remove the top rounded corners here since there is a hard edge above the menu
   .border-top-radius(0);
-}
-
-
-// Subnav
-// -------------------------
-.sub-nav {
-  overflow: hidden;
-  margin: -0.25em 0 @line-height-computed/2 -0.5625em;
-  padding-top: 0.25em;
-  li {
-    display: inline-block;
-    font-weight: @font-weight-base;
-    margin-left: 0.5625em;
-    .font-size(@font-size-small);
-  &.nav-label {
-  }
-    a {
-      color: @disabled-color;
-      text-decoration: none;
-      &:hover {
-        color:@gray-dark;
-      }
-    }
-    &.active a {
-      .border-radius(@border-radius-base);
-      font-weight: @font-weight-bold;
-      background: @brand-primary;
-      padding: 0.1875em 0.5625em;
-      cursor: default;
-      color: #fff;
-    }
-  }
 }
