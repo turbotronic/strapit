@@ -4186,28 +4186,10 @@ textarea.input-group.sm > .input-group-btn > .btn {
     border-bottom-color: #ffffff;
   }
 }
-.tabbable:before,
-.tabbable:after {
-  content: " ";
-  display: table;
-}
-.tabbable:after {
-  clear: both;
-}
-.tabbable:before,
-.tabbable:after {
-  content: " ";
-  display: table;
-}
-.tabbable:after {
-  clear: both;
-}
-.tab-content > .tab-pane,
-.pill-content > .pill-pane {
+.tab-content > .tab-pane {
   display: none;
 }
-.tab-content > .active,
-.pill-content > .active {
+.tab-content > .active {
   display: block;
 }
 .tab-pane {
