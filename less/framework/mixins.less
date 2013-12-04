@@ -19,19 +19,19 @@
 .clearfix() {
   &:before,
   &:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+    content: " "; // 1
+    display: table; // 2
   }
   &:after {
     clear: both;
   }
 }
 
-// Webkit-style focus
+// WebKit-style focus
 .tab-focus() {
   // Default
-  outline: thin dotted #333;
-  // Webkit
+  outline: thin dotted;
+  // WebKit
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -389,9 +389,6 @@
     + .panel-collapse .panel-body {
       border-top-color: @border;
     }
-    & > .dropdown .caret {
-      border-color: @heading-text-color transparent;
-    }
   }
   & > .panel-footer {
     + .panel-collapse .panel-body {
@@ -416,28 +413,27 @@
 
 // Tables
 // -------------------------
-.table-row-variant(@state; @background; @border) {
+.table-row-variant(@state; @background) {
   // Exact selectors below required to override `.table-striped` and prevent
   // inheritance to nested tables.
-  .table > thead > tr,
-  .table > tbody > tr,
-  .table > tfoot > tr {
-    > td.@{state},
-    > th.@{state},
-    &.@{state} > td,
-    &.@{state} > th {
-      background-color: @background;
+  .table {
+    > thead,
+    > tbody,
+    > tfoot {
+      > tr > .@{state},
+      > .@{state} > td,
+      > .@{state} > th {
+        background-color: @background;
+      }
     }
   }
 
   // Hover states for `.table-hover`
   // Note: this is not available for cells or rows within `thead` or `tfoot`.
-  .table-hover > tbody > tr,
-  .table.hover > tbody > tr {
-    > td.@{state}:hover,
-    > th.@{state}:hover,
-    &.@{state}:hover > td,
-    &.@{state}:hover > th {
+  .table-hover > tbody {
+    > tr > .@{state}:hover,
+    > .@{state}:hover > td,
+    > .@{state}:hover > th {
       background-color: darken(@background, 5%);
     }
   }
@@ -478,6 +474,10 @@
       background-color: @background;
           border-color: @border;
     }
+  }
+  .badge {
+    color: @background;
+    background-color: #fff;
   }
 }
 
