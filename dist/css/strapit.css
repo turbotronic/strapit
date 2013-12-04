@@ -1938,7 +1938,7 @@ pre code {
   color: inherit;
   white-space: pre-wrap;
   background-color: transparent;
-  border: 0;
+  border-radius: 0;
 }
 .pre-scrollable {
   max-height: 340px;
