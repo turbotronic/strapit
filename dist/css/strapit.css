@@ -5541,7 +5541,8 @@ a.list-group-item.active > .badge,
   color: inherit;
   background-color: #eeeeee;
 }
-.jumbotron h1 {
+.jumbotron h1,
+.jumbotron .h1 {
   line-height: 1;
   color: inherit;
 }
@@ -5560,7 +5561,8 @@ a.list-group-item.active > .badge,
     padding-left: 60px;
     padding-right: 60px;
   }
-  .jumbotron h1 {
+  .jumbotron h1,
+  .jumbotron .h1 {
     font-size: 63px;
     font-size: 6.3rem;
   }
