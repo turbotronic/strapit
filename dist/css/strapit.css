@@ -6306,11 +6306,6 @@ button.close {
 .modal-open {
   overflow: hidden;
 }
-body.modal-open,
-.modal-open .navbar-fixed-top,
-.modal-open .navbar-fixed-bottom {
-  margin-right: 15px;
-}
 .modal {
   display: none;
   overflow: auto;
@@ -6338,10 +6333,8 @@ body.modal-open,
 }
 .modal-dialog {
   position: relative;
-  margin-left: auto;
-  margin-right: auto;
   width: auto;
-  padding: 10px;
+  margin: 10px;
   z-index: 1050;
 }
 .modal-content {
@@ -6423,10 +6416,8 @@ body.modal-open,
 }
 @media screen and (min-width: 768px) {
   .modal-dialog {
-    right: auto;
     width: 600px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    margin: 30px auto;
   }
   .modal-content {
     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
