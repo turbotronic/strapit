@@ -5893,12 +5893,16 @@ a.list-group-item.active:focus .list-group-item-text {
   border-top-width: 0;
 }
 .panel > .table,
-.panel > .table-responsive {
+.panel > .table-responsive > .table {
   margin-bottom: 0;
 }
 .panel > .panel-body + .table,
 .panel > .panel-body + .table-responsive {
   border-top: 1px solid #dddddd;
+}
+.panel > .table > tbody:first-child th,
+.panel > .table > tbody:first-child td {
+  border-top: 0;
 }
 .panel > .table-bordered,
 .panel > .table.bordered,
@@ -5998,6 +6002,7 @@ a.list-group-item.active:focus .list-group-item-text {
   margin-bottom: 0;
   font-size: 16px;
   font-size: 1.6rem;
+  color: inherit;
 }
 .panel-title > a {
   color: inherit;
