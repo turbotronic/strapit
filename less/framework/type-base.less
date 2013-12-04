@@ -22,8 +22,10 @@ h1, h2, h3, h4, h5, h6,
   line-height: @headings-line-height;
   color: @headings-color;
   text-rendering: optimizeLegibility;
-  small {
-    font-weight: @font-weight-base;
+
+  small,
+  .small {
+    font-weight: normal;
     line-height: 1;
     color: @headings-small-color;
   }
@@ -35,7 +37,8 @@ h3 {
   margin-top: @line-height-computed;
   margin-bottom: (@line-height-computed / 2);
 
-  small {
+  small,
+  .small {
     font-size: 60%;
   }
 }
@@ -45,7 +48,8 @@ h6 {
   margin-top: (@line-height-computed / 2);
   margin-bottom: (@line-height-computed / 2);
 
-  small {
+  small,
+  .small {
     font-size: 70%;
   }
 }
