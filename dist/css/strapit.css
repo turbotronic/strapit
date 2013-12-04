@@ -2632,6 +2632,9 @@ input.square {
   .form-inline .form-control {
     display: inline-block;
   }
+  .form-inline select.form-control {
+    width: auto;
+  }
   .form-inline .radio,
   .form-inline .checkbox {
     display: inline-block;
@@ -2653,6 +2656,10 @@ input.square {
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 7px;
+}
+.form-horizontal .radio,
+.form-horizontal .checkbox {
+  min-height: 29px;
 }
 .form-horizontal .form-group {
   position: relative;
@@ -4660,6 +4667,9 @@ textarea.input-group.sm > .input-group-btn > .btn {
   }
   .navbar-form .form-control {
     display: inline-block;
+  }
+  .navbar-form select.form-control {
+    width: auto;
   }
   .navbar-form .radio,
   .navbar-form .checkbox {
