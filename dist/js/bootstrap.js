@@ -704,7 +704,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
   var backdrop = '.dropdown-backdrop'
   var toggle   = '[data-toggle=dropdown]'
   var Dropdown = function (element) {
-    var $el = $(element).on('click.bs.dropdown', this.toggle)
+    $(element).on('click.bs.dropdown', this.toggle)
   }
 
   Dropdown.prototype.toggle = function (e) {
@@ -763,7 +763,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
     if (e.keyCode == 38 && index > 0)                 index--                        // up
     if (e.keyCode == 40 && index < $items.length - 1) index++                        // down
-    if (!~index)                                      index=0
+    if (!~index)                                      index = 0
 
     $items.eq(index).focus()
   }
@@ -1013,7 +1013,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     } else if (!this.isShown && this.$backdrop) {
       this.$backdrop.removeClass('in')
 
-      $.support.transition && this.$element.hasClass('fade')?
+      $.support.transition && this.$element.hasClass('fade') ?
         this.$backdrop
           .one($.support.transition.end, callback)
           .emulateTransitionEnd(150) :
@@ -1213,7 +1213,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
   }
 
   Tooltip.prototype.show = function () {
-    var e = $.Event('show.bs.'+ this.type)
+    var e = $.Event('show.bs.' + this.type)
 
     if (this.hasContent() && this.enabled) {
       this.$element.trigger(e)
@@ -1272,7 +1272,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     }
   }
 
-  Tooltip.prototype.applyPlacement = function(offset, placement) {
+  Tooltip.prototype.applyPlacement = function (offset, placement) {
     var replace
     var $tip   = this.tip()
     var width  = $tip[0].offsetWidth
@@ -1323,8 +1323,8 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     if (replace) $tip.offset(offset)
   }
 
-  Tooltip.prototype.replaceArrow = function(delta, dimension, position) {
-    this.arrow().css(position, delta ? (50 * (1 - delta / dimension) + "%") : '')
+  Tooltip.prototype.replaceArrow = function (delta, dimension, position) {
+    this.arrow().css(position, delta ? (50 * (1 - delta / dimension) + '%') : '')
   }
 
   Tooltip.prototype.setContent = function () {
@@ -2004,51 +2004,3 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
   })
 
 }(jQuery);
-
-// Responsive tables
-// ---------------------------------
-
-(function($) {
-  // determine if table-responsive is present
-  if($('.table-responsive').length) {
-    $('.table-responsive').each(function(i, table) {
-      init($(table));
-    });
-  }
-  
-  function init(table) {
-    table.addClass('js'); // activates CSS for the table
-    var $childTable = table.find('.table'),
-        breakpoint = ($childTable.width() == undefined) ? $(window).width() : $childTable.width(),
-        switched = false,
-        updateTable = function() {
-          if ((table.width() <= breakpoint) && !switched ) {
-            switched = true;
-            $childTable.each(function(i, element) {
-              splitTable($(element));
-            });
-            return true;
-          } else if (switched && (table.width() > breakpoint)) {
-            switched = false;
-            $childTable.each(function(i, element) {
-              unsplitTable($(element));
-            });
-          }
-        },
-        splitTable = function(org) {
-          var cp = org.clone();
-          org.wrap('<div class="table-wrapper" />');
-          cp.find('td:not(:first-child), th:not(:first-child)').css('display', 'none');
-          org.closest('.table-wrapper').append(cp);
-          cp.wrap('<div class="pinned" />');
-          org.wrap('<div class="scrollable" />');
-        },
-        unsplitTable = function(org) {
-          org.closest('.table-wrapper').find('.pinned').remove();
-          org.unwrap();
-          org.unwrap();
-        };
-    updateTable();
-    $(window).bind('resize', updateTable);
-  }
-})(jQuery);
