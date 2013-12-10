@@ -4,7 +4,7 @@
 
 !function ($) {
 
-  $(function(){
+  $(function () {
 
     var $window = $(window)
     var $body   = $(document.body)
@@ -78,6 +78,6 @@
 
     // carousel demo
     $('.bs-docs-carousel-example').carousel()
-})
+  })
 
-}(window.jQuery)
+}(jQuery)
