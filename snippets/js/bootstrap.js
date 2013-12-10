@@ -28,7 +28,7 @@ if(!window.Zepto && !window.jQuery) {
  * ======================================================================== */
 
 
-+function ($) { "use strict";
++function ($) { 'use strict';
 
   // CSS TRANSITION SUPPORT (Shoutout: http://www.modernizr.com/)
   // ============================================================
@@ -85,7 +85,7 @@ if(!window.Zepto && !window.jQuery) {
  * ======================================================================== */
 
 
-+function ($) { "use strict";
++function ($) { 'use strict';
 
   // ALERT CLASS DEFINITION
   // ======================
@@ -184,7 +184,7 @@ if(!window.Zepto && !window.jQuery) {
  * ======================================================================== */
 
 
-+function ($) { "use strict";
++function ($) { 'use strict';
 
   // BUTTON PUBLIC CLASS DEFINITION
   // ==============================
@@ -294,7 +294,7 @@ if(!window.Zepto && !window.jQuery) {
  * ======================================================================== */
 
 
-+function ($) { "use strict";
++function ($) { 'use strict';
 
   // CAROUSEL CLASS DEFINITION
   // =========================
@@ -512,7 +512,7 @@ if(!window.Zepto && !window.jQuery) {
  * ======================================================================== */
 
 
-+function ($) { "use strict";
++function ($) { 'use strict';
 
   // COLLAPSE PUBLIC CLASS DEFINITION
   // ================================
@@ -692,7 +692,7 @@ if(!window.Zepto && !window.jQuery) {
  * ======================================================================== */
 
 
-+function ($) { "use strict";
++function ($) { 'use strict';
 
   // DROPDOWN CLASS DEFINITION
   // =========================
@@ -847,7 +847,7 @@ if(!window.Zepto && !window.jQuery) {
  * ======================================================================== */
 
 
-+function ($) { "use strict";
++function ($) { 'use strict';
 
   // MODAL CLASS DEFINITION
   // ======================
@@ -1095,7 +1095,7 @@ if(!window.Zepto && !window.jQuery) {
  * ======================================================================== */
 
 
-+function ($) { "use strict";
++function ($) { 'use strict';
 
   // TOOLTIP PUBLIC CLASS DEFINITION
   // ===============================
@@ -1481,7 +1481,7 @@ if(!window.Zepto && !window.jQuery) {
  * ======================================================================== */
 
 
-+function ($) { "use strict";
++function ($) { 'use strict';
 
   // POPOVER PUBLIC CLASS DEFINITION
   // ===============================
@@ -1599,7 +1599,7 @@ if(!window.Zepto && !window.jQuery) {
  * ======================================================================== */
 
 
-+function ($) { "use strict";
++function ($) { 'use strict';
 
   // SCROLLSPY CLASS DEFINITION
   // ==========================
@@ -1758,7 +1758,7 @@ if(!window.Zepto && !window.jQuery) {
  * ======================================================================== */
 
 
-+function ($) { "use strict";
++function ($) { 'use strict';
 
   // TAB CLASS DEFINITION
   // ====================
@@ -1894,7 +1894,7 @@ if(!window.Zepto && !window.jQuery) {
  * ======================================================================== */
 
 
-+function ($) { "use strict";
++function ($) { 'use strict';
 
   // AFFIX CLASS DEFINITION
   // ======================

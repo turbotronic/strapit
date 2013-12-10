@@ -6,6 +6,20 @@
 
   $(function () {
 
+   // IE10 viewport hack for Surface/desktop Windows 8 bug
+      //
+      // See Getting Started docs for more information
+      if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+        var msViewportStyle = document.createElement('style');
+        msViewportStyle.appendChild(
+          document.createTextNode(
+            '@-ms-viewport{width:auto!important}'
+          )
+        );
+        document.getElementsByTagName('head')[0].
+          appendChild(msViewportStyle);
+      }
+
     var $window = $(window)
     var $body   = $(document.body)
 
@@ -50,20 +64,20 @@
 
     // tooltip demo
     $('.tooltip-demo').tooltip({
-      selector: "[data-toggle=tooltip]",
-      container: "body"
+      selector: '[data-toggle=tooltip]',
+      container: 'body'
     })
 
     $('.tooltip-test').tooltip()
     $('.popover-test').popover()
 
     $('.bs-docs-navbar').tooltip({
-      selector: "a[data-toggle=tooltip]",
-      container: ".bs-docs-navbar .nav"
+      selector: 'a[data-toggle=tooltip]',
+      container: '.bs-docs-navbar .nav'
     })
 
     // popover demo
-    $("[data-toggle=popover]")
+    $('[data-toggle=popover]')
       .popover()
 
     // button state demo
