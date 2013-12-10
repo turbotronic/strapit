@@ -1477,6 +1477,12 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
             </td>
             <td>Indicates a dangerous or potentially negative action</td>
           </tr>
+          <tr>
+            <td>
+              <code>.info</code>
+            </td>
+            <td>Indicates a neutral informative change or action</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -1533,6 +1539,18 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
             <td>Column content</td>
             <td>Column content</td>
           </tr>
+          <tr>
+            <td>8</td>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+          </tr>
+          <tr class="info">
+            <td>9</td>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+          </tr>
         </tbody>
       </table>
     </div><!-- /example -->
@@ -1542,6 +1560,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 <tr class="success">...</tr>
 <tr class="warning">...</tr>
 <tr class="danger">...</tr>
+<tr class="info">...</tr>
 
 <!-- On cells (`td` or `th`) -->
 <tr>
@@ -1549,6 +1568,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
   <td class="success">...</td>
   <td class="warning">...</td>
   <td class="danger">...</td>
+  <td class="info">...</td>
 </tr>
 {% endhighlight %}
 
