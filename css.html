@@ -75,7 +75,8 @@ base_url: "../"
     <p>For improved cross-browser rendering, we use <a href="http://necolas.github.io/normalize.css/" target="_blank">Normalize</a>, a project by <a href="http://twitter.com/necolas" target="_blank">Nicolas Gallagher</a> and <a href="http://twitter.com/jon_neal" target="_blank">Jonathan Neal</a>. However, rather than one large file, Normailize is split up within the framework where the appropriate styles are grouped the LESS file that they impact. For example, you'll find Normailze's fonr styles within <code>forms.less</code>.</p><p>The advantage of this approach is that you use only the styles you need, so if you did not need <code>forms.less</code>, you would not get hte reset styles, either. The disadvantage is that it is harder to maintain when Normalize updates. For that reason, each Normalize style is commented with a version number e.g.: <code>//(nm v2.1.3)</code>.</p>
 
     <h3 id="overview-container">Containers</h3>
-    <p>Easily center a page's contents by wrapping its contents in a <code>.container</code>.</p>
+      <p>Easily center a page's contents by wrapping its contents in a <code>.container</code>.</p>
+      <p>Note that, due to <code>padding</code>, containers are not nestable by default.</p>
 {% highlight html %}
 <div class="container">
   ...
