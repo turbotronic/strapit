@@ -3845,7 +3845,7 @@ textarea.input-group.sm > .input-group-btn > .btn {
   }
   .switch input:first-of-type:checked ~ span:last-child {
     left: 100%;
-    margin-left: -28px;
+    margin-left: -32px;
   }
   .switch span:last-child {
     border-radius: 3px;

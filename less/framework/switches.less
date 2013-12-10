@@ -65,39 +65,34 @@
       }
       &:first-of-type:checked ~ span:last-child {
         left: 100%;
-        margin-left: -@switch-height + 2; 
+        margin-left: -(@switch-height + 2); 
       }
     }
     span {
       &:last-child {
         .border-radius(@border-radius-base);
-        width: @switch-height - 2;
-        height: @switch-height - 2;
+        width: (@switch-height - 2);
+        height: (@switch-height - 2);
         position: absolute;
         z-index: 1;
         display: block;
         padding: 0;
         border: 1px solid darken(@border-color, 10%);
         .transition(all 0.1s ease-out);
-        //#gradient > .vertical(#fff; 0%; #eee; 100%);
         .box-shadow(~'2px 0 10px 0 rgba(0, 0, 0, 0.07), 1000px 0 0 980px #e1f5d1, -2px 0 10px 0 rgba(0, 0, 0, 0.07), -1000px 0 0 1000px #f5f5f5');
       }
     }
     &:active {
       background: transparent;
     }
-    &:hover span:last-child,
-    &:focus span:last-child {
-       //#gradient > .vertical(#fff, 0%, @gray-lighter, 100%);
-    }
   }
   .switch-sm,
   .switch.sm {
     .border-radius(@border-radius-base);
-    height: @switch-height * .75;
+    height: (@switch-height * .75);
     label {
       padding: 0 @padding-base-horizontal;
-      line-height: @switch-height * .75;
+      line-height: (@switch-height * .75);
       .font-size(@font-size-small * .8);
     }
     input {
@@ -116,7 +111,7 @@
   .switch-lg,
   .switch.lg {
     .border-radius(@border-radius-large);
-    height: @switch-height * 1.5;
+    height: (@switch-height * 1.5);
     label {
       padding: 0 @padding-base-horizontal;
       line-height: (@switch-height * 1.5) - 2;

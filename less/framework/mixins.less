@@ -739,19 +739,17 @@
 // Framework grid generation
 //
 // Used only by Bootstrap to generate the correct number of grid classes given
-// any value of `@grid-columns`. Included here only as reference -- these are 
-// not used in the Strapit framework. Refer to mixins-custom.less for the 
-// functional grid-creation tools.
+// any value of `@grid-columns`.
 
 .make-grid-columns() {
   // Common styles for all sizes of grid columns, widths 1-12
   .col(@index) when (@index = 1) { // initial
     @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
-    .col(@index + 1, @item);
+    .col((@index + 1), @item);
   }
   .col(@index, @list) when (@index =< @grid-columns) { // general; "=<" isn't a typo
     @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
-    .col(@index + 1, ~"@{list}, @{item}");
+    .col((@index + 1), ~"@{list}, @{item}");
   }
   .col(@index, @list) when (@index > @grid-columns) { // terminal
     @{list} {
@@ -769,13 +767,13 @@
 .make-grid-columns-float(@class) {
   .col(@index) when (@index = 1) { // initial
     @item: ~".col-@{class}-@{index}";
-    .col(@index + 1, @item);
+    .col((@index + 1), @item);
   }
-  .col(@index, @list) when (@index < @grid-columns) { // general
+  .col(@index, @list) when (@index =< @grid-columns) { // general
     @item: ~".col-@{class}-@{index}";
-    .col(@index + 1, ~"@{list}, @{item}");
+    .col((@index + 1), ~"@{list}, @{item}");
   }
-  .col(@index, @list) when (@index = @grid-columns) { // terminal
+  .col(@index, @list) when (@index > @grid-columns) { // terminal
     @{list} {
       float: left;
     }
@@ -808,10 +806,8 @@
 .make-grid(@index, @class, @type) when (@index >= 0) {
   .calc-grid(@index, @class, @type);
   // next iteration
-  .make-grid(@index - 1, @class, @type);
+  .make-grid((@index - 1), @class, @type);
 }
-
-
 
 // Form validation states
 //
