@@ -9,7 +9,7 @@
 // Core styles
 .btn {
   display: inline-block;
-  padding: @padding-base-vertical @padding-base-horizontal;
+  padding: @btn-padding;
   margin-bottom: 0; // For input.btn
   .font-size(@font-size-base);
   font-weight: @btn-font-weight;
@@ -19,7 +19,7 @@
   cursor: pointer;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: 1px solid transparent;
-  .border-radius(@border-radius-base);
+  .border-radius(@btn-border-radius);
   white-space: nowrap;
   .user-select(none);
 
