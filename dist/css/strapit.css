@@ -2089,22 +2089,6 @@ table th.col {
 .table-hover > tbody > .success:hover > th {
   background-color: #d0e9c6;
 }
-.table > thead > tr > .danger,
-.table > tbody > tr > .danger,
-.table > tfoot > tr > .danger,
-.table > thead > .danger > td,
-.table > tbody > .danger > td,
-.table > tfoot > .danger > td,
-.table > thead > .danger > th,
-.table > tbody > .danger > th,
-.table > tfoot > .danger > th {
-  background-color: #f2dede;
-}
-.table-hover > tbody > tr > .danger:hover,
-.table-hover > tbody > .danger:hover > td,
-.table-hover > tbody > .danger:hover > th {
-  background-color: #ebcccc;
-}
 .table > thead > tr > .warning,
 .table > tbody > tr > .warning,
 .table > tfoot > tr > .warning,
@@ -2120,6 +2104,22 @@ table th.col {
 .table-hover > tbody > .warning:hover > td,
 .table-hover > tbody > .warning:hover > th {
   background-color: #faf2cc;
+}
+.table > thead > tr > .danger,
+.table > tbody > tr > .danger,
+.table > tfoot > tr > .danger,
+.table > thead > .danger > td,
+.table > tbody > .danger > td,
+.table > tfoot > .danger > td,
+.table > thead > .danger > th,
+.table > tbody > .danger > th,
+.table > tfoot > .danger > th {
+  background-color: #f2dede;
+}
+.table-hover > tbody > tr > .danger:hover,
+.table-hover > tbody > .danger:hover > td,
+.table-hover > tbody > .danger:hover > th {
+  background-color: #ebcccc;
 }
 @media print {
   .table {
