@@ -5915,6 +5915,13 @@ a.list-group-item.active:focus .list-group-item-text {
 .panel > .table-responsive > .table.bordered > tfoot > tr:last-child > td {
   border-bottom: 0;
 }
+.panel > .table-bordered > .table-responsive,
+.panel > .table.bordered > .table-responsive,
+.panel > .table-responsive > .table-bordered > .table-responsive,
+.panel > .table-responsive > .table.bordered > .table-responsive {
+  border: 0;
+  margin-bottom: 0;
+}
 .panel-heading {
   padding: 10px 15px;
   border-bottom: 1px solid transparent;
