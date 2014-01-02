@@ -122,13 +122,22 @@
 // -------------------------
 .input-group-btn {
   position: relative;
+  // Jankily prevent input button groups from wrapping
   white-space: nowrap;
+  // in combination with inline-blocks and nowrap, space characters would take visible space
+  font-size: 0;
+  // Negative margin to only have a 1px border between the two
+  &:first-child > .btn {
+    margin-right: -1px;
+  }
+  &:last-child > .btn {
+    margin-left: -1px;
+  }
 }
 .input-group-btn > .btn {
   position: relative;
-  // Jankily prevent input button groups from wrapping
   + .btn {
-    margin-left: -4px;
+    margin-left: -1px;
   }
   // Bring the "active" button to the front
   &:hover,
