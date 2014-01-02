@@ -15,9 +15,9 @@ All deviations are detailed in the docs. In addition, we will be keeping up with
 
 ## Why was this mashup constructed?
 
-We really like Bootstrap and we really like Foundation. We wished we could use the best of both at once, so we took the things we really liked about each and put them together. We prefer Bootstrap's clean, turn-key look and it's abundance of UI options to Foundation's rather basic offerings.
+We really like Bootstrap and we really like Foundation. We wished we could use the best of both at once, so we took the things we really liked about each and put them together. We prefer Bootstrap's clean, turn-key look and its abundance of UI options to Foundation's rather basic offerings.
 
-However, Foundation is really strong it's additional Javascript offerings. Although we do not anticipate adding the Foundation Javascript library to this framework, we are choosing alternate plugins to that will perform the same functions, such as form validation and progressive image enhancement. We also believe ZURB's experiments and subsequent solutions for things like responsive tables and off-canvas layouts are elegant and worth using.
+However, Foundation is really strong with its additional Javascript offerings. Although we do not anticipate adding the Foundation Javascript library to this framework, we are choosing alternate plugins to that will perform the same functions, such as form validation and progressive image enhancement. We also believe ZURB's experiments and subsequent solutions for things like responsive tables and off-canvas layouts are elegant and worth using.
 
 ## Documentation
 
