@@ -1,8 +1,8 @@
 {
-    "name": "jboho/strapit"
+    "name": "DFMLabs/strapit"
   , "description": "A CSS framework mashup of Twitter's Bootstrap and ZURB's Foundation."
   , "keywords": ["strapit", "bootstrap", "css", "foundation", "framework"]
-  , "homepage": "https://github.com/jboho/strapit"
+  , "homepage": "https://github.com/DFMLabs/strapit"
   , "bootstrap-authors": [
       {
         "name": "Mark Otto",
@@ -20,6 +20,6 @@
       }
     ]
   ,"support": {
-      "issues": "https://github.com/jboho/strapit/issues"
+      "issues": "https://github.com/DFMLabs/strapit/issues"
     }
 }
