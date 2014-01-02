@@ -6,12 +6,17 @@ pygments:         true
 permalink:        pretty
 
 # Server
+source:           ./docs
 destination:      ./_gh_pages
-exclude:          [".editorconfig", ".gitignore", ".ruby-version", "bower.json", "composer.json", "CONTRIBUTING.md", "CNAME", "LICENSE", "Gruntfile.js", "package.json", "node_modules", "README.md", "less"]
+host:             0.0.0.0
 port:             9001
+baseurl:          /
+url:              http://localhost:9001
 
 # Custom vars
 current_version:  2.0.1
 repo:             https://github.com/jboho/strapit
-download:         https://github.com/jboho/strapit/archive/strapit.zip
-download_dist:    https://sandbox.digitalfirstmedia.com/strapit/dist/strapit-v2.0.1-dist.zip
+
+download:
+  source:         https://github.com/jboho/strapit/archive/strapit.zip
+  dist:           https://sandbox.digitalfirstmedia.com/strapit/dist/strapit-v2.0.1-dist.zip
