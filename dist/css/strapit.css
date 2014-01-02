@@ -2640,6 +2640,9 @@ input.square {
   .form-inline select.form-control {
     width: auto;
   }
+  .form-inline > select.form-control {
+    width: auto;
+  }
   .form-inline .radio,
   .form-inline .checkbox {
     display: inline-block;
