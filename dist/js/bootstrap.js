@@ -1,6 +1,6 @@
 /*!
  * Bootstrap v3.0.3 (http://getbootstrap.com)
- * Copyright 2013 Twitter, Inc.
+ * Copyright 2014 Twitter, Inc.
  * Licensed under http://www.apache.org/licenses/LICENSE-2.0
  */
 
@@ -10,7 +10,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
  * Bootstrap: transition.js v3.0.3
  * http://getbootstrap.com/javascript/#transitions
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyright 2014 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,7 +67,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
  * Bootstrap: alert.js v3.0.3
  * http://getbootstrap.com/javascript/#alerts
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyright 2014 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -166,7 +166,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
  * Bootstrap: button.js v3.0.3
  * http://getbootstrap.com/javascript/#buttons
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyright 2014 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -282,7 +282,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
  * Bootstrap: carousel.js v3.0.3
  * http://getbootstrap.com/javascript/#carousel
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyright 2014 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -500,7 +500,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
  * Bootstrap: collapse.js v3.0.3
  * http://getbootstrap.com/javascript/#collapse
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyright 2014 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -680,7 +680,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
  * Bootstrap: dropdown.js v3.0.3
  * http://getbootstrap.com/javascript/#dropdowns
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyright 2014 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -835,7 +835,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
  * Bootstrap: modal.js v3.0.3
  * http://getbootstrap.com/javascript/#modals
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyright 2014 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1083,7 +1083,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
  * http://getbootstrap.com/javascript/#tooltip
  * Inspired by the original jQuery.tipsy by Jason Frame
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyright 2014 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1469,7 +1469,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
  * Bootstrap: popover.js v3.0.3
  * http://getbootstrap.com/javascript/#popovers
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyright 2014 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1587,7 +1587,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
  * Bootstrap: scrollspy.js v3.0.3
  * http://getbootstrap.com/javascript/#scrollspy
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyright 2014 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1746,7 +1746,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
  * Bootstrap: tab.js v3.0.3
  * http://getbootstrap.com/javascript/#tabs
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyright 2014 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1882,7 +1882,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
  * Bootstrap: affix.js v3.0.3
  * http://getbootstrap.com/javascript/#affix
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyright 2014 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.

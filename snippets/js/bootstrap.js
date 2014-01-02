@@ -1,6 +1,6 @@
 /*!
 * Bootstrap v3.0.0 by @fat and @mdo
-* Copyright 2013 Twitter, Inc.
+* Copyright 2014 Twitter, Inc.
 * Licensed under http://www.apache.org/licenses/LICENSE-2.0
 *
 * Designed and built with all the love in the world by @mdo and @fat.
@@ -12,7 +12,7 @@ if(!window.Zepto && !window.jQuery) {
  * Bootstrap: transition.js v3.0.0
  * http://twbs.github.com/bootstrap/javascript.html#transitions
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyright 2014 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,7 +69,7 @@ if(!window.Zepto && !window.jQuery) {
  * Bootstrap: alert.js v3.0.0
  * http://twbs.github.com/bootstrap/javascript.html#alerts
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyright 2014 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -168,7 +168,7 @@ if(!window.Zepto && !window.jQuery) {
  * Bootstrap: button.js v3.0.0
  * http://twbs.github.com/bootstrap/javascript.html#buttons
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyright 2014 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
