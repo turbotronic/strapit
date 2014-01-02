@@ -5454,20 +5454,18 @@ a.list-group-item.active > .badge,
 .jumbotron {
   padding: 30px;
   margin-bottom: 30px;
-  font-size: 21px;
-  font-size: 2.1rem;
-  font-weight: 200;
-  line-height: 2.427;
   color: inherit;
   background-color: #eeeeee;
 }
 .jumbotron h1,
 .jumbotron .h1 {
-  line-height: 1;
   color: inherit;
 }
 .jumbotron p {
-  line-height: 1.4;
+  margin-bottom: 15px;
+  font-size: 21px;
+  font-size: 2.1rem;
+  font-weight: 200;
 }
 .container .jumbotron {
   border-radius: 6px;
