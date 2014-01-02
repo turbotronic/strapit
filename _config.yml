@@ -15,8 +15,8 @@ url:              http://localhost:9001
 
 # Custom vars
 current_version:  2.0.1
-repo:             https://github.com/jboho/strapit
+repo:             https://github.com/DFMLabs/strapit
 
 download:
-  source:         https://github.com/jboho/strapit/archive/strapit.zip
-  dist:           https://sandbox.digitalfirstmedia.com/strapit/dist/strapit-v2.0.1-dist.zip
+  source:         https://github.com/DFMLabs/strapit/archive/master.zip
+  dist:           /dist/strapit-v2.0.1-dist.zip
