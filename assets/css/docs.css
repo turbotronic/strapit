@@ -419,7 +419,7 @@ h4[id] {
 }
 
 /* Typography */
-.bs-example-type .table .info {
+.bs-example-type .table .type-info {
   color: #999;
   vertical-align: middle;
 }
