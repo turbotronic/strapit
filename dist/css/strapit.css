@@ -6374,6 +6374,11 @@ a.list-group-item.info.active:focus {
   border-color: #dddddd;
   border-color: rgba(0, 0, 0, 0.15);
 }
+.well p:last-child,
+.well ul:last-child,
+.well li:last-child {
+  margin-bottom: 0;
+}
 .well-lg,
 .well.lg {
   padding: 25px;
