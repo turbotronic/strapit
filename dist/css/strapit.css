@@ -6432,23 +6432,23 @@ button.close {
 .callout .highlight {
   background-color: #fff;
 }
-.callout-'success',
-.callout.'success' {
+.callout-success,
+.callout.success {
   border-left-color: #468847;
   background-color: #eef7ea;
 }
-.callout-'warning',
-.callout.'warning' {
+.callout-warning,
+.callout.warning {
   border-left-color: #c09853;
   background-color: #fcf8e3;
 }
-.callout-'danger',
-.callout.'danger' {
+.callout-danger,
+.callout.danger {
   border-left-color: #b94a48;
   background-color: #f9f0f0;
 }
-.callout-'info',
-.callout.'info' {
+.callout-info,
+.callout.info {
   border-left-color: #3a87ad;
   background-color: #eef7fb;
 }
