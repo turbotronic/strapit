@@ -1198,12 +1198,14 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 
 
     <h2 id="code-user-input">User input</h2>
-    <p>Use the <code>&lt;kbd&gt;</code> to indicate input that is typically entered via keyboard.</p>
+    <p>Use the <code>&lt;kbd&gt;</code> or the <code>.keystroke</code> class to indicate input that is typically entered via keyboard.</p>
     <div class="bs-example">
-      To switch directories, type <kbd>cd</kbd> followed the name of the directory.
+      <p>To switch directories, type <kbd>cd</kbd> followed the name of the directory.</p>
+      <p>To switch directories, type <span class="keystroke">cd</span> followed the name of the directory.</p>
     </div>
 {% highlight html %}
-  To switch directories, type <kbd>cd</kbd> followed the name of the directory.
+  <p>To switch directories, type <kbd>cd</kbd> followed the name of the directory.</p>
+  <p>To switch directories, type <span class="keystroke">cd</span> followed the name of the directory.</p>
 {% endhighlight %}
 
     <h2 id="code-block">Basic block</h2>
