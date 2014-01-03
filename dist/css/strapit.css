@@ -4606,6 +4606,9 @@ textarea.input-group.sm > .input-group-btn > .btn {
   border: 1px solid transparent;
   border-radius: 3px;
 }
+.navbar-toggle:focus {
+  outline: none;
+}
 .navbar-toggle .icon-bar {
   display: block;
   width: 22px;
@@ -4693,9 +4696,17 @@ textarea.input-group.sm > .input-group-btn > .btn {
   }
   .navbar-form .form-control {
     display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+  .navbar-form .control-label {
+    margin-bottom: 0;
     vertical-align: middle;
   }
   .navbar-form select.form-control {
+    width: auto;
+  }
+  .navbar-form > select.form-control {
     width: auto;
   }
   .navbar-form .radio,
@@ -4710,6 +4721,9 @@ textarea.input-group.sm > .input-group-btn > .btn {
   .navbar-form .checkbox input[type="checkbox"] {
     float: none;
     margin-left: 0;
+  }
+  .navbar-form .has-feedback .form-control-feedback {
+    top: 0;
   }
 }
 @media (max-width: 767px) {
