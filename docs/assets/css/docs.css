@@ -842,3 +842,34 @@ h4[id] {
 .table-responsive-example .table.bordered > tfoot > tr:last-child > td {
   border-bottom: 0;
 }
+
+/*
+ * Color swatches
+ *
+ * Color swatches and associated values for our grayscale and brand colors.
+ */
+
+.color-swatches {
+  margin: 0 -5px;
+  overflow: hidden; /* clearfix */
+}
+.color-swatch {
+  float: left;
+  width:  100px;
+  height: 100px;
+  margin: 0 5px;
+  border-radius: 3px;
+}
+.color-swatches .gray-darker   { background-color: #222; }
+.color-swatches .gray-dark     { background-color: #555; }
+.color-swatches .gray          { background-color: #808080; }
+.color-swatches .gray-light    { background-color: #aaa; }
+.color-swatches .gray-lighter  { background-color: #ccc; }
+.color-swatches .gray-lightest { background-color: #eee; }
+.color-swatches .brand-primary { background-color: #428bca; }
+.color-swatches .brand-success { background-color: #5cb85c; }
+.color-swatches .brand-warning { background-color: #f0ad4e; }
+.color-swatches .brand-danger  { background-color: #d9534f; }
+.color-swatches .brand-info    { background-color: #5bc0de; }
+
+
