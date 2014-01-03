@@ -13,9 +13,12 @@
 
 // Callout
 // -------------------------
-.callout-variant(@border; @bg-color;) {
-  border-left-color: @border;
-  background-color: @bg-color;
+.callout-variant(@state; @border; @bg-color) {
+  .callout-@{state},
+  .callout.@{state} {
+    border-left-color: @border;
+    background-color: @bg-color;
+  }
 }
 
 // Radius
@@ -62,7 +65,7 @@
 // ------------------
 
 // Create custom columns
-.make-columns(@columns: @grid-columns; @size: md;) {
+.make-columns(@columns: @grid-columns; @size: md) {
   .colX (@index) when (@index > 0) {
      .@{size}-@{index} {
        width: round(percentage(((@index) / @columns)), 5);
@@ -73,7 +76,7 @@
    .colX (@columns);
 }
 // Generate offsets & source ordering
-.make-offsets(@columns: @grid-columns;) {
+.make-offsets(@columns: @grid-columns) {
   .offsetX (@index) when (@index > 0) {
     .offset-@{index} {
       margin-left: round(percentage(((@index) / @columns)), 5);
@@ -98,7 +101,7 @@
   .pushpullX (@columns - 1);
 }
 // Generate targeted offsets & source ordering
-.make-targeted-offsets(@columns: @grid-columns; @size: md;) {
+.make-targeted-offsets(@columns: @grid-columns; @size: md) {
   .offsetX (@index) when (@index > 0) {
     .@{size}-offset-@{index} {
       margin-left: round(percentage(((@index) / @columns)), 5);
@@ -123,7 +126,7 @@
   .pushpullX (@columns - 1);
 }
 // Generate targeted offsets only
-.make-targeted-offsets-only(@columns: @grid-columns; @size: md;) {
+.make-targeted-offsets-only(@columns: @grid-columns; @size: md) {
   .offsetX (@index) when (@index > 0) {
     .@{size}-offset-@{index} {
       margin-left: round(percentage(((@index) / @columns)), 5);
@@ -138,7 +141,7 @@
 }
 
 // Targeted centering
-.make-targeted-centering(@size: md;) {
+.make-targeted-centering(@size: md) {
   .col {
     &.@{size}-centered {
       float: none !important;
@@ -271,7 +274,7 @@
 // Block grid mixins
 // ---------------------
 
-.make-block-grid(@columns: @grid-columns; @size: sm;) {
+.make-block-grid(@columns: @grid-columns; @size: sm) {
   .blockGrid (@index) when (@index > 0) {
      .@{size}-block-grid-@{index} {
      > li {
@@ -291,7 +294,7 @@
    .blockGrid (@columns);
 }
 
-.remove-block-grid-clearing(@columns: @grid-columns; @size: sm;) {
+.remove-block-grid-clearing(@columns: @grid-columns; @size: sm) {
   .clearing (@index) when (@index > 0) {
      .@{size}-block-grid-@{index} {
        > li:nth-of-type(@{index}n+1) {
