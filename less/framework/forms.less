@@ -315,28 +315,39 @@ input[type="checkbox"],
   .input-size(@input-height-large; @padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @border-radius-large);
 }
 
-// If you don't want rounded corners, you'll need this
-// to fix Safari issues in iOS. 
-// See: http://stackoverflow.com/questions/2918707/turn-off-iphone-safari-input-element-rounding
-input.square {
-  -webkit-appearance: none;
-  border-radius: 0 !important;
-}
-
-
 // Form control feedback states
 //
 // Apply contextual and semantic states to individual form controls.
 
-// Warning
+.has-feedback {
+  // Enable absolute positioning
+  position: relative;
+
+  // Ensure icons don't overlap text
+  .form-control {
+    padding-right: (@input-height-base * 1.25);
+  }
+
+  // Feedback icon (requires .glyphicon classes)
+  .form-control-feedback {
+    position: absolute;
+    top: (@line-height-computed + 5); // Height of the `label` and its margin
+    right: 0;
+    display: block;
+    width: @input-height-base;
+    height: @input-height-base;
+    line-height: @input-height-base;
+    text-align: center;
+  }
+}
+
+// Feedback states
 .has-warning {
   .form-control-validation(@state-warning-text; @state-warning-text; @state-warning-bg);
 }
-// Error
 .has-error {
   .form-control-validation(@state-danger-text; @state-danger-text; @state-danger-bg);
 }
-// Success
 .has-success {
   .form-control-validation(@state-success-text; @state-success-text; @state-success-bg);
 }
@@ -390,6 +401,12 @@ input.square {
     // In navbar-form, allow folks to *not* use `.form-group`
     .form-control {
       display: inline-block;
+      width: auto; // Prevent labels from stacking above inputs in `.form-group`
+      vertical-align: middle;
+    }
+
+    .control-label {
+      margin-bottom: 0;
       vertical-align: middle;
     }
 
@@ -418,6 +435,13 @@ input.square {
     .checkbox input[type="checkbox"] {
       float: none;
       margin-left: 0;
+    }
+    // Validation states
+    //
+    // Reposition the icon because it's now within a grid column and columns have
+    // `position: relative;` on them. Also accounts for the grid gutter padding.
+    .has-feedback .form-control-feedback {
+      top: 0;
     }
   }
 }
@@ -462,4 +486,20 @@ input.square {
       text-align: right;
     }
   }
+  // Validation states
+  //
+  // Reposition the icon because it's now within a grid column and columns have
+  // `position: relative;` on them. Also accounts for the grid gutter padding.
+  .has-feedback .form-control-feedback {
+    top: 0;
+    right: (@grid-gutter-width / 2);
+  }
+}
+
+// If you don't want rounded corners, you'll need this
+// to fix Safari issues in iOS. 
+// See: http://stackoverflow.com/questions/2918707/turn-off-iphone-safari-input-element-rounding
+input.square {
+  -webkit-appearance: none;
+  border-radius: 0 !important;
 }
