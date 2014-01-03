@@ -38,18 +38,17 @@
 
 // Optional: Group multiple button groups together for a toolbar
 .btn-toolbar {
+  margin-left: -5px; // Offset the first child's margin
   .clearfix();
 
-  .btn-group {
+  .btn-group,
+  .input-group {
     float: left;
   }
-  // Space out series of button groups
   > .btn,
-  > .btn-group {
-    + .btn,
-    + .btn-group {
-      margin-left: 5px;
-    }
+  > .btn-group,
+  > .input-group {
+    margin-left: 5px;
   }
 }
 
