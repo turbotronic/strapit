@@ -2592,6 +2592,9 @@ input.square {
   border-color: #c09853;
   background-color: #fcf8e3;
 }
+.has-warning .form-control-feedback {
+  color: #c09853;
+}
 .has-error .help-block,
 .has-error .control-label,
 .has-error .radio,
@@ -2615,6 +2618,9 @@ input.square {
   border-color: #b94a48;
   background-color: #f2dede;
 }
+.has-error .form-control-feedback {
+  color: #b94a48;
+}
 .has-success .help-block,
 .has-success .control-label,
 .has-success .radio,
@@ -2637,6 +2643,9 @@ input.square {
   color: #468847;
   border-color: #468847;
   background-color: #dff0d8;
+}
+.has-success .form-control-feedback {
+  color: #468847;
 }
 .form-control-static,
 .form-control.static {
@@ -3430,13 +3439,8 @@ input[type="button"].btn-block {
 .btn-group .btn-group + .btn-group {
   margin-left: -1px;
 }
-.btn-toolbar:before,
-.btn-toolbar:after {
-  content: " ";
-  display: table;
-}
-.btn-toolbar:after {
-  clear: both;
+.btn-toolbar {
+  margin-left: -5px;
 }
 .btn-toolbar:before,
 .btn-toolbar:after {
@@ -3446,13 +3450,21 @@ input[type="button"].btn-block {
 .btn-toolbar:after {
   clear: both;
 }
-.btn-toolbar .btn-group {
+.btn-toolbar:before,
+.btn-toolbar:after {
+  content: " ";
+  display: table;
+}
+.btn-toolbar:after {
+  clear: both;
+}
+.btn-toolbar .btn-group,
+.btn-toolbar .input-group {
   float: left;
 }
-.btn-toolbar > .btn + .btn,
-.btn-toolbar > .btn-group + .btn,
-.btn-toolbar > .btn + .btn-group,
-.btn-toolbar > .btn-group + .btn-group {
+.btn-toolbar > .btn,
+.btn-toolbar > .btn-group,
+.btn-toolbar > .input-group {
   margin-left: 5px;
 }
 .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
