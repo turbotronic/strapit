@@ -4,21 +4,25 @@
 // by enabling horizontal scrolling.
 
 .table-responsive {
-  margin-bottom: @line-height-computed;
+  width: 100%;
+  margin-bottom: (@line-height-computed * 0.75);
   overflow-y: hidden;
-  overflow-x: auto;
+  overflow-x: scroll;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   border: 1px solid @table-border-color;
   -webkit-overflow-scrolling: touch;
-  table { 
+
+  // Tighten up spacing
+  > .table {
     margin-bottom: 0;
+
+    // Ensure the content doesn't wrap
     > thead,
     > tbody,
     > tfoot {
       > tr {
         > th,
         > td {
-          position: relative;
           white-space: nowrap;
         }
       }
