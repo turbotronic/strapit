@@ -6485,6 +6485,9 @@ button.close {
   overflow: hidden;
 }
 .modal {
+  display: none;
+  overflow: auto;
+  overflow-y: scroll;
   position: fixed;
   top: 0;
   right: 0;
@@ -6492,9 +6495,6 @@ button.close {
   left: 0;
   z-index: 1050;
   -webkit-overflow-scrolling: touch;
-  display: none;
-  overflow: auto;
-  overflow-y: scroll;
   outline: 0;
 }
 .modal.fade .modal-dialog {
