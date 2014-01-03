@@ -15,6 +15,8 @@
 // -------------------------
 
 .list-group-item {
+  //
+  // Use on `li`s or `div`s within the `.list-group` parent.
   position: relative;
   display: block;
   padding: 10px 15px;
@@ -42,6 +44,9 @@
 }
 
 // Linked list items
+//
+// Use anchor elements instead of `li`s or `div`s to create linked list items.
+// Includes an extra `.active` modifier class for showing selected items.
 a.list-group-item {
   color: @list-group-link-color;
 
@@ -75,8 +80,19 @@ a.list-group-item {
   }
 }
 
+// Contextual variants
+//
+// Add modifier classes to change text and background color on individual items.
+// Organizationally, this must come after the `:hover` states.
+
+.list-group-item-variant(success; @state-success-bg; @state-success-text);
+.list-group-item-variant(warning; @state-warning-bg; @state-warning-text);
+.list-group-item-variant(danger; @state-danger-bg; @state-danger-text);
+.list-group-item-variant(info; @state-info-bg; @state-info-text);
+
 // Custom content options
-// -------------------------
+//
+// Extra classes for creating well-formatted content within `.list-group-item`s.
 
 .list-group-item-heading {
   margin-top: 0;
