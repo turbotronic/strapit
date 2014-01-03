@@ -42,23 +42,25 @@ a {
   background: transparent; // Remove the gray background color from active links in IE 10. (nm v2.1.3)
   color: @link-color;
   text-decoration: none;
-}
-
-a:active,
-a:hover {
+  
+  &:active,
+  &:hover {
     outline: 0; // Improve readability when focused and also mouse hovered in all browsers. (nm v2.1.3)
+  }
+
+  &:hover,
+  &:focus {
+    color: @link-hover-color;
+    text-decoration: underline;
+  }
+
+  // Focus State (nm v2.1.3)
+  &:focus {
+    .tab-focus();
+  }
 }
 
-a:hover,
-a:focus {
-  color: @link-hover-color;
-  text-decoration: underline;
-}
 
-// Focus State (nm v2.1.3)
-a:focus {
-  .tab-focus();
-}
 
 
 // Images
