@@ -122,6 +122,7 @@
 // Scale up the modal
 @media screen and (min-width: @breakpoint-md) {
 
+  // Automatically set modal's width for larger viewports
   .modal-dialog {
     width: 600px;
     margin: 30px auto;
@@ -129,5 +130,9 @@
   .modal-content {
     .box-shadow(0 5px 15px rgba(0,0,0,.5));
   }
+
+  // Modal sizes
+  .modal-sm { width: @modal-sm; }
+  .modal-lg { width: @modal-lg; }
 
 }
