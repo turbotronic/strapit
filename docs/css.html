@@ -2510,6 +2510,47 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
       <h1 id="helper-classes">Helper classes</h1>
     </div>
 
+    <h3 id="helper-classes-colors">Contextual colors</h3>
+    <p>Convey meaning through color with a handful of emphasis utility classes. These may also be applied to links and will darken on hover just like our default link styles.</p>
+    <div class="bs-example">
+      <p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+      <p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+      <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+      <p class="text-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+      <p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
+      <p class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
+    </div>
+{% highlight html %}
+<p class="text-muted">...</p>
+<p class="text-primary">...</p>
+<p class="text-success">...</p>
+<p class="text-info">...</p>
+<p class="text-warning">...</p>
+<p class="text-danger">...</p>
+{% endhighlight %}
+    <div class="callout info">
+      <h4>Dealing with specificity</h4>
+      <p>Sometimes emphasis classes cannot be applied due to the specificity of another selector. In most cases, a sufficient workaround is to wrap your text in a <code>&lt;span&gt;</code> with the class.</p>
+    </div>
+
+    <h3 id="helper-classes-backgrounds">Contextual backgrounds</h3>
+    <p>Similar to the contextual text color classes, easily set the background of an element to any contextual class. Anchor components will darken on hover, just like the text classes.</p>
+    <div class="bs-example bs-example-bg-classes">
+      <p class="bg-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+      <p class="bg-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+      <p class="bg-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+      <p class="bg-warning">Etiam porta sem malesuada magna mollis euismod.</p>
+      <p class="bg-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
+    </div>
+{% highlight html %}
+<p class="bg-muted">...</p>
+<p class="bg-primary">...</p>
+<p class="bg-success">...</p>
+<p class="bg-info">...</p>
+<p class="bg-warning">...</p>
+<p class="bg-danger">...</p>
+{% endhighlight %}
+
 
     <h3 id="helper-classes-close">Close icon</h3>
     <p>Use the generic close icon for dismissing content like modals and alerts.</p>
@@ -2520,6 +2561,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 <button type="button" class="close" aria-hidden="true">&times;</button>
 {% endhighlight %}
 
+
     <h3 id="helper-classes-carets">Carets</h3>
     <p>Use carets to indicate dropdown functionality and direction. Note that the default caret will reverse automatically in <a href="../components/#btn-dropdowns-dropup">dropup menus</a>.</p>
     <div class="bs-example">
@@ -2528,7 +2570,6 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 {% highlight html %}
 <span class="caret"></span>
 {% endhighlight %}
-
 
 
     <h3 id="helper-classes-floats">Quick floats</h3>
@@ -2560,9 +2601,9 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
       <p>To align components in navbars with utility classes, use <code>.navbar-left</code> or <code>.navbar-right</code> instead. <a href="../components/#navbar-component-alignment">See the navbar docs</a> for details.</p>
     </div>
 
-<h3 id="helper-classes-center">Center content blocks</h3>
-   <p>Set an element to <code>display: block</code> and center via <code>margin</code>. Available as a mixin and class.</p>
 
+    <h3 id="helper-classes-center">Center content blocks</h3>
+    <p>Set an element to <code>display: block</code> and center via <code>margin</code>. Available as a mixin and class.</p>
 {% highlight html %}
 <div class="center-block">...</div>
 {% endhighlight %}
@@ -2583,7 +2624,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 
 
     <h3 id="helper-classes-clearfix">Clearfix</h3>
-    <p>Clear the <code>float</code> on any element with the <code>.clearfix</code> class. Utilizes <a href="http://nicolasgallagher.com/micro-clearfix-hack/">the micro clearfix</a> as popularized by Nicolas Gallagher. Can also be used as a mixin.</p>
+    <p>Clear the <code>float</code> on any element with the <code>.clearfix</code> class. Uses <a href="http://nicolasgallagher.com/micro-clearfix-hack/">the micro clearfix</a> as popularized by Nicolas Gallagher. Can also be used as a mixin.</p>
 {% highlight html %}
 <!-- Usage as a class -->
 <div class="clearfix">...</div>
@@ -2608,9 +2649,9 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 {% endhighlight %}
 
 
- <h3 id="helper-classes-show-hide">Showing and hiding content</h3>
+    <h3 id="helper-classes-show-hide">Showing and hiding content</h3>
     <p>Force an element to be shown or hidden (<strong>including for screen readers</strong>) with the use of <code>.show</code> and <code>.hidden</code> classes. These classes use <code>!important</code> to avoid specificity conflicts, just like the <a href="#helper-classes-floats">quick floats</a>. They are only available for block level toggling. They can also be used as mixins.</p>
-    <p><code>.hide</code> is available, but it does not always affect screen readers and is <strong>deprecated</strong> as of v3.0.1. Use <code>.hidden</code> or <code>.sr-only</code> instead.</p>
+    <p><code>.hide</code> is available, but it does not always affect screen readers and is <strong>deprecated</strong> as of v2.0.2. Use <code>.hidden</code> or <code>.sr-only</code> instead.</p>
     <p>Furthermore, <code>.invisible</code> can be used to toggle only the visibility of an element, meaning its <code>display</code> is not modified and the element can still affect the flow of the document.</p>
 {% highlight html %}
 <div class="show">...</div>
@@ -2619,10 +2660,14 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 {% highlight css %}
 // Classes
 .show {
-  show-grid: block !important;
+  display: block !important;
 }
-.hide {
-  show-grid: none !important;
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+.invisible {
+  visibility: hidden;
 }
 
 // Usage as mixins
@@ -2630,26 +2675,15 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
   .show();
 }
 .another-element {
-  .hide();
+  .hidden();
 }
 {% endhighlight %}
 
 
     <h3 id="helper-classes-screen-readers">Screen reader content</h3>
-	    <p>Hide an element to all devices <strong>except screen readers</strong> with <code>.sr-only</code>. Necessary for following <a href="{{ site.baseurl }}getting-started#accessibility">accessibility best practices</a>. Can also be used as a mixin.</p>
-	{% highlight html %}
-<div class="hidden"></div>
-{% endhighlight %}
-{% highlight css %}
-// Usage as a Mixin
-.example {
-  .hidden();
-}
-{% endhighlight %}
-
-    <p>Hide an element to all users <em>except</em> screen readers with <code>.sr-only</code>. Necessary for following <a href="{{ site.baseurl }}getting-started#accessibility">accessibility best practices</a>. Can also be used as a mixin.</p>
+    <p>Hide an element to all devices <strong>except screen readers</strong> with <code>.sr-only</code>. Necessary for following <a href="{{ site.baseurl }}getting-started#accessibility">accessibility best practices</a>. Can also be used as a mixin.</p>
 {% highlight html %}
-<a class="sr-only" href="#content">Skip to content</a>
+<a class="sr-only" href="#content">Skip to main content</a>
 {% endhighlight %}
 {% highlight css %}
 // Usage as a Mixin
@@ -2683,6 +2717,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 <div class="label danger square">Square label</div>
 <div class="label warning rounded">Rounded label</div>
 {% endhighlight %}
+
   </div>
 
 

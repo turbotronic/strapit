@@ -143,6 +143,10 @@ svg:not(:root) {
   background-color: transparent;
   border: 0;
 }
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
 .affix {
   position: fixed;
 }
@@ -1087,6 +1091,37 @@ blockquote.pull-right .small:after {
 }
 .text-info:hover {
   color: #2d6987;
+}
+.bg-primary {
+  color: #fff;
+  background-color: #428bca;
+}
+a.bg-primary:hover {
+  background-color: #3071a9;
+}
+.bg-warning {
+  background-color: #fcf8e3;
+}
+a.bg-warning:hover {
+  background-color: #f7ecb5;
+}
+.bg-danger {
+  background-color: #f2dede;
+}
+a.bg-danger:hover {
+  background-color: #e4b9b9;
+}
+.bg-success {
+  background-color: #dff0d8;
+}
+a.bg-success:hover {
+  background-color: #c1e2b3;
+}
+.bg-info {
+  background-color: #d9edf7;
+}
+a.bg-info:hover {
+  background-color: #afd9ee;
 }
 .text-left {
   text-align: left;
@@ -6419,7 +6454,7 @@ button.close {
   background-color: #eeeeee;
   margin: 22px 0;
   padding: 20px 16px;
-  border-left: 5px solid #555555;
+  border-left: 3px solid #555555;
 }
 .callout > h1,
 .callout > h2,
@@ -6427,6 +6462,7 @@ button.close {
 .callout > h4,
 .callout > h5,
 .callout > h6 {
+  color: #555555;
   margin-top: 0;
   margin-bottom: 11px;
 }
@@ -6439,23 +6475,127 @@ button.close {
 }
 .callout-success,
 .callout.success {
-  border-left-color: #468847;
-  background-color: #eef7ea;
+  border-left-color: #d6e9c6;
+  background-color: #f4faf2;
+}
+.callout-success h1,
+.callout.success h1,
+.callout-success h2,
+.callout.success h2,
+.callout-success h3,
+.callout.success h3,
+.callout-success h4,
+.callout.success h4,
+.callout-success h5,
+.callout.success h5,
+.callout-success h6,
+.callout.success h6,
+.callout-success .h1,
+.callout.success .h1,
+.callout-success .h2,
+.callout.success .h2,
+.callout-success .h3,
+.callout.success .h3,
+.callout-success .h4,
+.callout.success .h4,
+.callout-success .h5,
+.callout.success .h5,
+.callout-success .h6,
+.callout.success .h6 {
+  color: #468847;
 }
 .callout-warning,
 .callout.warning {
-  border-left-color: #c09853;
-  background-color: #fcf8e3;
+  border-left-color: #fbeed5;
+  background-color: #fdfaec;
+}
+.callout-warning h1,
+.callout.warning h1,
+.callout-warning h2,
+.callout.warning h2,
+.callout-warning h3,
+.callout.warning h3,
+.callout-warning h4,
+.callout.warning h4,
+.callout-warning h5,
+.callout.warning h5,
+.callout-warning h6,
+.callout.warning h6,
+.callout-warning .h1,
+.callout.warning .h1,
+.callout-warning .h2,
+.callout.warning .h2,
+.callout-warning .h3,
+.callout.warning .h3,
+.callout-warning .h4,
+.callout.warning .h4,
+.callout-warning .h5,
+.callout.warning .h5,
+.callout-warning .h6,
+.callout.warning .h6 {
+  color: #c09853;
 }
 .callout-danger,
 .callout.danger {
-  border-left-color: #b94a48;
-  background-color: #f9f0f0;
+  border-left-color: #eed3d7;
+  background-color: #fcf8f8;
+}
+.callout-danger h1,
+.callout.danger h1,
+.callout-danger h2,
+.callout.danger h2,
+.callout-danger h3,
+.callout.danger h3,
+.callout-danger h4,
+.callout.danger h4,
+.callout-danger h5,
+.callout.danger h5,
+.callout-danger h6,
+.callout.danger h6,
+.callout-danger .h1,
+.callout.danger .h1,
+.callout-danger .h2,
+.callout.danger .h2,
+.callout-danger .h3,
+.callout.danger .h3,
+.callout-danger .h4,
+.callout.danger .h4,
+.callout-danger .h5,
+.callout.danger .h5,
+.callout-danger .h6,
+.callout.danger .h6 {
+  color: #b94a48;
 }
 .callout-info,
 .callout.info {
-  border-left-color: #3a87ad;
-  background-color: #eef7fb;
+  border-left-color: #bce8f1;
+  background-color: #f6fbfd;
+}
+.callout-info h1,
+.callout.info h1,
+.callout-info h2,
+.callout.info h2,
+.callout-info h3,
+.callout.info h3,
+.callout-info h4,
+.callout.info h4,
+.callout-info h5,
+.callout.info h5,
+.callout-info h6,
+.callout.info h6,
+.callout-info .h1,
+.callout.info .h1,
+.callout-info .h2,
+.callout.info .h2,
+.callout-info .h3,
+.callout.info .h3,
+.callout-info .h4,
+.callout.info .h4,
+.callout-info .h5,
+.callout.info .h5,
+.callout-info .h6,
+.callout.info .h6 {
+  color: #3a87ad;
 }
 .pricing-table {
   margin-left: 0;
