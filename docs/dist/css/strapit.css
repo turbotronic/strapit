@@ -704,7 +704,7 @@ hr {
   margin-top: 22px;
   margin-bottom: 22px;
   border: 0;
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid #eeeeee;
 }
 hr.soften {
   height: 1px;
@@ -781,7 +781,7 @@ h6 .small,
 .h6 .small {
   font-weight: normal;
   line-height: 1;
-  color: #aaaaaa;
+  color: #cccccc;
 }
 h1,
 .h1,
@@ -988,7 +988,7 @@ blockquote {
   font-size: 17px;
   font-size: 1.7rem;
   font-weight: 200;
-  border-left: 5px solid #cccccc;
+  border-left: 5px solid #eeeeee;
 }
 blockquote:before,
 blockquote:after {
@@ -1005,7 +1005,7 @@ blockquote .small {
   display: block;
   font-size: 80%;
   line-height: 1.618;
-  color: #aaaaaa;
+  color: #cccccc;
 }
 blockquote footer:before,
 blockquote small:before,
@@ -1020,7 +1020,7 @@ blockquote.reverse,
 blockquote.pull-right {
   padding-right: 15px;
   padding-left: 0;
-  border-right: 5px solid #cccccc;
+  border-right: 5px solid #eeeeee;
   border-left: 0;
   text-align: right;
 }
@@ -1043,7 +1043,7 @@ blockquote.pull-right .small:after {
 .page-header {
   padding-bottom: 10px;
   margin: 44px 0 22px;
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid #eeeeee;
 }
 .subhead {
   margin-bottom: 22px;
@@ -1060,7 +1060,7 @@ blockquote.pull-right .small:after {
   }
 }
 .text-muted {
-  color: #aaaaaa;
+  color: #cccccc;
 }
 .text-primary {
   color: #428bca;
@@ -1158,7 +1158,7 @@ mark {
 abbr[title],
 abbr[data-original-title] {
   cursor: help;
-  border-bottom: 1px dotted #aaaaaa;
+  border-bottom: 1px dotted #cccccc;
 }
 .initialism {
   font-size: 90%;
@@ -2511,23 +2511,23 @@ output {
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 .form-control:-moz-placeholder {
-  color: #aaaaaa;
+  color: #cccccc;
 }
 .form-control::-moz-placeholder {
-  color: #aaaaaa;
+  color: #cccccc;
   opacity: 1;
 }
 .form-control:-ms-input-placeholder {
-  color: #aaaaaa;
+  color: #cccccc;
 }
 .form-control::-webkit-input-placeholder {
-  color: #aaaaaa;
+  color: #cccccc;
 }
 .form-control[disabled],
 .form-control[readonly],
 fieldset[disabled] .form-control {
   cursor: not-allowed;
-  background-color: #cccccc;
+  background-color: #eeeeee;
 }
 textarea.form-control {
   height: auto;
@@ -3459,7 +3459,7 @@ input[type="button"].btn-block {
   font-size: 12px;
   font-size: 1.2rem;
   line-height: 1.618;
-  color: #aaaaaa;
+  color: #cccccc;
 }
 .dropdown-backdrop {
   position: fixed;
@@ -3870,7 +3870,7 @@ textarea.input-group.sm > .input-group-btn > .btn {
   line-height: 1;
   color: #808080;
   text-align: center;
-  background-color: #cccccc;
+  background-color: #eeeeee;
   border: 1px solid #cccccc;
   border-radius: 3px;
 }
@@ -3935,15 +3935,6 @@ textarea.input-group.sm > .input-group-btn > .btn {
 .input-group-btn > .btn:hover,
 .input-group-btn > .btn:active {
   z-index: 2;
-}
-.input-group-btn > .btn.left {
-  border-right-width: 0;
-}
-.input-group-btn > .btn.right {
-  border-left-width: 0;
-}
-.input-group-btn > .btn.segmented {
-  border-width: 1px 0;
 }
 @media only screen {
   .switch {
@@ -4123,7 +4114,7 @@ textarea.input-group.sm > .input-group-btn > .btn {
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: #cccccc;
+  background-color: #eeeeee;
 }
 .nav > li.disabled > a {
   color: #aaaaaa;
@@ -4138,7 +4129,7 @@ textarea.input-group.sm > .input-group-btn > .btn {
 .nav .open > a,
 .nav .open > a:hover,
 .nav .open > a:focus {
-  background-color: #cccccc;
+  background-color: #eeeeee;
   border-color: #428bca;
 }
 .nav .nav-divider {
@@ -4164,10 +4155,11 @@ textarea.input-group.sm > .input-group-btn > .btn {
   margin-right: 2px;
   line-height: 1.618;
   border: 1px solid transparent;
+  border-radius: 3px 3px 0 0;
 }
 .nav-tabs > li > a:hover,
 .tabs > li > a:hover {
-  border-color: #cccccc #cccccc #dddddd;
+  border-color: #eeeeee #eeeeee #dddddd;
 }
 .nav-tabs > li.active > a,
 .tabs > li.active > a,
@@ -4228,6 +4220,7 @@ textarea.input-group.sm > .input-group-btn > .btn {
   .nav-tabs.justified > li > a,
   .tabs.justified > li > a {
     border-bottom: 1px solid #dddddd;
+    border-radius: 3px 3px 0 0;
   }
   .nav-tabs.justified > .active > a,
   .tabs.justified > .active > a,
@@ -4345,6 +4338,7 @@ textarea.input-group.sm > .input-group-btn > .btn {
   .tabs-justified > li > a,
   .tabs.justified > li > a {
     border-bottom: 1px solid #dddddd;
+    border-radius: 3px 3px 0 0;
   }
   .tabs-justified > .active > a,
   .tabs.justified > .active > a,
@@ -4397,6 +4391,28 @@ textarea.input-group.sm > .input-group-btn > .btn {
 }
 .tabs-below .tab-pane {
   border-width: 1px 1px 0 1px;
+}
+.tabs-left:before,
+.tabs-right:before,
+.tabs-left:after,
+.tabs-right:after {
+  content: " ";
+  display: table;
+}
+.tabs-left:after,
+.tabs-right:after {
+  clear: both;
+}
+.tabs-left:before,
+.tabs-right:before,
+.tabs-left:after,
+.tabs-right:after {
+  content: " ";
+  display: table;
+}
+.tabs-left:after,
+.tabs-right:after {
+  clear: both;
 }
 .tabs-left .nav-tabs,
 .tabs-right .nav-tabs,
@@ -4971,7 +4987,7 @@ textarea.input-group.sm > .input-group-btn > .btn {
 }
 .navbar-inverse .navbar-brand,
 .navbar.inverse .navbar-brand {
-  color: #aaaaaa;
+  color: #cccccc;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar.inverse .navbar-brand:hover,
@@ -4982,11 +4998,11 @@ textarea.input-group.sm > .input-group-btn > .btn {
 }
 .navbar-inverse .navbar-text,
 .navbar.inverse .navbar-text {
-  color: #aaaaaa;
+  color: #cccccc;
 }
 .navbar-inverse .navbar-nav > li > a,
 .navbar.inverse .navbar-nav > li > a {
-  color: #aaaaaa;
+  color: #cccccc;
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar.inverse .navbar-nav > li > a:hover,
@@ -5053,7 +5069,7 @@ textarea.input-group.sm > .input-group-btn > .btn {
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a,
   .navbar.inverse .navbar-nav .open .dropdown-menu > li > a {
-    color: #aaaaaa;
+    color: #cccccc;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar.inverse .navbar-nav .open .dropdown-menu > li > a:hover,
@@ -5083,7 +5099,7 @@ textarea.input-group.sm > .input-group-btn > .btn {
 }
 .navbar-inverse .navbar-link,
 .navbar.inverse .navbar-link {
-  color: #aaaaaa;
+  color: #cccccc;
 }
 .navbar-inverse .navbar-link:hover,
 .navbar.inverse .navbar-link:hover {
@@ -5159,7 +5175,7 @@ textarea.input-group.sm > .input-group-btn > .btn {
 .side-nav > li > a:hover,
 .side-nav > li > a:focus {
   text-decoration: none;
-  background-color: #cccccc;
+  background-color: #eeeeee;
 }
 .side-nav > li.disabled > a {
   color: #aaaaaa;
@@ -5174,7 +5190,7 @@ textarea.input-group.sm > .input-group-btn > .btn {
 .side-nav .open > a,
 .side-nav .open > a:hover,
 .side-nav .open > a:focus {
-  background-color: #cccccc;
+  background-color: #eeeeee;
   border-color: #428bca;
 }
 .side-nav .nav-divider {
@@ -5265,10 +5281,10 @@ textarea.input-group.sm > .input-group-btn > .btn {
 .breadcrumb > li + li:before {
   content: "/\00a0";
   padding: 0 5px;
-  color: #cccccc;
+  color: #aaaaaa;
 }
 .breadcrumb > .active {
-  color: #aaaaaa;
+  color: #808080;
 }
 .breadcrumb.plain {
   background-color: transparent;
@@ -5311,7 +5327,7 @@ textarea.input-group.sm > .input-group-btn > .btn {
 .pagination > li > a:focus,
 .pagination > li > span:focus {
   color: #2a6496;
-  background-color: #cccccc;
+  background-color: #eeeeee;
   border-color: #dddddd;
 }
 .pagination > .active > a,
@@ -5432,7 +5448,7 @@ textarea.input-group.sm > .input-group-btn > .btn {
 .pager li > a:hover,
 .pager li > a:focus {
   text-decoration: none;
-  background-color: #cccccc;
+  background-color: #eeeeee;
 }
 .pager .next > a,
 .pager .next > span {
@@ -5499,13 +5515,13 @@ textarea.input-group.sm > .input-group-btn > .btn {
 }
 .label-default,
 .label.default {
-  background-color: #aaaaaa;
+  background-color: #cccccc;
 }
 .label-default[href]:hover,
 .label.default[href]:hover,
 .label-default[href]:focus,
 .label.default[href]:focus {
-  background-color: #919191;
+  background-color: #b3b3b3;
 }
 .label-primary,
 .label.primary {
@@ -5578,7 +5594,7 @@ textarea.input-group.sm > .input-group-btn > .btn {
   vertical-align: baseline;
   white-space: nowrap;
   text-align: center;
-  background-color: #aaaaaa;
+  background-color: #cccccc;
   border-radius: 10px;
 }
 .badge:empty {
@@ -5608,7 +5624,7 @@ a.list-group-item.active > .badge,
   padding: 30px;
   margin-bottom: 30px;
   color: inherit;
-  background-color: #cccccc;
+  background-color: #eeeeee;
 }
 .jumbotron h1,
 .jumbotron .h1 {
@@ -6451,7 +6467,7 @@ button.close {
   -webkit-appearance: none;
 }
 .callout {
-  background-color: #cccccc;
+  background-color: #eeeeee;
   margin: 22px 0;
   padding: 22px 16px;
   border-left: 3px solid #555555;
