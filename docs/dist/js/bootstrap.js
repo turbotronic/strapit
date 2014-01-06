@@ -1226,7 +1226,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
     // $.fn.offset doesn't round pixel values
     // so we use setOffset directly with our own function B-0
-    jQuery.offset.setOffset($tip[0], $.extend({
+    $.offset.setOffset($tip[0], $.extend({
       using: function (props) {
         $tip.css({
           top: Math.round(props.top),
