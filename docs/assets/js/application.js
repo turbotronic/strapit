@@ -16,7 +16,7 @@
             '@-ms-viewport{width:auto!important}'
           )
         );
-        document.getElementsByTagName('head')[0].
+        document.querySelector('head').
           appendChild(msViewportStyle);
       }
 
