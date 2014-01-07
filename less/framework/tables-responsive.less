@@ -89,6 +89,17 @@
   .table-wrapper { 
     overflow: hidden;
     border-right: 1px solid @table-border-color;
+    // Ensure the content doesn't wrap
+    thead,
+    tbody,
+    tfoot {
+      tr {
+        th,
+        td {
+          white-space: nowrap;
+        }
+      }
+    }
   }
   .scrollable {
     margin-left: @responsive-cell-width;

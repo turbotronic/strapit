@@ -2327,6 +2327,14 @@ table th.col {
   overflow: hidden;
   border-right: 1px solid #dddddd;
 }
+.table-responsive.js .table-wrapper thead tr th,
+.table-responsive.js .table-wrapper tbody tr th,
+.table-responsive.js .table-wrapper tfoot tr th,
+.table-responsive.js .table-wrapper thead tr td,
+.table-responsive.js .table-wrapper tbody tr td,
+.table-responsive.js .table-wrapper tfoot tr td {
+  white-space: nowrap;
+}
 .table-responsive.js .scrollable {
   margin-left: 25%;
   overflow: scroll;

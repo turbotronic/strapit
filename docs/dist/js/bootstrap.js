@@ -1943,6 +1943,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 (function($) {
   // determine if table-responsive is present
   if($('.table-responsive').length) {
+	console.log('yup');
     $('.table-responsive').each(function(i, table) {
       init($(table));
     });
