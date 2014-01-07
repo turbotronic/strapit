@@ -2499,7 +2499,6 @@ output {
   font-size: 1.4rem;
   line-height: 1.618;
   color: #808080;
-  vertical-align: middle;
 }
 .form-control {
   display: block;
@@ -2510,7 +2509,6 @@ output {
   font-size: 1.4rem;
   line-height: 1.618;
   color: #808080;
-  vertical-align: middle;
   background-color: #ffffff;
   background-image: none;
   border: 1px solid #cccccc;
@@ -2561,12 +2559,10 @@ input[type="date"] {
   margin-top: 10px;
   margin-bottom: 10px;
   padding-left: 20px;
-  vertical-align: middle;
 }
 .radio label,
 .checkbox label {
   display: inline;
-  margin-bottom: 0;
   font-weight: normal;
   cursor: pointer;
 }
