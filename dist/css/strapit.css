@@ -5143,7 +5143,6 @@ textarea.input-group.sm > .input-group-btn > .btn {
   list-style: none;
   padding-top: 10px;
   padding-bottom: 10px;
-  text-shadow: 0 1px 0 #fff;
   border-radius: 3px;
   background: #eeeeee;
 }
@@ -5202,41 +5201,35 @@ textarea.input-group.sm > .input-group-btn > .btn {
 .side-nav > li > a > img {
   max-width: none;
 }
-.side-nav > .active > a,
-.side-nav > .active:hover > a,
-.side-nav > .active:focus > a {
+.side-nav li.active > a {
   font-weight: 500;
-  color: #555555;
-  background-color: #cccccc;
-  border-right: 2px solid #428bca;
-}
-.side-nav > li > a {
-  display: block;
   color: #428bca;
-  padding: 5px 20px;
+  border-right: 1px solid #428bca;
 }
-.side-nav > li > a:hover,
-.side-nav > li > a:focus {
+.side-nav li.active > a:hover,
+.side-nav li.active > a:focus {
+  background: #eeeeee;
   text-decoration: none;
-  background-color: #cccccc;
-  color: #3071a9;
+  color: #428bca;
 }
-.side-nav > li ul {
+.side-nav li a {
+  display: block;
+  color: #808080;
+}
+.side-nav li a:hover,
+.side-nav li a:focus {
+  background: #e6e6e6;
+  text-decoration: none;
+  color: #808080;
+}
+.side-nav li ul {
   display: none;
   margin-bottom: 8px;
 }
-.side-nav > li ul > li > a {
+.side-nav li ul li a {
   padding: 3px 0 3px 30px;
   font-size: 12px;
   font-size: 1.2rem;
-}
-.side-nav > li ul > .active > a,
-.side-nav > li ul > .active:hover > a,
-.side-nav > li ul > .active:focus > a {
-  font-weight: 500;
-  color: #2a6496;
-  background-color: transparent;
-  border-right: 2px solid #428bca;
 }
 .side-nav li.divider {
   border-top: 1px solid #dddddd;

@@ -7,76 +7,44 @@
   .nav();
   padding-top: 10px;
   padding-bottom: 10px;
-  text-shadow: 0 1px 0 #fff;
   .border-radius(@border-radius-base);
   background: @gray-lightest;
-  > .active > a,
-  > .active:hover > a,
-  > .active:focus > a {
-    font-weight: @font-weight-bold;
-    color: @gray-dark;
-    background-color: @gray-lighter;
-    border-right: 2px solid @brand-primary;
-  }
-  > li {
-    > a {
-      display: block;
+  li {
+    &.active > a {
+      font-weight: @font-weight-bold;
       color: @brand-primary;
-      padding: 5px 20px;
+      border-right: 1px solid @brand-primary;
       &:hover,
       &:focus {
+        background: @gray-lightest;
         text-decoration: none;
-        background-color: @gray-lighter;
-        color: darken(@brand-primary, 10%);
+        color: @brand-primary;
+      }
+    }
+    a {
+      display: block;
+      color: @gray;
+      &:hover,
+      &:focus {
+        background: lighten(@gray-lighter, 10%);
+        text-decoration: none;
+        color: @gray;
       }
     }
     ul {
       display: none;
       margin-bottom: 8px;
-      > li {
-        > a {
+      li {
+        a {
           padding: 3px 0 3px 30px;
          .font-size(@font-size-small);
         }
      }
-     > .active > a,
-     > .active:hover > a,
-     > .active:focus > a {
-       font-weight: @font-weight-bold;
-       color: darken(@brand-primary, 15%);
-       background-color: transparent;
-       border-right: 2px solid @brand-primary;
-       }
     }
   }
   li.divider {
     border-top: 1px solid @border-color;
     height: 0;
     padding: 0;
-  }
-}
-
-// work this out:::
-// Show and affix the side nav when space allows it
-@media screen and (min-width: @breakpoint-lg) {
-  .side-nav > .active > ul {
-    display: block;
-  }
-  /* Widen the fixed sidebar */
-  .side-nav.affix,
-  .side-nav.affix-bottom {
-    width: 213px;
-  }
-  .side-nav.affix {
-    position: fixed; /* Undo the static from mobile first approach */
-    top: 80px;
-  }
-  .side-nav.affix-bottom {
-    position: absolute; /* Undo the static from mobile first approach */
-  }
-  .side-nav.affix-bottom .side-nav,
-  .side-nav.affix .side-nav {
-    margin-top: 0;
-    margin-bottom: 0;
   }
 }
