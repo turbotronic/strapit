@@ -315,6 +315,14 @@ h4[id] {
   padding-top: 80px;
   margin-top: -45px;
 }
+/* Janky fix to fix janky fix in modals */
+.modal h1[id],
+.modal h2[id],
+.modal h3[id],
+.modal h4[id] {
+  padding-top: 0;
+  margin-top: 0;
+}
 
 
 /*
