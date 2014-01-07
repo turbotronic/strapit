@@ -14,9 +14,9 @@ baseurl:          /
 url:              http://localhost:9001
 
 # Custom vars
-current_version:  2.0.1
+current_version:  2.0.2
 repo:             https://github.com/DFMLabs/strapit
 
 download:
   source:         https://github.com/DFMLabs/strapit/archive/master.zip
-  dist:           /dist/strapit-v2.0.1-dist.zip
+  dist:           /dist/strapit-v2.0.2-dist.zip
