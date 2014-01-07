@@ -10,7 +10,7 @@
   margin-bottom: 0;
   padding-left: 0; // Override default ul/ol
   list-style: none;
-  .clearfix();
+  &:extend(.clearfix all);
 
   > li {
     position: relative;
@@ -277,7 +277,7 @@
 
 .tabs-left,
 .tabs-right {
-  .clearfix();
+  &:extend(.clearfix all);
   .nav-tabs,
   .tabs {
     border-bottom: 0;
