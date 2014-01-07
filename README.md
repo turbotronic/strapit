@@ -3,7 +3,7 @@ Strapit
 
 A CSS framework mashup of Twitter's Bootstrap and ZURB's Foundation.
 
-## Current version: 2.0.1
+## Current version: 2.0.2
 
 ## How is this mashup constructed?
 
