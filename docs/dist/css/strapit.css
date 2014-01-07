@@ -5236,30 +5236,6 @@ textarea.input-group.sm > .input-group-btn > .btn {
   height: 0;
   padding: 0;
 }
-@media screen and (min-width: 960px) {
-  .side-nav > .active > ul {
-    display: block;
-  }
-  /* Widen the fixed sidebar */
-  .side-nav.affix,
-  .side-nav.affix-bottom {
-    width: 213px;
-  }
-  .side-nav.affix {
-    position: fixed;
-    /* Undo the static from mobile first approach */
-    top: 80px;
-  }
-  .side-nav.affix-bottom {
-    position: absolute;
-    /* Undo the static from mobile first approach */
-  }
-  .side-nav.affix-bottom .side-nav,
-  .side-nav.affix .side-nav {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
 .breadcrumb {
   padding: 8px 15px;
   margin: 0 0 22px;
