@@ -1,0 +1,305 @@
+// Chat widget
+// Take from Bootsnipp :: http://bootsnipp.com/snippets/featured/chat-widgets
+.chat-widget {
+  .chat {
+    li {
+      margin-bottom: (@line-height-computed / 2);
+      padding-bottom: @padding-base-vertical;
+      border-bottom: 1px dotted @border-color;
+
+      &:nth-child(n+1) { // right
+        .chat-body {
+          margin-right: ( @grid-gutter-width * 2 );
+        }
+        .img-circle {
+          .pull-right();
+        }
+      }
+      &:nth-child(2n+1) { //left
+        .chat-body {
+          margin-left: ( @grid-gutter-width * 2 );
+        }
+        .img-circle {
+          .pull-left();
+        }
+      }
+    }
+  }
+  .chat-body {
+    p {
+      margin:0;
+      color: @gray;
+    }
+  }
+  .panel-body {
+    overflow-y: scroll;
+    height: 250px;
+  }
+  .panel .slidedown .glyphicon, .chat .glyphicon {
+    margin-right: 5px;
+  }
+  ::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+      background-color: #F5F5F5;
+  }
+  ::-webkit-scrollbar {
+      width: 12px;
+      background-color: #F5F5F5;
+  }
+  ::-webkit-scrollbar-thumb {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+      background-color: #555;
+  }
+}
+
+
+
+// Buttons with labels
+// Taken from Bootsnipp :: http://bootsnipp.com/snippets/featured/buttons-with-labels
+.btn.labeled {
+  padding-top: 0;
+  padding-bottom: 0;
+  .btn-label {
+    position: relative;
+    left: -@padding-base-horizontal;
+    display: inline-block;
+    padding: @padding-base-vertical  @padding-base-horizontal;
+    background: rgba(0,0,0,0.15);
+    border-radius: @border-radius-base 0 0 @border-radius-base;
+  }
+}
+.btn.lg.labeled {
+  .btn-label {
+    left: -@padding-large-horizontal;
+    padding: @padding-large-vertical  @padding-large-horizontal;
+    border-radius: @border-radius-large 0 0 @border-radius-large;
+  }
+}
+.btn.sm.labeled {
+  .btn-label {
+    left: -@padding-small-horizontal;
+    padding: @padding-small-vertical  @padding-small-horizontal;
+    border-radius: @border-radius-small 0 0 @border-radius-small;
+  }
+}
+.btn.xs.labeled {
+  .btn-label {
+    left: -5px;
+    padding: 1px  5px;
+    border-radius: @border-radius-small 0 0 @border-radius-small;
+  }
+}
+
+// Google style login widget
+// Taken from Bootsnipp :: http://bootsnipp.com/snippets/featured/google-style-login
+.login-widget {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+    h3 {
+      text-align: center;
+    color: @gray-dark;
+    .font-size(18px);
+    font-weight: @font-weight-base;
+     margin-bottom: 10px;
+    }
+  img {
+      .square(96px);
+      margin: 0 auto 10px;
+      display: block;
+      .border-radius(50%);
+  }
+  form {
+    .clearfix();
+  }
+  input[type="text"] {
+      margin-bottom: -1px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+  }
+  input[type="password"] {
+      margin-bottom: 10px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+  }
+    .checkbox {
+      font-weight: @font-weight-base;
+      .pull-left();
+  }
+  .form-control {
+      position: relative;
+      font-size: 16px;
+      height: auto;
+      padding: 10px;
+      &:focus {
+        z-index: 2;
+      }
+  }
+  .account-wall {
+      margin-top: @line-height-computed;
+      padding: (@line-height-computed * 2) @line-height-computed @line-height-computed;
+      background-color: @gray-lightest;
+      .box-shadow(0px 2px 2px rgba(0, 0, 0, 0.3));
+  }
+  .need-help {
+      margin-top: 10px;
+      .pull-right();
+  }
+  .new-account {
+      display: block;
+      margin-top: 10px;
+      .text-center();
+  }
+}
+
+
+// Message counter
+// Taken from Bootsnipp :: http://bootsnipp.com/snippets/featured/message-box-with-counter
+.message-counter {
+  .panel();
+  .message-body {
+    .panel-body();
+  }
+  textarea {
+    margin-bottom: @line-height-computed / 2;
+  }
+  .counter {
+    .pull-right();
+  }
+}
+
+
+// Circle buttons
+// Taken from Bootsnipp :: http://bootsnipp.com/snippets/featured/circle-button
+.btn.circle {
+  .square(50px);
+  text-align: center;
+  font-size: 18px;
+  padding: 10px 16px;
+  line-height: 1.33;
+  border-radius: 50%;
+}
+.btn.circle.lg {
+  .square(70px);
+  font-size: 24px;
+}
+.btn.circle.sm {
+  .square(30px);
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+}
+/*user profile */
+.user-profile {
+  background: #f3f3f3;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+.user-image {
+  width: 18%
+  float:left;
+  margin: 0 15px;
+}
+.user-info {
+  width: 18%;
+  float:left;  
+    margin: 0 15px;
+}
+.user-action {
+    width: 18%;
+      float:left;
+        margin: 0 15px;
+}
+
+/*media-slider-carousel*/
+
+/* carousel */
+.media-carousel 
+{
+  margin-bottom: 0;
+  padding: 0 40px 30px 40px;
+  margin-top: 30px;
+}
+/* Previous button  */
+.media-carousel .carousel-control.left 
+{
+  left: -12px;
+  background-image: none;
+  background: none repeat scroll 0 0 #222222;
+  border: 4px solid #FFFFFF;
+  border-radius: 23px 23px 23px 23px;
+  height: 40px;
+  width : 40px;
+  margin-top: 30px
+}
+/* Next button  */
+.media-carousel .carousel-control.right 
+{
+  right: -12px !important;
+  background-image: none;
+  background: none repeat scroll 0 0 #222222;
+  border: 4px solid #FFFFFF;
+  border-radius: 23px 23px 23px 23px;
+  height: 40px;
+  width : 40px;
+  margin-top: 30px
+}
+/* Changes the position of the indicators */
+.media-carousel .carousel-indicators 
+{
+  right: 50%;
+  top: auto;
+  bottom: 0px;
+  margin-right: -19px;
+}
+/* Changes the colour of the indicators */
+.media-carousel .carousel-indicators li 
+{
+  background: #c0c0c0;
+}
+.media-carousel .carousel-indicators .active 
+{
+  background: #333333;
+}
+.media-carousel img
+{
+  width: 250px;
+  height: 100px
+}
+/* End carousel */
+
+/*login form*/
+
+
+
+
+
+/*thumbnail-carousel*/
+/* Removes the default 20px margin and creates some padding space for the indicators and controls */
+
+#thumbnail-carousel .carousel {
+    margin-bottom: 0;
+  padding: 0 40px 30px 40px;
+}
+/* Reposition the controls slightly */
+#thumbnail-carousel .carousel-control {
+  left: -12px;
+}
+#thumbnail-carousel .carousel-control.right {
+  right: -12px;
+}
+/* Changes the position of the indicators */
+#thumbnail-carousel .carousel-indicators {
+  right: 50%;
+  top: auto;
+  bottom: 0px;
+  margin-right: -19px;
+}
+/* Changes the colour of the indicators */
+#thumbnail-carousel .carousel-indicators li {
+  background: #c0c0c0;
+}
+#thumbnail-carousel .carousel-indicators .active {
+background: #333333;
+}
