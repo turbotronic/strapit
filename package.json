@@ -1,0 +1,46 @@
+{
+  "name": "strapit",
+  "description": "Based on Bootstrap v3.0.3 and Foundation 4.3.1",
+  "version": "2.0.2",
+  "keywords": [
+    "bootstrap",
+    "css"
+  ],
+  "homepage": "http://sandbox.digitalfirstmedia.com/strapit/",
+  "author": "Twitter, Inc., ZURB, DFM Labs team",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DFMLabs/strapit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DFMLabs/strapit/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/DFMLabs/strapit/blob/master/LICENSE"
+    }
+  ],
+  "devDependencies": {
+    "btoa": "~1.1.1",
+    "grunt": "~0.4.2",
+    "grunt-banner": "~0.2.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-connect": "~0.6.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-csslint": "~0.2.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-less": "~0.9.0",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-csscomb": "~2.0.1",
+    "grunt-html-validation": "~0.1.13",
+    "grunt-jekyll": "~0.4.1",
+    "grunt-sed": "~0.1.1",
+    "load-grunt-tasks": "~0.2.1"
+  }
+}
