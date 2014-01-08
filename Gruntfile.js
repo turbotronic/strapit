@@ -16,9 +16,13 @@ module.exports = function (grunt) {
     // Metadata.
     pkg: grunt.file.readJSON('package.json'),
     banner: '/*!\n' +
-              ' * Strapit v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
-              ' * Copyright 2011-<%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
-              ' * Licensed under <%= _.pluck(pkg.licenses, "type") %> (<%= _.pluck(pkg.licenses, "url") %>)\n' +
+              ' * Strapit Framework v<%= pkg.version.strapit %> (<%= pkg.homepage %>)\n' +
+              ' * \n' +
+              ' * Based on Bootstrap v<%= pkg.version.bootstrap %> and Foundation v<%= pkg.version.foundation %>\n' +
+              ' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
+              ' * Cobbled together and maintained by the design squad at Digital First Media\n' + 
+              ' * Bootstrap and Foundation are licensed under the MIT License\n' +
+              ' * http://opensource.org/licenses/MIT\n' +
               ' */\n',
     jqueryCheck: 'if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery") }\n\n',
 
@@ -145,6 +149,11 @@ module.exports = function (grunt) {
         src: ['fonts/*'],
         dest: 'dist/'
       },
+      webicons: {
+        expand: true,
+        src: ['img/webicons/*'],
+        dest: 'dist/'
+      },
       docs: {
         expand: true,
         cwd: './dist',
@@ -188,7 +197,7 @@ module.exports = function (grunt) {
 
     watch: {
       reloader: {
-        files: ['*.html'],
+        files: ['docs/*.html'],
         options: {
           livereload: true
         }
@@ -239,10 +248,10 @@ module.exports = function (grunt) {
   grunt.registerTask('dist-docs', ['copy:docs']);
 
   // Full distribution task.
-  grunt.registerTask('dist', ['clean', 'dist-css', 'copy:fonts', 'dist-docs', 'dist-js']);
+  grunt.registerTask('dist', ['clean', 'dist-css', 'copy:fonts', 'copy:webicons', 'dist-docs', 'dist-js']);
 
   // Default task.
-  grunt.registerTask('default', ['dist']);
+  grunt.registerTask('default', ['dist', 'watch']);
 
   // Version numbering task.
   // grunt change-version-number --oldver=A.B.C --newver=X.Y.Z
