@@ -251,7 +251,7 @@ module.exports = function (grunt) {
   grunt.registerTask('dist', ['clean', 'dist-css', 'copy:fonts', 'copy:webicons', 'dist-docs', 'dist-js']);
 
   // Default task.
-  grunt.registerTask('default', ['dist', 'watch']);
+  grunt.registerTask('default', ['dist']);
 
   // Version numbering task.
   // grunt change-version-number --oldver=A.B.C --newver=X.Y.Z
