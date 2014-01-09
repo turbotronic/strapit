@@ -5,8 +5,6 @@ A CSS framework mashup of Twitter's Bootstrap and ZURB's Foundation.
 
 ## Current version: 2.0.2
 
-## How is this mashup constructed?
-
 Basically, this framework retains the styling and semantics of Bootstrap with the Javascript grid, responsivie utilties and Javascript element ideas coming from Foundation. UI elements of Foundation, e.g. subnavs, switches, and flex-video, have been ported over to the Bootstrap styles. Strapit is still written in LESS and retains Bootstrap's mixins, however, we are considering a SASS version and porting the best of each's mixins into both languages for two distinct versions.
 
 There are also some original UI elements and typographic conventions scattered throughout. We expect there will soon be more. We also changed some of the semantics in an attempt to reduce overall code. For example: Rather than append a 'btn-primary' class to a 'btn' class, we simply remove the 'btn-' on the former class, so the styling on an element would read <button class="btn primary block lg"> as opposed to <btn class="btn btn-primary btn-block btn-lg">. Maybe we are wrong to do this. Time will tell.
@@ -31,3 +29,42 @@ Strapit's documentation, included in this repo in the root directory, is built w
 3. Open [http://localhost:9001](http://localhost:9001) in your browser, and voilà.
 
 Learn more about using Jekyll by reading their [documentation](http://jekyllrb.com/docs/home/).
+
+## Compiling CSS and JavaScript
+
+Bootstrap uses [Grunt](http://gruntjs.com/) with convenient methods for working with the framework. It's how we compile our code, run tests, and more. To use it, install the required dependencies as directed and then run some Grunt commands.
+
+### Install Grunt
+
+From the command line:
+
+1. Install `grunt-cli` globally with `npm install -g grunt-cli`.
+2. Navigate to the root `/strapit` directory, then run `npm install`. npm will look at [package.json](package.json) and automatically install the necessary local dependencies listed there.
+
+When completed, you'll be able to run the various Grunt commands provided from the command line.
+
+**Unfamiliar with `npm`? Don't have node installed?** That's a-okay. npm stands for [node packaged modules](http://npmjs.org/) and is a way to manage development dependencies through node.js. [Download and install node.js](http://nodejs.org/download/) before proceeding.
+
+### Available Grunt commands
+
+#### Build - `grunt`
+Run `grunt` to run tests locally and compile the CSS and JavaScript into `/dist`. **Uses [Less](http://lesscss.org/) and [UglifyJS](http://lisperator.net/uglifyjs/).**
+
+#### Only compile CSS and JavaScript - `grunt dist`
+`grunt dist` creates the `/dist` directory with compiled files. **Uses [Less](http://lesscss.org/) and [UglifyJS](http://lisperator.net/uglifyjs/).**
+
+#### Watch - `grunt watch`
+This is a convenience method for watching just Less files and automatically building them whenever you save.
+
+### Troubleshooting dependencies
+
+Should you encounter problems with installing dependencies or running Grunt commands, uninstall all previous dependency versions (global and local). Then, rerun `npm install`.
+
+
+## Contributing
+
+Please read through our [contributing guidelines](https://github.com/dfmlabs/strapit/blob/master/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
+
+
+
+
