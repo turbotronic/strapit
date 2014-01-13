@@ -5498,6 +5498,9 @@ a.list-group-item.info.active:focus {
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 2px;
 }
+.panel-group {
+  margin-bottom: 22px;
+}
 .panel-group .panel {
   margin-bottom: 0;
   overflow: hidden;
