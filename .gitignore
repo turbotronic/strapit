@@ -11,8 +11,6 @@ Icon
 .Spotlight-V100
 .Trashes
 
+# Files in this folder
 _gh_pages/*
 node_modules/*
-
-/dist/strapit-v2.0.1-dist.zip
-/docs/dist/strapit-v2.0.1-dist.zip
