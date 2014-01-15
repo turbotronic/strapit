@@ -7,19 +7,27 @@
 @import "framework/reset.less";
 @import "framework/print.less";
 
-// Utilities
-@import "framework/utilities.less";
-@import "framework/responsive-utilities.less";
-
 // Core CSS
 @import "framework/scaffolding.less";
 @import "framework/type-base.less";
 @import "framework/typography.less";
 @import "framework/type-rare.less";
 
-// Structure
-@import "framework/grid.less";
-@import "framework/block-grid.less";
+// Utilities
+@import "framework/utilities.less";
+@import "framework/responsive-utilities.less";
+
+// Grid files
+@import "framework/grid-base.less"; // Base styles for all grids
+@import "framework/grid-fluid.less"; // The default fluid grid
+@import "framework/grid-stops.less";  // This file will cap the container at certain widths as opposed to being fluid throughout
+@import "framework/grid-block.less"; // Foundation justified block grid
+
+// Fixed width grid
+// @import "framework/grid-static.less"; 
+// --------------------------------------------------------
+// If you want a fixed-width grid, use this and comment out 
+// the 'grid-fluid', 'grid-stops' and 'responsive-utilities' files.
 
 // Components :: Baseline
 @import "framework/code.less";
