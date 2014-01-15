@@ -96,7 +96,7 @@ module.exports = function (grunt) {
     less: {
       compileCore: {
         options: {
-          //strictMath: true,
+          strictMath: true,
           sourceMap: true,
           outputSourceFiles: true,
           sourceMapURL: '<%= pkg.name %>.css.map',
@@ -158,6 +158,7 @@ module.exports = function (grunt) {
         expand: true,
         cwd: './dist',
         src: [
+          '{css,js}/*',
           '{css,js}/*.min.*',
           'css/*.map',
           'fonts/*'
@@ -211,7 +212,7 @@ module.exports = function (grunt) {
       },
       less: {
         files: 'less/strapit.less',
-        tasks: ['less'],
+        tasks: ['less', 'csscomb', 'usebanner', 'copy:docs'],
         options: {
           livereload: true
         }
