@@ -211,7 +211,7 @@ module.exports = function (grunt) {
         }
       },
       less: {
-        files: 'less/strapit.less',
+        files: ['less/*.less', 'less/*/*.less'],
         tasks: ['less', 'csscomb', 'usebanner', 'copy:docs'],
         options: {
           livereload: true
