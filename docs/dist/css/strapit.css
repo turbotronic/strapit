@@ -5760,6 +5760,11 @@ textarea.input-group.sm > .input-group-btn > .btn {
   position: relative;
   top: -1px;
 }
+.btn-xs .badge,
+.btn.xs .badge {
+  top: 0;
+  padding: 1px 5px;
+}
 a.badge:hover,
 a.badge:focus {
   color: #fff;
