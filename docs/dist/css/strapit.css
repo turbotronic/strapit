@@ -6443,7 +6443,7 @@ a.list-group-item.info.active:focus {
 }
 .well {
   min-height: 22px;
-  padding: 22px - 2;
+  padding: 20px;
   margin-bottom: 22px;
   background-color: #f5f5f5;
   border: 1px solid #e3e3e3;
@@ -6462,12 +6462,12 @@ a.list-group-item.info.active:focus {
 }
 .well-lg,
 .well.lg {
-  padding: (22px - 2) * 1.25;
+  padding: 25px;
   border-radius: 6px;
 }
 .well-sm,
 .well.sm {
-  padding: (22px - 2) * .5;
+  padding: 10px;
   border-radius: 3px;
 }
 .close {
