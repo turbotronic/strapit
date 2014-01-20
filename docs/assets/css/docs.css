@@ -307,6 +307,10 @@ body {
   padding-top: 40px;
 }
 
+.bs-docs-section:last-child {
+  margin-bottom: 0;
+}
+
 /* Janky fix for preventing navbar from overlapping */
 h1[id],
 h2[id],
