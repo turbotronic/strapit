@@ -568,6 +568,15 @@
   }
 }
 
+// Typography
+// -------------------------
+.text-emphasis-variant(@color) {
+  color: @color;
+  a&:hover {
+    color: darken(@color, 10%);
+  }
+}
+
 // Navbar vertical align
 // -------------------------
 // Vertically center elements in the navbar.
@@ -804,7 +813,7 @@
   }
 }
 
-// Basic looping in LESS
+// Basic looping in Less
 .make-grid(@index, @class, @type) when (@index >= 0) {
   .calc-grid(@index, @class, @type);
   // next iteration

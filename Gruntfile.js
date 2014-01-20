@@ -88,7 +88,7 @@ module.exports = function (grunt) {
           banner: '<%= banner %>\n',
           report: 'min'
         },
-        src: ['<%= concat.bootstrap.dest %>'],
+        src: '<%= concat.bootstrap.dest %>',
         dest: 'dist/js/bootstrap.min.js'
       },
     },
@@ -138,7 +138,7 @@ module.exports = function (grunt) {
           config: 'less/.csscomb.json'
         },
         files: {
-          'dist/css/<%= pkg.name %>.css': ['dist/css/<%= pkg.name %>.css']
+          'dist/css/<%= pkg.name %>.css': 'dist/css/<%= pkg.name %>.css'
         }
       }
     },
@@ -146,12 +146,12 @@ module.exports = function (grunt) {
     copy: {
       fonts: {
         expand: true,
-        src: ['fonts/*'],
+        src: 'fonts/*',
         dest: 'dist/'
       },
       webicons: {
         expand: true,
-        src: ['img/webicons/*'],
+        src: 'img/webicons/*',
         dest: 'dist/'
       },
       docs: {
@@ -192,20 +192,20 @@ module.exports = function (grunt) {
         ]
       },
       files: {
-        src: ['_gh_pages/**/*.html']
+        src: '_gh_pages/**/*.html'
       }
     },
 
     watch: {
       reloader: {
-        files: ['docs/*.html'],
+        files: 'docs/*.html',
         options: {
           livereload: true
         }
       },
       src: {
         files: '<%= jshint.src.src %>',
-        tasks: ['jshint:src'],
+        tasks: 'jshint:src',
         options: {
           livereload: true
         }

@@ -63,7 +63,7 @@ $.fn.bootstrapBtn = bootstrapButton            // give $().bootstrapBtn the Stra
 {% endhighlight %}
 
     <h3 id="js-events">Events</h3>
-    <p>Strapit provides custom events for most plugin's unique actions. Generally, these come in an infinitive and past participle form - where the infinitive (ex. <code>show</code>) is triggered at the start of an event, and its past participle form (ex. <code>shown</code>) is trigger on the completion of an action.</p>
+    <p>Strapit provides custom events for most plugins' unique actions. Generally, these come in an infinitive and past participle form - where the infinitive (ex. <code>show</code>) is triggered at the start of an event, and its past participle form (ex. <code>shown</code>) is trigger on the completion of an action.</p>
     <p>As of 3.0.0, all Strapit events are namespaced.</p>
     <p>All infinitive events provide <code>preventDefault</code> functionality. This provides the ability to stop the execution of an action before it starts.</p>
 {% highlight js %}
@@ -532,7 +532,7 @@ $('#myModal').on('hidden.bs.modal', function (e) {
   </ul>
 </div>
 {% endhighlight %}
-          <p>To keep URLs intact, use the <code>data-target</code> attribute instead of <code>href="#"</code>.</p>
+<p>To keep URLs intact, use the <code>data-target</code> attribute instead of <code>href="#"</code>.</p>
 {% highlight html %}
 <div class="dropdown">
   <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
@@ -797,7 +797,7 @@ $('#myTab li:eq(2) a').tab('show') // Select third tab (0-indexed)
 {% highlight html %}
 <!-- Nav tabs -->
 <ul class="nav tabs">
-  <li><a href="#home" data-toggle="tab">Home</a></li>
+  <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
   <li><a href="#profile" data-toggle="tab">Profile</a></li>
   <li><a href="#messages" data-toggle="tab">Messages</a></li>
   <li><a href="#settings" data-toggle="tab">Settings</a></li>

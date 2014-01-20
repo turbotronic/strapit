@@ -28,11 +28,11 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     <p>Instead of adding on optional mobile styles, <strong>Strapit is mobile first</strong>. Mobile first styles can be found throughout the entire library instead of in separate files.</p>
     <p>To ensure proper rendering and touch zooming, <strong>add the viewport meta tag</strong> to your <code>&lt;head&gt;</code>.</p>
 {% highlight html %}
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 {% endhighlight %}
-    <p>You can disable zooming capabilities on mobile devices by adding <code>user-scalable=no</code> to the viewport meta tag. This disables zooming, meaning users are only able to scroll, and results in your site feeling a bit more like a native application. Overall we don't recommend this on every site, so use caution!</p>
+    <p>You can disable zooming capabilities on mobile devices by adding <code>user-scalable=no</code> to the viewport meta tag. This disables zooming, meaning users are only able to scroll, and results in your site feeling a bit more like a native application. Overall, we don't recommend this on every site, so use caution!</p>
 {% highlight html %}
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 {% endhighlight %}
 
     <h3 id="overview-responsive-images">Responsive images</h3>
@@ -72,7 +72,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     <p>These styles can be found within <code>scaffolding.less</code>.</p>
 
     <h3 id="overview-normalize">Normalize</h3>
-    <p>For improved cross-browser rendering, we use <a href="http://necolas.github.io/normalize.css/" target="_blank">Normalize</a>, a project by <a href="http://twitter.com/necolas" target="_blank">Nicolas Gallagher</a> and <a href="http://twitter.com/jon_neal" target="_blank">Jonathan Neal</a>. However, rather than one large file, Normalize is split up within the framework where the appropriate styles are grouped the LESS file that they impact. For example, you'll find Normalize's font styles within <code>forms.less</code>.</p><p>The advantage of this approach is that you use only the styles you need, so if you did not need <code>forms.less</code>, you would not get the reset styles, either. The disadvantage is that it is harder to maintain when Normalize updates. For that reason, each Normalize style is commented with a version number e.g.: <code>//(nm v2.1.3)</code>.</p>
+    <p>For improved cross-browser rendering, we use <a href="http://necolas.github.io/normalize.css/" target="_blank">Normalize</a>, a project by <a href="http://twitter.com/necolas" target="_blank">Nicolas Gallagher</a> and <a href="http://twitter.com/jon_neal" target="_blank">Jonathan Neal</a>. However, rather than one large file, Normalize is split up within the framework where the appropriate styles are grouped the Less file that they impact. For example, you'll find Normalize's font styles within <code>forms.less</code>.</p><p>The advantage of this approach is that you use only the styles you need, so if you did not need <code>forms.less</code>, you would not get the reset styles, either. The disadvantage is that it is harder to maintain when Normalize updates. For that reason, each Normalize style is commented with a version number e.g.: <code>//(nm v2.1.3)</code>.</p>
 
     <h3 id="overview-container">Containers</h3>
       <p>Easily center a page's contents by wrapping its contents in a <code>.container</code>.</p>
@@ -107,7 +107,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
 <li>Content should be placed within columns, and only columns may be immediate children of rows. Columns are defined with the <code>.col</code> class.</li>
 <li>Columns create gutters (gaps between column content) via <code>padding</code>. That padding is offset in rows for the first and last column via negative margin on <code>.row</code>s.</li>
 <li>Grid columns are created by resizing the <code>.col</code> elements with screen size and column width modifiers (such as <code>.md-4</code> which reads "four columns on a medium-sized screen or more" or <code>.lg-6</code>, which reads "six columns on a large-screen screen or more" etc.).</li>
-<li>LESS mixins can also be used for <a href="#grid-less">more semantic layouts</a>.</li>
+<li>Less mixins can also be used for <a href="#grid-less">more semantic layouts</a>.</li>
 </ul>
 <div class="callout info">
 <h4>Grids and full-width layouts</h4>
@@ -510,8 +510,8 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
 </div>
 
 
-<h3 id="grid-less">LESS mixins and variables</h3>
-<p>In addition to <a href="#grid-example-basic">prebuilt grid classes</a> for fast layouts, Strapit includes LESS variables and mixins for quickly generating your own simple, semantic layouts.</p>
+<h3 id="grid-less">Less mixins and variables</h3>
+<p>In addition to <a href="#grid-example-basic">prebuilt grid classes</a> for fast layouts, Strapit includes Less variables and mixins for quickly generating your own simple, semantic layouts.</p>
 <h4>Variables</h4>
 <p>Variables determine the number of columns, the gutter width, and the media query point at which to begin floating columns. We use these to generate the predefined grid classes documented above, as well as for the custom mixins listed below.</p>
 {% highlight html %}
@@ -911,9 +911,9 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
 <p class="lead">...</p>
 {% endhighlight %}
 
-    <!-- Using LESS -->
+    <!-- Using Less -->
     <h3>Built with Less</h3>
-    <p>The typographic scale is based on two LESS variables in <strong>variables.less</strong>: <code>@font-size-base</code> and <code>@line-height-base</code>. The first is the base font-size used throughout and the second is the base line-height. We use those variables and some simple math to create the margins, paddings, and line-heights of all our type and more. Customize them and Strapit adapts.</p>
+    <p>The typographic scale is based on two Less variables in <strong>variables.less</strong>: <code>@font-size-base</code> and <code>@line-height-base</code>. The first is the base font-size used throughout and the second is the base line-height. We use those variables and some simple math to create the margins, paddings, and line-heights of all our type and more. Customize them and Strapit adapts.</p>
 
 
     <!-- Emphasis -->
@@ -1229,7 +1229,7 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
     <p>Stylized implementation of HTML's <code>&lt;abbr&gt;</code> element for abbreviations and acronyms to show the expanded version on hover. Abbreviations with a <code>title</code> attribute have a light dotted bottom border and a help cursor on hover, providing additional context on hover.</p>
     <div class="callout info">
       <h4>Located in type-rare.less</h4>
-      <p>Abbreviations and the style shown here afterward are kind of rarely used. Because of that, we separated these styles into another LESS stylesheet named <code>type-rare.less</code> just in case yuou'd like to turn these off in final complication.'</p>
+      <p>Abbreviations and the style shown here afterward are kind of rarely used. Because of that, we separated these styles into another Less stylesheet named <code>type-rare.less</code> just in case yuou'd like to turn these off in final complication.'</p>
     </div>
     <h3>Basic abbreviation</h3>
     <p>For expanded text on long hover of an abbreviation, include the <code>title</code> attribute with the <code>&lt;abbr&gt;</code> element.</p>
@@ -1312,12 +1312,12 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <h2 id="code-user-input">User input</h2>
     <p>Use the <code>&lt;kbd&gt;</code> or the <code>.keystroke</code> class to indicate input that is typically entered via keyboard.</p>
     <div class="bs-example">
-      <p>To switch directories, type <kbd>cd</kbd> followed the name of the directory.</p>
-      <p>To switch directories, type <span class="keystroke">cd</span> followed the name of the directory.</p>
+      <p>To switch directories, type <kbd>cd</kbd> followed by the name of the directory.</p>
+      <p>To switch directories, type <span class="keystroke">cd</span> followed by the name of the directory.</p>
     </div>
 {% highlight html %}
-  <p>To switch directories, type <kbd>cd</kbd> followed the name of the directory.</p>
-  <p>To switch directories, type <span class="keystroke">cd</span> followed the name of the directory.</p>
+  <p>To switch directories, type <kbd>cd</kbd> followed by the name of the directory.</p>
+  <p>To switch directories, type <span class="keystroke">cd</span> followed by the name of the directory.</p>
 {% endhighlight %}
 
     <h2 id="code-block">Basic block</h2>
@@ -2500,7 +2500,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 
 
 <h2 id="buttons-active">Active state</h2>
-    <p>Buttons will appear pressed (with a darker background, darker border, and inset shadow) when active. For <code>&lt;button&gt;</code> elements, this is done via <code>:active</code>. For <code>&lt;a&gt;</code> elements, it's done with <code>.active</code>. However, you may use <code>.active</code> <code>&lt;button&gt;</code>s should you need to replicate the active state progammatically.</p>
+    <p>Buttons will appear pressed (with a darker background, darker border, and inset shadow) when active. For <code>&lt;button&gt;</code> elements, this is done via <code>:active</code>. For <code>&lt;a&gt;</code> elements, it's done with <code>.active</code>. However, you may use <code>.active</code> on <code>&lt;button&gt;</code>s should you need to replicate the active state programmatically.</p>
 
     <h3>Button element</h3>
     <p>No need to add <code>:active</code> as it's a pseudo state, but if you need it, go ahead and add <code>.active</code>.</p>
@@ -3264,7 +3264,7 @@ a {
 
 
     <h2 id="less-mixins-vendor">Vendor mixins</h2>
-    <p>Vendor mixins are mixins to help support multiple browsers by including all relevant vendor prefixs in your compiled CSS.</p>
+    <p>Vendor mixins are mixins to help support multiple browsers by including all relevant vendor prefixes in your compiled CSS.</p>
 
 
     <h3 id="less-mixins-box-sizing">Box-sizing</h3>
@@ -3336,7 +3336,7 @@ a {
 {% endhighlight %}
 
     <h3 id="less-mixins-transformations">Transformations</h3>
-    <p>Rorate, scale, translate (move), or skew any object.</p>
+    <p>Rotate, scale, translate (move), or skew any object.</p>
 {% highlight css %}
 .rotate(@degrees) {
   -webkit-transform: rotate(@degrees);
@@ -3392,7 +3392,7 @@ a {
 {% endhighlight %}
 
     <h3 id="less-mixins-animations">Animations</h3>
-    <p>A single mixin for using all CSS3's animation properties in one declarations and other mixins for individual properties.</p>
+    <p>A single mixin for using all of CSS3's animation properties in one declaration and other mixins for individual properties.</p>
 {% highlight css %}
 .animation(@animation) {
   -webkit-animation: @animation;
@@ -3482,7 +3482,7 @@ a {
 #gradient > .vertical-three-colors(#777; #333; .25; #000);
 #gradient > .horizontal-three-colors(#777; #333; .25; #000);
 {% endhighlight %}
-    <p><strong>Heads up!</strong> Should you ever need to remove a gradient, be sure to remove any IE-specific <code>filter</code> you may have added. You can do that by using <code>.reset-filter()</code> mixin alignside <code>background-image: none;</code>.</p>
+    <p><strong>Heads up!</strong> Should you ever need to remove a gradient, be sure to remove any IE-specific <code>filter</code> you may have added. You can do that by using the <code>.reset-filter()</code> mixin alongside <code>background-image: none;</code>.</p>
 
 
     <h2 id="less-mixins-utility">Utility mixins</h2>

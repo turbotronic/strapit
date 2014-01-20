@@ -130,7 +130,8 @@ less/
 <html>
   <head>
     <title>Strapit 101 Template</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Strapit -->
     <link href="css/strapit.min.css" rel="stylesheet" media="screen">
   </head>
@@ -147,7 +148,7 @@ less/
 
 
 
-  <!-- Template
+  <!-- Examples
   ================================================== -->
   <div class="bs-docs-section">
     <div class="page-header">
@@ -281,7 +282,7 @@ less/
 
 
 
-  <!-- Template
+  <!-- Disabling responsiveness
   ================================================== -->
   <div class="bs-docs-section">
     <div class="page-header">
@@ -317,14 +318,53 @@ less/
     <p class="lead">Strapit is built to work best in the latest desktop and mobile browsers, meaning older browsers might display differently styled, though fully functional, renderings of certain components.</p>
 
     <h3 id="support-browsers">Supported browsers</h3>
-    <p>Specifically, we support the latest versions of the following:</p>
-    <ul class="list">
-      <li>Chrome (Mac, Windows, iOS, and Android)</li>
-      <li>Safari (Mac and iOS only, as the Windows version is being abandoned)</li>
-      <li>Firefox (Mac, Windows)</li>
-      <li>Internet Explorer</li>
-      <li>Opera (Mac, Windows)</li>
-    </ul>
+    <p>Specifically, we support the <strong>latest versions</strong> of the following browsers on the following platforms:</p>
+    <div class="table-responsive">
+      <table class="table bordered striped">
+        <thead>
+          <tr>
+            <td>&nbsp;</td>
+            <th>Chrome</th>
+            <th>Firefox</th>
+            <th>IE</th>
+            <th>Opera</th>
+            <th>Safari</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Android</th>
+            <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span class="sr-only">Supported</span></td>
+            <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> <span class="sr-only">Not Supported</span></td>
+            <td class="text-muted" rowspan="3" style="vertical-align: middle;">N/A</td>
+            <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> <span class="sr-only">Not Supported</span></td>
+            <td class="text-muted">N/A</td>
+          </tr>
+          <tr>
+            <th>iOS</th>
+            <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span class="sr-only">Supported</span></td>
+            <td class="text-muted">N/A</td>
+            <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> <span class="sr-only">Not Supported</span></td>
+            <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span class="sr-only">Supported</span></td>
+          </tr>
+          <tr>
+            <th>Mac OS X</th>
+            <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span class="sr-only">Supported</span></td>
+            <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span class="sr-only">Supported</span></td>
+            <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span class="sr-only">Supported</span></td>
+            <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span class="sr-only">Supported</span></td>
+          </tr>
+          <tr>
+            <th>Windows</th>
+            <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span class="sr-only">Supported</span></td>
+            <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span class="sr-only">Supported</span></td>
+            <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span class="sr-only">Supported</span></td>
+            <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span class="sr-only">Supported</span></td>
+            <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> <span class="sr-only">Not Supported</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <p>Unofficially, Strapit should look and behave well enough in Chromium and Chrome for Linux, Firefox for Linux, and Internet Explorer 7, though they are not officially supported.</p>
 
     <h3 id="support-ie8-ie9">Internet Explorer 8 and 9</h3>
@@ -407,13 +447,13 @@ less/
 
 {% highlight js %}
 if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-  var msViewportStyle = document.createElement("style")
+  var msViewportStyle = document.createElement('style')
   msViewportStyle.appendChild(
     document.createTextNode(
-      "@-ms-viewport{width:auto!important}"
+      '@-ms-viewport{width:auto!important}'
     )
   )
-  document.querySelector("head").appendChild(msViewportStyle)
+  document.querySelector('head').appendChild(msViewportStyle)
 }
 {% endhighlight %}
     <p>For more information and usage guidelines, read <a href="http://timkadlec.com/2013/01/windows-phone-8-and-device-width/">Windows Phone 8 and Device-Width</a>.</p>
@@ -444,7 +484,7 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
     <h3 id="support-android-stock-browser">Android stock browser</h3>
     <p>Out of the box, Android 4.1 (and even some newer releases apparently) ship with the Browser app as the default web browser of choice (as opposed to Chrome). Unfortunately, the Browser app has lots of bugs and inconsistencies with CSS in general.</p>
     <h4>Select menus</h4>
-    <p>On <code>&lt;select&gt;</code> elements, the Android stock browser will not display the side controls if there is a <code>border-radius</code> and/or <code>border</code> applied. Use the snippet of code below to remove the offending CSS and render the <code>&lt;select&gt;</code> as an unstyled element on the Android stock broswer. The useragent sniffing avoids interfernece with Chrome, Safari, and Mozilla browsers.</p>
+    <p>On <code>&lt;select&gt;</code> elements, the Android stock browser will not display the side controls if there is a <code>border-radius</code> and/or <code>border</code> applied. Use the snippet of code below to remove the offending CSS and render the <code>&lt;select&gt;</code> as an unstyled element on the Android stock browser. The user agent sniffing avoids interference with Chrome, Safari, and Mozilla browsers.</p>
 {% highlight html %}
 <script>
 var nua = navigator.userAgent;
@@ -476,7 +516,7 @@ if(isAndroid) {
     <div class="page-header">
       <h1 id="accessibility">Accessibility</h1>
     </div>
-    <p class="lead">Strapit follows common web standards, and with minimal extra effort, can be used to create sites that are accessible to those using <abbr title="Assistive Technology" class="initialism">AT</abbr>.</p>
+    <p class="lead">Strapit follows common web standards and&mdash;with minimal extra effort&mdash;can be used to create sites that are accessible to those using <abbr title="Assistive Technology" class="initialism">AT</abbr>.</p>
 
     <h3>Skip navigation</h3>
     <p>If your navigation contains many links and comes before the main content in the DOM, add a <code>Skip to content</code> link immediately after your opening <code>&lt;body&gt;</code> tag. <a href="http://a11yproject.com/posts/skip-nav-links/">(read why)</a></p>
