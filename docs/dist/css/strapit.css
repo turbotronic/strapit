@@ -6775,7 +6775,7 @@ button.close {
 }
 .modal-dialog {
   position: relative;
-  width: auto;
+  width: 600px;
   margin: 10px;
 }
 .modal-content {
