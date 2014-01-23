@@ -1,5 +1,5 @@
 //
-// Variables :: reorg and do camel case????
+// Variables
 // --------------------------------------------------
 
 
@@ -232,18 +232,12 @@
 // Padding, to be divided by two and applied to the left and right of all columns
 @grid-gutter-width:         30px;
 
-// Columns and gutters
+// Columns
 @grid-columns-xs:         4;
 @grid-columns-sm:         @grid-columns-xs;
 @grid-columns-md:         @grid-columns;
 @grid-columns-lg:         @grid-columns-md;
 @grid-columns-xl:         @grid-columns-lg;
-
-@grid-gutter-width-xs:    @grid-gutter-width;
-@grid-gutter-width-sm:    @grid-gutter-width;
-@grid-gutter-width-md:    @grid-gutter-width;
-@grid-gutter-width-lg:    @grid-gutter-width;
-@grid-gutter-width-xl:    @grid-gutter-width;
 
 // Minimum widths
 @site-min-width:          320px;
@@ -254,7 +248,7 @@
 @breakpoint-xl:           1200px;
 
 // Maximum widths
-@site-max-width:          1440px;
+@site-max-width:          1320px;
 @breakpoint-xs-max:       (@breakpoint-sm - 1);
 @breakpoint-sm-max:       (@breakpoint-md - 1);
 @breakpoint-md-max:       (@breakpoint-lg - 1);
@@ -263,6 +257,25 @@
 
 // Point at which the navbar stops collapsing
 @grid-float-breakpoint:     @breakpoint-md;
+
+
+// Container sizes -- used in optional 'grid-stops.less' file
+// ---------------------------------------------------------
+
+// Small screen / tablet
+@container-tablet:             ((720px + @grid-gutter-width));
+@container-sm:                 @container-tablet;
+
+// Medium screen / desktop
+@container-desktop:            ((900px + @grid-gutter-width));
+@container-md:                 @container-desktop;
+
+// Large screen / wide desktop
+@container-lg-desktop:         ((1140px + @grid-gutter-width));
+@container-lg:                 @container-lg-desktop;
+
+// For static width sites
+@site-static-width:            @container-lg;
 
 
 // Navbar

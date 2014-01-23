@@ -158,6 +158,7 @@ module.exports = function (grunt) {
         expand: true,
         cwd: './dist',
         src: [
+          '{css,js}/*',
           '{css,js}/*.min.*',
           'css/*.map',
           'fonts/*'
@@ -210,8 +211,8 @@ module.exports = function (grunt) {
         }
       },
       less: {
-        files: 'less/strapit.less',
-        tasks: ['less'],
+        files: ['less/*.less', 'less/*/*.less'],
+        tasks: ['less', 'csscomb', 'usebanner', 'copy:docs'],
         options: {
           livereload: true
         }

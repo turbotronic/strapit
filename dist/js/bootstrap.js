@@ -1,5 +1,5 @@
 /*!
- * Strapit Framework v2.0.2 (http://sandbox.digitalfirstmedia.com/strapit/)
+ * Strapit Framework v2.0.3 (http://sandbox.digitalfirstmedia.com/strapit/)
  * 
  * Based on Bootstrap v3.0.3 and Foundation v5.0.2
  * Copyright 2014 Twitter, Inc., ZURB

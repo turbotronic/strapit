@@ -5,7 +5,7 @@
 [class*="block-grid-"] {
   display: block;
   padding: 0;
-  margin: 0 -(@grid-gutter-width / 2);
+  margin: 0 (@grid-gutter-width / -2);
   &:extend(.clearfix all);
   > li {
     display: inline;
@@ -17,10 +17,10 @@
 }
 
 @media only screen {
-  .make-block-grid(@columns: @grid-columns; @size: sm;);
+  .make-block-grid(@columns: @grid-columns; @class: sm);
 }
 
 @media only screen and (min-width: @breakpoint-md) {
   .remove-block-grid-clearing();
-  .make-block-grid(@columns: @grid-columns; @size: lg;);
+  .make-block-grid(@columns: @grid-columns; @class: lg);
 }

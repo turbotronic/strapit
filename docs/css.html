@@ -518,18 +518,12 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
 @grid-columns:              12;
 @grid-gutter-width:         30px;
 
-// Columns and gutters
+// Columns
 @grid-columns-xs:         4;
 @grid-columns-sm:         @grid-columns-xs;
 @grid-columns-md:         @grid-columns;
 @grid-columns-lg:         @grid-columns-md;
 @grid-columns-xl:         @grid-columns-lg;
-
-@grid-gutter-width-xs:    @grid-gutter-width;
-@grid-gutter-width-sm:    @grid-gutter-width;
-@grid-gutter-width-md:    @grid-gutter-width;
-@grid-gutter-width-lg:    @grid-gutter-width;
-@grid-gutter-width-xl:    @grid-gutter-width;
 
 // Minimum widths
 @site-min-width:          320px;
@@ -546,10 +540,32 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
 @breakpoint-md-max:       (@breakpoint-lg - 1);
 @breakpoint-lg-max:       (@breakpoint-xl - 1);
 @breakpoint-xl-max:       @site-max-width;
+
+// Point at which the navbar stops collapsing
+@grid-float-breakpoint:     @breakpoint-md;
+
+
+// Container sizes -- used in optional 'grid-stops.less' file
+// ---------------------------------------------------------
+
+// Small screen / tablet
+@container-tablet:             ((720px + @grid-gutter-width));
+@container-sm:                 @container-tablet;
+
+// Medium screen / desktop
+@container-desktop:            ((900px + @grid-gutter-width));
+@container-md:                 @container-desktop;
+
+// Large screen / wide desktop
+@container-lg-desktop:         ((1140px + @grid-gutter-width));
+@container-lg:                 @container-lg-desktop;
+
+// For static width sites
+@site-static-width:            @container-lg;
 {% endhighlight %}
 
 <h4>Mixins</h4>
-<p>Mixins are used in conjunction with the grid variables to generate semantic CSS for individual grid columns.</p>
+<p>Mixins are used in conjunction with the grid variables to generate semantic CSS for individual grid columns. These are found in <code>mixins-custom.less</code> in the <code>framework</code> folder.</p>
 {% highlight html %}
 // Creates a wrapper
 .make-container(@class-name: container) {
@@ -572,6 +588,102 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
   .clearfix();
 }
 
+// Grid generator
+// ------------------
+
+// These four mixins create different parts of the grid
+
+// Column width
+.grid-calc(@index; @columns: @grid-columns; @class; @type) when (@type = width) and (@index > 0) {
+  .@{class}-@{index} {
+    width: round(percentage((@index / @columns)), 5);
+  }
+}
+
+// Push source ordering
+.grid-calc(@index; @columns: @grid-columns; @class; @type) when (@type = push) {
+  .@{class}-push-@{index} {
+    left: round(percentage((@index / @columns)), 5);
+  }
+}
+
+// Pull source ordering
+.grid-calc(@index; @columns: @grid-columns; @class; @type) when (@type = pull) {
+  .@{class}-pull-@{index} {
+    right: round(percentage((@index / @columns)), 5);
+  }
+}
+
+// Offsets
+.grid-calc(@index; @columns: @grid-columns; @class; @type) when (@type = offset) {
+  .@{class}-offset-@{index} {
+    margin-left: round(percentage((@index / @columns)), 5);
+  }
+}
+
+// THE LOOP 
+// This mixin builds targeted classes one property at a time
+.build-grid(@index; @columns: @grid-columns; @class; @type) when (@index >= 0) {
+  .grid-calc(@index; @columns; @class; @type);
+  // next iteration
+  .build-grid((@index - 1); @columns; @class; @type);
+}
+
+// Builds global push/pull, for when you don't need or want to source-ordering to a particular class
+.build-source-ordering(@index, @columns: @grid-columns) when (@index >= 0) {
+  .col.push-@{index} {
+    left: round(percentage((@index / @columns)), 5);
+  }
+  .col.pull-@{index} {
+    right: round(percentage((@index / @columns)), 5);
+  }
+  // next iteration
+  .build-source-ordering((@index - 1));
+}
+
+// Builds global offsets, for when you don't need or want to target offsets to a particular class
+.build-offsets(@index, @columns: @grid-columns) when (@index >=0) {
+  .col.offset-@{index} {
+    margin-left: round(percentage((@index / @columns)), 5);
+  }
+  // next iteration
+  .build-offsets((@index - 1));
+}
+
+// Full grid
+// Build all targeted properties for a single class
+.build-full-grid(@index; @columns: @grid-columns; @class) when (@index >= 0) {
+  .grid-calc(@index; @columns; @class; @type: width);
+  .grid-calc(@index; @columns; @class; @type: offset);
+  .grid-calc(@index; @columns; @class; @type: push);
+  .grid-calc(@index; @columns; @class; @type: pull);
+  // next iteration
+  .build-full-grid((@index - 1); @columns; @class);
+}
+
+// Static grid
+// Build a special static grid if you don't want a fluid one
+.build-static-grid(@index) when (@index >= 0) {
+  .col.st-@{index} {
+    width: round(percentage((@index / @grid-columns)), 5);
+  }
+  .col.offset-@{index} {
+    margin-left: round(percentage((@index / @grid-columns)), 5);
+  }
+  .col.push-@{index} {
+    left: round(percentage((@index / @grid-columns)), 5);
+  }
+  .col.pull-@{index} {
+    right: round(percentage((@index / @grid-columns)), 5);
+  }
+  // next iteration
+  .build-static-grid((@index - 1));
+}
+{% endhighlight %}
+
+<h4>Original Bootstrap mixins are still available</h4>
+<p>If you prefer the original mixins, by all means use them. Here's a sample of the default mixins located in the <code>mixins.less</code> file.</p>
+{% highlight html %}
 // Generate columns and offsets
 .make-md-column(@columns; @gutter: @grid-gutter-width) {
   position: relative;
@@ -1758,6 +1870,10 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
   <button type="submit" class="btn default">Submit</button>
 </form>
 {% endhighlight %}
+    <div class="callout warning">
+      <h4>Don't mix form groups with input groups</h4>
+      <p>Do not mix form groups directly with <a href="/components/#input-groups">input groups</a>. Instead, nest the input group inside of the form group.</p>
+    </div>
 
 
     <h2 id="forms-inline">Inline form</h2>
@@ -1766,7 +1882,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
       <h4>Requires custom widths</h4>
       <p>Inputs, selects, and textareas are 100% wide by default in Strapit. To use the inline form, you'll have to set a width on the form controls used within.</p>
     </div>
-    <div class="callout danger">
+    <div class="callout warning">
       <h4>Always add labels</h4>
       <p>Screen readers will have trouble with your forms if you don't include a label for every input. For these inline forms, you can hide the labels using the <code>.sr-only</code> class.</p>
     </div>
