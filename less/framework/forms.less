@@ -108,6 +108,9 @@ label {
 
 
 // Normalize form controls
+// While most of our form styles require extra classes, some basic normalization
+// is required to ensure optimum display with or without those classes to better
+// address browser inconsistencies.
 
 // Set the height of file controls to match text inputs
 input[type="file"] {
@@ -141,8 +144,8 @@ input[type="checkbox"]:focus {
 }
 
 // Fix for Chrome number input
-// Setting certain font-sizes causes the `I` bar to appear on hover of the bottom increment button.
-// See https://github.com/twbs/bootstrap/issues/8350 for more.
+// Setting certain font-sizes causes the `I` bar to appear on hover of the
+// bottom increment button. See https://github.com/twbs/bootstrap/issues/8350.
 input[type="number"] {
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
@@ -217,6 +220,7 @@ output {
   fieldset[disabled] & {
     cursor: not-allowed;
     background-color: @input-bg-disabled;
+    opacity: 1; // iOS fix for unreadable disabled content
   }
 
   // Reset height for `textarea`s
