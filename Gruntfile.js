@@ -16,9 +16,9 @@ module.exports = function (grunt) {
     // Metadata.
     pkg: grunt.file.readJSON('package.json'),
     banner: '/*!\n' +
-              ' * Strapit Framework v<%= pkg.version.strapit %> (<%= pkg.homepage %>)\n' +
+              ' * Strapit Framework v<%= pkg.strapit %> (<%= pkg.homepage %>)\n' +
               ' * \n' +
-              ' * Based on Bootstrap v<%= pkg.version.bootstrap %> and Foundation v<%= pkg.version.foundation %>\n' +
+              ' * Based on Bootstrap v<%= pkg.bootstrap %> and Foundation v<%= pkg.foundation %>\n' +
               ' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
               ' * Cobbled together and maintained by the design squad at Digital First Media\n' + 
               ' * Bootstrap and Foundation are licensed under the MIT License\n' +
