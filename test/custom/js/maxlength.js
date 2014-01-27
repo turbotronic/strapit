@@ -13,22 +13,40 @@
 
     $.fn.extend({
         maxlength: function (options, callback) {
+<<<<<<< HEAD
             var documentBody = $('body'),
                 defaults = {
                     alwaysShow: false, // if true the indicator it's always shown.
                     threshold: 1, // Represents how many chars left are needed to show up the counter
                     warningClass: 'label success',
                     limitReachedClass: 'label danger',
+=======
+
+            var documentBody = $('body'),
+                defaults = {
+                    alwaysShow: false, // if true the indicator it's always shown.
+                    threshold: 10, // Represents how many chars left are needed to show up the counter
+                    warningClass: 'label label-success',
+                    limitReachedClass: 'label label-important',
+>>>>>>> Adding more examples to test area
                     separator: ' / ',
                     preText: '',
                     postText: '',
                     showMaxLength : true,
                     placement: 'bottom',
+<<<<<<< HEAD
                     showCharsTyped: true, // show characters typed; not number of characters remaining
                     validate: false, // if the browser doesn't support the maxlength attribute, 
                                      // attempt to type more than the indicated chars, will be prevented.
                     utf8: false, // counts using bytesize rather than length.  eg: '£' is counted as 2 characters.
                     ignoreBreaks: false // true will consider either CR or LF, false would consider both.
+=======
+                    showCharsTyped: true, // show the number of characters typed and not the number of characters remaining
+                    validate: false, // if the browser doesn't support the maxlength attribute, attempt to type more than
+                                                                        // the indicated chars, will be prevented.
+                    utf8: false, // counts using bytesize rather than length.  eg: '£' is counted as 2 characters.
+                    ignoreBreaks: false //true will consider either CR or LF, false would consider both.
+>>>>>>> Adding more examples to test area
                 };
 
             if ($.isFunction(options) && !callback) {
