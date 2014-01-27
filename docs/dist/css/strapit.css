@@ -8666,4 +8666,614 @@ button.close {
 .svg .webicon.zerply {
   background-image: url('http://projects/strapit/img/webiconsnew/fc-webicon-zerply.svg');
 }
+/*!
+* bootstrap-lightbox.css v0.6.1 
+* Copyright 2013 Jason Butz
+* http://www.apache.org/licenses/LICENSE-2.0.txt
+*/
+.lightbox {
+  position: relative;
+  top: 70px;
+  z-index: 1050;
+  line-height: 0;
+  text-align: center;
+  background-color: transparent;
+  outline: none;
+}
+.lightbox .hide {
+  display: none;
+}
+.lightbox .in {
+  display: block;
+}
+.lightbox-content {
+  display: inline-block;
+  padding: 10px;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding-box;
+          background-clip: padding-box;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, .3);
+          border-radius: 6px;
+  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, .3);
+     -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, .3);
+          box-shadow: 0 3px 7px rgba(0, 0, 0, .3);
+
+  *border: 1px solid #999;
+  /* IE6-7 */
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+}
+.lightbox-content .lightbox-caption {
+  position: absolute;
+  right: 12px;
+  bottom: 11px;
+  left: 11px;
+  padding: 2%;
+  font-size: 14px;
+  line-height: 18px;
+  color: white;
+  text-align: center;
+  text-shadow: 0 -1px 0 #000;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
+  background: #000;
+  background: rgba(0, 0, 0, .6);
+}
+.lightbox-header .close {
+  margin-top: -16px;
+  margin-right: -16px;
+  font-size: 2em;
+  color: white;
+  filter: alpha(opacity=80);
+  opacity: .8;
+}
+.lightbox-header .close :hover {
+  filter: alpha(opacity=40);
+  opacity: .4;
+}
+.btn-file {
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.btn-file > input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  font-size: 23px;
+  cursor: pointer;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  transform: translate(-300px, 0) scale(4);
+
+  direction: ltr;
+}
+.fileinput {
+  display: inline-block;
+  margin-bottom: 9px;
+}
+.fileinput .uneditable-input {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+  cursor: text;
+}
+.fileinput .thumbnail {
+  display: inline-block;
+  margin-bottom: 5px;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
+}
+.fileinput .thumbnail > img {
+  max-height: 100%;
+}
+.fileinput .btn {
+  vertical-align: middle;
+}
+.fileinput-exists .fileinput-new,
+.fileinput-new .fileinput-exists {
+  display: none;
+}
+.fileinput-inline .fileinput-controls {
+  display: inline;
+}
+.fileinput .uneditable-input {
+  white-space: normal;
+}
+.fileinput-new .input-group .btn-file {
+  border-radius: 0 3px 3px 0;
+}
+.fileinput-new .input-group .btn-file.btn-xs,
+.fileinput-new .input-group .btn-file.btn-sm {
+  border-radius: 0 3px 3px 0;
+}
+.fileinput-new .input-group .btn-file.btn-lg {
+  border-radius: 0 6px 6px 0;
+}
+.form-group.has-warning .fileinput .uneditable-input {
+  color: #c09853;
+  border-color: #fbeed5;
+}
+.form-group.has-warning .fileinput .fileinput-preview {
+  color: #c09853;
+}
+.form-group.has-warning .fileinput .thumbnail {
+  border-color: #fbeed5;
+}
+.form-group.has-error .fileinput .uneditable-input {
+  color: #b94a48;
+  border-color: #eed3d7;
+}
+.form-group.has-error .fileinput .fileinput-preview {
+  color: #b94a48;
+}
+.form-group.has-error .fileinput .thumbnail {
+  border-color: #eed3d7;
+}
+.form-group.has-success .fileinput .uneditable-input {
+  color: #468847;
+  border-color: #d6e9c6;
+}
+.form-group.has-success .fileinput .fileinput-preview {
+  color: #468847;
+}
+.form-group.has-success .fileinput .thumbnail {
+  border-color: #d6e9c6;
+}
+.input-group-addon:not(:first-child) {
+  border-left: 0;
+}
+/*!
+ * Bootstrap Modal
+ *
+ * Copyright Jordan Schroter
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Boostrap 3 patch for for bootstrap-modal. Include BEFORE bootstrap-modal.css!
+ */
+body.modal-open,
+.modal-open .navbar-fixed-top,
+.modal-open .navbar-fixed-bottom {
+  margin-right: 0;
+}
+.modal {
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  width: 500px;
+  padding: 0;
+  margin-left: -250px;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+          box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+}
+.modal.container {
+  max-width: none;
+}
+/*!
+ * Bootstrap Modal
+ *
+ * Copyright Jordan Schroter
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+.modal-open {
+  overflow: hidden;
+}
+/* add a scroll bar to stop page from jerking around */
+.modal-open.page-overflow .page-container,
+.modal-open.page-overflow .page-container .navbar-fixed-top,
+.modal-open.page-overflow .page-container .navbar-fixed-bottom,
+.modal-open.page-overflow .modal-scrollable {
+  overflow-y: scroll;
+}
+@media (max-width: 979px) {
+  .modal-open.page-overflow .page-container .navbar-fixed-top,
+  .modal-open.page-overflow .page-container .navbar-fixed-bottom {
+    overflow-y: visible;
+  }
+}
+.modal-scrollable {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  margin-top: 0;
+  overflow: visible;
+  outline: none;
+  /* allow content to popup out (i.e tooltips) */
+}
+.modal.fade {
+  top: -100%;
+  -webkit-transition: opacity .3s linear, top .3s ease-out, bottom .3s ease-out, margin-top .3s ease-out;
+     -moz-transition: opacity .3s linear, top .3s ease-out, bottom .3s ease-out, margin-top .3s ease-out;
+       -o-transition: opacity .3s linear, top .3s ease-out, bottom .3s ease-out, margin-top .3s ease-out;
+          transition: opacity .3s linear, top .3s ease-out, bottom .3s ease-out, margin-top .3s ease-out;
+}
+.modal.fade.in {
+  top: 50%;
+}
+.modal-body {
+  max-height: none;
+  overflow: visible;
+}
+.modal.modal-absolute {
+  position: absolute;
+  z-index: 950;
+}
+.modal .loading-mask {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  border-radius: 6px;
+}
+.modal-backdrop.modal-absolute {
+  position: absolute;
+  z-index: 940;
+}
+.modal-backdrop,
+.modal-backdrop.fade.in {
+  background: #fff;
+  filter: alpha(opacity=70);
+  opacity: .7;
+}
+.modal.container {
+  width: 940px;
+  margin-left: -470px;
+}
+/* Modal Overflow */
+.modal-overflow.modal {
+  top: 1%;
+}
+.modal-overflow.modal.fade {
+  top: -100%;
+}
+.modal-overflow.modal.fade.in {
+  top: 1%;
+}
+.modal-overflow .modal-body {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+/* Responsive */
+@media (min-width: 1200px) {
+  .modal.container {
+    width: 1170px;
+    margin-left: -585px;
+  }
+}
+@media (max-width: 979px) {
+  .modal,
+  .modal.container,
+  .modal.modal-overflow {
+    top: 1%;
+    right: 1%;
+    bottom: auto;
+    left: 1%;
+    width: auto !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .modal.fade.in,
+  .modal.container.fade.in,
+  .modal.modal-overflow.fade.in {
+    top: 1%;
+    bottom: auto;
+  }
+  .modal-body,
+  .modal-overflow .modal-body {
+    position: static;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0;
+    overflow: visible !important;
+  }
+  .modal-footer,
+  .modal-overflow .modal-footer {
+    position: static;
+  }
+}
+.loading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -12px 0 0 -12px;
+}
+/*
+Animate.css - http://daneden.me/animate
+Licensed under the ☺ license (http://licence.visualidiot.com/)
+
+Copyright (c) 2012 Dan Eden*/
+.animated {
+  -webkit-animation-duration: 1s;
+     -moz-animation-duration: 1s;
+       -o-animation-duration: 1s;
+          animation-duration: 1s;
+
+  -webkit-animation-fill-mode: both;
+     -moz-animation-fill-mode: both;
+       -o-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+@-webkit-keyframes shake {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translateX(10px);
+  }
+}
+@-moz-keyframes shake {
+  0%,
+  100% {
+    -moz-transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -moz-transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -moz-transform: translateX(10px);
+  }
+}
+@-o-keyframes shake {
+  0%,
+  100% {
+    -o-transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -o-transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -o-transform: translateX(10px);
+  }
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+.shake {
+  -webkit-animation-name: shake;
+     -moz-animation-name: shake;
+       -o-animation-name: shake;
+          animation-name: shake;
+}
+/* bootstrap-tags styles */
+.bootstrap-tags.bootstrap-3 .tag a {
+  margin: 0 0 0 .3em;
+}
+.bootstrap-tags.bootstrap-3 .glyphicon-white {
+  color: #fff;
+}
+.bootstrap-tags.bootstrap-2 .tag.md {
+  padding: .3em .4em .4em;
+}
+.bootstrap-tags.bootstrap-2 .tag.lg {
+  padding: .4em .4em .5em;
+}
+.bootstrap-tags {
+  position: relative;
+}
+.bootstrap-tags .tags {
+  position: absolute;
+  width: inherit;
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+.bootstrap-tags .tag-data {
+  display: none;
+}
+.bootstrap-tags .tags-input {
+  width: 100%;
+  height: 1.7em;
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+  padding: 0;
+  margin: 0;
+}
+.bootstrap-tags .tag-list {
+  position: relative;
+  top: 2px;
+  left: 2px;
+  width: 280px;
+  height: auto;
+  min-height: 26px;
+}
+.bootstrap-tags .tag {
+  float: left;
+  padding: .4em .4em .4em;
+  margin: 0 .1em;
+}
+.bootstrap-tags .tag.sm {
+  padding: .4em .4em .5em;
+  font-size: 12px;
+}
+.bootstrap-tags .tag.md {
+  font-size: 14px;
+}
+.bootstrap-tags .tag.lg {
+  padding: .4em .4em .4em;
+  margin: 0 .2em .2em 0;
+  font-size: 18px;
+}
+.bootstrap-tags .tag a {
+  color: #bbb;
+  cursor: pointer;
+  opacity: .5;
+}
+.bootstrap-tags .tag .remove {
+  top: 0;
+  vertical-align: bottom;
+}
+.bootstrap-tags ul.tags-suggestion-list {
+  z-index: 2;
+  width: 300px;
+  height: auto;
+  max-height: 160px;
+  margin: 0;
+  overflow: scroll;
+  list-style: none;
+}
+.bootstrap-tags ul.tags-suggestion-list li.tags-suggestion {
+  height: auto;
+  padding: 3px 20px;
+}
+.bootstrap-tags ul.tags-suggestion-list li.tags-suggestion-highlighted {
+  color: white;
+  text-decoration: none;
+  background-color: #0081c2;
+  background-image:    -moz-linear-gradient(top, #08c, #0077b3);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#08c), to(#0077b3));
+  background-image: -webkit-linear-gradient(top, #08c, #0077b3);
+  background-image:      -o-linear-gradient(top, #08c, #0077b3);
+  background-image:         linear-gradient(to bottom, #08c, #0077b3);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
+  background-repeat: repeat-x;
+}
+@charset "UTF-8";
+/*
+ * Bootstrap Image Gallery CSS 3.0.0
+ * https://github.com/blueimp/Bootstrap-Image-Gallery
+ *
+ * Copyright 2013, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * http://www.opensource.org/licenses/MIT
+ */
+.blueimp-gallery .modal-body {
+  position: relative;
+  padding: 0 0 56.25% 0;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+}
+.blueimp-gallery .modal-footer {
+  margin: 0;
+}
+.blueimp-gallery .modal-body img,
+.blueimp-gallery .modal-body .video-content video,
+.blueimp-gallery .modal-body .video-content iframe,
+.blueimp-gallery .modal-body .video-content a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+}
+.blueimp-gallery .modal-body .video-content video {
+  display: none;
+}
+.blueimp-gallery .modal-body .video-playing video {
+  display: block;
+}
+.blueimp-gallery .modal-body .video-content iframe {
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.blueimp-gallery .modal-body .video-playing iframe {
+  left: 0;
+}
+.blueimp-gallery .modal-body .video-playing img,
+.blueimp-gallery .modal-body .video-playing a {
+  display: none;
+}
+.blueimp-gallery .modal-body .video-content a {
+  cursor: pointer;
+}
+.blueimp-gallery .modal-body .video-content a:after {
+  position: absolute;
+  top: 50%;
+  width: 64px;
+  height: 64px;
+  margin: -32px 0 0 -32px;
+  font-family: "Glyphicons Halflings";
+  font-size: 64px;
+  line-height: 64px;
+  content: "\e029";
+
+  -webkit-font-smoothing: antialiased;
+}
+.blueimp-gallery .modal-body .video-loading a {
+  background: url(../img/loading.gif) center no-repeat;
+  background-size: 64px 64px;
+}
+.blueimp-gallery .modal-body .video-loading a:after {
+  content: none;
+}
+@media screen and (min-width: 768px) {
+  .blueimp-gallery .modal-dialog {
+    right: auto;
+    left: auto;
+    width: auto;
+    max-width: 900px;
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+}
 /*# sourceMappingURL=strapit.css.map */

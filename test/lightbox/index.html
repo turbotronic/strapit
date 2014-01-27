@@ -10,10 +10,39 @@
 
   </head>
   <body>
-    <h1>Hello, world!</h1>
+
+
+	<div class="container">
+		<div class="page-header">
+			<h1>Lightbox</h1>
+		</div>
+		<p>Click the thumbnail below to open the lightbox. This demo includes the optional <code>.lightbox-caption</code> element, which adds an image caption.</p>
+
+
+			<a data-toggle="lightbox" href="#demoLightbox" class="thumbnail">
+				<img src="http://placehold.it/100x100" alt="Click to view the lightbox">
+			</a>
+
+			<div id="demoLightbox" class="lightbox hide fade"  tabindex="-1" role="dialog" aria-hidden="true">
+				<div class='lightbox-content'>
+					<img src="http://placehold.it/300x250">
+					<div class="lightbox-caption"><p>Your caption here</p></div>
+				</div>
+			</div>
+		</div>
+
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="//code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
+
     <script src="../dist/js/bootstrap.min.js"></script>
+	<script src="js/lightbox.js"></script>
   </body>
 </html>
+
+<!-- 
+TWO CONFLICTS:
+1) js conflict prevents modal from closing
+2) css conflict on 'hide' class causes problems
+-->
