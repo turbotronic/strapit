@@ -45,8 +45,7 @@ module.exports = function (grunt) {
         src: ['docs/assets/js/application.js']
       }
     },
-
-
+git 
     csslint: {
       options: {
         csslintrc: 'less/.csslintrc'
