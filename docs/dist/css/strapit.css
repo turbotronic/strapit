@@ -2320,8 +2320,13 @@ th {
 .table-condensed > tfoot > tr > td,
 .table.condensed > tfoot > tr > td {
   padding: 5px;
+<<<<<<< HEAD
   font-size: 13px;
   font-size: 1.3rem;
+=======
+  font-size: 14px;
+  font-size: 1.4rem;
+>>>>>>> Off canvas examples added plus small change to jumbrotron
 }
 .table-bordered,
 .table.bordered {
@@ -2697,7 +2702,10 @@ textarea {
   vertical-align: top;
 }
 fieldset {
+<<<<<<< HEAD
   min-width: 0;
+=======
+>>>>>>> Off canvas examples added plus small change to jumbrotron
   padding: 0;
   margin: 0;
   border: 0;
@@ -2707,8 +2715,13 @@ legend {
   width: 100%;
   padding: 0;
   margin-bottom: 22px;
+<<<<<<< HEAD
   font-size: 21px;
   font-size: 2.1rem;
+=======
+  font-size: 14px;
+  font-size: 1.4rem;
+>>>>>>> Off canvas examples added plus small change to jumbrotron
   line-height: inherit;
   color: #555;
   border: 0;
@@ -4261,8 +4274,13 @@ textarea.input-group.sm > .input-group-btn > .btn {
   .switch-sm label,
   .switch.sm label {
     padding: 0 12px;
+<<<<<<< HEAD
     font-size: 9px;
     font-size: .9rem;
+=======
+    font-size: 12px;
+    font-size: 1.2rem;
+>>>>>>> Off canvas examples added plus small change to jumbrotron
     line-height: 22.5px;
   }
   .switch-sm input:first-of-type:checked ~ span:last-child,
@@ -5870,6 +5888,7 @@ a.list-group-item.active > .badge,
 .jumbotron h1,
 .jumbotron .h1 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   margin-top: 0;
   color: inherit;
 }
@@ -5883,6 +5902,11 @@ a.list-group-item.active > .badge,
   font-weight: 200;
 }
 >>>>>>> Adding offcanvas and redoing sidenav
+=======
+  margin-top: 0;
+  color: inherit;
+}
+>>>>>>> Off canvas examples added plus small change to jumbrotron
 .container .jumbotron {
   border-radius: 6px;
 }
@@ -5904,14 +5928,20 @@ a.list-group-item.active > .badge,
     font-size: 6.3rem;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Off canvas examples added plus small change to jumbrotron
   .jumbotron p {
     margin-bottom: 15px;
     font-size: 21px;
     font-size: 2.1rem;
     font-weight: 200;
   }
+<<<<<<< HEAD
 =======
 >>>>>>> Adding offcanvas and redoing sidenav
+=======
+>>>>>>> Off canvas examples added plus small change to jumbrotron
 }
 .thumbnail {
   display: block;
@@ -6429,8 +6459,13 @@ a.list-group-item.info.active:focus {
 .panel > .panel-body + .table-responsive {
   border-top: 1px solid #ddd;
 }
+<<<<<<< HEAD
 .panel > .table > tbody:first-child > tr:first-child th,
 .panel > .table > tbody:first-child > tr:first-child td {
+=======
+.panel > .table > tbody:first-child th,
+.panel > .table > tbody:first-child td {
+>>>>>>> Off canvas examples added plus small change to jumbrotron
   border-top: 0;
 }
 .panel > .table-bordered,
@@ -6712,8 +6747,13 @@ a.list-group-item.info.active:focus {
 }
 .close {
   float: right;
+<<<<<<< HEAD
   font-size: 21px;
   font-size: 2.1rem;
+=======
+  font-size: 14px;
+  font-size: 1.4rem;
+>>>>>>> Off canvas examples added plus small change to jumbrotron
   font-weight: bold;
   line-height: 1;
   color: #000;
@@ -7469,6 +7509,9 @@ button.close {
   display: block;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Off canvas examples added plus small change to jumbrotron
 @media (max-width: 479px) {
   .offcanvas-xs {
     display: none;
@@ -7507,6 +7550,7 @@ button.close {
 .offcanvas-xl.in {
   display: block;
 }
+<<<<<<< HEAD
 =======
 /*@media (max-width: @breakpoint-xs-max) { // change to breakpoints
   .offcanvas-xs {
@@ -7531,6 +7575,8 @@ button.close {
 }
 */
 >>>>>>> Adding offcanvas and redoing sidenav
+=======
+>>>>>>> Off canvas examples added plus small change to jumbrotron
 .canvas-sliding {
   -webkit-transition: -webkit-transform .35s;
           transition:         transform .35s, -ms-transform .35s;
