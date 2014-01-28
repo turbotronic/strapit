@@ -11,12 +11,8 @@
 
   h1,
   .h1 {
+    margin-top: 0;
     color: @jumbotron-heading-color;
-  }
-  p {
-    margin-bottom: (@jumbotron-padding / 2);
-    .font-size((@font-size-base * 1.5));
-    font-weight: 200;
   }
 
   .container & {
@@ -39,6 +35,11 @@
     h1,
     .h1 {
       .font-size((@font-size-base * 4.5));
+    }
+    p {
+      margin-bottom: (@jumbotron-padding / 2);
+      .font-size((@font-size-base * 1.5));
+      font-weight: 200;
     }
   }
 }
