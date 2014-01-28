@@ -1,0 +1,23 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  padding-top: 65px;
+}
+
+.navbar-toggle {
+  float: left;
+  margin-left: 15px;
+}
+
+.sidenav.canvas-sliding,
+.sidenav.canvas-slid {
+  z-index: 2000;
+}
+
+@media (min-width: 0px) {
+  .navbar-toggle {
+    display: block;
+  }
+}
