@@ -76,6 +76,8 @@ module.exports = function (grunt) {
           'js/scrollspy.js',
           'js/tab.js',
           'js/affix.js',
+          'js/inputmask.js',
+          'js/fileinput.js',
           'js/responsive-tables.js'
         ],
         dest: 'dist/js/bootstrap.js'
