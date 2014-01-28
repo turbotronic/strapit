@@ -1944,10 +1944,10 @@ $('.sidenav').offcanvas()
     </div>
 
     <h2 id="inputmask-examples">Example</h2>
-    <p>Input masks can be used to force the user to enter data conform a specific format. Unlike validation, the user can't enter any other key than the ones specified by the mask. Developed by Arnold Daniels at <a href="http://jasny.github.io/bootstrap/javascript/#inputmask">Jansy Bootstrap</a></p>.
+    <p>Input masks can be used to force the user to enter data conform a specific format. Unlike validation, the user can't enter any other key than the ones specified by the mask. Developed by Arnold Daniels at <a href="http://jasny.github.io/bootstrap/javascript/#inputmask">Jansy Bootstrap</a>.</p>
 
     <div class="bs-example">
-      <input type="text" class="form-control" data-mask="999-99-999-9999-9" placeholder="ISBN">
+      <input type="text" class="form-control" data-mask="999-99-999-9999-9" placeholder="ISBN" style="margin-bottom:10px;">
       <input type="text" class="form-control" data-mask="(999) 999-9999" placeholder="US phone number">
     </div>
 {% highlight js %}
@@ -2132,6 +2132,115 @@ $('.inputmask').inputmask({
     <p>Add <code>.fileinput</code> to the container. Elements inside the container with <code>.fileinput-new</code> and <code>.fileinput-exists</code> are shown or hidden based on the current state. A preview of the selected file is placed in <code>.fileinput-preview</code>. The text of <code>.fileinput-filename</code> gets set to the name of the selected file.</p>
     <p>The file input widget should be placed in a regular <code>&lt;form&gt;</code> replacing a standard <code>&lt;input type="file"&gt;</code>. The server side code should handle the file upload as normal.</p>
 
+  <!-- File input
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="fileinput">File input <small>fileinput.js</small></h1>
+    </div>
+
+    <h2 id="fileinput-examples">Examples</h2>
+    <p>The file input plugin allows you to create a visually appealing file or image input widgets. Developed by Arnold Daniels at <a href="http://jasny.github.io/bootstrap/javascript/#fileinput">Jansy Bootstrap</a>.</p>
+
+    <h3>File input widgets</h3>
+    <div class="bs-example">
+      <div class="fileinput fileinput-new" data-provides="fileinput">
+        <div class="input-group">
+          <div class="form-control uneditable-input" data-trigger="fileinput">
+            <span class="glyphicon glyphicon-file fileinput-exists"></span>
+            <span class="fileinput-filename"></span>
+          </div>
+          <span class="input-group-addon btn default btn-file">
+          <span class="fileinput-new">Select file</span>
+          <span class="fileinput-exists">Change</span>
+          <input type="file"></span>
+          <a href="#" class="input-group-addon btn default fileinput-exists" data-dismiss="fileinput">Remove</a>
+        </div>
+      </div>
+    </div>
+{% highlight html %}
+<div class="fileinput fileinput-new" data-provides="fileinput">
+  <div class="input-group">
+    <div class="form-control uneditable-input" data-trigger="fileinput">
+      <span class="glyphicon glyphicon-file fileinput-exists"></span>
+      <span class="fileinput-filename"></span>
+    </div>
+    <span class="input-group-addon btn default btn-file">
+    <span class="fileinput-new">Select file</span>
+    <span class="fileinput-exists">Change</span>
+    <input type="file"></span>
+    <a href="#" class="input-group-addon btn default fileinput-exists" data-dismiss="fileinput">Remove</a>
+  </div>
+</div>
+{% endhighlight %}
+
+    <div class="bs-example">
+      <div class="fileinput fileinput-new" data-provides="fileinput">
+        <span class="btn default btn-file">
+        <span class="fileinput-new">Select file</span>
+        <span class="fileinput-exists">Change</span><input type="file"></span>
+        <span class="fileinput-filename"></span>
+        <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">×</a>
+      </div>
+    </div>
+{% highlight html %}
+<div class="fileinput fileinput-new" data-provides="fileinput">
+  <span class="btn default btn-file">
+  <span class="fileinput-new">Select file</span>
+  <span class="fileinput-exists">Change</span><input type="file"></span>
+  <span class="fileinput-filename"></span>
+  <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">×</a>
+</div>
+{% endhighlight %}
+
+    <h3>Image upload widgets</h3>
+    <p>When uploading an image, it's possible to show a thumbnail instead of the filename.</p>
+    <div class="bs-example">
+      <div class="fileinput fileinput-new" data-provides="fileinput">
+        <div class="fileinput-new thumbnail">
+          <img data-src="holder.js/150x100" alt="">
+        </div>
+        <div class="fileinput-preview fileinput-exists thumbnail"></div>
+        <div>
+          <span class="btn default btn-file">
+            <span class="fileinput-new">Select image</span>
+            <span class="fileinput-exists">Change</span>
+            <input type="file">
+          </span>
+          <a href="#" class="btn default fileinput-exists" data-dismiss="fileinput">Remove</a>
+        </div>
+      </div>
+    </div>
+{% highlight html %}
+<div class="fileinput fileinput-new" data-provides="fileinput">
+  <div class="fileinput-new thumbnail">
+    <img data-src="holder.js/150x100" alt="">
+  </div>
+  <div class="fileinput-preview fileinput-exists thumbnail"></div>
+  <div>
+    <span class="btn default btn-file">
+      <span class="fileinput-new">Select image</span>
+      <span class="fileinput-exists">Change</span>
+      <input type="file">
+    </span>
+    <a href="#" class="btn default fileinput-exists" data-dismiss="fileinput">Remove</a>
+  </div>
+</div>
+{% endhighlight %}
+
+    <div class="callout warning">
+      <h4>Browser issues</h4>
+      <p>Image preview only works in IE10+, FF3.6+, Safari6.0+, Chrome6.0+ and Opera11.1+. In older browsers the filename is shown instead.</p>
+    </div>
+
+    <hr class="bs-docs-separator">
+
+
+    <h2 id="fileinput-usage">Usage</h2>
+    <p>Add <code>.fileinput</code> to the container. Elements inside the container with <code>.fileinput-new</code> and <code>.fileinput-exists</code> are shown or hidden based on the current state. A preview of the selected file is placed in <code>.fileinput-preview</code>. The text of <code>.fileinput-filename</code> gets set to the name of the selected file.</p>
+    <p>The file input widget should be placed in a regular <code>&lt;form&gt;</code> replacing a standard <code>&lt;input type="file"&gt;</code>. The server side code should handle the file upload as normal.</p>
+
+>>>>>>> Fixes issues #107 and #108 -- adds file input and input mask to framework
     <h3>Via data attributes</h3>
     <p>Add <code>data-provides="fileinput"</code> to the <code>.fileinput</code> element. Implement a button to clear the file with <code>data-dismiss="fileinput"</code>. Add <code>data-trigger="fileinput"</code> to any element within the <code>.fileinput</code> widget to trigger the file dialog.</p>
 

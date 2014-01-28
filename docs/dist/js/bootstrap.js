@@ -1954,6 +1954,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
 }(jQuery);
 
+<<<<<<< HEAD
 /* ========================================================================
  * Bootstrap: offcanvas.js v3.0.0-p7
  * http://jasny.github.io/bootstrap/javascript.html#offcanvas
@@ -2251,6 +2252,8 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
   })
 
 }(window.jQuery);
+=======
+>>>>>>> Fixes issues #107 and #108 -- adds file input and input mask to framework
 /* ===========================================================
  * Bootstrap: inputmask.js v3.0.0-p7
  * http://jasny.github.io/bootstrap/javascript.html#inputmask
