@@ -12,7 +12,7 @@
   function init(table) {
     table.addClass('js'); // activates CSS for the table
     var $childTable = table.find('.table'),
-        breakpoint = ($childTable.width() == undefined) ? $(window).width() : $childTable.width(),
+        breakpoint = ($childTable.width() === undefined) ? $(window).width() : $childTable.width(),
         switched = false,
         updateTable = function() {
           if ((table.width() <= breakpoint) && !switched ) {
