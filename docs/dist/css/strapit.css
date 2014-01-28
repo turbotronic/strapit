@@ -5868,13 +5868,8 @@ a.list-group-item.active > .badge,
 }
 .jumbotron h1,
 .jumbotron .h1 {
+  margin-top: 0;
   color: inherit;
-}
-.jumbotron p {
-  margin-bottom: 15px;
-  font-size: 21px;
-  font-size: 2.1rem;
-  font-weight: 200;
 }
 .container .jumbotron {
   border-radius: 6px;
@@ -5895,6 +5890,12 @@ a.list-group-item.active > .badge,
   .jumbotron .h1 {
     font-size: 63px;
     font-size: 6.3rem;
+  }
+  .jumbotron p {
+    margin-bottom: 15px;
+    font-size: 21px;
+    font-size: 2.1rem;
+    font-weight: 200;
   }
 }
 .thumbnail {
@@ -7452,28 +7453,44 @@ button.close {
 .offcanvas.in {
   display: block;
 }
-/*@media (max-width: @breakpoint-xs-max) { // change to breakpoints
+@media (max-width: 479px) {
   .offcanvas-xs {
-    .offcanvas();
+    display: none;
+  }
+  .offcanvas-xs.in {
+    display: block;
   }
 }
-@media (max-width: @breakpoint-sm-max) {
+@media (max-width: 767px) {
   .offcanvas-sm {
-    .offcanvas();
+    display: none;
+  }
+  .offcanvas-sm.in {
+    display: block;
   }
 }
-@media (max-width: @breakpoint-md-max) {
+@media (max-width: 959px) {
   .offcanvas-md {
-    .offcanvas();
+    display: none;
+  }
+  .offcanvas-md.in {
+    display: block;
   }
 }
-.offcanvas-lg (max-width: @breakpoint-lg-max) {
-  .offcanvas();
+@media (max-width: 1199px) {
+  .offcanvas-lg {
+    display: none;
+  }
+  .offcanvas-lg.in {
+    display: block;
+  }
 }
 .offcanvas-xl {
-  .offcanvas();
+  display: none;
 }
-*/
+.offcanvas-xl.in {
+  display: block;
+}
 .canvas-sliding {
   -webkit-transition: -webkit-transform .35s;
           transition:         transform .35s, -ms-transform .35s;

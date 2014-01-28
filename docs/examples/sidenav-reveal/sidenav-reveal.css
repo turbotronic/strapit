@@ -1,0 +1,27 @@
+html, body {
+  height: 100%;
+}
+.navbar-toggle {
+  float: left;
+  margin-left: 15px;
+}
+.sidenav {
+  z-index: 1!important;
+}
+.sidenav.canvas-sliding,
+.sidenav.canvas-slid {
+  z-index: 2000;
+}
+.canvas {
+  position: relative;
+  z-index: 2;
+  padding-top: 65px;
+  background: #fff;
+  min-height: 100%;
+}
+
+@media (min-width: 0px) {
+  .navbar-toggle {
+    display: block;
+  }
+}
