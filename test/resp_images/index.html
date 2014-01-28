@@ -10,10 +10,35 @@
 
   </head>
   <body>
-    <h1>Hello, world!</h1>
+
+		
+		<div class="media single-img">
+			
+			<span data-picture data-alt="Image description goes here">
+			    <span data-src="http://placehold.it/320x240"></span>
+			
+				<span data-src="http://placehold.it/640x480" data-media="(min-device-pixel-ratio: 2.0)"></span>
+			    <span data-src="http://placehold.it/480x320" data-media="(min-width: 321px)"></span>
+				<span data-src="http://placehold.it/960x640" data-media="(min-width: 321px) and (min-device-pixel-ratio: 2.0)"></span>
+			    <span data-src="http://placehold.it/640x480" data-media="(min-width: 481px)"></span>
+				<span data-src="http://placehold.it/1280x960" data-media="(min-width: 481px) and (min-device-pixel-ratio: 2.0)"></span>
+			    <span data-src="http://placehold.it/800x600" data-media="(min-width: 641px)"></span>
+				<span data-src="http://placehold.it/1600x1200" data-media="(min-width: 641px) and (min-device-pixel-ratio: 2.0)"></span>
+				
+			    <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+			    <noscript>
+			        <img src="http://placehold.it/320x240" alt="Image description goes here">
+			    </noscript>
+			</span>
+			
+		</div> <!-- .media -->
+		
+		
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="//code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../dist/js/bootstrap.min.js"></script>
+    <script src="js/picturefill-master/picturefill.js"></script>
   </body>
 </html>

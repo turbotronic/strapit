@@ -239,69 +239,69 @@ $('#myModal').on('show.bs.modal', function (e) {
       <p>Additionally, you may give a description of your modal dialog with <code>aria-describedby</code> on <code>.modal</code>.</p>
     </div>
 
-	    <h2 id="modals-sizes">Optional sizes</h2>
-	    <p>Modals have two optional sizes, available via modifier classes to be placed on a <code>.modal-dialog</code>.</p>
-	    <div class="bs-example">
-	      <button class="btn primary" data-toggle="modal" data-target=".bs-modal-lg">Large modal</button>
-	      <button class="btn primary" data-toggle="modal" data-target=".bs-modal-sm">Small modal</button>
-	    </div>
-	{% highlight html %}
-	<!-- Large modal -->
-	<button class="btn primary" data-toggle="modal" data-target=".bs-modal-lg">Large modal</button>
+      <h2 id="modals-sizes">Optional sizes</h2>
+      <p>Modals have two optional sizes, available via modifier classes to be placed on a <code>.modal-dialog</code>.</p>
+      <div class="bs-example">
+        <button class="btn primary" data-toggle="modal" data-target=".bs-modal-lg">Large modal</button>
+        <button class="btn primary" data-toggle="modal" data-target=".bs-modal-sm">Small modal</button>
+      </div>
+  {% highlight html %}
+  <!-- Large modal -->
+  <button class="btn primary" data-toggle="modal" data-target=".bs-modal-lg">Large modal</button>
 
-	<div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-	  <div class="modal-dialog modal-lg">
-	    <div class="modal-content">
-	      ...
-	    </div>
-	  </div>
-	</div>
+  <div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        ...
+      </div>
+    </div>
+  </div>
 
-	<!-- Small modal -->
-	<button class="btn primary" data-toggle="modal" data-target=".bs-modal-sm">Small modal</button>
+  <!-- Small modal -->
+  <button class="btn primary" data-toggle="modal" data-target=".bs-modal-sm">Small modal</button>
 
-	<div class="modal fade bs-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-	  <div class="modal-dialog modal-sm">
-	    <div class="modal-content">
-	      ...
-	    </div>
-	  </div>
-	</div>
-	{% endhighlight %}
+  <div class="modal fade bs-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        ...
+      </div>
+    </div>
+  </div>
+  {% endhighlight %}
 
-	    <!--  Modal content for the above example -->
-	    <div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-	      <div class="modal-dialog modal-lg">
-	        <div class="modal-content">
+      <!--  Modal content for the above example -->
+      <div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
 
-	          <div class="modal-header">
-	            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	            <h4 class="modal-title" id="myLargeModalLabel">Large modal</h4>
-	          </div>
-	          <div class="modal-body">
-	            ...
-	          </div>
-	        </div><!-- /.modal-content -->
-	      </div><!-- /.modal-dialog -->
-	    </div><!-- /.modal -->
-	    <div class="modal fade bs-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-	      <div class="modal-dialog modal-sm">
-	        <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" id="myLargeModalLabel">Large modal</h4>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+      <div class="modal fade bs-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
 
-	          <div class="modal-header">
-	            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	            <h4 class="modal-title" id="mySmallModalLabel">Small modal</h4>
-	          </div>
-	          <div class="modal-body">
-	            ...
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-	
-	
-	    <h2 id="modals-usage">Usage</h2>
-	    <p>The modal plugin toggles your hidden content on demand, via data attributes or JavaScript. It also adds <code>.modal-open</code> to the <code>&lt;body&gt;</code> to override default scrolling behavior and generates a <code>.modal-backdrop</code> to provide a click area for dismissing shown modals when clicking outside the modal.</p>
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" id="mySmallModalLabel">Small modal</h4>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+          </div>
+        </div>
+      </div>
+  
+  
+      <h2 id="modals-usage">Usage</h2>
+      <p>The modal plugin toggles your hidden content on demand, via data attributes or JavaScript. It also adds <code>.modal-open</code> to the <code>&lt;body&gt;</code> to override default scrolling behavior and generates a <code>.modal-backdrop</code> to provide a click area for dismissing shown modals when clicking outside the modal.</p>
 
     <h3>Via data attributes</h3>
     <p>Activate a modal without writing JavaScript. Set <code>data-toggle="modal"</code> on a controller element, like a button, along with a <code>data-target="#foo"</code> or <code>href="#foo"</code> to target a specific modal to toggle.</p>
@@ -1808,6 +1808,202 @@ $('#myCollapsible').on('hidden.bs.collapse', function () {
 
 
 
+
+  <!-- Input mask
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="inputmask">Input mask <small>inputmask.js</small></h1>
+    </div>
+
+    <h2 id="inputmask-examples">Example</h2>
+    <p>Input masks can be used to force the user to enter data conform a specific format. Unlike validation, the user can't enter any other key than the ones specified by the mask. Developed by Arnold Daniels at <a href="http://jasny.github.io/bootstrap/javascript/#inputmask">Jansy Bootstrap</a></p>.
+
+    <div class="bs-example">
+      <input type="text" class="form-control" data-mask="999-99-999-9999-9" placeholder="ISBN">
+      <input type="text" class="form-control" data-mask="(999) 999-9999" placeholder="US phone number">
+    </div>
+{% highlight js %}
+<input type="text" class="form-control" data-mask="999-99-999-9999-9" placeholder="ISBN">
+<input type="text" class="form-control" data-mask="(999) 999-9999" placeholder="US phone number">
+{% endhighlight %}
+
+    <hr class="bs-docs-separator">
+
+    <h2 id="inputmask-usage">Usage</h2>
+
+    <h3>Via data attributes</h3>
+    <p>Add data attributes to register an element with inputmask functionality as shown in the example above.</p>
+
+    <h3>Via JavaScript</h3>
+    <p>Call the input mask via javascript:</p>
+{% highlight js %}
+$('.inputmask').inputmask({
+  mask: '999-99-999-9999-9'
+})
+{% endhighlight %}
+
+    <h3>Options</h3>
+    <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as in <code>data-mask="999-99-999-9999-9"</code>.</p>
+
+    <div class="table-responsive">
+      <table class="table bordered striped">
+        <thead>
+          <tr>
+            <th style="width: 100px;">Name</th>
+            <th style="width: 50px;">Type</th>
+            <th style="width: 100px;">Default</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>mask</td>
+            <td>string</td>
+            <td>''</td>
+            <td>A string of formatting and literal characters, defining the input mask (see below).</td>
+          </tr>
+          <tr>
+            <td>placeholder</td>
+            <td>string</td>
+            <td>'_'</td>
+            <td>The character that is displayed where something needs to be typed.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Format</h3>
+    <p>Each typed character needs to match exactly one character in the <code>mask</code> option.</p>
+
+    <div class="table-responsive">
+      <table class="table bordered striped">
+        <thead>
+          <tr><th>Character</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>9</td><td>Number</td></tr>
+          <tr><td>a</td><td>Letter</td></tr>
+          <tr><td>?</td><td>Alphanumeric</td></tr>
+          <tr><td>*</td><td>Any character</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Methods</h3>
+
+    <h4>.inputmask(options)</h4>
+    <p>Initializes an input element with an input mask.</p>
+  </div>
+
+
+
+
+
+  <!-- Responsive tables :: Javacript
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="rtables">Responsive tables <small>Javascript version</small></h1>
+    </div>
+
+
+    <h2 id="rtables-examples">Example</h2>
+    <p>This JS solution allows tables to shrink on small devices without sacrificing the value of tables — comparison of columns — without modifying our table markup on the page. CSS applies the requisite positioning and overflow styles to make the new elements work.</p>
+
+  <div class="bs-example">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+            <th>Header 4</th>
+            <th>Header 5</th>
+            <th>Header 6</th>
+            <th>Header 7</th>
+            <th>Header 8</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>row 1, cell 1</td>
+            <td>row 1, cell 2</td>
+            <td>row 1, cell 3</td>
+            <td>row 1, cell 4</td>
+            <td>row 1, cell 5</td>
+            <td>row 1, cell 6</td>
+            <td>row 1, cell 7</td>
+            <td>row 1, cell 8</td>
+          </tr>
+          <tr>
+            <td>row 2, cell 1</td>
+            <td>row 2, cell 2</td>
+            <td>row 2, cell 3</td>
+            <td>row 2, cell 4</td>
+            <td>row 2, cell 5</td>
+            <td>row 2, cell 6</td>
+            <td>row 2, cell 7</td>
+            <td>row 2, cell 8</td>
+          </tr>
+          <tr>
+            <td>row 3, cell 1</td>
+            <td>row 3, cell 2</td>
+            <td>row 3, cell 3</td>
+            <td>row 3, cell 4</td>
+            <td>row 3, cell 5</td>
+            <td>row 3, cell 6</td>
+            <td>row 3, cell 7</td>
+            <td>row 3, cell 8</td>
+          </tr>
+          <tr>
+            <td>row 4, cell 1</td>
+            <td>row 4, cell 2</td>
+            <td>row 4, cell 3</td>
+            <td>row 4, cell 4</td>
+            <td>row 4, cell 5</td>
+            <td>row 4, cell 6</td>
+            <td>row 4, cell 7</td>
+            <td>row 4, cell 8</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div><!-- /example -->
+{% highlight html %}
+<div class="table-responsive">
+  <table class="table">
+    ...
+  </table>
+</div>
+{% endhighlight %}
+
+    <hr class="bs-docs-separator">
+
+    <h2 id="inputmask-usage">Usage</h2>
+
+    <h3>Via data attributes</h3>
+    <p></p>
+
+    <h3>Via JavaScript</h3>
+    <p></p>
+{% highlight js %}
+{% endhighlight %}
+
+    <h3>Options</h3>
+    <p></p>
+
+    <h3>Format</h3>
+    <p></p>
+
+    <h3>Methods</h3>
+
+    <h4></h4>
+    <p></p>
+  </div>
+
+
   <!-- Carousel
   ================================================== -->
   <div class="bs-docs-section">
@@ -2111,7 +2307,7 @@ $('#myCarousel').on('slide.bs.carousel', function () {
       </table>
     </div><!-- /.table-responsive -->
 
-	<h3>Events</h3>
+  <h3>Events</h3>
     <p>Bootstrap's affix class exposes a few events for hooking into affix functionality.</p>
     <div class="table-responsive">
       <table class="table bordered striped">
