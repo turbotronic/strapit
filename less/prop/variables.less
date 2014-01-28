@@ -220,6 +220,7 @@
 @zindex-popover:           1010;
 @zindex-tooltip:           1030;
 @zindex-navbar-fixed:      1030;
+@zindex-sidenav-fixed:     1030;
 @zindex-modal-background:  1040;
 @zindex-modal:             1050;
 
@@ -365,6 +366,60 @@
 // Pills
 @nav-pills-active-link-hover-bg:            @component-active-bg;
 @nav-pills-active-link-hover-color:         #fff;
+
+
+// Side nav
+// -------------------------
+
+// Basics of a side nav
+@sidenav-width:                     300px;
+@sidenav-margin-vertical:           (@line-height-computed / 2);
+@sidenav-default-color:             #777;
+@sidenav-default-bg:                #f8f8f8;
+@sidenav-default-border:            darken(@sidenav-default-bg, 6.5%);
+
+// Side nav links
+@sidenav-default-link-color:                #777;
+@sidenav-default-link-hover-color:          #333;
+@sidenav-default-link-hover-bg:             darken(@sidenav-default-bg, 3%);
+@sidenav-default-link-active-color:         #555;
+@sidenav-default-link-active-bg:            darken(@sidenav-default-bg, 6.5%);
+@sidenav-default-link-disabled-color:       #ccc;
+@sidenav-default-link-disabled-bg:          transparent;
+
+// Side nav brand label
+@sidenav-default-brand-color:               @sidenav-default-link-color;
+@sidenav-default-brand-hover-color:         darken(@sidenav-default-link-color, 10%);
+@sidenav-default-brand-hover-bg:            transparent;
+
+
+// Inverted side nav
+//
+// Reset inverted side nav basics
+@sidenav-inverse-color:                      @gray-light;
+@sidenav-inverse-bg:                         #222;
+@sidenav-inverse-border:                     darken(@sidenav-inverse-bg, 10%);
+
+// Inverted side nav links
+@sidenav-inverse-link-color:                 @gray-light;
+@sidenav-inverse-link-hover-color:           #fff;
+@sidenav-inverse-link-hover-bg:              darken(@sidenav-inverse-bg, 5%);
+@sidenav-inverse-link-active-color:          @sidenav-inverse-link-hover-color;
+@sidenav-inverse-link-active-bg:             darken(@sidenav-inverse-bg, 15%);
+@sidenav-inverse-link-disabled-color:        #444;
+@sidenav-inverse-link-disabled-bg:           transparent;
+
+// Inverted side nav brand label
+@sidenav-inverse-brand-color:                @sidenav-inverse-link-color;
+@sidenav-inverse-brand-hover-color:          #fff;
+@sidenav-inverse-brand-hover-bg:             transparent;
+
+// Inverted side nav search
+// Normal side nav needs no special styles or vars
+@sidenav-inverse-search-bg:                  lighten(@sidenav-inverse-bg, 25%);
+@sidenav-inverse-search-bg-focus:            #fff;
+@sidenav-inverse-search-border:              @sidenav-inverse-bg;
+@sidenav-inverse-search-placeholder-color:   #ccc;
 
 
 // Pagination

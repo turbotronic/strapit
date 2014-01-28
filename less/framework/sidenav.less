@@ -1,49 +1,237 @@
+// 
+// Sidenav
+// Developed by Arnold Daniels (https://github.com/jasny/bootstrap)
+// Example: http://jasny.github.io/bootstrap/components/#navmenu
+// ----------------------------------------------------------------
+
+// Wrapper and base class
 //
-// Side Nav -- idea from Foundation & styling 
-// taken from Bootstrap docs
+// Provide a static sidenav from which we expand to create the fixed sidenav
+// variations.
+
+.sidenav {
+  width: @sidenav-width;
+  height: 100%;
+  border: 1px solid @sidenav-default-border;
+  border-radius: @border-radius-base;
+}
+
+.sidenav-fixed-left,
+.sidenav-fixed-right,
+.sidenav.fixed-left,
+.sidenav.fixed-right {
+  position: fixed;
+  z-index: @zindex-sidenav-fixed;
+  top: 0;
+  border-radius: 0;
+}
+.sidenav-fixed-left,
+.sidenav.fixed-left {
+  left: 0;
+  border-width: 0 1px 0 0;
+}
+.sidenav-fixed-right,
+.sidenav.fixed-right {
+  right: 0;
+  border-width: 0 0 0 1px;
+}
+
+.sidenav-nav {
+  margin-bottom: @sidenav-margin-vertical;
+
+  &.dropdown-menu {
+    position: static;
+    margin: 0;
+    padding-top: 0;
+    float: none;
+    border: none;
+    .box-shadow(none);
+    border-radius: 0;
+  }
+}
+
+// Brand/project name
+
+.sidenav-brand {
+  display: block;
+  font-size: @font-size-large;
+  line-height: @line-height-computed;
+  padding: @nav-link-padding;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+  margin: @sidenav-margin-vertical 0;
+}
+
+// Alternate sidenavs
 // --------------------------------------------------
 
-.side-nav {
-  &:extend(.nav all);
-  padding-top: 10px;
-  padding-bottom: 10px;
-  .border-radius(@border-radius-base);
-  background: @gray-lightest;
-  li {
-    &.active > a {
-      font-weight: @font-weight-bold;
-      color: @brand-primary;
-      border-right: 1px solid @brand-primary;
-      &:hover,
-      &:focus {
-        background: @gray-lightest;
-        text-decoration: none;
-        color: @brand-primary;
-      }
-    }
-    a {
-      display: block;
-      color: @gray;
-      &:hover,
-      &:focus {
-        background: lighten(@gray-lighter, 10%);
-        text-decoration: none;
-        color: @gray;
-      }
-    }
-    ul {
-      margin-bottom: 8px;
-      li {
-        a {
-          padding: 3px 0 3px 30px;
-         .font-size(@font-size-small);
-        }
-     }
+// Default sidenav
+.sidenav-default,
+.sidenav.default {
+  background-color: @sidenav-default-bg;
+  border-color: @sidenav-default-border;
+
+  .sidenav-brand {
+    color: @sidenav-default-brand-color;
+    &:hover,
+    &:focus {
+      color: @sidenav-default-brand-hover-color;
+      background-color: @sidenav-default-brand-hover-bg;
     }
   }
-  li.divider {
-    border-top: 1px solid @border-color;
-    height: 0;
-    padding: 0;
+
+  .sidenav-text {
+    color: @sidenav-default-color;
+  }
+
+  .sidenav-nav {
+    // Caret should match text color on hover
+    > .dropdown > a:hover .caret,
+    > .dropdown > a:focus .caret {
+      border-top-color: @sidenav-default-link-hover-color;
+      border-bottom-color: @sidenav-default-link-hover-color;
+    }
+
+    // Remove background color from open dropdown
+    > .open > a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: @sidenav-default-link-active-bg;
+        color: @sidenav-default-link-active-color;
+        .caret {
+          border-top-color: @sidenav-default-link-active-color;
+          border-bottom-color: @sidenav-default-link-active-color;
+        }
+      }
+    }
+    > .dropdown > a .caret {
+      border-top-color: @sidenav-default-link-color;
+      border-bottom-color: @sidenav-default-link-color;
+    }
+    &.dropdown-menu {
+      background-color: @sidenav-default-link-active-bg;
+      & > .divider {
+        background-color: @sidenav-default-bg;
+      }
+      > .active > a {
+        &,
+        &:hover,
+        &:focus {
+          background-color: darken(@sidenav-default-link-active-bg, 6.5%);
+        }
+      }
+    }
+
+    > li > a {
+      color: @sidenav-default-link-color;
+      &:hover,
+      &:focus {
+        color: @sidenav-default-link-hover-color;
+        background-color: @sidenav-default-link-hover-bg;
+      }
+    }
+    > .active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @sidenav-default-link-active-color;
+        background-color: @sidenav-default-link-active-bg;
+      }
+    }
+    > .disabled > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @sidenav-default-link-disabled-color;
+        background-color: @sidenav-default-link-disabled-bg;
+      }
+    }
+  }
+}
+
+// Inverse sidenav
+.sidenav-inverse,
+.sidenav.inverse {
+  background-color: @sidenav-inverse-bg;
+  border-color: @sidenav-inverse-border;
+
+  .sidenav-brand {
+    color: @sidenav-inverse-brand-color;
+    &:hover,
+    &:focus {
+      color: @sidenav-inverse-brand-hover-color;
+      background-color: @sidenav-inverse-brand-hover-bg;
+    }
+  }
+
+  .sidenav-text {
+    color: @sidenav-inverse-color;
+  }
+
+  .sidenav-nav {
+    // Caret should match text color on hover
+    > .dropdown > a:hover .caret,
+    > .dropdown > a:focus .caret {
+      border-top-color: @sidenav-inverse-link-hover-color;
+      border-bottom-color: @sidenav-inverse-link-hover-color;
+    }
+
+    // Remove background color from open dropdown
+    > .open > a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: @sidenav-inverse-link-active-bg;
+        color: @sidenav-inverse-link-active-color;
+        .caret {
+          border-top-color: @sidenav-inverse-link-active-color;
+          border-bottom-color: @sidenav-inverse-link-active-color;
+        }
+      }
+    }
+    > .dropdown > a .caret {
+      border-top-color: @sidenav-inverse-link-color;
+      border-bottom-color: @sidenav-inverse-link-color;
+    }
+    &.dropdown-menu {
+      background-color: @sidenav-inverse-link-active-bg;
+      & > .divider {
+        background-color: @sidenav-inverse-bg;
+      }
+      > .active > a {
+        &,
+        &:hover,
+        &:focus {
+          background-color: darken(@sidenav-inverse-link-active-bg, 6.5%);
+        }
+      }
+    }
+    > li > a {
+      color: @sidenav-inverse-link-color;
+      &:hover,
+      &:focus {
+        color: @sidenav-inverse-link-hover-color;
+        background-color: @sidenav-inverse-link-hover-bg;
+      }
+    }
+    > .active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @sidenav-inverse-link-active-color;
+        background-color: @sidenav-inverse-link-active-bg;
+      }
+    }
+    > .disabled > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @sidenav-inverse-link-disabled-color;
+        background-color: @sidenav-inverse-link-disabled-bg;
+      }
+    }
   }
 }
