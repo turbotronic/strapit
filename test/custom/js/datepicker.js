@@ -362,8 +362,6 @@
 
 $(function() {
 	$("input[data-datepicker-format]").datepicker({
-		weekStart: 1,
-		days: ["zo","ma","di","wo","do","vr","za"],
-		months: ["januari","februari","maart","april","mei","juni","juli","augustus","september","oktober","november","december"]
+		weekStart: 1
 	});
 });

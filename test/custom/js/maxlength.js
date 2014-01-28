@@ -13,23 +13,22 @@
 
     $.fn.extend({
         maxlength: function (options, callback) {
-
             var documentBody = $('body'),
                 defaults = {
                     alwaysShow: false, // if true the indicator it's always shown.
-                    threshold: 10, // Represents how many chars left are needed to show up the counter
-                    warningClass: 'label label-success',
-                    limitReachedClass: 'label label-important',
+                    threshold: 1, // Represents how many chars left are needed to show up the counter
+                    warningClass: 'label success',
+                    limitReachedClass: 'label danger',
                     separator: ' / ',
                     preText: '',
                     postText: '',
                     showMaxLength : true,
                     placement: 'bottom',
-                    showCharsTyped: true, // show the number of characters typed and not the number of characters remaining
-                    validate: false, // if the browser doesn't support the maxlength attribute, attempt to type more than
-                                                                        // the indicated chars, will be prevented.
+                    showCharsTyped: true, // show characters typed; not number of characters remaining
+                    validate: false, // if the browser doesn't support the maxlength attribute, 
+                                     // attempt to type more than the indicated chars, will be prevented.
                     utf8: false, // counts using bytesize rather than length.  eg: '£' is counted as 2 characters.
-                    ignoreBreaks: false //true will consider either CR or LF, false would consider both.
+                    ignoreBreaks: false // true will consider either CR or LF, false would consider both.
                 };
 
             if ($.isFunction(options) && !callback) {
