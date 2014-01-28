@@ -5869,9 +5869,20 @@ a.list-group-item.active > .badge,
 }
 .jumbotron h1,
 .jumbotron .h1 {
+<<<<<<< HEAD
   margin-top: 0;
   color: inherit;
 }
+=======
+  color: inherit;
+}
+.jumbotron p {
+  margin-bottom: 15px;
+  font-size: 21px;
+  font-size: 2.1rem;
+  font-weight: 200;
+}
+>>>>>>> Adding offcanvas and redoing sidenav
 .container .jumbotron {
   border-radius: 6px;
 }
@@ -5892,12 +5903,15 @@ a.list-group-item.active > .badge,
     font-size: 63px;
     font-size: 6.3rem;
   }
+<<<<<<< HEAD
   .jumbotron p {
     margin-bottom: 15px;
     font-size: 21px;
     font-size: 2.1rem;
     font-weight: 200;
   }
+=======
+>>>>>>> Adding offcanvas and redoing sidenav
 }
 .thumbnail {
   display: block;
@@ -7454,6 +7468,7 @@ button.close {
 .offcanvas.in {
   display: block;
 }
+<<<<<<< HEAD
 @media (max-width: 479px) {
   .offcanvas-xs {
     display: none;
@@ -7492,6 +7507,30 @@ button.close {
 .offcanvas-xl.in {
   display: block;
 }
+=======
+/*@media (max-width: @breakpoint-xs-max) { // change to breakpoints
+  .offcanvas-xs {
+    .offcanvas();
+  }
+}
+@media (max-width: @breakpoint-sm-max) {
+  .offcanvas-sm {
+    .offcanvas();
+  }
+}
+@media (max-width: @breakpoint-md-max) {
+  .offcanvas-md {
+    .offcanvas();
+  }
+}
+.offcanvas-lg (max-width: @breakpoint-lg-max) {
+  .offcanvas();
+}
+.offcanvas-xl {
+  .offcanvas();
+}
+*/
+>>>>>>> Adding offcanvas and redoing sidenav
 .canvas-sliding {
   -webkit-transition: -webkit-transform .35s;
           transition:         transform .35s, -ms-transform .35s;

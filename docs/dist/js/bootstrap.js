@@ -1955,6 +1955,9 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 }(jQuery);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Adding offcanvas and redoing sidenav
 /* ========================================================================
  * Bootstrap: offcanvas.js v3.0.0-p7
  * http://jasny.github.io/bootstrap/javascript.html#offcanvas
@@ -2252,8 +2255,11 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
   })
 
 }(window.jQuery);
+<<<<<<< HEAD
 =======
 >>>>>>> Fixes issues #107 and #108 -- adds file input and input mask to framework
+=======
+>>>>>>> Adding offcanvas and redoing sidenav
 /* ===========================================================
  * Bootstrap: inputmask.js v3.0.0-p7
  * http://jasny.github.io/bootstrap/javascript.html#inputmask
