@@ -19,7 +19,7 @@ main,
 nav,
 section,
 summary {
-  display: block;
+  display: block; // (nm v3.0.0)
   position: relative; // easier positioning of absolute and relative elements
 }
 
@@ -27,20 +27,22 @@ div, ul {
   position: relative; // easier positioning of absolute and relative elements
 }
 
-// Display block in IE8-9
+// Correct `inline-block` display not defined in IE 8/9.
+// Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
 // ----------------------
 
 audio,
 canvas,
+progress,
 video {
-    display: inline-block;
+    display: inline-block; // (nm v3.0.0)
 }
 
 // Prevents modern browsers from displaying 'audio' without controls
 // Remove excess height in iOS 5 devices.
 // -----------------------------------------------------------------
 
-audio:not([controls]) {
+audio:not([controls]) { // (nm v3.0.0)
     display: none;
     height: 0;
 }
@@ -51,9 +53,9 @@ audio:not([controls]) {
 
 [hidden],
 template {
-    display: none;
+    display: none; // (nm v3.0.0)
 }
 
 svg:not(:root) {
-    overflow: hidden; // Corrects overflow displayed oddly in IE 9.
+    overflow: hidden; // Corrects overflow displayed oddly in IE 9. (nm v3.0.0)
 }
