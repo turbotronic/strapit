@@ -164,7 +164,7 @@ module.exports = function (grunt) {
         expand: true,
         cwd: './dist',
         src: [
-          '{css,js}/*',
+          '{css,js}/*.*',
           '{css,js}/*.min.*',
           'css/*.map',
           'fonts/*'
@@ -255,7 +255,7 @@ module.exports = function (grunt) {
   grunt.registerTask('dist-docs', ['copy:docs']);
 
   // Full distribution task.
-  grunt.registerTask('dist', ['clean', 'dist-css', 'copy:fonts', 'copy:webicons', 'dist-docs', 'dist-js']);
+  grunt.registerTask('dist', ['clean', 'dist-css', 'copy:fonts', 'copy:webicons', 'dist-js', 'dist-docs']);
 
   // Default task.
   grunt.registerTask('default', ['dist']);
