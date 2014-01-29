@@ -7,8 +7,6 @@
     <script src="../js/modernizr.js"></script>
     <!-- Strapit -->
     <link href="../dist/css/strapit.min.css" rel="stylesheet" media="screen">
-<<<<<<< HEAD
-<<<<<<< HEAD
     <link href="css/datepicker.css" rel="stylesheet" media="screen">
 </style>
   </head>
@@ -114,130 +112,10 @@ $(<span class="string">'input#placement'</span>).maxlength({ alwaysShow: <span c
     
     
     
-=======
-
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
->>>>>>> Add environments for new features
-=======
-    <link href="css/datepicker.css" rel="stylesheet" media="screen">
-</style>
-  </head>
-  <body>
-  
-
-  <div class="container">
-    <div class="page-header">
-      <h1>Components</h1>
-    </div>
-    <div class="page-header">
-    	<h2>Date picker</h2>
-    </div>
-<div>
-	<!--
-	TODO 
-	:: make this so that the button works and triggers everything (focus over all!!!)
-	:: revamp styles into Less and that they work with datepicker class
-	:: add functions and methods from fuel's datepicker
-	-->
-	<div class="row">
-	  <div class="col md-3">
-	    <div class="input-group datepicker">
-	      <input type="text" class="form-control" data-datepicker-format="mm/dd/yyyy" data-datepicker-nodefault="true">
-	      <span class="input-group-btn">
-	        <button class="btn default right" type="button"><span class="glyphicon glyphicon-calendar"></span></button>
-	      </span>
-	    </div><!-- /input-group -->
-	  </div><!-- /.col.lg-6 -->
-	</div><!-- /.row -->
-	
-</div>
-<<<<<<< HEAD
-
-    </div> <!-- .container -->
->>>>>>> Adding more examples to test area
-=======
-      <div class="page-header">
-        <h2>MaxLength</h2>
-	  <!-- 
-	  TODO 
-	  :: make data-* tags work so it does not have to be instantiated via javascript
-	  :: also styles for labels?
-	  :: proper documentation
-	  -->
-      </div>
-      <h2>Default usage</h2>
-      <p>The badge will show up by default when the remaining chars are 10 or less:</p>
-      <input type="text" class="form-control" data-maxlength="25" maxlength="25" name="defaultconfig" id="defaultconfig">
-<pre>
-<code class="undefined">$('input[maxlength]').maxlength();</code>
-</pre>
-
-      <h2>Change the threshold value</h2>
-      <p>Do you want the badge to show up when there are 20 chars or less? Use the <code>threshold</code> option:</p>
-      <input type="text" maxlength="25" name="thresholdconfig" class="form-control" id="thresholdconfig">
-<pre>
-<code class="undefined">
-$('input.className').maxlength({ threshold: 20 }); </code>
-</pre>
-
-      <h2>Few options </h2>
-      <input type="text" class="form-control" maxlength="25" name="moreoptions" id="moreoptions">
-<pre>
-<code class="javascript">
-$(<span class="string">'input.className'</span>).maxlength({ alwaysShow: <span class="literal">true</span>, threshold: <span class="number">10</span>, warningClass: <span class="string">"label label-success"</span>, limitReachedClass: <span class="string">"label label-important"</span>
-}); </code>
-</pre>
-
-      <h2>All the options</h2>
-      <p>
-        This is a complete example where all the options configured for the bootstrap-maxlength counter are setted.
-      </p>
-      <p>
-        Please note: if the <code>alwaysShow</code> option is enabled, the <code>threshold</code> option is ignored.
-      </p>
-      <input type="text" class="form-control" maxlength="25" name="alloptions" id="alloptions">
-<pre>
-<code class="javascript">
-$(<span class="string">'input.className'</span>).maxlength({ alwaysShow: <span class="literal">true</span>, threshold: <span class="number">10</span>, warningClass: <span class="string">"label label-success"</span>, limitReachedClass: <span class="string">"label label-important"</span>, separator: <span class="string">' of '</span>, preText: <span class="string">'You have '</span>, postText: <span class="string">' chars remaining.'</span>, validate: <span class="literal">true</span>
-}); </code>
-</pre>
-
-      <h2>What about textareas?</h2>
-      <p>
-        Bootstrap maxlength supports textarea as well as inputs. Even on old IE.
-      </p>
-      <textarea id="textarea" class="form-control" maxlength="225" rows="2" placeholder="This textarea has a limit of 225 chars."></textarea>
-<pre>
-<code class="javascript">
-  $(<span class="string">'textarea#textarea'</span>).maxlength({ alwaysShow: <span class="literal">true</span>
-}); </code>
-</pre>
-
-      <h2>Let's play with the position</h2>
-      <p>
-        The field counter can be positioned at the top, bottom, left or right. You can also place the maxlength indicator on the corners: bottom-right, top-right, top-left, bottom-left and centered-right.<br>
-         All you need to do is specify the <code>placement</code> option, with one of those strings. If none is specified, the positioning will be defauted to 'bottom'.
-      </p>
-      <input type="text" class="form-control" maxlength="25" name="placement" id="placement">
-<pre>
-<code class="javascript">
-$(<span class="string">'input#placement'</span>).maxlength({ alwaysShow: <span class="literal">true</span>, placement: <span class="string">'top-left'</span>
-}); </code>
-</pre>
-      
-    </div><!-- .container -->
-    
-    
-    
->>>>>>> Adding offcanvas and redoing sidenav
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="//code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../dist/js/bootstrap.min.js"></script>
-<<<<<<< HEAD
-<<<<<<< HEAD
     <script src="js/datepicker.js"></script>
     <script src="js/maxlength.js"></script>
 
@@ -245,47 +123,17 @@ $(<span class="string">'input#placement'</span>).maxlength({ alwaysShow: <span c
   $(document).ready(function(){
     $('input#defaultconfig').maxlength({
     });
-=======
-    <script src="js/datepicker.js"></script>
-    <script src="js/maxlength.js"></script>
-
-  <script>
-  $(document).ready(function(){
-<<<<<<< HEAD
-    $('input#defaultconfig').maxlength()
->>>>>>> Adding more examples to test area
-=======
-    $('input#defaultconfig').maxlength({
-    });
->>>>>>> Adding offcanvas and redoing sidenav
 
     $('input#thresholdconfig').maxlength({
       threshold: 20
     });
 
     $('input#moreoptions').maxlength({
-<<<<<<< HEAD
-<<<<<<< HEAD
       alwaysShow: true
-=======
-      alwaysShow: true,
-      warningClass: "label success",
-      limitReachedClass: "label danger"
->>>>>>> Adding more examples to test area
-=======
-      alwaysShow: true
->>>>>>> Adding offcanvas and redoing sidenav
     });
 
     $('input#alloptions').maxlength({
       alwaysShow: true,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-      warningClass: "label success",
->>>>>>> Adding more examples to test area
-=======
->>>>>>> Adding offcanvas and redoing sidenav
       limitReachedClass: "label danger",
       separator: ' out of ',
       preText: 'You typed ',
@@ -294,15 +142,7 @@ $(<span class="string">'input#placement'</span>).maxlength({ alwaysShow: <span c
     });
 
     $('textarea#textarea').maxlength({
-<<<<<<< HEAD
-<<<<<<< HEAD
       alwaysShow: true,
-=======
-      alwaysShow: true
->>>>>>> Adding more examples to test area
-=======
-      alwaysShow: true,
->>>>>>> Adding offcanvas and redoing sidenav
     });
 
     $('input#placement').maxlength({
@@ -310,21 +150,7 @@ $(<span class="string">'input#placement'</span>).maxlength({ alwaysShow: <span c
       placement: 'top-left'
     });
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
    </script>
-=======
->>>>>>> Add environments for new features
-=======
-    //hljs.initHighlightingOnLoad();
-
-   });
-   </script>
-=======
->>>>>>> Adding offcanvas and redoing sidenav
-
-   </script>
->>>>>>> Adding more examples to test area
   </body>
 </html>
