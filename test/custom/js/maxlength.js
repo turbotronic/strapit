@@ -334,4 +334,8 @@
             });
         }
     });
+<<<<<<< HEAD
 }(jQuery));
+=======
+}(jQuery));
+>>>>>>> 37a7fcfb6cdd16b73bf7b7b53b2f0df6c40c171b

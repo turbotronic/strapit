@@ -4,7 +4,10 @@
   "version": "2.0.3",
   "bootstrap" : "3.0.3",
   "foundation" : "5.0.2",
+<<<<<<< HEAD
 
+=======
+>>>>>>> 37a7fcfb6cdd16b73bf7b7b53b2f0df6c40c171b
   "keywords": [
     "bootstrap",
     "css"
