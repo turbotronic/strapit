@@ -29,6 +29,7 @@ ul {
 }
 audio,
 canvas,
+progress,
 video {
   display: inline-block;
 }
@@ -654,9 +655,6 @@ abbr[data-original-title] {
 .initialism {
   font-size: 90%;
   text-transform: uppercase;
-}
-q {
-  quotes: "\201C" "\201D" "\2018" "\2019";
 }
 address {
   margin-bottom: 22px;
@@ -2214,6 +2212,7 @@ th.hidden-touch {
 code,
 pre {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 1em;
 }
 code {
   padding: 2px 4px;
@@ -2239,13 +2238,13 @@ pre {
   display: block;
   padding: 10.5px;
   margin: 0 0 11px;
+  overflow: auto;
   font-size: 13px;
   font-size: 1.3rem;
   line-height: 1.618;
   color: #555;
   word-break: break-all;
   word-wrap: break-word;
-  white-space: pre-wrap;
   background-color: #f5f5f5;
   border: 1px solid #ccc;
   border-radius: 3px;
@@ -2271,7 +2270,9 @@ table {
   border-collapse: collapse;
   background-color: transparent;
 }
+td,
 th {
+  padding: 0;
   text-align: left;
 }
 .table {
@@ -2320,13 +2321,8 @@ th {
 .table-condensed > tfoot > tr > td,
 .table.condensed > tfoot > tr > td {
   padding: 5px;
-<<<<<<< HEAD
   font-size: 13px;
   font-size: 1.3rem;
-=======
-  font-size: 14px;
-  font-size: 1.4rem;
->>>>>>> Off canvas examples added plus small change to jumbrotron
 }
 .table-bordered,
 .table.bordered {
@@ -2630,21 +2626,18 @@ table th.col {
 label,
 select,
 button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"],
 input[type="radio"],
 input[type="checkbox"] {
   cursor: pointer;
 }
 button,
 input,
+optgroup,
 select,
 textarea {
   margin: 0;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
+  font: inherit;
+  color: inherit;
 }
 button,
 input,
@@ -2652,7 +2645,9 @@ select[multiple],
 textarea {
   background-image: none;
 }
-button,
+button {
+  overflow: visible;
+}
 input {
   line-height: normal;
 }
@@ -2673,9 +2668,7 @@ html input[disabled] {
 }
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
   margin: 4px 0 0;
   margin-top: 1px \9;
@@ -2692,6 +2685,10 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   padding: 0;
@@ -2699,13 +2696,12 @@ input::-moz-focus-inner {
 }
 textarea {
   overflow: auto;
-  vertical-align: top;
+}
+optgroup {
+  font-weight: bold;
 }
 fieldset {
-<<<<<<< HEAD
   min-width: 0;
-=======
->>>>>>> Off canvas examples added plus small change to jumbrotron
   padding: 0;
   margin: 0;
   border: 0;
@@ -2715,13 +2711,8 @@ legend {
   width: 100%;
   padding: 0;
   margin-bottom: 22px;
-<<<<<<< HEAD
   font-size: 21px;
   font-size: 2.1rem;
-=======
-  font-size: 14px;
-  font-size: 1.4rem;
->>>>>>> Off canvas examples added plus small change to jumbrotron
   line-height: inherit;
   color: #555;
   border: 0;
@@ -2743,21 +2734,12 @@ select[multiple],
 select[size] {
   height: auto;
 }
-select optgroup {
-  font-family: inherit;
-  font-size: inherit;
-  font-style: inherit;
-}
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
-}
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  height: auto;
 }
 output {
   display: block;
@@ -4274,13 +4256,8 @@ textarea.input-group.sm > .input-group-btn > .btn {
   .switch-sm label,
   .switch.sm label {
     padding: 0 12px;
-<<<<<<< HEAD
     font-size: 9px;
     font-size: .9rem;
-=======
-    font-size: 12px;
-    font-size: 1.2rem;
->>>>>>> Off canvas examples added plus small change to jumbrotron
     line-height: 22.5px;
   }
   .switch-sm input:first-of-type:checked ~ span:last-child,
@@ -5887,26 +5864,9 @@ a.list-group-item.active > .badge,
 }
 .jumbotron h1,
 .jumbotron .h1 {
-<<<<<<< HEAD
-<<<<<<< HEAD
   margin-top: 0;
   color: inherit;
 }
-=======
-  color: inherit;
-}
-.jumbotron p {
-  margin-bottom: 15px;
-  font-size: 21px;
-  font-size: 2.1rem;
-  font-weight: 200;
-}
->>>>>>> Adding offcanvas and redoing sidenav
-=======
-  margin-top: 0;
-  color: inherit;
-}
->>>>>>> Off canvas examples added plus small change to jumbrotron
 .container .jumbotron {
   border-radius: 6px;
 }
@@ -5927,21 +5887,12 @@ a.list-group-item.active > .badge,
     font-size: 63px;
     font-size: 6.3rem;
   }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Off canvas examples added plus small change to jumbrotron
   .jumbotron p {
     margin-bottom: 15px;
     font-size: 21px;
     font-size: 2.1rem;
     font-weight: 200;
   }
-<<<<<<< HEAD
-=======
->>>>>>> Adding offcanvas and redoing sidenav
-=======
->>>>>>> Off canvas examples added plus small change to jumbrotron
 }
 .thumbnail {
   display: block;
@@ -6459,13 +6410,8 @@ a.list-group-item.info.active:focus {
 .panel > .panel-body + .table-responsive {
   border-top: 1px solid #ddd;
 }
-<<<<<<< HEAD
 .panel > .table > tbody:first-child > tr:first-child th,
 .panel > .table > tbody:first-child > tr:first-child td {
-=======
-.panel > .table > tbody:first-child th,
-.panel > .table > tbody:first-child td {
->>>>>>> Off canvas examples added plus small change to jumbrotron
   border-top: 0;
 }
 .panel > .table-bordered,
@@ -6747,13 +6693,8 @@ a.list-group-item.info.active:focus {
 }
 .close {
   float: right;
-<<<<<<< HEAD
   font-size: 21px;
   font-size: 2.1rem;
-=======
-  font-size: 14px;
-  font-size: 1.4rem;
->>>>>>> Off canvas examples added plus small change to jumbrotron
   font-weight: bold;
   line-height: 1;
   color: #000;
@@ -7508,10 +7449,6 @@ button.close {
 .offcanvas.in {
   display: block;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Off canvas examples added plus small change to jumbrotron
 @media (max-width: 479px) {
   .offcanvas-xs {
     display: none;
@@ -7550,33 +7487,6 @@ button.close {
 .offcanvas-xl.in {
   display: block;
 }
-<<<<<<< HEAD
-=======
-/*@media (max-width: @breakpoint-xs-max) { // change to breakpoints
-  .offcanvas-xs {
-    .offcanvas();
-  }
-}
-@media (max-width: @breakpoint-sm-max) {
-  .offcanvas-sm {
-    .offcanvas();
-  }
-}
-@media (max-width: @breakpoint-md-max) {
-  .offcanvas-md {
-    .offcanvas();
-  }
-}
-.offcanvas-lg (max-width: @breakpoint-lg-max) {
-  .offcanvas();
-}
-.offcanvas-xl {
-  .offcanvas();
-}
-*/
->>>>>>> Adding offcanvas and redoing sidenav
-=======
->>>>>>> Off canvas examples added plus small change to jumbrotron
 .canvas-sliding {
   -webkit-transition: -webkit-transform .35s;
           transition:         transform .35s, -ms-transform .35s;

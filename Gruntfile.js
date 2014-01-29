@@ -45,7 +45,8 @@ module.exports = function (grunt) {
         src: ['docs/assets/js/application.js']
       }
     },
-git 
+
+
     csslint: {
       options: {
         csslintrc: 'less/.csslintrc'
@@ -75,9 +76,6 @@ git
           'js/scrollspy.js',
           'js/tab.js',
           'js/affix.js',
-          'js/offcanvas.js',
-          'js/inputmask.js',
-          'js/fileinput.js',
           'js/responsive-tables.js'
         ],
         dest: 'dist/js/bootstrap.js'
