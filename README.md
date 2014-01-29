@@ -7,7 +7,7 @@ A CSS framework mashup of Twitter's Bootstrap and ZURB's Foundation.
 
 Basically, this framework retains the styling and semantics of Bootstrap with the Javascript grid, responsivie utilties and Javascript element ideas coming from Foundation. UI elements of Foundation, e.g. subnavs, switches, and flex-video, have been ported over to the Bootstrap styles. Strapit is still written in LESS and retains Bootstrap's mixins, however, we are considering a SASS version and porting the best of each's mixins into both languages for two distinct versions.
 
-There are also some original UI elements and typographic conventions scattered throughout. We expect there will soon be more. We also changed some of the semantics in an attempt to reduce overall code. For example: Rather than append a 'btn-primary' class to a 'btn' class, we simply remove the 'btn-' on the former class, so the styling on an element would read <button class="btn primary block lg"> as opposed to <btn class="btn btn-primary btn-block btn-lg">. Maybe we are wrong to do this. Time will tell.
+There are also some original UI elements and typographic conventions scattered throughout. We expect there will soon be more. We also changed some of the semantics in an attempt to reduce overall code. For example: Rather than append a 'btn-primary' class to a 'btn' class, we simply remove the 'btn-' on the former class, so the styling on an element would read ```<button class="btn primary block lg">``` as opposed to ```<btn class="btn btn-primary btn-block btn-lg">```. Maybe we are wrong to do this. Time will tell.
 
 All deviations are detailed in the docs. In addition, we will be keeping up with the issues and updates of both frameworks and adding them to this framework when applicable.
 
