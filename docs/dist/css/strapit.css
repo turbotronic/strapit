@@ -2320,8 +2320,8 @@ th {
 .table-condensed > tfoot > tr > td,
 .table.condensed > tfoot > tr > td {
   padding: 5px;
-  font-size: 14px;
-  font-size: 1.4rem;
+  font-size: 13px;
+  font-size: 1.3rem;
 }
 .table-bordered,
 .table.bordered {
@@ -2697,6 +2697,7 @@ textarea {
   vertical-align: top;
 }
 fieldset {
+  min-width: 0;
   padding: 0;
   margin: 0;
   border: 0;
@@ -2706,8 +2707,8 @@ legend {
   width: 100%;
   padding: 0;
   margin-bottom: 22px;
-  font-size: 14px;
-  font-size: 1.4rem;
+  font-size: 21px;
+  font-size: 2.1rem;
   line-height: inherit;
   color: #555;
   border: 0;
@@ -4260,8 +4261,8 @@ textarea.input-group.sm > .input-group-btn > .btn {
   .switch-sm label,
   .switch.sm label {
     padding: 0 12px;
-    font-size: 12px;
-    font-size: 1.2rem;
+    font-size: 9px;
+    font-size: .9rem;
     line-height: 22.5px;
   }
   .switch-sm input:first-of-type:checked ~ span:last-child,
@@ -6414,8 +6415,8 @@ a.list-group-item.info.active:focus {
 .panel > .panel-body + .table-responsive {
   border-top: 1px solid #ddd;
 }
-.panel > .table > tbody:first-child th,
-.panel > .table > tbody:first-child td {
+.panel > .table > tbody:first-child > tr:first-child th,
+.panel > .table > tbody:first-child > tr:first-child td {
   border-top: 0;
 }
 .panel > .table-bordered,
@@ -6697,8 +6698,8 @@ a.list-group-item.info.active:focus {
 }
 .close {
   float: right;
-  font-size: 14px;
-  font-size: 1.4rem;
+  font-size: 21px;
+  font-size: 2.1rem;
   font-weight: bold;
   line-height: 1;
   color: #000;
