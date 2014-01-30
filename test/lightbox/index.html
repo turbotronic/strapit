@@ -7,27 +7,29 @@
     <script src="../js/modernizr.js"></script>
     <!-- Strapit -->
     <link href="../dist/css/strapit.min.css" rel="stylesheet" media="screen">
-
   </head>
   <body>
-	<div class="container">
-		<div class="page-header">
-			<h1>Lightbox</h1>
-		</div>
-		<p>Click the thumbnail below to open the lightbox. This demo includes the optional <code>.lightbox-caption</code> element, which adds an image caption.</p>
+    <div class="container">
+      <div class="page-header">
+        <h1>Lightbox</h1>
+      </div>
+      <p>Click the thumbnail below to open the lightbox. This demo includes the optional <code>.lightbox-caption</code> element, which adds an image caption.</p>
+      <div class="example">
+        <a data-toggle="lightbox" href="#myModal" class="thumbnail">
+          <img src="http://placehold.it/100x100" alt="Click to view the lightbox" />
+        </a>
+ 		<div class="modal fade lightbox" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-body">
+		        <img src="http://placehold.it/300x250" />
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+      </div>
+    </div>
 
-
-			<a data-toggle="lightbox" href="#demoLightbox" class="thumbnail">
-				<img src="http://placehold.it/100x100" alt="Click to view the lightbox">
-			</a>
-
-			<div id="demoLightbox" class="lightbox hide fade"  tabindex="-1" role="dialog" aria-hidden="true">
-				<div class='lightbox-content'>
-					<img src="http://placehold.it/300x250">
-					<div class="lightbox-caption"><p>Your caption here</p></div>
-				</div>
-			</div>
-		</div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="//code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -36,10 +38,3 @@
 	<script src="js/lightbox.js"></script>
   </body>
 </html>
-
-<!-- 
-TODO
-:: js conflict prevents modal from closing
-:: css conflict on 'hide' class causes problems
-:: styling is a little off from original
--->

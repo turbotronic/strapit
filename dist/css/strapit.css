@@ -7038,10 +7038,12 @@ button.close {
     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
             box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
   }
-  .modal-sm {
+  .modal-sm,
+  .modal.sm {
     width: 300px;
   }
-  .modal-lg {
+  .modal-lg,
+  .modal.lg {
     width: 900px;
   }
 }
@@ -8901,70 +8903,35 @@ button.close {
   background-image: url('http://projects/strapit/img/webiconsnew/fc-webicon-zerply.svg');
 }
 /*!
-* bootstrap-lightbox.css v0.6.1 
+* bootstrap-lightbox.css v0.7.0
 * Copyright 2013 Jason Butz
 * http://www.apache.org/licenses/LICENSE-2.0.txt
 */
-.lightbox {
-  position: relative;
-  top: 70px;
-  z-index: 1050;
-  line-height: 0;
-  text-align: center;
-  background-color: transparent;
-  outline: none;
+body.lightbox-open {
+  overflow: hidden;
 }
-.lightbox .hide {
-  display: none;
-}
-.lightbox .in {
-  display: block;
-}
-.lightbox-content {
-  display: inline-block;
-  padding: 10px;
-  background-color: #fff;
-  -webkit-background-clip: padding-box;
-     -moz-background-clip: padding-box;
-          background-clip: padding-box;
-  border: 1px solid #999;
-  border: 1px solid rgba(0, 0, 0, .3);
-          border-radius: 6px;
-  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, .3);
-     -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, .3);
-          box-shadow: 0 3px 7px rgba(0, 0, 0, .3);
-
-  *border: 1px solid #999;
-  /* IE6-7 */
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-}
-.lightbox-content .lightbox-caption {
+.modal.lightbox .modal-dialog {
   position: absolute;
-  right: 12px;
-  bottom: 11px;
-  left: 11px;
-  padding: 2%;
-  font-size: 14px;
-  line-height: 18px;
-  color: white;
+  top: 50%;
+  right: 50%;
+  width: auto!important;
+}
+.modal.lightbox .modal-body {
+  padding: 10px;
+}
+.lightbox-caption {
+  padding: 5px 15px;
+  font-size: 13px;
+  font-size: 1.3rem;
+  color: #fff;
   text-align: center;
   text-shadow: 0 -1px 0 #000;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
   background: #000;
   background: rgba(0, 0, 0, .6);
 }
-.lightbox-header .close {
-  margin-top: -16px;
-  margin-right: -16px;
-  font-size: 2em;
-  color: white;
-  filter: alpha(opacity=80);
-  opacity: .8;
-}
-.lightbox-header .close :hover {
-  filter: alpha(opacity=40);
-  opacity: .4;
+.lightbox-caption p {
+  margin-bottom: 0;
 }
 .btn-file {
   position: relative;
