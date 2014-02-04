@@ -35,31 +35,6 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 {% endhighlight %}
 
-    <h3 id="overview-responsive-images">Responsive images</h3>
-    <p>Images in Strapit are responsive-friendly by default. If you're using Google Maps, you might run into some display problems due to the use of <code>max-width</code> on images. Also, there may be a problem with the use of <code>* { box-sizing: border-box; }</code>. The following snippet should avoid all those problems.</p>
-{% highlight css %}
-/* Fix Google Maps canvas
- *
- * Wrap your Google Maps embed in a `.google-map-canvas` to reset Strapit's
- * global `box-sizing` changes.
- */
-
-.google-map-canvas,
-.google-map-canvas * { 
-  .box-sizing(content-box);
-  max-width: none !important;
-  img {
-    display: inline;
-  }
-}
-{% endhighlight %}
-    <p>For other cases where max-width is not desired on an image, or any other element for that matter, add the <code>.no-max</code> class.</p>
-{% highlight html %}
-<div class="no-max">
-  ...
-</div>
-{% endhighlight %}
-
     <h3 id="overview-type-links">Typography and links</h3>
     <p>Strapit sets basic global show-grid, typography, and link styles. Specifically, we:</p>
     <ul class="list">
@@ -2598,13 +2573,37 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <div class="page-header">
       <h1 id="images">Images</h1>
     </div>
+	    <h2 id="images-responsive">Responsive images</h2>
+	    <p>Images in Strapit are responsive-friendly by default. If you're using Google Maps, you might run into some display problems due to the use of <code>max-width</code> on images. Also, there may be a problem with the use of <code>* { box-sizing: border-box; }</code>. The following snippet should avoid all those problems.</p>
+{% highlight css %}
+/* Fix Google Maps canvas
+ *
+ * Wrap your Google Maps embed in a `.google-map-canvas` to reset Strapit's
+ * global `box-sizing` changes.
+ */
 
+.google-map-canvas,
+.google-map-canvas * { 
+  .box-sizing(content-box);
+  max-width: none !important;
+  img {
+    display: inline;
+  }
+}
+{% endhighlight %}
+    <p>For other cases where max-width is not desired on an image, or any other element for that matter, add the <code>.no-max</code> class.</p>
+{% highlight html %}
+<div class="no-max">
+  ...
+</div>
+{% endhighlight %}
+
+    <h2 id="images-shapes">Image shapes</h2>
     <p>Add classes to an <code>&lt;img&gt;</code> element to easily style images in any project.</p>
     <div class="callout danger">
       <h4>Cross-browser compatibility</h4>
       <p>Keep in mind that Internet Explorer 8 lacks support for rounded corners.</p>
     </div>
-    <div class="bs-example bs-example-images">
     <div class="bs-example bs-example-images">
       <img data-src="holder.js/140x140" class="img-rounded" alt="A generic square placeholder image with rounded corners">
       <img data-src="holder.js/140x140" class="img-circle" alt="A generic square placeholder image where only the portion within the circle circumscribed about said square is visible">
