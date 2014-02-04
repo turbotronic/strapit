@@ -161,7 +161,8 @@ module.exports = function (grunt) {
           '{css,js}/*.*',
           '{css,js}/*.min.*',
           'css/*.map',
-          'fonts/*'
+          'fonts/*',
+          'img/webicons/*'
         ],
         dest: 'docs/dist'
       }
