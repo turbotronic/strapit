@@ -24,7 +24,7 @@ module.exports = function (grunt) {
               ' * Bootstrap and Foundation are licensed under the MIT License\n' +
               ' * http://opensource.org/licenses/MIT\n' +
               ' */\n',
-    jqueryCheck: 'if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery") }\n\n',
+    jqueryCheck: 'if (typeof jQuery === "undefined") { throw new Error("Bootstrap Javascript requires jQuery") }\n\n',
 
     // Task configuration.
     clean: {
