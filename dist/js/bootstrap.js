@@ -8,7 +8,7 @@
  * http://opensource.org/licenses/MIT
  */
 
-if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery") }
+if (typeof jQuery === "undefined") { throw new Error("Bootstrap Javascript requires jQuery") }
 
 /* ========================================================================
  * Bootstrap: transition.js v3.0.3
