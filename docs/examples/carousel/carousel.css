@@ -24,10 +24,9 @@ body {
 
 /* Carousel base class */
 .carousel {
-  margin-bottom: 60px;
-
   /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
   margin-top: -90px;
+  margin-bottom: 60px;
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
@@ -54,21 +53,21 @@ body {
 
 /* Pad the edges of the mobile views a bit */
 .marketing {
-  padding-left: 15px;
   padding-right: 15px;
+  padding-left: 15px;
 }
 
 /* Center align the text within the three columns below the carousel */
 .marketing .col .lg-4 {
-  text-align: center;
   margin-bottom: 20px;
+  text-align: center;
 }
 .marketing h2 {
   font-weight: normal;
 }
 .marketing .col .lg-4 p {
-  margin-left: 10px;
   margin-right: 10px;
+  margin-left: 10px;
 }
 
 
@@ -95,8 +94,8 @@ body {
 
   /* Remove the edge padding needed for mobile */
   .marketing {
-    padding-left: 0;
     padding-right: 0;
+    padding-left: 0;
   }
 
   /* Navbar positioning foo */
@@ -118,7 +117,6 @@ body {
   .featurette-heading {
     font-size: 50px;
   }
-
 }
 
 @media (min-width: 992px) {

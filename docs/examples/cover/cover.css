@@ -47,8 +47,8 @@ body {
   vertical-align: top;
 }
 .cover-container {
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }
 
 /* Padding for spacing */
@@ -72,8 +72,8 @@ body {
   margin-left: 20px;
 }
 .masthead-nav > li > a {
-  padding-left: 0;
   padding-right: 0;
+  padding-left: 0;
   font-size: 16px;
   font-weight: bold;
   color: #fff; /* IE8 proofing */
