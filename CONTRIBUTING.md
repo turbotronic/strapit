@@ -152,3 +152,8 @@ included in the project:
 - 2 spaces (no tabs)
 - strict mode
 - "Attractive"
+
+### Checking coding style
+
+Run `grunt test` before committing to ensure your changes follow our coding standards.
+
