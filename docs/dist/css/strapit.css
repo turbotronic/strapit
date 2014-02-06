@@ -6852,7 +6852,7 @@ button.close {
 .modal-footer .btn.block + .btn.block {
   margin-left: 0;
 }
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
   .modal-dialog {
     width: 600px;
     margin: 30px auto;
@@ -6864,6 +6864,8 @@ button.close {
   .modal-sm {
     width: 300px;
   }
+}
+@media (min-width: 960px) {
   .modal-lg {
     width: 900px;
   }
