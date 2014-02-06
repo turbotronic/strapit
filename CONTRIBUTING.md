@@ -149,7 +149,6 @@ included in the project:
 ### JS
 
 - No semicolons
-- Comma first
 - 2 spaces (no tabs)
 - strict mode
 - "Attractive"
