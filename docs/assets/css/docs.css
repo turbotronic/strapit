@@ -28,8 +28,8 @@ body {
   box-shadow: 0 1px 0 rgba(255,255,255,.1);
 }
 .bs-docs-nav .navbar-collapse {
-  border-color: #3d5f7f;
   background: #222;
+  border-color: #3d5f7f;
 }
 .bs-docs-nav .navbar-brand {
   color: #fff;
@@ -62,8 +62,8 @@ body {
 @media screen and (min-width: 768px) and (max-width:992px) {
   .bs-docs-nav .navbar-nav > li > a {
     max-width: 150px;
-    overflow: hidden; 
-    text-overflow: ellipsis; 
+    overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap;
   }
 }
@@ -78,14 +78,14 @@ body {
 
 .bs-footer {
   padding: 30px 0;
+  margin-top:60px;
   color: #777;
   text-align: center;
   border-top: 1px solid #ddd;
-  margin-top:60px;
 }
 .footer-links {
-  margin: 10px 0;
   padding-left: 0;
+  margin: 10px 0;
 }
 .footer-links li {
   display: inline;
@@ -125,19 +125,19 @@ body {
   line-height: 1;
 }
 .bs-masthead .btn-outline {
+  padding: 18px 24px;
   margin-top: 20px;
   margin-bottom: 20px;
-  padding: 18px 24px;
   font-size: 21px;
 }
 
 /* Links to project-level content like the repo, Expo, etc */
 .bs-masthead-links {
+  padding: 0 15px;
   margin-top: 20px;
   margin-bottom: 20px;
-  padding: 0 15px;
-  list-style: none;
   text-align: center;
+  list-style: none;
 }
 .bs-masthead-links li {
   display: inline;
@@ -151,9 +151,9 @@ body {
 
 @media screen and (min-width: 768px) {
   .bs-masthead {
-    text-align: left;
     padding-top:    80px;
     padding-bottom: 80px;
+    text-align: left;
   }
   .bs-masthead h1 {
     font-size: 100px;
@@ -179,9 +179,9 @@ body {
 .bs-header {
   padding: 30px 15px 40px; /* side padding builds on .container 15px, so 30px */
   font-size: 16px;
+  color: #fff;
   text-align: center;
   text-shadow: 0 1px 0 rgba(0,0,0,.15);
-  color: #fff;
   background: #428bca;
   border-bottom:  1px solid #3d5f7f;
 }
@@ -215,10 +215,10 @@ body {
 
 /* First level of nav */
 .bs-sidenav {
-  margin-top: 30px;
-  margin-bottom: 30px;
   padding-top:    10px;
   padding-bottom: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   text-shadow: 0 1px 0 #fff;
   background-color: #f3f3f3;
   border-radius: 5px;
@@ -227,8 +227,8 @@ body {
 /* All levels of nav */
 .bs-sidebar .nav > li > a {
   display: block;
-  color: #808080;
   padding: 5px 20px;
+  color: #808080;
 }
 .bs-sidebar .nav > li > a:hover,
 .bs-sidebar .nav > li > a:focus {
@@ -342,12 +342,12 @@ h4[id] {
 .show-grid .col {
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: #eee;
-  background-color: rgba(86,61,124,.15);
-  border: 1px solid rgba(86,61,124,.2);
-  border: 1px solid #ddd;
   font-weight:700;
   word-break: break-all;
+  background-color: #eee;
+  background-color: rgba(86,61,124,.15);
+  border: 1px solid #ddd;
+  border: 1px solid rgba(86,61,124,.2);
 }
 
 
@@ -363,14 +363,13 @@ h4[id] {
   padding: 45px 15px 15px;
   margin: 0 -15px 15px;
   background-color: #fafafa;
-  box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
   border-color: #e5e5e5 #eee #eee;
   border-style: solid;
   border-width: 1px 0;
+  box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
 }
 /* Echo out a label for the example */
 .bs-example:after {
-  content: "Example";
   position: absolute;
   top:  15px;
   left: 15px;
@@ -379,33 +378,34 @@ h4[id] {
   color: #bbb;
   text-transform: uppercase;
   letter-spacing: 1px;
+  content: "Example";
 }
 
 /* Tweak display of the code snippets when following an example */
 .bs-example + .highlight {
   margin: -15px -15px 15px;
-  border-radius: 0;
   border-width: 0 0 1px;
+  border-radius: 0;
 }
 
 /* Make the examples and snippets not full-width */
 @media screen and (min-width: 768px) {
   .bs-example {
-    margin-left: 0;
     margin-right: 0;
+    margin-left: 0;
     background-color: #fff;
-    border-width: 1px;
     border-color: #ddd;
+    border-width: 1px;
     border-radius: 4px 4px 0 0;
     box-shadow: none;
   }
   .bs-example + .highlight {
     margin-top: -16px;
-    margin-left: 0;
     margin-right: 0;
+    margin-left: 0;
     border-width: 1px;
-    border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
   }
 }
 
@@ -512,8 +512,8 @@ h4[id] {
 .bs-navbar-top-example .navbar.fixed-top,
 .bs-navbar-bottom-example .navbar.fixed-bottom {
   position: relative;
-  margin-left: 0;
   margin-right: 0;
+  margin-left: 0;
 }
 .bs-navbar-top-example {
   padding-bottom: 45px;
@@ -566,18 +566,17 @@ h4[id] {
   position: relative;
   top: auto;
   right: auto;
-  left: auto;
   bottom: auto;
+  left: auto;
   z-index: 1;
   display: block;
   overflow: visible;
-  
 }
 .bs-example-modal .modal-dialog {
   left: auto;
-  margin-left: auto;
-  margin-right: auto;
   width: auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /* Example dropdowns */
@@ -636,9 +635,9 @@ h4[id] {
   padding: 0;
   margin-top: 0;
   margin-bottom: 0;
+  white-space: nowrap;
   background-color: transparent;
   border: 0;
-  white-space: nowrap;
 }
 .highlight pre code {
   font-size: inherit;
@@ -649,8 +648,8 @@ h4[id] {
   width: 22px;
   padding-right: 5px;
   margin-right: 10px;
-  text-align: right;
   color: #bebec5;
+  text-align: right;
 }
 
 /* Show code snippets when we have the space */
@@ -685,11 +684,11 @@ h4[id] {
 .responsive-utilities td {
   text-align: center;
 }
-.responsive-utilities td.is-visible {
+.responsive-utilities .is-visible {
   color: #468847;
   background-color: #dff0d8 !important;
 }
-.responsive-utilities td.is-hidden {
+.responsive-utilities .is-hidden {
   color: #ccc;
   background-color: #f9f9f9 !important;
 }
@@ -745,8 +744,8 @@ h4[id] {
 }
 .bs-glyphicons:before,
 .bs-glyphicons:after {
-  content: " ";
   display: table;
+  content: " ";
 }
 .bs-glyphicons:after {
   clear: both;
@@ -772,13 +771,14 @@ h4[id] {
   font-size: 24px;
 }
 .bs-glyphicons li:hover {
+  background-color: #563d7c;
   background-color: rgba(86,61,124,.1);
 }
 
 @media (min-width: 768px) {
   .bs-glyphicons {
-    margin-left: 0;
     margin-right: 0;
+    margin-left: 0;
   }
   .bs-glyphicons li {
     width: 12.5%;
@@ -802,6 +802,7 @@ h4[id] {
 
 /* Pseudo :focus state for showing how it looks in the docs */
 #focusedInput {
+  border-color: #52a8ec;
   border-color: rgba(82,168,236,.8);
   outline: 0;
   outline: thin dotted \9; /* IE6-9 */
@@ -818,11 +819,11 @@ h4[id] {
 /*Responsive table example w/o js*/
 .table-responsive-example {
   margin-bottom: 22px;
-  overflow-y: hidden;
   overflow-x: auto;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-  border: 1px solid #dddddd;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  border: 1px solid #ddd;
 }
 .table-responsive-example table {
   margin-bottom: 0;
@@ -879,14 +880,36 @@ h4[id] {
   margin: 0 5px;
   border-radius: 3px;
 }
-.color-swatches .gray-darker   { background-color: #222; }
-.color-swatches .gray-dark     { background-color: #555; }
-.color-swatches .gray          { background-color: #808080; }
-.color-swatches .gray-light    { background-color: #aaa; }
-.color-swatches .gray-lighter  { background-color: #ccc; }
-.color-swatches .gray-lightest { background-color: #eee; }
-.color-swatches .brand-primary { background-color: #428bca; }
-.color-swatches .brand-success { background-color: #5cb85c; }
-.color-swatches .brand-warning { background-color: #f0ad4e; }
-.color-swatches .brand-danger  { background-color: #d9534f; }
-.color-swatches .brand-info    { background-color: #5bc0de; }
+.color-swatches .gray-darker   {
+  background-color: #222;
+}
+.color-swatches .gray-dark     {
+  background-color: #555;
+}
+.color-swatches .gray          {
+  background-color: #808080;
+}
+.color-swatches .gray-light    {
+  background-color: #aaa;
+}
+.color-swatches .gray-lighter  {
+  background-color: #ccc;
+}
+.color-swatches .gray-lightest {
+  background-color: #eee;
+}
+.color-swatches .brand-primary {
+  background-color: #428bca;
+}
+.color-swatches .brand-success {
+  background-color: #5cb85c;
+}
+.color-swatches .brand-warning {
+  background-color: #f0ad4e;
+}
+.color-swatches .brand-danger  {
+  background-color: #d9534f;
+}
+.color-swatches .brand-info    {
+  background-color: #5bc0de;
+}

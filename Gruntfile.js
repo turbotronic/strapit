@@ -53,7 +53,7 @@ module.exports = function (grunt) {
       },
       src: [
         //'dist/css/strapit.css',
-        //'docs/assets/css/docs.css',
+        'docs/assets/css/docs.css',
         'docs/examples/**/*.css'
       ]
     },
@@ -139,7 +139,8 @@ module.exports = function (grunt) {
       },
       dist: {
         files: {
-          'dist/css/<%= pkg.name %>.css': 'dist/css/<%= pkg.name %>.css'
+          'dist/css/<%= pkg.name %>.css': 'dist/css/<%= pkg.name %>.css',
+          'docs/assets/css/docs.css': 'docs/assets/css/docs.css'
         }
       },
       examples: {
