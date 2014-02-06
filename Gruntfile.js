@@ -52,8 +52,8 @@ module.exports = function (grunt) {
         csslintrc: 'less/.csslintrc'
       },
       src: [
-        'dist/css/strapit.css',
-        'docs/assets/css/docs.css',
+        //'dist/css/strapit.css',
+        //'docs/assets/css/docs.css',
         'docs/examples/**/*.css'
       ]
     },
@@ -251,7 +251,7 @@ module.exports = function (grunt) {
   grunt.registerTask('dist-js', ['concat', 'uglify']);
 
   // CSS distribution task.
-  grunt.registerTask('dist-css', ['less', 'csscomb', 'usebanner']);
+  grunt.registerTask('dist-css', ['less', 'csslint', 'csscomb', 'usebanner']);
 
   // Docs distribution task.
   grunt.registerTask('dist-docs', ['copy:docs']);
