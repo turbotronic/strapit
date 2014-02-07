@@ -142,7 +142,7 @@ body {
 .bs-masthead-links li {
   display: inline;
 }
-.bs-masthead-links li + li {
+.bs-masthead-links li li {
   margin-left: 20px;
 }
 .bs-masthead-links a {
@@ -251,10 +251,32 @@ body {
   margin-bottom: 8px;
 }
 .bs-sidebar .nav .nav > li > a {
-  padding-top:    3px;
-  padding-bottom: 3px;
+  padding-top:    1px;
+  padding-bottom: 1px;
   padding-left: 30px;
   font-size: 90%;
+}
+
+
+/* Back to top (hidden on mobile) */
+.back-to-top {
+  display: none;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #999;
+}
+.back-to-top:hover {
+  text-decoration: none;
+  color: #563d7c;
+}
+
+@media (min-width: 768px) {
+  .back-to-top {
+    display: block;
+  }
 }
 
 /* Show and affix the side nav when space allows it */
@@ -303,7 +325,7 @@ body {
  */
 
 /* Space things out */
-.bs-docs-section + .bs-docs-section {
+.bs-docs-section .bs-docs-section {
   padding-top: 40px;
 }
 
@@ -382,7 +404,7 @@ h4[id] {
 }
 
 /* Tweak display of the code snippets when following an example */
-.bs-example + .highlight {
+.bs-example .highlight {
   margin: -15px -15px 15px;
   border-width: 0 0 1px;
   border-radius: 0;
@@ -399,7 +421,7 @@ h4[id] {
     border-radius: 4px 4px 0 0;
     box-shadow: none;
   }
-  .bs-example + .highlight {
+  .bs-example .highlight {
     margin-top: -16px;
     margin-right: 0;
     margin-left: 0;
@@ -474,13 +496,13 @@ h4[id] {
   margin-top: 5px;
   margin-bottom: 5px;
 }
-.bs-example > .btn-toolbar + .btn-toolbar {
+.bs-example > .btn-toolbar .btn-toolbar {
   margin-top: 10px;
 }
 
 /* Forms */
 .bs-example-control-sizing select,
-.bs-example-control-sizing input[type="text"] + input[type="text"] {
+.bs-example-control-sizing input[type="text"] input[type="text"] {
   margin-top: 10px;
 }
 .bs-example-form .input-group {
