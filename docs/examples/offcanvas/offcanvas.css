@@ -9,6 +9,9 @@ footer {
   padding-right: 15px;
   padding-left: 15px;
 }
+.side-nav {
+  background: transparent;
+}
 
 /*
  * Off Canvas
