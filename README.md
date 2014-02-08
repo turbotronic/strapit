@@ -33,7 +33,7 @@ Learn more about using Jekyll by reading its [documentation](http://jekyllrb.com
 
 ## Compiling CSS and JavaScript
 
-Bootstrap uses [Grunt](http://gruntjs.com/) with convenient methods for working with the framework. It's how we compile our code, run tests, and more. To use it, install the required dependencies as directed and then run some Grunt commands.
+Strapit uses [Grunt](http://gruntjs.com/) with convenient methods for working with the framework. It's how we compile our code, run tests, and more. To use it, install the required dependencies as directed and then run some Grunt commands.
 
 ### Install Grunt
 
