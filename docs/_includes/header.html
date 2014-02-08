@@ -10,19 +10,21 @@
   {% endif %}
 </title>
 
+<!-- Modernizr for touch detection and IE8 support of HTML5 elements -->
+<script src="https://oss.maxcdn.com/libs/modernizr/2.7.1/modernizr.min.js"></script>
+
+<!-- Selectivizr and Respond.js IE8 support of CSS3 pseudo-selectors and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
 <!-- Strapit core CSS -->
 <link href="{{ site.baseurl }}dist/css/strapit.css" rel="stylesheet">
 
 <!-- Documentation extras -->
 <link href="{{ site.baseurl }}assets/css/docs.css" rel="stylesheet">
 <link href="{{ site.baseurl }}assets/css/pygments-manni.css" rel="stylesheet">
-
-<!-- Modernizr for touch detection and IE support of HTML5 elements -->
-<script src="{{ site.baseurl }}assets/js/modernizr.js"></script>
-<!-- Respond.js IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-  <script src="{{ site.baseurl }}assets/js/respond.min.js"></script>
-<![endif]-->
 
 <!-- Favicons -->
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}assets/ico/apple-touch-icon-144-precomposed.png">
