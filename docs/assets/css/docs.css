@@ -415,13 +415,6 @@ h1[id] {
   content: "Example";
 }
 
-/* Tweak display of the code snippets when following an example */
-.bs-example .highlight {
-  margin: -15px -15px 15px;
-  border-width: 0 0 1px;
-  border-radius: 0;
-}
-
 /* Make the examples and snippets not full-width */
 @media screen and (min-width: 768px) {
   .bs-example {
@@ -433,7 +426,7 @@ h1[id] {
     border-radius: 4px 4px 0 0;
     box-shadow: none;
   }
-  .bs-example .highlight {
+  .bs-example + .highlight {
     margin-top: -16px;
     margin-right: 0;
     margin-left: 0;
