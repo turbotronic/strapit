@@ -5,7 +5,7 @@
  */
 
 body {
-  padding-top: 50px; /* Account for fixed navbar */
+  position: relative;
 }
 
 /* Keep code small in tables on account of limited space */
@@ -22,6 +22,7 @@ body {
  */
 
 .bs-docs-nav {
+  margin-bottom: 0;
   text-shadow: 0 -1px 0 rgba(0,0,0,.15);
   background-color: #3c7db6;
   border-color: #3d5f7f;
@@ -177,13 +178,14 @@ body {
 
 /* Page headers */
 .bs-header {
-  padding: 30px 15px 40px; /* side padding builds on .container 15px, so 30px */
-  font-size: 16px;
+  padding: 30px 15px;
+  margin-bottom: 40px;
+  font-size: 18px;
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 0 rgba(0,0,0,.15);
   background: #428bca;
-  border-bottom:  1px solid #3d5f7f;
+  border-bottom: 1px solid #3d5f7f;
 }
 .bs-header p {
   font-weight: 300;
@@ -196,7 +198,7 @@ body {
     text-align: left;
   }
   .bs-header h1 {
-    font-size: 60px;
+    font-size: 54px;
     line-height: 1;
   }
 }
@@ -215,72 +217,56 @@ body {
 
 /* First level of nav */
 .bs-sidenav {
-  padding-top:    10px;
-  padding-bottom: 10px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  text-shadow: 0 1px 0 #fff;
-  background-color: #f3f3f3;
-  border-radius: 5px;
+  display: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
-
-/* All levels of nav */
 .bs-sidebar .nav > li > a {
   display: block;
-  padding: 5px 20px;
-  color: #808080;
+  padding: 4px 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: #999;
 }
 .bs-sidebar .nav > li > a:hover,
-.bs-sidebar .nav > li > a:focus {
+.bs-sidebar .nav > li >a:focus {
+  color: #428bca;
   text-decoration: none;
-  background-color: #e5e5e5;
-  border-right: 1px solid #ddd;
+  background-color: transparent;
+  border-right: 1px solid #428bca;
 }
 .bs-sidebar .nav > .active > a,
 .bs-sidebar .nav > .active:hover > a,
 .bs-sidebar .nav > .active:focus > a {
-  font-weight: bold;
+  font-weight: 700;
   color: #428bca;
   background-color: transparent;
-  border-right: 1px solid #428bca;
+  border-right: 2px solid #428bca;
 }
 
 /* Nav: second level (shown on .active) */
 .bs-sidebar .nav .nav {
-  display: none; /* Hide by default, but at >768px, show it */
-  margin-bottom: 8px;
+  display: none;
+  padding-bottom: 10px;
+  margin-left: 10px;
 }
 .bs-sidebar .nav .nav > li > a {
-  padding-top:    1px;
-  padding-bottom: 1px;
-  padding-left: 30px;
-  font-size: 90%;
-}
-
-
-/* Back to top (hidden on mobile) */
-.back-to-top {
-  display: none;
-  padding: 4px 10px;
-  margin-top: 10px;
-  margin-left: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
   font-size: 12px;
+  font-weight: 400;
+}
+.bs-sidebar .nav .nav > .active > a,
+.bs-sidebar .nav .nav > .active:hover > a,
+.bs-sidebar .nav .nav > .active:focus > a {
   font-weight: 500;
-  color: #999;
-}
-.back-to-top:hover {
-  color: #563d7c;
-  text-decoration: none;
-}
-
-@media (min-width: 768px) {
-  .back-to-top {
-    display: block;
-  }
 }
 
 /* Show and affix the side nav when space allows it */
 @media screen and (min-width: 768px) {
+  .bs-sidenav {
+    display: block;
+  }
   .bs-sidebar .nav > .active > ul {
     display: block;
   }
@@ -291,7 +277,7 @@ body {
   }
   .bs-sidebar.affix {
     position: fixed; /* Undo the static from mobile first approach */
-    top: 80px;
+    top: 20px;
   }
   .bs-sidebar.affix-bottom {
     position: absolute; /* Undo the static from mobile first approach */
@@ -302,18 +288,52 @@ body {
     margin-bottom: 0;
   }
 }
-@media screen and (min-width: 960px) {
-  /* Widen the fixed sidebar again */
+
+@media (min-width:960px) {
+  .bs-sidebar .nav > .active > ul {
+    display:block;
+  }
   .bs-sidebar.affix,
   .bs-sidebar.affix-bottom {
     width: 213px;
   }
+  .bs-sidebar.affix {
+    position: fixed;
+  }
+  .bs-sidebar.affix-bottom {
+    position: absolute;
+  }
+  .bs-sidebar.affix-bottom .bs-sidenav,
+  .bs-sidebar.affix .bs-sidenav {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
-@media screen and (min-width: 1200px) {
-  /* Widen the fixed sidebar again */
+
+@media (min-width:1200px) {
   .bs-sidebar.affix-bottom,
   .bs-sidebar.affix {
     width: 263px;
+  }
+}
+
+/* Back to top (hidden on mobile) */
+.back-to-top {
+  display: none;
+  padding: 4px 0;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #999;
+}
+.back-to-top:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .back-to-top {
+    display: block;
   }
 }
 
@@ -325,29 +345,21 @@ body {
  */
 
 /* Space things out */
-.bs-docs-section .bs-docs-section {
-  padding-top: 40px;
-}
 
+.bs-docs-section {
+  margin-bottom: 60px;
+}
 .bs-docs-section:last-child {
   margin-bottom: 0;
 }
 
-/* Janky fix for preventing navbar from overlapping */
-h1[id],
-h2[id],
-h3[id],
-h4[id] {
-  padding-top: 80px;
-  margin-top: -45px;
-}
-/* Janky fix to fix janky fix in modals */
-.modal h1[id],
-.modal h2[id],
-.modal h3[id],
-.modal h4[id] {
-  padding-top: 0;
+h1[id] {
+  padding-top: 20px;
   margin-top: 0;
+}
+
+.modal h1[id] {
+  padding-top: 0;
 }
 
 

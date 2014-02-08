@@ -10,9 +10,7 @@ lead: "An overview of Strapit, how to download and use, basic templates and exam
   <!-- Getting started
   ================================================== -->
   <div class="bs-docs-section">
-    <div class="page-header">
-      <h1 id="download">Download Strapit</h1>
-    </div>
+    <h1 id="download" class="page-header">Download Strapit</h1>
     <div class="row">
      <div class="col md-4">
        <h3 id="download-strapit">Strapit</h3>
@@ -35,15 +33,13 @@ lead: "An overview of Strapit, how to download and use, basic templates and exam
   <!-- File structure
   ================================================== -->
   <div class="bs-docs-section">
-    <div class="page-header">
-      <h1 id="whats-included">What's included</h1>
-    </div>
+    <h1 id="whats-included" class="page-header">What's included</h1>
     <p class="lead">Strapit is downloadable in two forms, within which you'll find the following directories and files, logically grouping common resources and providing both compiled and minified variations.</p>
     <div class="callout danger">
       <h4>jQuery required</h4>
       <p>Please note that <strong>all JavaScript plugins require <a href="http://jquery.com/">jQuery</a></strong> to be included, as shown in the <a href="#template">starter template</a>.</p>
     </div>
-    <h2 id="whats-included-precompiled">Precompiled Strapit</h2>
+    <h3 id="whats-included-precompiled">Precompiled Strapit</h3>
     <p>Once downloaded, unzip the compressed folder to see the structure of (the compiled) Strapit. You'll see something like this:</p>
 
 {% highlight bash %}
@@ -65,7 +61,7 @@ strapit/
 
     <p>This is the most basic form of Strapit: compiled files for quick drop-in usage in nearly any web project. We provide compiled CSS and JS, as well as compiled and minified CSS and JS. Fonts from Glyphicons are included and images from Fairfield Creative's FC Webicons.</p>
 
-    <h2 id="whats-included-source">Strapit source code</h2>
+    <h3 id="whats-included-source">Strapit source code</h3>
         <p>The Strapit source code download includes the precompiled CSS, JavaScript, font and image assets, along with source Less, JavaScript, and documentation. More specifically, it includes the following and more:</p>
 {% highlight bash %}
 strapit/
@@ -83,7 +79,7 @@ strapit/
 {% endhighlight %}
         <p>The <code>less/</code>, <code>js/</code>, and <code>fonts/</code>, and <code>img/</code> are the source code for our CSS, JS, icon fonts and social web icons (respectively). The <code>dist/</code> folder includes everything listed in the precompiled download section above. The <code>docs/</code> folder includes the source code for our documentation, and <code>examples/</code> of Strapit usage. Beyond that, any other included file provides support for packages, license information, and development.</p>
 
-    <h2 id="whats-included-less">Less source code structure</h1>
+    <h2 id="whats-included-less">Less source code structure</h2>
     <p class="lead">If you download the source code, you'll need to know something about the structure of the Less files within.</p>
     <p>Unzip the compressed folder of the source code and look within the folder named <code>less</code> to see Strapit's pre-complied structure.</p>
 
@@ -108,7 +104,7 @@ less/
      <p>The <code>application.less</code> file serves as a complier for the custom Less files you create &emdash; similar to the <code>style.less</code> file contained in the root folder. When you open <code>style.less</code>, you will notice that <code>application.less</code> is one of the lasts file within the complication chain. <code>style.less</code> is also where you can comment out the styles you may not need from the master framework files.</p>
      <p>Finally, the <code>vendor</code> folder should contain any third-party plugin style files you want to add into your project. As an example, the <code>glyphicons.less</code> and <code>webicons.less</code> files are contained here.</p>
 
-    <h2 id="whats-included-less-compilation">Less compilation</h1>
+    <h3 id="whats-included-less-compilation">Less compilation</h3>
     <p class="lead">If you download the original files, you need to compile Strapit's Less files into usable CSS. To do that, you will need a complier. Here are some options:</p>
       <h3>Third party compliers</h3>
       <p>Compliers run alongside your browser and recompile your Less files per save. For Mac users, <a href="http://incident57.com/codekit/">CodeKit</a> or <a href="http://livereload.com/">LiveReload</a> are good options. If you have a Windows machine, <a href="http://wearekiss.com/simpless">SimpLess</a> is an option (it's also available for Mac users) and so is <a href="http://winless.org/">WinLess</a>.</p>
@@ -122,9 +118,7 @@ less/
   <!-- Template
   ================================================== -->
   <div class="bs-docs-section">
-    <div class="page-header">
-      <h1 id="template">Basic template</h1>
-    </div>
+    <h1 id="template" class="page-header">Basic template</h1>
     <p class="lead">Make use of a super basic HTML template, or dive into a <a href="../getting-started#examples">few examples</a> we've started for you. We encourage folks to iterate on these examples and not simply use them as an end result.</p>
 
     <p>Copy the HTML below to begin working with a minimal Strapit document.</p>
@@ -164,9 +158,7 @@ less/
   <!-- Examples
   ================================================== -->
   <div class="bs-docs-section">
-    <div class="page-header">
-      <h1 id="examples">Examples</h1>
-    </div>
+    <h1 id="examples" class="page-header">Examples</h1>
     <p class="lead">Build on the basic template above with Strapit's many components. Check out some of the more advanced tips for how to customize and build on top of them.</p>
 
     <div class="row bs-examples">
@@ -305,9 +297,7 @@ less/
   <!-- Disabling responsiveness
   ================================================== -->
   <div class="bs-docs-section">
-    <div class="page-header">
-      <h1 id="disable-responsive">Disabling responsiveness</h1>
-    </div>
+    <h1 id="disable-responsive" class="page-header">Disabling responsiveness</h1>
     <p class="lead">Don't want your site or application to be scaled on different devices? With a little bit of work, you can disable the responsive features of Strapit so that mobile users see your full desktop-version site. Read below or check out <a href="../examples/non-responsive/">the non-responsive example</a>.</p>
 
     <h3>Steps to disable responsive views</h3>
@@ -332,9 +322,7 @@ less/
 <!-- Browser support
   ================================================== -->
   <div class="bs-docs-section">
-    <div class="page-header">
-      <h1 id="browsers">Browser and device support</h1>
-    </div>
+    <h1 id="browsers" class="page-header">Browser and device support</h1>
     <p class="lead">Strapit is built to work best in the latest desktop and mobile browsers, meaning older browsers might display differently styled, though fully functional, renderings of certain components.</p>
 
     <h3 id="support-browsers">Supported browsers</h3>
@@ -584,9 +572,7 @@ if(isAndroid) {
   <!-- Accessibility
   ================================================== -->
   <div class="bs-docs-section">
-    <div class="page-header">
-      <h1 id="accessibility">Accessibility</h1>
-    </div>
+    <h1 id="accessibility" class="page-header">Accessibility</h1>
     <p class="lead">Strapit follows common web standards and&mdash;with minimal extra effort&mdash;can be used to create sites that are accessible to those using <abbr title="Assistive Technology" class="initialism">AT</abbr>.</p>
 
     <h3>Skip navigation</h3>
@@ -616,9 +602,7 @@ if(isAndroid) {
   <!-- License FAQs
   ================================================== -->
   <div class="bs-docs-section">
-    <div class="page-header">
-      <h1 id="customizing">Customizing Strapit</h1>
-    </div>
+    <h1 id="customizing" class="page-header">Customizing Strapit</h1>
     <p class="lead">Customizing Strapit is best accomplished when you treat it as another dependency in your development stack. Doing so ensures future upgrades are as easy as possible while also familiarizing yourself to the intricacies of the framework.</p>
 
     <p>Once you've downloaded and included Strapit's CSS into your templates, you can move on to customizing the included components. To do so, create a new stylesheet (Less, if you like, or just plain CSS) to house your customizations.</p>
