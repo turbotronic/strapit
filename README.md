@@ -3,7 +3,7 @@ Strapit
 
 A CSS framework mashup of Twitter's Bootstrap and ZURB's Foundation.
 
-## Current version: 2.0.4
+## Current version: 2.0.5
 
 Basically, this framework retains the styling and semantics of Bootstrap with the Javascript grid, responsive utilities and Javascript element ideas coming from Foundation. UI elements of Foundation, e.g. subnavs, switches, and flex-video, have been ported over to the Bootstrap styles. Strapit is still written in LESS and retains Bootstrap's mixins, however, we are considering a SASS version and porting the best of each's mixins into both languages for two distinct versions.
 
