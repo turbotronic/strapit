@@ -4,18 +4,17 @@
 
 @media screen and (min-width: @site-min-width) {
   // make xs grid
-  .build-grid(@grid-columns-xs; @columns: @grid-columns-xs; @class: xs; width);
+  .build-full-grid(@grid-columns-xs; @columns: @grid-columns-xs; @class: xs);
 }
 
 @media screen and (min-width: @breakpoint-sm) {
   // make sm grid
-  .build-grid(@grid-columns-sm; @columns: @grid-columns-sm; @class: sm; width);
+  .build-full-grid(@grid-columns-sm; @columns: @grid-columns-sm; @class: sm);
 }
 
 @media screen and (min-width: @breakpoint-md) {
   // make md grid (default)
   .build-full-grid(@grid-columns-md; @columns: @grid-columns-md; @class: md);
-  .build-source-ordering(@grid-columns);
   .make-centered-columns(md);
 }
 

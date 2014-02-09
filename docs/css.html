@@ -150,8 +150,8 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
         <tbody>
           <tr>
             <th>Grid behavior</th>
-            <td colspan="2">Horizontal at all times</td>
-            <td colspan="3">Collapsed to start, horizontal above breakpoints</td>
+            <td colspan="1">Horizontal at all times</td>
+            <td colspan="4">Collapsed to start, horizontal above breakpoints</td>
           </tr>
           <tr>
             <th>Max container width</th>
@@ -171,8 +171,8 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
           </tr>
           <tr>
             <th># of columns</th>
-            <td colspan="2">4</td>
-            <td colspan="3">12</td>
+            <td colspan="1">4</td>
+            <td colspan="4">12</td>
           </tr>
           <tr>
             <th>Gutter width</th>
@@ -184,18 +184,21 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
           </tr>
           <tr>
             <th>Offsets</th>
-            <td colspan="2" class="text-muted">N/A</td>
-            <td colspan="3">Yes</td>
+            <td colspan="5">Yes</td>
           </tr>
           <tr>
             <th>Column ordering</th>
+            <td colspan="5">Yes</td>
+          </tr>
+          <tr>
+            <th>Centered columns</th>
             <td colspan="2" class="text-muted">N/A</td>
             <td colspan="3">Yes</td>
           </tr>
         </tbody>
       </table>
 </div>
-<p>By default, the <code>.xs</code> and <code>.sm</code> classes are set on a four-column grid, the rest are set on a 12-column grid. You are free to set a different grid for each screen size, or have them all be uniform. Or you can choose to not use anything but one screen size. It's completely up to you and what you need for your project.</p>
+<p>By default, the <code>.xs</code> is set on a four-column grid, the rest are set on a 12-column grid. You are free to set a different grid for each screen size, or have them all be uniform. Or you can choose to not use anything but one screen size. It's completely up to you and what you need for your project.</p>
 
 <h3 id="grid-example-basic">Basic grid: Stacked-to-horizontal</h3>
 <p>Strapit uses <code>box-sizing: border-box</code> so that borders and padding do not affect the overall width of the column, making the math dead-simple. Since Strapit is mobile-first, we'll stack content by default. You do have access to an entirely separate small grid to use up to the 768px breakpoint. This means you can create some pretty complex layouts and even drop columns if you want.</p>
@@ -268,16 +271,16 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
   <div class="col xs-3">3</div>
 </div>
 <div class="row show-grid">
-  <div class="col xs-4 sm-2"><span class="visible-xs">full</span><span class="visible-sm-up">2</span></div>
-  <div class="col xs-4 sm-2"><span class="visible-xs">full</span><span class="visible-sm-up">2</span></div>
+  <div class="col xs-4 sm-6"><span class="visible-xs">full</span><span class="visible-sm-up">6</span></div>
+  <div class="col xs-4 sm-6"><span class="visible-xs">full</span><span class="visible-sm-up">6</span></div>
 </div>
 <div class="row show-grid">
   <div class="col xs-2 md-8"><span class="visible-sm-down">2</span><span class="hidden-sm-down">8</span></div>
   <div class="col xs-2 md-4"><span class="visible-sm-down">2</span><span class="hidden-sm-down">4</span></div>
 </div>
 <div class="row show-grid">
-  <div class="col sm-1 md-2"><span class="visible-sm-down">1</span><span class="visible-md-up">2</span></div>
-  <div class="col sm-3 md-10"><span class="visible-sm-down">3</span><span class="visible-md-up">10</span></div>
+  <div class="col sm-3 md-2"><span class="visible-sm-down">3</span><span class="visible-md-up">2</span></div>
+  <div class="col sm-9 md-10"><span class="visible-sm-down">9</span><span class="visible-md-up">10</span></div>
 </div>
 {% highlight html %}
 <div class="row">
@@ -285,45 +288,45 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
   <div class="col xs-3">3, last</div>
 </div>
 <div class="row">
-  <div class="col xs-4 sm-2">...</div>
-  <div class="col xs-4 sm-2">...</div>
+  <div class="col xs-4 sm-6">...</div>
+  <div class="col xs-4 sm-6">...</div>
 </div>
 <div class="row">
   <div class="col xs-2 md-8">...</div>
   <div class="col xs-2 md-4">...</div>
 </div>
 <div class="row">
-  <div class="col sm-1 md-2">...</div>
-  <div class="col sm-3 md-10">...</div>
+  <div class="col sm-3 md-2">...</div>
+  <div class="col sm-9 md-10">...</div>
 </div>
 {% endhighlight %}
 
 <h3 id="grid-large">Large Grid: Mobile, tablet and desktop</h3>
 <p>Build on the previous examples by creating even more dynamic and powerful layouts with desktop <code>.lg</code> classes.</p>
 <div class="row show-grid">
-  <div class="col sm-4 md-6 lg-8"><span class="visible-sm-down">full</span><span class="visible-md">6</span><span class="visible-lg-up">8</span></div>
-  <div class="col sm-2 md-6 lg-4"><span class="visible-sm-down">6 - stacks below!</span><span class="visible-md">6</span><span class="visible-lg-up">4</span></div>
+  <div class="col sm-12 md-6 lg-8"><span class="visible-sm-down">full</span><span class="visible-md">6</span><span class="visible-lg-up">8</span></div>
+  <div class="col sm-6 md-6 lg-4"><span class="visible-sm-down">6 - stacks below!</span><span class="visible-md">6</span><span class="visible-lg-up">4</span></div>
 </div>
 <div class="row show-grid">
-  <div class="col sm-3 md-4 lg-6"><span class="visible-sm-down">3</span><span class="visible-md">4</span><span class="visible-lg-up">6</span></div>
-  <div class="col sm-1 md-8 lg-6"><span class="visible-sm-down">9</span><span class="visible-md">8</span><span class="visible-lg-up">6</span></div>
+  <div class="col sm-9 md-4 lg-6"><span class="visible-sm-down">9</span><span class="visible-md">4</span><span class="visible-lg-up">6</span></div>
+  <div class="col sm-3 md-8 lg-6"><span class="visible-sm-down">3</span><span class="visible-md">8</span><span class="visible-lg-up">6</span></div>
 </div>
 <div class="row show-grid">
-  <div class="col sm-2 md-8 lg-10"><span class="visible-sm-down">6</span><span class="visible-md">8</span><span class="visible-lg-up">10</span></div>
-  <div class="col sm-2 md-4 lg-2"><span class="visible-sm-down">6</span><span class="visible-md">4</span><span class="visible-lg-up">2</span></div>
+  <div class="col sm-6 md-8 lg-10"><span class="visible-sm-down">6</span><span class="visible-md">8</span><span class="visible-lg-up">10</span></div>
+  <div class="col sm-6 md-4 lg-2"><span class="visible-sm-down">6</span><span class="visible-md">4</span><span class="visible-lg-up">2</span></div>
 </div>
 {% highlight html %}
 <div class="row">
-  <div class="col sm-4 md-6 lg-8">...</div>
-  <div class="col sm-2 md-6 lg-4">...</div>
+  <div class="col sm-12 md-6 lg-8">...</div>
+  <div class="col sm-6 md-6 lg-4">...</div>
 </div>
 <div class="row">
-  <div class="col sm-3 md-4 lg-6">...</div>
-  <div class="col sm-1 md-8 lg-6">...</div>
+  <div class="col sm-9 md-4 lg-6">...</div>
+  <div class="col sm-3 md-8 lg-6">...</div>
 </div>
 <div class="row">
-  <div class="col sm-2 md-8 lg-10">...</div>
-  <div class="col sm-2 md-4 lg-2">...</div>
+  <div class="col sm-6 md-8 lg-10">...</div>
+  <div class="col sm-6 md-4 lg-2">...</div>
 </div>
 {% endhighlight %}
 
@@ -495,8 +498,8 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
 
 // Columns
 @grid-columns-xs:         4;
-@grid-columns-sm:         @grid-columns-xs;
-@grid-columns-md:         @grid-columns;
+@grid-columns-sm:         @grid-columns;
+@grid-columns-md:         @grid-columns-sm;
 @grid-columns-lg:         @grid-columns-md;
 @grid-columns-xl:         @grid-columns-lg;
 
@@ -524,15 +527,15 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
 // ---------------------------------------------------------
 
 // Small screen / tablet
-@container-tablet:             ((720px + @grid-gutter-width));
+@container-tablet:             ((@breakpoint-md - @grid-gutter-width));
 @container-sm:                 @container-tablet;
 
 // Medium screen / desktop
-@container-desktop:            ((900px + @grid-gutter-width));
+@container-desktop:            ((@breakpoint-lg - @grid-gutter-width));
 @container-md:                 @container-desktop;
 
 // Large screen / wide desktop
-@container-lg-desktop:         ((1140px + @grid-gutter-width));
+@container-lg-desktop:         ((@breakpoint-xl - @grid-gutter-width));
 @container-lg:                 @container-lg-desktop;
 
 // For static width sites

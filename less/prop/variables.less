@@ -234,8 +234,8 @@
 
 // Columns
 @grid-columns-xs:         4;
-@grid-columns-sm:         @grid-columns-xs;
-@grid-columns-md:         @grid-columns;
+@grid-columns-sm:         @grid-columns;
+@grid-columns-md:         @grid-columns-sm;
 @grid-columns-lg:         @grid-columns-md;
 @grid-columns-xl:         @grid-columns-lg;
 
@@ -263,15 +263,15 @@
 // ---------------------------------------------------------
 
 // Small screen / tablet
-@container-tablet:             ((720px + @grid-gutter-width));
+@container-tablet:             ((@breakpoint-md - @grid-gutter-width));
 @container-sm:                 @container-tablet;
 
 // Medium screen / desktop
-@container-desktop:            ((900px + @grid-gutter-width));
+@container-desktop:            ((@breakpoint-lg - @grid-gutter-width));
 @container-md:                 @container-desktop;
 
 // Large screen / wide desktop
-@container-lg-desktop:         ((1140px + @grid-gutter-width));
+@container-lg-desktop:         ((@breakpoint-xl - @grid-gutter-width));
 @container-lg:                 @container-lg-desktop;
 
 // For static width sites
