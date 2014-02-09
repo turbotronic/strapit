@@ -645,6 +645,50 @@ h1[id] {
 
 
 /*
+ * Side nav styles
+ */
+
+.bs-sidenav-fixed-example {
+  height: 200px;
+  padding-left: 315px;
+}
+.bs-sidenav-fixed-example:after {
+  left: 315px;
+}
+
+.bs-sidenav-offcanvas-example {
+  min-height: 200px;
+  overflow: hidden;
+}
+.bs-sidenav-offcanvas-example:after {
+  display: none;
+}
+.bs-sidenav-offcanvas-example > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 70px 15px 15px 15px;
+}
+.bs-sidenav-offcanvas-example p {
+  color: #bbb;
+}
+.bs-sidenav-fixed-example .sidenav.fixed-left,
+  .bs-sidenav-offcanvas-example .sidenav.fixed-left,
+  .bs-sidenav-offcanvas-example .navbar.fixed-top {
+  position: absolute;
+  z-index: 1;
+}
+.bs-sidenav-offcanvas-example .navbar-toggle {
+  display: block;
+  float: left;
+  margin-left: 15px;
+}
+
+
+
+/*
  * Code snippets
  *
  * Generated via Pygments and Jekyll, these are snippets of HTML, CSS, and JS.

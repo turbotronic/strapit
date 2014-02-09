@@ -1,0 +1,33 @@
+html, body {
+  height: 100%;
+}
+body {
+  padding-top: 65px;
+}
+.sidenav  {
+  padding-top:50px;
+}
+.navbar {
+  text-align: center;
+}
+.navbar-brand {
+  display: inline-block;
+  float: none;
+}
+.navbar-toggle {
+  position: absolute;
+  left: 15px;
+}
+@media (min-width: 768px) {
+  body {
+    padding-top: 15px;
+  }
+  .sidenav {
+    padding-top: 0;
+  }
+  .container {
+    width: auto!important;
+    max-width: none!important;
+    margin-left: 300px;
+  }
+}

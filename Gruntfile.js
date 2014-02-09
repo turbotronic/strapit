@@ -71,12 +71,18 @@ module.exports = function (grunt) {
           'js/carousel.js',
           'js/collapse.js',
           'js/dropdown.js',
+          'js/fileinput.js',
+          'js/inputmask.js',
           'js/modal.js',
+          'js/offcanvas.js',
           'js/tooltip.js',
           'js/popover.js',
           'js/scrollspy.js',
           'js/tab.js',
           'js/affix.js',
+          'js/offcanvas.js',
+          'js/inputmask.js',
+          'js/fileinput.js',
           'js/responsive-tables.js'
         ],
         dest: 'dist/js/bootstrap.js'

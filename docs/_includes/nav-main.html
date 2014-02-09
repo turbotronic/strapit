@@ -25,8 +25,12 @@
             <!-- <li><a href="{{ site.baseurl }}extras">Extras</a></li> -->
           </ul>
         </li>
-        <li{% if page.slug == "js" %} class="active"{% endif %}>
-          <a href="{{ site.baseurl }}javascript">JavaScript</a>
+        <li class="dropdown{% if page.slug == "js" %} active{% endif %}{% if page.slug == "js-xtra" %} active{% endif %}">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Javascript <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ site.baseurl }}javascript">Core Javascript</a></li>
+            <li><a href="{{ site.baseurl }}javascript-extras">Extras</a></li>
+          </ul>
         </li>
         <!-- <li{% if page.slug == "custom" %} class="active"{% endif %}>
           <a href="{{ site.baseurl }}custom">Custom DFM Components</a>
