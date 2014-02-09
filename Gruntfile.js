@@ -98,6 +98,16 @@ module.exports = function (grunt) {
         src: '<%= concat.bootstrap.dest %>',
         dest: 'dist/js/bootstrap.min.js'
       },
+      docsJs: {
+        options: {
+          preserveComments: 'some'
+        },
+        src: [
+          'docs/assets/js/holder.js',
+          'docs/assets/js/application.js'
+        ],
+        dest: 'docs/assets/js/docs.min.js'
+      }
     },
 
     less: {
@@ -121,6 +131,22 @@ module.exports = function (grunt) {
         files: {
           'dist/css/<%= pkg.name %>.min.css': 'dist/css/<%= pkg.name %>.css'
         }
+      }
+    },
+
+    cssmin: {
+      compress: {
+        options: {
+          keepSpecialComments: '*',
+          noAdvanced: true, // turn advanced optimizations off until the issue is fixed in clean-css
+          report: 'min',
+          selectorsMergeMode: 'ie8'
+        },
+        src: [
+          'docs/assets/css/docs.css',
+          'docs/assets/css/pygments-manni.css'
+        ],
+        dest: 'docs/assets/css/docs.min.css'
       }
     },
 
@@ -258,7 +284,7 @@ module.exports = function (grunt) {
   grunt.registerTask('dist-js', ['concat', 'uglify']);
 
   // CSS distribution task.
-  grunt.registerTask('dist-css', ['less', 'csslint', 'csscomb', 'usebanner']);
+  grunt.registerTask('dist-css', ['less', 'cssmin', 'csslint', 'csscomb', 'usebanner']);
 
   // Docs distribution task.
   grunt.registerTask('dist-docs', ['copy:docs']);
