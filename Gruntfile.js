@@ -52,7 +52,7 @@ module.exports = function (grunt) {
         csslintrc: 'less/.csslintrc'
       },
       src: [
-        //'dist/css/strapit.css',
+        'dist/css/strapit.css',
         'docs/assets/css/docs.css',
         'docs/examples/**/*.css'
       ]

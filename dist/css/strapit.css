@@ -211,7 +211,7 @@ hr {
   border: 0;
   border-top: 1px solid #eee;
 }
-hr.soften {
+.hr-soften {
   height: 1px;
   margin: 22px 0;
   background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
@@ -1313,12 +1313,6 @@ th.hidden-touch {
   .xs-offset-0 {
     margin-left: 0;
   }
-  .xs-push-0 {
-    left: 0;
-  }
-  .xs-pull-0 {
-    right: 0;
-  }
 }
 @media screen and (min-width: 480px) {
   .sm-12 {
@@ -1468,12 +1462,6 @@ th.hidden-touch {
   .sm-offset-0 {
     margin-left: 0;
   }
-  .sm-push-0 {
-    left: 0;
-  }
-  .sm-pull-0 {
-    right: 0;
-  }
 }
 @media screen and (min-width: 768px) {
   .md-12 {
@@ -1622,12 +1610,6 @@ th.hidden-touch {
   }
   .md-offset-0 {
     margin-left: 0;
-  }
-  .md-push-0 {
-    left: 0;
-  }
-  .md-pull-0 {
-    right: 0;
   }
   .col .md-centered {
     float: none !important;
@@ -1791,12 +1773,6 @@ th.hidden-touch {
   .lg-offset-0 {
     margin-left: 0;
   }
-  .lg-push-0 {
-    left: 0;
-  }
-  .lg-pull-0 {
-    right: 0;
-  }
   .col .lg-centered {
     float: none !important;
     margin-right: auto;
@@ -1959,12 +1935,6 @@ th.hidden-touch {
   .xl-offset-0 {
     margin-left: 0;
   }
-  .xl-push-0 {
-    left: 0;
-  }
-  .xl-pull-0 {
-    right: 0;
-  }
   .col .xl-centered {
     float: none !important;
     margin-right: auto;
@@ -2010,7 +1980,6 @@ th.hidden-touch {
   margin: 0 -15px;
 }
 [class*="block-grid-"] > li {
-  display: inline;
   float: left;
   max-width: 100%;
   height: auto;
@@ -2334,9 +2303,6 @@ pre {
   background-color: #f5f5f5;
   border: 1px solid #ccc;
   border-radius: 3px;
-}
-pre.prettyprint {
-  margin-bottom: 22px;
 }
 pre code {
   padding: 0;
@@ -4318,7 +4284,7 @@ select[multiple].input-group.sm > .input-group-btn > .btn {
   }
   .switch input:first-of-type:checked ~ span:last-child {
     left: 100%;
-    margin-left: -(30px + 2);
+    margin-left: -32px;
   }
   .switch span:last-child {
     position: absolute;
@@ -4351,12 +4317,12 @@ select[multiple].input-group.sm > .input-group-btn > .btn {
   }
   .switch-sm input:first-of-type:checked ~ span:last-child,
   .switch.sm input:first-of-type:checked ~ span:last-child {
-    margin-left: -(30px * .75) + 2;
+    margin-left: -24.5px;
   }
   .switch-sm span:last-child,
   .switch.sm span:last-child {
-    width: (30px * .75) - 2;
-    height: (30px * .75) - 2;
+    width: 20.5px;
+    height: 20.5px;
     border-radius: 3px;
   }
   .switch-lg,
@@ -4369,16 +4335,16 @@ select[multiple].input-group.sm > .input-group-btn > .btn {
     padding: 0 12px;
     font-size: 14px;
     font-size: 1.4rem;
-    line-height: (30px * 1.5) - 2;
+    line-height: 43px;
   }
   .switch-lg input:first-of-type:checked ~ span:last-child,
   .switch.lg input:first-of-type:checked ~ span:last-child {
-    margin-left: -(30px * 1.5) + 2;
+    margin-left: -47px;
   }
   .switch-lg span:last-child,
   .switch.lg span:last-child {
-    width: (30px * 1.5) - 2;
-    height: (30px * 1.5) - 2;
+    width: 43px;
+    height: 43px;
     border-radius: 6px;
   }
   .switch-rounded,
