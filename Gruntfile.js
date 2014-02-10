@@ -85,7 +85,7 @@ module.exports = function (grunt) {
           'js/fileinput.js',
           'js/responsive-tables.js'
         ],
-        dest: 'dist/js/bootstrap.js'
+        dest: 'dist/js/strapit.js'
       }
     },
 
@@ -96,7 +96,7 @@ module.exports = function (grunt) {
           report: 'min'
         },
         src: '<%= concat.bootstrap.dest %>',
-        dest: 'dist/js/bootstrap.min.js'
+        dest: 'dist/js/strapit.min.js'
       },
       docsJs: {
         options: {
