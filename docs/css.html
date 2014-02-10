@@ -488,6 +488,12 @@ lead: "Global CSS settings, fundamental HTML elements styled and enhanced with e
 </div>
 
 
+<h3 id="grid-static">Static grid</h3>
+<p>If you are using Less to create a custom Strapit CSS file, you can create a static grid by swapping out a couple of imports in your <code>strapit.less</code> file. This option freezes the container width and uses <code>.col-*</code> classes for styling.</p>
+<p>Accomplishing this requires the <code>grid-fluid.less</code> and <code>grid-stop.less</code> files be commented out and the <code>grid-static.less</code> file be uncommented.</p>
+<p>Like with the <a href="../getting-started/#disable-responsive">non-responsive Strapit</a> option, various items, such as navbars, will still react to browser resizing, so some other adjustments may be required. For a more detailed explanation on that and other issues, <a href="../examples/static-grid/">visit the example page</a>.</p>
+
+
 <h3 id="grid-less">Less mixins and variables</h3>
 <p>In addition to <a href="#grid-example-basic">prebuilt grid classes</a> for fast layouts, Strapit includes Less variables and mixins for quickly generating your own simple, semantic layouts.</p>
 <h4>Variables</h4>

@@ -683,6 +683,8 @@ samp {
 .container:after,
 .row:before,
 .row:after,
+.container-fluid:before,
+.container-fluid:after,
 [class*="block-grid-"]:before,
 [class*="block-grid-"]:after,
 .btn-toolbar:before,
@@ -715,6 +717,7 @@ samp {
 .clearfix:after,
 .container:after,
 .row:after,
+.container-fluid:after,
 [class*="block-grid-"]:after,
 .btn-toolbar:after,
 .btn-group-vertical > .btn-group:after,
@@ -1946,8 +1949,21 @@ th.hidden-touch {
     float: right !important;
   }
 }
+.container-fluid {
+  position: relative;
+  padding: 0 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.container-fluid .container {
+  width: auto !important;
+}
+.container-fluid .container-fluid {
+  width: auto !important;
+}
 @media screen and (min-width: 1350px) {
-  .container {
+  .container,
+  .container-fluid {
     width: 1320px;
   }
 }

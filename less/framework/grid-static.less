@@ -1,7 +1,8 @@
 // Grid system -- Static version
+// Still requires grid-base.less to work
 // --------------------------------------------------
 
-// Make containrer fixed
+// Make container fixed
 .container {
   width: @site-static-width;
 }
@@ -9,7 +10,31 @@
 // Build the full grid
 .build-static-grid(@grid-columns);
 
-// zero offset
-.md-offset-0 {
+// Add zero offset
+.offset-0 {
   margin-left: 0;
+}
+
+// Add centered and last options
+[class^="col"] {
+  &.centered {
+    float: none !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &.uncentered {
+    float: left !important;
+    margin-left: 0;
+    margin-right: 0;
+    &.opposite {
+      float: right !important;
+    }
+  }
+  // If you want to float that last column to go to the edge
+  // of the row, you can add the class '.last' to the last column
+  + [class^="col"] {
+    &.last {
+      float: right!important;
+    }
+  }
 }
