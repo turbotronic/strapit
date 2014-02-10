@@ -3,14 +3,14 @@
 
 (function($) {
   // determine if table-responsive is present
-  if($('.table-responsive').length) {
-    $('.table-responsive').each(function(i, table) {
+  if($('.table-responsive.js').length) {
+    $('.table-responsive.js').each(function(i, table) {
       init($(table));
     });
   }
   
   function init(table) {
-    table.addClass('js'); // activates CSS for the table
+    //table.addClass('js'); // activates CSS for the table
     var $childTable = table.find('.table'),
         breakpoint = ($childTable.width() == undefined) ? $(window).width() : $childTable.width(),
         switched = false,

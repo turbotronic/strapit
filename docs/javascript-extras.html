@@ -397,13 +397,13 @@ $('.fileinput').fileinput()
  <!-- Responsive tables :: Javascript
   ================================================== -->
   <div class="bs-docs-section">
-    <h1 id="rtables" class="page-header">Responsive tables <small>Javascript version</small></h1>
+    <h1 id="rtables" class="page-header">Responsive tables <small>responsive-tables.js</small></h1>
 
     <h2 id="rtables-examples">Example</h2>
-    <p>This JS solution allows tables to shrink on small devices without sacrificing the value of tables — comparison of columns — without modifying our table markup on the page. CSS applies the requisite positioning and overflow styles to make the new elements work.</p>
+    <p>This Javscript solution allows tables to shrink on small devices without sacrificing the value of tables — comparison of columns — with just a small modification to our table markup. CSS applies the requisite positioning and overflow styles to make the new elements work.</p>
 
   <div class="bs-example">
-    <div class="table-responsive">
+    <div class="table-responsive js">
       <table class="table">
         <thead>
           <tr>
@@ -463,7 +463,7 @@ $('.fileinput').fileinput()
     </div>
     </div><!-- /example -->
 {% highlight html %}
-<div class="table-responsive">
+<div class="table-responsive js">
   <table class="table">
     ...
   </table>
@@ -473,23 +473,6 @@ $('.fileinput').fileinput()
     <hr class="bs-docs-separator">
 
     <h2 id="inputmask-usage">Usage</h2>
-
-    <h3>Via data attributes</h3>
-    <p></p>
-
-    <h3>Via JavaScript</h3>
-    <p></p>
-{% highlight js %}
-{% endhighlight %}
-
-    <h3>Options</h3>
-    <p></p>
-
-    <h3>Format</h3>
-    <p></p>
-
-    <h3>Methods</h3>
-
-    <h4></h4>
-    <p></p>
+	<p>Add the class <code>.js</code> to the <code>.table-responsive</code> wrapper to trigger the plugin.</p>
+	
   </div>
