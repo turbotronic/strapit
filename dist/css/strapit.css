@@ -5943,6 +5943,22 @@ a.list-group-item.active > .badge,
 .nav.pills > li > a > .badge {
   margin-left: 3px;
 }
+.badge-success,
+.badge.success {
+  background: #468847;
+}
+.badge-warning,
+.badge.warning {
+  background: #c09853;
+}
+.badge-danger,
+.badge.danger {
+  background: #b94a48;
+}
+.badge-info,
+.badge.info {
+  background: #3a87ad;
+}
 .jumbotron {
   padding: 30px;
   margin-bottom: 30px;
