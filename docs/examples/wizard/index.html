@@ -33,36 +33,35 @@
     <div class="container">
 
       <div class="starter-template">
-        <h1>Strapit starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        <h1>Wizard</h1>
       </div>
 
-<div class="well wizard-example">
-				<div id="MyWizard" class="wizard">
-					<ul class="steps">
-						<li data-target="#step1" class="active"><span class="badge badge-info">1</span>Step 1<span class="chevron"></span></li>
-						<li data-target="#step2"><span class="badge">2</span>Step 2<span class="chevron"></span></li>
-						<li data-target="#step3"><span class="badge">3</span>Step 3<span class="chevron"></span></li>
-						<li data-target="#step4"><span class="badge">4</span>Step 4<span class="chevron"></span></li>
-						<li data-target="#step5"><span class="badge">5</span>Step 5<span class="chevron"></span></li>
-					</ul>
-					<div class="actions">
-						<button type="button" class="btn xs prev"> <span class="glyphicon glyphicon-arrow-left"></span> Prev</button>
-						<button type="button" class="btn xs -next" data-last="Finish">Next <span class="glyphicon glyphicon-arrow-right"></span></button>
-					</div>
-				</div>
-				<div class="step-content">
-					<div class="step-pane active" id="step1">This is step 1</div>
-					<div class="step-pane" id="step2">This is step 2</div>
-					<div class="step-pane" id="step3">This is step 3</div>
-					<div class="step-pane" id="step4">This is step 4</div>
-					<div class="step-pane" id="step5">This is step 5</div>
-				</div>
+      <div class="well wizard-example">
+        <div id="MyWizard" class="wizard">
+          <ul class="steps">
+            <li data-target="#step1" class="active"><span class="badge badge-info">1</span>Step 1<span class="chevron"></span></li>
+            <li data-target="#step2"><span class="badge">2</span>Step 2<span class="chevron"></span></li>
+            <li data-target="#step3"><span class="badge">3</span>Step 3<span class="chevron"></span></li>
+            <li data-target="#step4"><span class="badge">4</span>Step 4<span class="chevron"></span></li>
+            <li data-target="#step5"><span class="badge">5</span>Step 5<span class="chevron"></span></li>
+          </ul>
+          <div class="actions">
+            <button type="button" class="btn xs prev"> <span class="glyphicon glyphicon-arrow-left"></span> Prev</button>
+            <button type="button" class="btn xs -next" data-last="Finish">Next <span class="glyphicon glyphicon-arrow-right"></span></button>
+          </div>
+        </div>
+        <div class="step-content">
+          <div class="step-pane active" id="step1">This is step 1</div>
+          <div class="step-pane" id="step2">This is step 2</div>
+          <div class="step-pane" id="step3">This is step 3</div>
+          <div class="step-pane" id="step4">This is step 4</div>
+          <div class="step-pane" id="step5">This is step 5</div>
+        </div>
 
-				<input type="button" class="btn xs" id="btnWizardPrev" value="prev">
-				<input type="button" class="btn xs" id="btnWizardNext" value="next">
-				<input type="button" class="btn xs" id="btnWizardStep" value="current step">
-			</div>
+        <input type="button" class="btn xs" id="btnWizardPrev" value="prev">
+        <input type="button" class="btn xs" id="btnWizardNext" value="next">
+        <input type="button" class="btn xs" id="btnWizardStep" value="current step">
+      </div>
 
     </div><!-- /.container -->
 
@@ -71,6 +70,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="../../dist/js/strapit.min.js"></script>
     <script src="wizard.js"></script>
   </body>
 </html>
