@@ -12,21 +12,26 @@ lead: "Bring Strapit's components to life with these custom jQuery plugins from 
   <div class="bs-docs-section">
     <h1 id="js-overview" class="page-header">Overview</h1>
 
-    <h3 id="js-individual-compiled">Individual or compiled</h3>
-    <p>Plugins can be included individually (using Strapit's individual <code>*.js</code> files), or all at once (using <code>strapit.js</code> or the minified <code>strapit.min.js</code>).</p>
+ <h3 id="js-individual-compiled">Individual or compiled</h3>
+  <p>Plugins can be included individually (using Bootstrap's individual <code>*.js</code> files), or all at once (using <code>bootstrap.js</code> or the minified <code>bootstrap.min.js</code>).</p>
 
-    <div class="callout danger">
-      <h4>Do not attempt to include both.</h4>
-      <p>Both <code>strapit.js</code> and <code>strapit.min.js</code> contain all plugins in a single file.</p>
-    </div>
+  <div class="callout danger">
+    <h4>Using the compiled JavaScript</h4>
+    <p>Both <code>strapit.js</code> and <code>strapit.min.js</code> contain all plugins in a single file. Include only one.</p>
+  </div>
 
-    <div class="callout danger">
-      <h4>Plugin dependencies</h4>
-      <p>Some plugins and CSS components depend on other plugins. If you include plugins individually, make sure to check for these dependencies in the docs. Also note that all plugins depend on jQuery being present (this means either library &#8212; but not both! &#8212; must be included <strong>before</strong> the plugin files).</p>
-    </div>
+  <div class="callout danger">
+    <h4>Component data attributes</h4>
+    <p>Don't use data attributes from multiple plugins on the same element. For example, a button cannot both have a tooltip and toggle a modal. To accomplish this, use a wrapping element.</p>
+  </div>
 
-    <h3 id="js-data-attrs">Data attributes</h3>
-    <p>You can use all Strapit plugins purely through the markup API without writing a single line of JavaScript. This is Strapit's first-class API and should be your first consideration when using a plugin.</p>
+  <div class="callout danger">
+    <h4>Plugin dependencies</h4>
+    <p>Some plugins and CSS components depend on other plugins. If you include plugins individually, make sure to check for these dependencies in the docs. Also note that all plugins depend on jQuery (this means jQuery must be included <strong>before</strong> the plugin files). <a href="{{ site.repo }}/blob/v{{ site.current_version }}/bower.json">Consult our <code>bower.json</code></a> to see which versions of jQuery are supported.</p>
+  </div>
+
+  <h3 id="js-data-attrs">Data attributes</h3>
+  <p>You can use all Bootstrap plugins purely through the markup API without writing a single line of JavaScript. This is Bootstrap's first-class API and should be your first consideration when using a plugin.</p>
 
     <p>That said, in some situations it may be desirable to turn this functionality off. Therefore, we also provide the ability to disable the data attribute API by unbinding all events on the document namespaced with <code>data-api</code>. This looks like this:</p>
 {% highlight js %}
@@ -56,8 +61,8 @@ $('#myModal').modal('show')                // initializes and invokes show immed
     <h3 id="js-noconflict">No conflict</h3>
     <p>Sometimes it is necessary to use Strapit plugins with other UI frameworks. In these circumstances, namespace collisions can occasionally occur. If this happens, you may call <code>.noConflict</code> on the plugin you wish to revert the value of.</p>
 {% highlight js %}
-var bootstrapButton = $.fn.button.noConflict() // return $.fn.button to previously assigned value
-$.fn.bootstrapBtn = bootstrapButton            // give $().bootstrapBtn the Strapit functionality
+var strapitButton = $.fn.button.noConflict() // return $.fn.button to previously assigned value
+$.fn.strapitBtn = bootstrapButton            // give $().strapitBtn the Strapit functionality
 {% endhighlight %}
 
     <h3 id="js-events">Events</h3>
@@ -1854,7 +1859,7 @@ $('#myCollapsible').on('hidden.bs.collapse', function () {
 {% endhighlight %}
   <div class="callout warning" id="callout-carousel-transitions">
     <h4>Transition animations not supported in Internet Explorer 8 &amp; 9</h4>
-    <p>Bootstrap exclusively uses CSS3 for its animations, but Internet Explorer 8 &amp; 9 don't support the necessary CSS properties. Thus, there are no slide transition animations when using these browsers. We have intentionally decided not to include jQuery-based fallbacks for the transitions.</p>
+    <p>Strapit exclusively uses CSS3 for its animations, but Internet Explorer 8 &amp; 9 don't support the necessary CSS properties. Thus, there are no slide transition animations when using these browsers. We have intentionally decided not to include jQuery-based fallbacks for the transitions.</p>
   </div>
 
     <h3>Optional captions</h3>
@@ -2037,7 +2042,7 @@ $('#myCarousel').on('slide.bs.carousel', function () {
     <p>Here's how the affix plugin works:</p>
     <ol>
       <li>To start, the plugin adds <code>.affix-top</code> to indicate the element is in its top-most position. At this point no CSS positioning is required.</li>
-      <li>Scrolling past the element you want affixed should trigger the actual affixing. This is where <code>.affix</code> replaces <code>.affix-top</code> and sets <code>position: fixed;</code> (provided by Bootstrap's code CSS).</li>
+      <li>Scrolling past the element you want affixed should trigger the actual affixing. This is where <code>.affix</code> replaces <code>.affix-top</code> and sets <code>position: fixed;</code> (provided by Strapit's code CSS).</li>
       <li>If a bottom offset is defined, scrolling past that should replace <code>.affix</code> with <code>.affix-bottom</code>. Since offsets are optional, setting one requires you to set the appropriate CSS. In this case, add <code>position: absolute;</code> when necessary. The plugin uses the data attribute or JavaScript option to determine where to position the element from there.</li>
     </ol>
     <p>Follow the above steps to set your CSS for either of the usage options below.</p>
@@ -2090,7 +2095,7 @@ $('#myCarousel').on('slide.bs.carousel', function () {
     </div><!-- /.table-responsive -->
 
 	<h3>Events</h3>
-    <p>Bootstrap's affix class exposes a few events for hooking into affix functionality.</p>
+    <p>Strapit's affix class exposes a few events for hooking into affix functionality.</p>
     <div class="table-responsive">
       <table class="table bordered striped">
         <thead>
