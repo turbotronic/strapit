@@ -23,10 +23,6 @@ summary {
   position: relative;
   display: block;
 }
-div,
-ul {
-  position: relative;
-}
 audio,
 canvas,
 video {
@@ -411,6 +407,7 @@ ol li ol {
 .list-inline,
 .list.inline {
   padding-left: 0;
+  margin-left: -5px;
   list-style: none;
 }
 .list-inline > li,
@@ -3071,6 +3068,9 @@ select[multiple].input-lg {
     width: auto;
     vertical-align: middle;
   }
+  .form-inline .input-group > .form-control {
+    width: 100%;
+  }
   .form-inline .control-label {
     margin-bottom: 0;
     vertical-align: middle;
@@ -3112,10 +3112,24 @@ select[multiple].input-lg {
   min-height: 30px;
 }
 .form-horizontal .form-group {
-  position: relative;
-  width: auto;
   margin-right: -15px;
   margin-left: -15px;
+}
+.form-horizontal .form-group:before,
+.form-horizontal .form-group:after {
+  display: table;
+  content: " ";
+}
+.form-horizontal .form-group:after {
+  clear: both;
+}
+.form-horizontal .form-group:before,
+.form-horizontal .form-group:after {
+  display: table;
+  content: " ";
+}
+.form-horizontal .form-group:after {
+  clear: both;
 }
 .form-horizontal .form-control-static,
 .form-horizontal .form-control.static {
@@ -3149,13 +3163,14 @@ input.square {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
-       -o-user-select: none;
           user-select: none;
   background-image: none;
   border: 1px solid transparent;
   border-radius: 3px;
 }
-.btn:focus {
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
@@ -6417,17 +6432,13 @@ a.list-group-item.info.active:focus {
   border-width: 1px 0;
   border-radius: 0;
 }
-.panel > .list-group .list-group-item:first-child {
-  border-top: 0;
-}
-.panel > .list-group .list-group-item:last-child {
-  border-bottom: 0;
-}
 .panel > .list-group:first-child .list-group-item:first-child {
+  border-top: 0;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
 }
 .panel > .list-group:last-child .list-group-item:last-child {
+  border-bottom: 0;
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 2px;
 }
@@ -6435,37 +6446,38 @@ a.list-group-item.info.active:focus {
   border-top-width: 0;
 }
 .panel > .table,
-.panel > .table-responsive > .table,
-.panel > .table.responsive > .table {
+.panel > .table-responsive > .table {
   margin-bottom: 0;
+}
+.panel > .table:first-child,
+.panel > .table-responsive:first-child > .table:first-child {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
 }
 .panel > .table:first-child > thead:first-child > tr:first-child td:first-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
-.panel > .table.responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child td:first-child,
 .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
-.panel > .table.responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
 .panel > .table:first-child > thead:first-child > tr:first-child th:first-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
-.panel > .table.responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child th:first-child,
-.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child,
-.panel > .table.responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
   border-top-left-radius: 2px;
 }
 .panel > .table:first-child > thead:first-child > tr:first-child td:last-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
-.panel > .table.responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child td:last-child,
 .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
-.panel > .table.responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
 .panel > .table:first-child > thead:first-child > tr:first-child th:last-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
-.panel > .table.responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child th:last-child,
-.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child,
-.panel > .table.responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
   border-top-right-radius: 2px;
+}
+.panel > .table:last-child,
+.panel > .table-responsive:last-child > .table:last-child {
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
 }
 .panel > .table:last-child > tbody:last-child > tr:last-child td:first-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
@@ -7532,8 +7544,8 @@ button.close {
   text-shadow: none;
 }
 @media screen and (min-width: 768px) {
-  .carousel-control .glyphicons-chevron-left,
-  .carousel-control .glyphicons-chevron-right .icon-prev,
+  .carousel-control .glyphicon-chevron-left,
+  .carousel-control .glyphicon-chevron-right .icon-prev,
   .carousel-control .icon-next {
     width: 30px;
     height: 30px;
@@ -7849,9 +7861,6 @@ button.close {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-.glyphicon:empty {
-  width: 1em;
 }
 .glyphicon-asterisk:before {
   content: "\2a";
