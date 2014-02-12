@@ -870,6 +870,9 @@ h1[id] {
 .bs-examples p {
   margin-bottom: 20px;
 }
+.bs-examples .col {
+  min-height: 290px;
+}
 
 /* Pseudo :focus state for showing how it looks in the docs */
 #focusedInput {
