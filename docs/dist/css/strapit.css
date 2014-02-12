@@ -4244,8 +4244,12 @@ select[multiple].input-group.sm > .input-group-btn > .btn {
 .input-group-btn > .btn:active {
   z-index: 2;
 }
+div {
+  position: relative;
+}
 @media only screen {
   .switch {
+    position: relative;
     height: 30px;
     margin-bottom: 22px;
     overflow: hidden;
