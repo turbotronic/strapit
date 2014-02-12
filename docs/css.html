@@ -2204,6 +2204,92 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 </div>
 {% endhighlight %}
 
+  <h3>With optional icons</h3>
+  <p>You can also add optional feedback icons with the addition of an extra class and the right icon.</p>
+  <div class="callout warning">
+    <h4>Icons and input groups</h4>
+    <p>When using the feedback icons, be aware that manual positioning may be required for <a href="../components#input-groups">input groups</a> with an add-on on the right. Adjust the <code>right: 0;</code> to an appropriate pixel value depending on the width of your add-on.</p>
+  </div>
+  <div class="bs-example">
+    <form role="form">
+      <div class="form-group has-success has-feedback">
+        <label class="control-label" for="inputSuccess2">Input with success</label>
+        <input type="text" class="form-control" id="inputSuccess2">
+        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+      </div>
+      <div class="form-group has-warning has-feedback">
+        <label class="control-label" for="inputWarning2">Input with warning</label>
+        <input type="text" class="form-control" id="inputWarning2">
+        <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+      </div>
+      <div class="form-group has-error has-feedback">
+        <label class="control-label" for="inputError2">Input with error</label>
+        <input type="text" class="form-control" id="inputError2">
+        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+      </div>
+    </form>
+  </div>
+{% highlight html %}
+<div class="form-group has-success has-feedback">
+  <label class="control-label" for="inputSuccess2">Input with success</label>
+  <input type="text" class="form-control" id="inputSuccess2">
+  <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+</div>
+<div class="form-group has-warning has-feedback">
+  <label class="control-label" for="inputWarning2">Input with warning</label>
+  <input type="text" class="form-control" id="inputWarning2">
+  <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+</div>
+<div class="form-group has-error has-feedback">
+  <label class="control-label" for="inputError2">Input with error</label>
+  <input type="text" class="form-control" id="inputError2">
+  <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+</div>
+{% endhighlight %}
+
+  <p>Optional icons also work on horizontal and inline forms.</p>
+  <div class="bs-example">
+    <form class="form-horizontal" role="form">
+      <div class="form-group has-success has-feedback">
+        <label class="control-label col sm-3" for="inputSuccess3">Input with success</label>
+        <div class="col sm-9">
+          <input type="text" class="form-control" id="inputSuccess3">
+          <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+        </div>
+      </div>
+    </form>
+  </div>
+{% highlight html %}
+<form class="form-horizontal" role="form">
+  <div class="form-group has-success has-feedback">
+    <label class="control-label col sm-3" for="inputSuccess3">Input with success</label>
+    <div class="col sm-9">
+      <input type="text" class="form-control" id="inputSuccess3">
+      <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+    </div>
+  </div>
+</form>
+{% endhighlight %}
+
+  <div class="bs-example">
+    <form class="form-inline" role="form">
+      <div class="form-group has-success has-feedback">
+        <label class="control-label" for="inputSuccess4">Input with success</label>
+        <input type="text" class="form-control" id="inputSuccess4">
+        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+      </div>
+    </form>
+  </div>
+{% highlight html %}
+<form class="form-inline" role="form">
+  <div class="form-group has-success has-feedback">
+    <label class="control-label" for="inputSuccess4">Input with success</label>
+    <input type="text" class="form-control" id="inputSuccess4">
+    <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+  </div>
+</form>
+{% endhighlight %}
+
 
     <h2 id="forms-control-sizes">Control sizing</h2>
     <p>Set heights using classes like <code>.input-lg</code>, and set widths using grid column classes like <code>.col lg-*</code>.</p>
