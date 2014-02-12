@@ -192,6 +192,11 @@ output {
 // input[type="color"]
 
 .form-control {
+  // Ensure that the input is always above the *appended* addon button for
+  // proper border colors.
+  position: relative;
+  z-index: 2;
+
   display: block;
   width: 100%;
   height: @input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
