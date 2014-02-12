@@ -7586,7 +7586,6 @@ button.close {
   direction: ltr;
 }
 .fileinput {
-  display: inline-block;
   margin-bottom: 9px;
 }
 .fileinput .uneditable-input {
