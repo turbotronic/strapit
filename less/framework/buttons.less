@@ -22,8 +22,12 @@
   white-space: nowrap;
   .user-select(none);
 
-  &:focus {
-    .tab-focus();
+  &,
+  &:active,
+  &.active {
+    &:focus {
+      .tab-focus();
+    }
   }
 
   &:hover,
