@@ -25,17 +25,17 @@
     &:after {
       padding: 0;
       content: none;
-      border-left: 8px solid @border-color;
+      border-left: 8px solid @block-breadcrumb-bg;
     }
     a {
-      background: @border-color;
+      background: @block-breadcrumb-bg;
       line-height: @line-height-computed!important;
       padding: 10px 14px 10px 20px;
       .transition(none);
       &:after {
         width: 0;
         height: 0;
-        border-left: 8px solid @border-color;
+        border-left: 8px solid @block-breadcrumb-bg;
         border-top: 18px solid transparent;
         border-bottom: 18px solid transparent;
         content: "";
@@ -44,10 +44,10 @@
         top: -6px;
       }
       &:hover {
-        background: darken(@border-color, 10%);
+        background: @block-breadcrumb-bg-hover;
         text-decoration: none;
         &:after {
-          border-left: 8px solid darken(@border-color, 10%);
+          border-left-color: @block-breadcrumb-bg-hover;
         }
       }
     }
