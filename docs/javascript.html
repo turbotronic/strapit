@@ -1426,12 +1426,12 @@ $('#my-alert').bind('closed.bs.alert', function () {
 
 <script>
   $('#loading-example-btn').click(function () {
-    var btn = $(this);
-    btn.button('loading');
+    var btn = $(this)
+    btn.button('loading')
     $.ajax(...).always(function () {
-      btn.button('reset');
-    });
-  });
+      btn.button('reset')
+    })
+  })
 </script>
 {% endhighlight %}
 
@@ -1534,12 +1534,12 @@ $('.btn-group').button()
 <button id="loading-example-btn" type="button" class="btn primary" data-loading-text="loading stuff...">...</button>
 <script>
   $('#loading-example-btn').click(function () {
-    var btn = $(this);
-    btn.button('loading');
+    var btn = $(this)
+    btn.button('loading')
     $.ajax(...).always(function () {
-      btn.button('reset');
-    });
-  });
+      btn.button('reset')
+    })
+  })
 </script>
 {% endhighlight %}
 
