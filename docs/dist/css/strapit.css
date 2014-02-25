@@ -7738,8 +7738,8 @@ button.close {
   display: block;
 }
 .canvas-sliding {
-  -webkit-transition: -webkit-transform .35s;
-          transition:         transform .35s, -ms-transform .35s;
+  -webkit-transition: top .35s, left .35s, bottom .35s, right .35s;
+          transition: top .35s, left .35s, bottom .35s, right .35s;
 }
 .offcanvas-clone {
   position: absolute !important;
