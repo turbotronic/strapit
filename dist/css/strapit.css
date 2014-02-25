@@ -6706,12 +6706,12 @@ a.list-group-item.info.active:focus {
   background-color: #f5f5f5;
   border-color: #dddddd;
 }
-.panel-default > .panel-heading + .panel-collapse .panel-body,
-.panel.default > .panel-heading + .panel-collapse .panel-body {
+.panel-default > .panel-heading + .panel-collapse > .panel-body,
+.panel.default > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #dddddd;
 }
-.panel-default > .panel-footer + .panel-collapse .panel-body,
-.panel.default > .panel-footer + .panel-collapse .panel-body {
+.panel-default > .panel-footer + .panel-collapse > .panel-body,
+.panel.default > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #dddddd;
 }
 .panel-primary,
@@ -6724,12 +6724,12 @@ a.list-group-item.info.active:focus {
   background-color: #428bca;
   border-color: #428bca;
 }
-.panel-primary > .panel-heading + .panel-collapse .panel-body,
-.panel.primary > .panel-heading + .panel-collapse .panel-body {
+.panel-primary > .panel-heading + .panel-collapse > .panel-body,
+.panel.primary > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #428bca;
 }
-.panel-primary > .panel-footer + .panel-collapse .panel-body,
-.panel.primary > .panel-footer + .panel-collapse .panel-body {
+.panel-primary > .panel-footer + .panel-collapse > .panel-body,
+.panel.primary > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #428bca;
 }
 .panel-success,
@@ -6742,12 +6742,12 @@ a.list-group-item.info.active:focus {
   background-color: #dff0d8;
   border-color: #d6e9c6;
 }
-.panel-success > .panel-heading + .panel-collapse .panel-body,
-.panel.success > .panel-heading + .panel-collapse .panel-body {
+.panel-success > .panel-heading + .panel-collapse > .panel-body,
+.panel.success > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #d6e9c6;
 }
-.panel-success > .panel-footer + .panel-collapse .panel-body,
-.panel.success > .panel-footer + .panel-collapse .panel-body {
+.panel-success > .panel-footer + .panel-collapse > .panel-body,
+.panel.success > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #d6e9c6;
 }
 .panel-info,
@@ -6760,12 +6760,12 @@ a.list-group-item.info.active:focus {
   background-color: #d9edf7;
   border-color: #bce8f1;
 }
-.panel-info > .panel-heading + .panel-collapse .panel-body,
-.panel.info > .panel-heading + .panel-collapse .panel-body {
+.panel-info > .panel-heading + .panel-collapse > .panel-body,
+.panel.info > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #bce8f1;
 }
-.panel-info > .panel-footer + .panel-collapse .panel-body,
-.panel.info > .panel-footer + .panel-collapse .panel-body {
+.panel-info > .panel-footer + .panel-collapse > .panel-body,
+.panel.info > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #bce8f1;
 }
 .panel-warning,
@@ -6778,12 +6778,12 @@ a.list-group-item.info.active:focus {
   background-color: #fcf8e3;
   border-color: #fbeed5;
 }
-.panel-warning > .panel-heading + .panel-collapse .panel-body,
-.panel.warning > .panel-heading + .panel-collapse .panel-body {
+.panel-warning > .panel-heading + .panel-collapse > .panel-body,
+.panel.warning > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #fbeed5;
 }
-.panel-warning > .panel-footer + .panel-collapse .panel-body,
-.panel.warning > .panel-footer + .panel-collapse .panel-body {
+.panel-warning > .panel-footer + .panel-collapse > .panel-body,
+.panel.warning > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #fbeed5;
 }
 .panel-danger,
@@ -6796,12 +6796,12 @@ a.list-group-item.info.active:focus {
   background-color: #f2dede;
   border-color: #eed3d7;
 }
-.panel-danger > .panel-heading + .panel-collapse .panel-body,
-.panel.danger > .panel-heading + .panel-collapse .panel-body {
+.panel-danger > .panel-heading + .panel-collapse > .panel-body,
+.panel.danger > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #eed3d7;
 }
-.panel-danger > .panel-footer + .panel-collapse .panel-body,
-.panel.danger > .panel-footer + .panel-collapse .panel-body {
+.panel-danger > .panel-footer + .panel-collapse > .panel-body,
+.panel.danger > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #eed3d7;
 }
 .well {
