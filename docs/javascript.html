@@ -239,69 +239,76 @@ $('#myModal').on('show.bs.modal', function (e) {
       <p>Additionally, you may give a description of your modal dialog with <code>aria-describedby</code> on <code>.modal</code>.</p>
     </div>
 
-	    <h2 id="modals-sizes">Optional sizes</h2>
-	    <p>Modals have two optional sizes, available via modifier classes to be placed on a <code>.modal-dialog</code>.</p>
-	    <div class="bs-example">
-	      <button class="btn primary" data-toggle="modal" data-target=".bs-modal-lg">Large modal</button>
-	      <button class="btn primary" data-toggle="modal" data-target=".bs-modal-sm">Small modal</button>
-	    </div>
-	{% highlight html %}
-	<!-- Large modal -->
-	<button class="btn primary" data-toggle="modal" data-target=".bs-modal-lg">Large modal</button>
+      <h2 id="modals-sizes">Optional sizes</h2>
+      <p>Modals have two optional sizes, available via modifier classes to be placed on a <code>.modal-dialog</code>.</p>
+      <div class="bs-example">
+        <button class="btn primary" data-toggle="modal" data-target=".bs-modal-lg">Large modal</button>
+        <button class="btn primary" data-toggle="modal" data-target=".bs-modal-sm">Small modal</button>
+      </div>
+  {% highlight html %}
+  <!-- Large modal -->
+  <button class="btn primary" data-toggle="modal" data-target=".bs-modal-lg">Large modal</button>
 
-	<div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-	  <div class="modal-dialog modal-lg">
-	    <div class="modal-content">
-	      ...
-	    </div>
-	  </div>
-	</div>
+  <div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        ...
+      </div>
+    </div>
+  </div>
 
-	<!-- Small modal -->
-	<button class="btn primary" data-toggle="modal" data-target=".bs-modal-sm">Small modal</button>
+  <!-- Small modal -->
+  <button class="btn primary" data-toggle="modal" data-target=".bs-modal-sm">Small modal</button>
 
-	<div class="modal fade bs-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-	  <div class="modal-dialog modal-sm">
-	    <div class="modal-content">
-	      ...
-	    </div>
-	  </div>
-	</div>
-	{% endhighlight %}
+  <div class="modal fade bs-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        ...
+      </div>
+    </div>
+  </div>
+  {% endhighlight %}
 
-	    <!--  Modal content for the above example -->
-	    <div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-	      <div class="modal-dialog modal-lg">
-	        <div class="modal-content">
+      <!--  Modal content for the above example -->
+      <div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
 
-	          <div class="modal-header">
-	            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	            <h4 class="modal-title" id="myLargeModalLabel">Large modal</h4>
-	          </div>
-	          <div class="modal-body">
-	            ...
-	          </div>
-	        </div><!-- /.modal-content -->
-	      </div><!-- /.modal-dialog -->
-	    </div><!-- /.modal -->
-	    <div class="modal fade bs-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-	      <div class="modal-dialog modal-sm">
-	        <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" id="myLargeModalLabel">Large modal</h4>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+      <div class="modal fade bs-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
 
-	          <div class="modal-header">
-	            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	            <h4 class="modal-title" id="mySmallModalLabel">Small modal</h4>
-	          </div>
-	          <div class="modal-body">
-	            ...
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-	
-	
-	    <h2 id="modals-usage">Usage</h2>
-	    <p>The modal plugin toggles your hidden content on demand, via data attributes or JavaScript. It also adds <code>.modal-open</code> to the <code>&lt;body&gt;</code> to override default scrolling behavior and generates a <code>.modal-backdrop</code> to provide a click area for dismissing shown modals when clicking outside the modal.</p>
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" id="mySmallModalLabel">Small modal</h4>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <h2 id="modals-remove-animation">Remove animation</h2>
+        <p>For modals that simply appear rather than fade in to view, remove the <code>.fade</code> class from your modal markup.</p>
+{% highlight html %}
+<div class="modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+...
+</div>
+{% endhighlight %}
+
+      <h2 id="modals-usage">Usage</h2>
+      <p>The modal plugin toggles your hidden content on demand, via data attributes or JavaScript. It also adds <code>.modal-open</code> to the <code>&lt;body&gt;</code> to override default scrolling behavior and generates a <code>.modal-backdrop</code> to provide a click area for dismissing shown modals when clicking outside the modal.</p>
 
     <h3>Via data attributes</h3>
     <p>Activate a modal without writing JavaScript. Set <code>data-toggle="modal"</code> on a controller element, like a button, along with a <code>data-target="#foo"</code> or <code>href="#foo"</code> to target a specific modal to toggle.</p>
@@ -2094,7 +2101,7 @@ $('#myCarousel').on('slide.bs.carousel', function () {
       </table>
     </div><!-- /.table-responsive -->
 
-	<h3>Events</h3>
+  <h3>Events</h3>
     <p>Strapit's affix class exposes a few events for hooking into affix functionality.</p>
     <div class="table-responsive">
       <table class="table bordered striped">
