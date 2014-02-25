@@ -1,7 +1,7 @@
 /*!
- * Strapit Framework v2.0.5 (http://sandbox.digitalfirstmedia.com/strapit/)
+ * Strapit Framework v2.0.6 (http://sandbox.digitalfirstmedia.com/strapit/)
  * 
- * Based on Bootstrap v3.1.0 and Foundation v4.3.1
+ * Based on Bootstrap v3.1.1 and Foundation v4.3.1
  * Copyright 2014 Twitter, Inc., ZURB
  * Cobbled together and maintained by the design squad at Digital First Media
  * Bootstrap and Foundation are licensed under the MIT License
