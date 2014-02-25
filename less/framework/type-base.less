@@ -62,6 +62,18 @@ h5, .h5 { .font-size(@font-size-h5); }
 h6, .h6 { .font-size(@font-size-h6); }
 
 
+// This is different from Bootstrap because for our purposes, 
+// we will use the .h* classes as headline substitutes but we
+// still want an option for inline styling. Not very semantic,
+// but that's the way the cookie crumbles.
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  display: block;
+  &.inline {
+    display: inline;
+  }
+}
+
+
 // Lists
 // --------------------------------------------------
 
