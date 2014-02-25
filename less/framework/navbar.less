@@ -568,7 +568,20 @@
       color: @navbar-default-link-hover-color;
     }
   }
-
+  .btn-link {
+    color: @navbar-default-link-color;
+    &:hover,
+    &:focus {
+      color: @navbar-default-link-hover-color;
+    }
+    &[disabled],
+    fieldset[disabled] & {
+      &:hover,
+      &:focus {
+        color: @navbar-default-link-disabled-color;
+      }
+    }
+  }
 }
 
 // Inverse navbar
@@ -690,7 +703,20 @@
       color: @navbar-inverse-link-hover-color;
     }
   }
-
+  .btn-link {
+    color: @navbar-inverse-link-color;
+    &:hover,
+    &:focus {
+      color: @navbar-inverse-link-hover-color;
+    }
+    &[disabled],
+    fieldset[disabled] & {
+      &:hover,
+      &:focus {
+        color: @navbar-inverse-link-disabled-color;
+      }
+    }
+  }
 }
 
 // Print-only styles
