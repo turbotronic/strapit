@@ -1,9 +1,10 @@
 /* ===========================================================
- * Bootstrap: inputmask.js v3.0.0-p7
- * http://jasny.github.io/bootstrap/javascript.html#inputmask
+ * Bootstrap: inputmask.js v3.1.0
+ * http://jasny.github.io/bootstrap/javascript/#inputmask
+ * 
  * Based on Masked Input plugin by Josh Bush (digitalbush.com)
  * ===========================================================
- * Copyright 2012 Jasny BV, Netherlands.
+ * Copyright 2012-2014 Arnold Daniels
  *
  * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
@@ -18,10 +19,10 @@
  * limitations under the License.
  * ========================================================== */
 
-+function ($) { 'use strict';
++function ($) { "use strict";
 
   var isIphone = (window.orientation !== undefined)
-  var isAndroid = navigator.userAgent.toLowerCase().indexOf('android') > -1
+  var isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1
   var isIE = window.navigator.appName == 'Microsoft Internet Explorer'
 
   // INPUTMASK PUBLIC CLASS DEFINITION
@@ -41,13 +42,13 @@
   }
 
   Inputmask.DEFAULS = {
-    mask: '',
-    placeholder: '_',
+    mask: "",
+    placeholder: "_",
     definitions: {
-      '9': '[0-9]',
-      'a': '[A-Za-z]',
-      '?': '[A-Za-z0-9]',
-      '*': '.'
+      '9': "[0-9]",
+      'a': "[A-Za-z]",
+      '?': "[A-Za-z0-9]",
+      '*': "."
     }
   }
 
@@ -59,26 +60,26 @@
     this.partialPosition = this.mask.length
     this.firstNonMaskPos = null
 
-    $.each(this.mask.split(''), $.proxy(function(i, c) {
+    $.each(this.mask.split(""), $.proxy(function(i, c) {
       if (c == '?') {
         len--
         this.partialPosition = i
       } else if (defs[c]) {
         this.tests.push(new RegExp(defs[c]))
-        if(this.firstNonMaskPos === null)
+        if (this.firstNonMaskPos === null)
           this.firstNonMaskPos =  this.tests.length - 1
       } else {
         this.tests.push(null)
       }
     }, this))
 
-    this.buffer = $.map(this.mask.split(''), $.proxy(function(c, i) {
+    this.buffer = $.map(this.mask.split(""), $.proxy(function(c, i) {
       if (c != '?') return defs[c] ? this.options.placeholder : c
     }, this))
 
     this.focusText = this.$element.val()
 
-    this.$element.data('rawMaskFn', $.proxy(function() {
+    this.$element.data("rawMaskFn", $.proxy(function() {
       return $.map(this.buffer, function(c, i) {
         return this.tests[i] && c != this.options.placeholder ? c : null
       }).join('')
@@ -86,18 +87,18 @@
   }
     
   Inputmask.prototype.listen = function() {
-    if (this.$element.attr('readonly')) return
+    if (this.$element.attr("readonly")) return
 
-    var pasteEventName = (isIE ? 'paste' : 'input') + '.mask'
+    var pasteEventName = (isIE ? 'paste' : 'input') + ".mask"
 
     this.$element
-      .on('unmask.bs.inputmask', $.proxy(this.unmask, this))
+      .on("unmask.bs.inputmask", $.proxy(this.unmask, this))
 
-      .on('focus.bs.inputmask', $.proxy(this.focusEvent, this))
-      .on('blur.bs.inputmask', $.proxy(this.blurEvent, this))
+      .on("focus.bs.inputmask", $.proxy(this.focusEvent, this))
+      .on("blur.bs.inputmask", $.proxy(this.blurEvent, this))
 
-      .on('keydown.bs.inputmask', $.proxy(this.keydownEvent, this))
-      .on('keypress.bs.inputmask', $.proxy(this.keypressEvent, this))
+      .on("keydown.bs.inputmask", $.proxy(this.keydownEvent, this))
+      .on("keypress.bs.inputmask", $.proxy(this.keypressEvent, this))
 
       .on(pasteEventName, $.proxy(this.pasteEvent, this))
   }
@@ -150,9 +151,9 @@
   Inputmask.prototype.shiftL = function(begin,end) {
     var len = this.mask.length
 
-    if(begin<0) return
+    if (begin < 0) return
 
-    for (var i = begin,j = this.seekNext(end); i < len; i++) {
+    for (var i = begin, j = this.seekNext(end); i < len; i++) {
       if (this.tests[i]) {
         if (j < len && this.tests[i].test(this.buffer[j])) {
           this.buffer[i] = this.buffer[j]
@@ -184,8 +185,8 @@
 
   Inputmask.prototype.unmask = function() {
     this.$element
-      .unbind('.mask')
-      .removeData('inputmask')
+      .unbind(".mask")
+      .removeData("inputmask")
   }
 
   Inputmask.prototype.focusEvent = function() {
@@ -213,7 +214,7 @@
   }
 
   Inputmask.prototype.keydownEvent = function(e) {
-    var k=e.which
+    var k = e.which
 
     //backspace, delete, and escape get special treatment
     if (k == 8 || k == 46 || (isIphone && k == 127)) {
@@ -221,12 +222,12 @@
       begin = pos.begin,
       end = pos.end
 
-      if (end-begin === 0) {
-        begin = k!=46 ? this.seekPrev(begin) : (end=this.seekNext(begin-1))
-        end = k==46 ? this.seekNext(end) : end
+      if (end - begin === 0) {
+        begin = k != 46 ? this.seekPrev(begin) : (end = this.seekNext(begin - 1))
+        end = k == 46 ? this.seekNext(end) : end
       }
       this.clearBuffer(begin, end)
-      this.shiftL(begin,end-1)
+      this.shiftL(begin, end - 1)
 
       return false
     } else if (k == 27) {//escape
@@ -242,12 +243,12 @@
     var k = e.which,
     pos = this.caret()
 
-    if (e.ctrlKey || e.altKey || e.metaKey || k<32)  {//Ignore
+    if (e.ctrlKey || e.altKey || e.metaKey || k < 32)  {//Ignore
       return true
     } else if (k) {
       if (pos.end - pos.begin !== 0) {
         this.clearBuffer(pos.begin, pos.end)
-        this.shiftL(pos.begin, pos.end-1)
+        this.shiftL(pos.begin, pos.end - 1)
       }
 
       var p = this.seekNext(pos.begin - 1)
@@ -311,7 +312,7 @@
       }
     }
     if (!allow && lastMatch + 1 < this.partialPosition) {
-      this.$element.val('')
+      this.$element.val("")
       this.clearBuffer(0, len)
     } else if (allow || lastMatch + 1 >= this.partialPosition) {
       this.writeBuffer()
