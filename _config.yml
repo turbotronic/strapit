@@ -19,4 +19,4 @@ repo:             https://github.com/DFMLabs/strapit
 
 download:
   source:         https://github.com/DFMLabs/strapit/archive/master.zip
-  dist:           http://sandbox.digitalfirstmedia.com/strapit/dist/strapit-v2.0.5-dist.zip
+  dist:           http://sandbox.digitalfirstmedia.com/strapit/dist/strapit-v2.0.6-dist.zip
