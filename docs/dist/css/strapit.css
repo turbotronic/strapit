@@ -5388,19 +5388,18 @@ select[multiple].input-group.sm > .input-group-btn > .btn {
 .sidenav-fixed-right,
 .sidenav.fixed-left,
 .sidenav.fixed-right {
-  position: fixed;
+  position: absolute;
   top: 0;
+  margin-left: -300px;
   z-index: 1030;
   border-radius: 0;
 }
 .sidenav-fixed-left,
 .sidenav.fixed-left {
-  left: 0;
   border-width: 0 1px 0 0;
 }
 .sidenav-fixed-right,
 .sidenav.fixed-right {
-  right: 0;
   border-width: 0 0 0 1px;
 }
 .sidenav-nav {
