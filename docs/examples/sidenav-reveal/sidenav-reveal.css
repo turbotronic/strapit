@@ -2,7 +2,7 @@ html, body {
   height: 100%;
 }
 .container {
-	padding-top: 70px;
+  padding-top: 70px;
 }
 
 .navbar-toggle {
@@ -12,6 +12,10 @@ html, body {
 
 .sidenav {
   z-index: 1!important;
+}
+.sidenav.canvas-sliding,
+.sidenav.canvas-slid {
+  z-index: 2;
 }
 
 .thecanvas {
@@ -23,7 +27,7 @@ html, body {
   background: #fff;
 }
 
-@media (min-width: 0) {
+@media (min-width:0) {
   .navbar-toggle {
     display: block; /* force showing the toggle */
   }
