@@ -122,15 +122,6 @@ module.exports = function (grunt) {
         files: {
           'dist/css/<%= pkg.name %>.css': 'less/strapit.less'
         }
-      },
-      minify: {
-        options: {
-          cleancss: true,
-          report: 'min'
-        },
-        files: {
-          'dist/css/<%= pkg.name %>.min.css': 'dist/css/<%= pkg.name %>.css'
-        }
       }
     },
 
@@ -147,6 +138,18 @@ module.exports = function (grunt) {
           'docs/assets/css/pygments-manni.css'
         ],
         dest: 'docs/assets/css/docs.min.css'
+      },
+      maincompress: {
+        options: {
+          keepSpecialComments: '*',
+          noAdvanced: true, // turn advanced optimizations off until the issue is fixed in clean-css
+          report: 'min',
+          selectorsMergeMode: 'ie8'
+        },
+        src: [
+          'dist/css/<%= pkg.name %>.css'
+        ],
+        dest: 'dist/css/<%= pkg.name %>.min.css'
       }
     },
 
@@ -253,7 +256,7 @@ module.exports = function (grunt) {
       },
       less: {
         files: ['less/*.less', 'less/*/*.less'],
-        tasks: ['less', 'csscomb', 'usebanner', 'copy:docs'],
+        tasks: ['less', 'csscomb', 'cssmin:maincompress', 'usebanner', 'copy:docs'],
         options: {
           livereload: true
         }
