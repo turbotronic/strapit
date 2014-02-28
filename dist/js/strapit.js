@@ -1872,6 +1872,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap Javascript requi
   })
 
 }(window.jQuery);
+
 /* ========================================================================
  * Bootstrap: tooltip.js v3.1.1
  * http://getbootstrap.com/javascript/#tooltip

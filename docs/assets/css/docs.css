@@ -655,7 +655,6 @@ h1[id] {
 .bs-sidenav-fixed-example:after {
   left: 315px;
 }
-
 .bs-sidenav-offcanvas-example {
   min-height: 200px;
   overflow: hidden;
@@ -675,18 +674,20 @@ h1[id] {
   color: #bbb;
 }
 .bs-sidenav-fixed-example .sidenav.fixed-left,
-  .bs-sidenav-offcanvas-example .sidenav.fixed-left,
-  .bs-sidenav-offcanvas-example .navbar.fixed-top {
+.bs-sidenav-offcanvas-example .sidenav.fixed-left,
+.bs-sidenav-offcanvas-example .navbar.fixed-top {
   position: absolute;
   z-index: 1;
+}
+.bs-sidenav-offcanvas-example .sidenav.fixed-left {
+  -webkit-transform: translate(-300px, 0);
+          transform: translate(-300px, 0);
 }
 .bs-sidenav-offcanvas-example .navbar-toggle {
   display: block;
   float: left;
   margin-left: 15px;
 }
-
-
 
 /*
  * Code snippets
