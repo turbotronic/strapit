@@ -10,17 +10,17 @@ html, body {
 }
 .sidenav.canvas-sliding,
 .sidenav.canvas-slid {
-  z-index: 2000;
+  z-index: 2;
 }
-.canvas {
+.thecanvas {
   position: relative;
   z-index: 2;
   min-height: 100%;
-  padding-top: 65px;
+  padding-top: 0;
   background: #fff;
 }
 
-@media (min-width: 0) {
+@media (min-width:0) {
   .navbar-toggle {
     display: block;
   }
