@@ -1,0 +1,61 @@
+//
+// Image or Page CSS Based Preloader
+// Custom file created by Travis Curl for DFM
+// --------------------------------------------------
+// To use the Preloader, temporarily swap your image or page DIV with the following:
+// <div class="preloader">LOADING</div>
+
+.preloader {
+  color: #ccc;
+  font-family: sans-serif;
+  font-size: 14px;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  margin: 100px auto;
+  position: relative;
+  box-sizing: border-box;
+  text-align: center;
+  z-index: 0;
+  text-transform: uppercase;
+}
+
+.preloader:before,
+.preloader:after {
+  opacity: 0;
+  box-sizing: border-box;
+  content: "\0020";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  border: 5px solid #ccc;
+  box-shadow: 0 0 50px #ccc, inset 0 0 50px #ccc;
+}
+
+.preloader:after {
+  z-index: 1;
+  -webkit-animation: gogoloader 2s infinite 1s;
+}
+
+.preloader:before {
+  z-index: 2;
+  -webkit-animation: gogoloader 2s infinite;
+}
+
+@-webkit-keyframes gogoloader {
+  0% {
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 0;
+  }
+}
+
