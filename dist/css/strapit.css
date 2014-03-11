@@ -3108,6 +3108,15 @@ select[multiple].input-lg {
     width: auto;
     vertical-align: middle;
   }
+  .form-inline .input-group {
+    display: inline-table;
+    vertical-align: middle;
+  }
+  .form-inline .input-group .input-group-addon,
+  .form-inline .input-group .input-group-btn,
+  .form-inline .input-group .form-control {
+    width: auto;
+  }
   .form-inline .input-group > .form-control {
     width: 100%;
   }
@@ -4833,7 +4842,6 @@ select[multiple].input-group.sm > .input-group-btn > .btn {
   }
 }
 .navbar-collapse {
-  max-height: 340px;
   padding-right: 15px;
   padding-left: 15px;
   overflow-x: visible;
@@ -4869,6 +4877,20 @@ select[multiple].input-group.sm > .input-group-btn > .btn {
   .navbar.fixed-bottom .navbar-collapse {
     padding-right: 0;
     padding-left: 0;
+  }
+}
+.navbar-fixed-top .navbar-collapse,
+.navbar.fixed-top .navbar-collapse,
+.navbar-fixed-bottom .navbar-collapse,
+.navbar.fixed-bottom .navbar-collapse {
+  max-height: 340px;
+}
+@media (max-width: 320px) and (orientation: landscape) {
+  .navbar-fixed-top .navbar-collapse,
+  .navbar.fixed-top .navbar-collapse,
+  .navbar-fixed-bottom .navbar-collapse,
+  .navbar.fixed-bottom .navbar-collapse {
+    max-height: 200px;
   }
 }
 .container > .navbar-header,
