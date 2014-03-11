@@ -1,7 +1,7 @@
 {
     "name": "DFMLabs/strapit"
   , "description": "A CSS framework mashup of Twitter's Bootstrap and ZURB's Foundation."
-  , "keywords": ["strapit", "bootstrap", "css", "foundation", "framework"]
+  , "keywords": ["css", "framework"]
   , "homepage": "https://github.com/DFMLabs/strapit"
   , "bootstrap-authors": [
       {
