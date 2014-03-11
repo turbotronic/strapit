@@ -6387,6 +6387,22 @@ a.list-group-item:focus {
   text-decoration: none;
   background-color: #f5f5f5;
 }
+.list-group-item.disabled,
+.list-group-item.disabled:hover,
+.list-group-item.disabled:focus {
+  color: #aaa;
+  background-color: #ccc;
+}
+.list-group-item.disabled .list-group-item-heading,
+.list-group-item.disabled:hover .list-group-item-heading,
+.list-group-item.disabled:focus .list-group-item-heading {
+  color: inherit;
+}
+.list-group-item.disabled .list-group-item-text,
+.list-group-item.disabled:hover .list-group-item-text,
+.list-group-item.disabled:focus .list-group-item-text {
+  color: #aaa;
+}
 .list-group-item.active,
 .list-group-item.active:hover,
 .list-group-item.active:focus {
