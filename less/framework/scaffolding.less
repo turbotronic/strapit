@@ -171,15 +171,19 @@ hr {
   overflow: hidden;
   clip: rect(0 0 0 0);
   border: 0;
-}
-
-// Extends the .sr-only class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p
-.sr-only.focusable:active, 
-.sr-only.focusable:focus { 
-  clip: auto; 
-  height: auto; 
-  margin: 0; 
-  overflow: visible; 
-  position: static; 
-  width: auto;
+  // Use in conjunction with .sr-only to only display content when it's focused.
+  // Useful for "Skip to main content" links; see 
+  // http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+  // Credit: HTML5 Boilerplate
+  &.focusable {
+    &:active,
+    &:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      clip: auto;
+    }
+  }
 }
