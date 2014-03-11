@@ -48,7 +48,6 @@
 // content for the user's viewport.
 
 .navbar-collapse {
-  max-height: @navbar-collapse-max-height;
   overflow-x: visible;
   padding-right: @navbar-padding-horizontal;
   padding-left:  @navbar-padding-horizontal;
@@ -87,6 +86,19 @@
     .navbar.fixed-bottom & {
       padding-left: 0;
       padding-right: 0;
+    }
+  }
+}
+
+.navbar-fixed-top,
+.navbar.fixed-top,
+.navbar-fixed-bottom,
+.navbar.fixed-bottom {
+  .navbar-collapse {
+    max-height: @navbar-collapse-max-height;
+
+    @media (max-width: @breakpoint-xs) and (orientation: landscape) {
+      max-height: 200px;
     }
   }
 }
