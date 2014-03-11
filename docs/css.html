@@ -3355,7 +3355,7 @@ a {
 {% endhighlight %}
 
     <h3 id="less-mixins-transitions">Transitions</h3>
-    <p>Three mixins for flexibility. Set all transition information with one, or specify a separate delay and duration as needed.</p>
+    <p>Multiple mixins for flexibility. Set all transition information with one, or specify a separate delay and duration as needed.</p>
 {% highlight scss %}
 .transition(@transition) {
   -webkit-transition: @transition;
@@ -3372,6 +3372,11 @@ a {
 .transition-duration(@transition-duration) {
   -webkit-transition-duration: @transition-duration;
           transition-duration: @transition-duration;
+}
+
+.transition-timing-function(@timing-function) {
+  -webkit-transition-timing-function: @timing-function;
+          transition-timing-function: @timing-function;
 }
 .transition-transform(@transition) {
   -webkit-transition: -webkit-transform @transition;
