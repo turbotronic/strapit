@@ -2107,10 +2107,6 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 </form>
 {% endhighlight %}
 
-
-    <h2 id="forms-control-states">Form states</h2>
-    <p>Provide feedback to users or visitors with basic feedback states on form controls and labels.</p>
-
     <h3 id="forms-input-focus">Input focus</h3>
     <p>We remove the default <code>outline</code> styles on some form controls and apply a <code>box-shadow</code> in its place for <code>:focus</code>.</p>
     <div class="bs-example">
@@ -2123,7 +2119,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 {% endhighlight %}
 
     <h3 id="forms-disabled-inputs">Disabled inputs</h3>
-    <p>Add the <code>disabled</code> attribute on an input to prevent user input and trigger a slightly different look.</p>
+    <p>Add the <code>disabled</code> boolean attribute on an input to prevent user input and trigger a slightly different look.</p>
     <div class="bs-example">
       <form role="form">
         <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here…" disabled>
@@ -2191,7 +2187,18 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 </form>
 {% endhighlight %}
 
-    <h3 id="forms-validation">Validation states</h3>
+<h2 id="forms-control-readonly">Readonly inputs</h2>
+  <p>Add the <code>readonly</code> boolean attribute on an input to prevent user input and style the input as disabled.</p>
+  <div class="bs-example">
+    <form role="form">
+      <input class="form-control" type="text" placeholder="Readonly input here…" readonly>
+    </form>
+  </div><!-- /.bs-example -->
+{% highlight html %}
+<input class="form-control" type="text" placeholder="Readonly input here…" readonly>
+{% endhighlight %}
+
+    <h2 id="forms-control-validation">Validation states</h2>
     <p>Strapit includes validation styles for error, warning, and success states on form controls. To use, add <code>.has-warning</code>, <code>.has-error</code>, or <code>.has-success</code> to the parent element. Any <code>.control-label</code>, <code>.form-control</code>, and <code>.help-block</code> within that element will receive the validation styles.</p>
 
     <div class="bs-example">
