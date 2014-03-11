@@ -2897,6 +2897,13 @@ input[type="search"] {
 }
 input[type="date"] {
   line-height: 38px;
+  line-height: 1.618 \0;
+}
+input[type="date"].input-sm {
+  line-height: 30px;
+}
+input[type="date"].input-lg {
+  line-height: 47px;
 }
 .form-group {
   margin-bottom: 15px;
