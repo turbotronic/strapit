@@ -22,9 +22,10 @@ sub {
 }
 
 // Addresses styling not present in IE 8/9. (nm v2.1.2)
-mark {
-  background: #ff0;
-  color: @text-color;
+mark,
+.mark {
+  background-color: @state-warning-bg;
+  padding: .2em;
 }
 
 // Abbreviations and acronyms
