@@ -46,6 +46,23 @@ module.exports = function (grunt) {
       }
     },
 
+    jscs: {
+      options: {
+        config: 'js/.jscsrc'
+      },
+      grunt: {
+        options: {
+          'requireParenthesesAroundIIFE': true
+        },
+        src: '<%= jshint.grunt.src %>'
+      },
+      src: {
+        src: '<%= jshint.src.src %>'
+      },
+      assets: {
+        src: '<%= jshint.assets.src %>'
+      }
+    },
 
     csslint: {
       options: {
