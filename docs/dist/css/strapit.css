@@ -7921,6 +7921,64 @@ button.close {
   color: #555;
   background: #aaa;
 }
+.preloader {
+  position: relative;
+  z-index: 0;
+  width: 120px;
+  height: 120px;
+  margin: 100px auto;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 120px;
+  color: #ccc;
+  text-align: center;
+  text-transform: uppercase;
+}
+.preloader:before,
+.preloader:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '\0020';
+  filter: alpha(opacity=0);
+  border: 5px solid #ccc;
+  border-radius: 100px;
+  box-shadow: 0 0 50px #ccc, inset 0 0 50px #ccc;
+  opacity: 0;
+}
+.preloader::before {
+  z-index: 2;
+  -webkit-animation: gogoloader 2s infinite;
+          animation: gogoloader 2s infinite;
+}
+.preloader:after {
+  z-index: 1;
+  -webkit-animation: gogoloader 2s infinite 1s;
+          animation: gogoloader 2s infinite 1s;
+}
+@-webkit-keyframes gogoloader {
+  0% {
+    filter: alpha(opacity=0);
+    opacity: 0;
+    -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+            transform: scale(0);
+  }
+  50% {
+    filter: alpha(opacity=100);
+    opacity: 1;
+  }
+  100% {
+    filter: alpha(opacity=0);
+    opacity: 0;
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+  }
+}
 @font-face {
   font-family: 'Glyphicons Halflings';
 
