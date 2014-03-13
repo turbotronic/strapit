@@ -1,43 +1,7 @@
-//
-// Mixins -- custom file for new and candidate mixins
-// --------------------------------------------------
-
-// Font size rem to px converter: Converts px to rems with px fallback
-// 
-.font-size(@value) {
-  @pxValue: ~`function(){var a='@{value}'.split("px");return parseInt(a[0])+'px'}()`;
-  @remValue: ~`function(){var a='@{value}'.split("px");return parseInt(a[0])/10+'rem'}()`;
-  font-size: ~"@{pxValue}"; 
-  font-size: ~"@{remValue}";
-}
-
-// Callout
-// -------------------------
-.callout-variant(@state; @border; @bg-color; @text-color) {
-  .callout-@{state},
-  .callout.@{state} {
-    border-left-color: @border;
-    background-color: @bg-color;
-    h1, h2, h3, h4, h5, h6,
-    .h1, .h2, .h3, .h4, .h5, .h6 {
-      color: @text-color;
-    }
-  }
-}
-
-// Radius
-// -------------------------
-.radius(@radius) {
-  border-radius: @radius;
-}
-
-// Border radius
-// If the @border-radius-base (or -small or -large) is set to 0, we do not
-// want a bunch of declarations where border-radius:0; everywhere. 
-// Wrapping the bortder-radius property in this mixin prevents that.
-.border-radius(@radius) when (isnumber(@radius)) and not (@radius = 0) {
-  border-radius: @radius;
-}
+// Grid generator
+// Created for the Strapit framework -- slight differences from 
+// Boostrap's which is also included in the framework
+// -------------------------------------------------------------
 
 
 // Centered container element
@@ -56,6 +20,7 @@
 }
 
 // Create a row
+// ------------------------------------------
 .make-rows(@gutter: @grid-gutter-width) {
   position: relative;
   width: auto;
@@ -64,6 +29,7 @@
 }
 
 // Create targeted centered columns
+// ------------------------------------------
 .make-centered-columns(@class) {
   .col {
     .@{class}-centered {
@@ -82,10 +48,8 @@
   }
 }
 
-// Grid generator
-// ------------------
-
 // These four mixins create different parts of the grid
+// ----------------------------------------------------
 
 // Column width
 .grid-calc(@index; @columns: @grid-columns; @class; @type) when (@type = width) and (@index > 0) {
@@ -174,35 +138,4 @@
   }
   // next iteration
   .build-static-grid((@index - 1));
-
-}
-
-// Block grid mixins
-// ---------------------
-
-.make-block-grid(@columns: @grid-columns; @class: sm) when (@columns > 0) {
-  .@{class}-block-grid-@{columns} {
-    > li {
-      width: round(percentage((1 / @columns)), 5);
-      padding: 0 0.625em 1.25em;
-      &:nth-of-type(n) {
-        clear: none; 
-      }
-      &:nth-of-type(@{columns}n+1) {
-        clear: both; 
-      }
-    }
-  }
-  // next iteration
-  .make-block-grid((@columns - 1), @class);
-}
-
-.remove-block-grid-clearing(@columns: @grid-columns; @class: sm) when (@columns > 0) {
-  .@{class}-block-grid-@{columns} {
-    > li:nth-of-type(@{columns}n+1) {
-      clear: none; 
-    }   
-  }
-  // next iteration
-  .remove-block-grid-clearing((@columns - 1), @class);
 }

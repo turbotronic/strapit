@@ -1,0 +1,29 @@
+// Block grid mixins
+// ---------------------
+
+.make-block-grid(@columns: @grid-columns; @class: sm) when (@columns > 0) {
+  .@{class}-block-grid-@{columns} {
+    > li {
+      width: round(percentage((1 / @columns)), 5);
+      padding: 0 0.625em 1.25em;
+      &:nth-of-type(n) {
+        clear: none; 
+      }
+      &:nth-of-type(@{columns}n+1) {
+        clear: both; 
+      }
+    }
+  }
+  // next iteration
+  .make-block-grid((@columns - 1), @class);
+}
+
+.remove-block-grid-clearing(@columns: @grid-columns; @class: sm) when (@columns > 0) {
+  .@{class}-block-grid-@{columns} {
+    > li:nth-of-type(@{columns}n+1) {
+      clear: none; 
+    }   
+  }
+  // next iteration
+  .remove-block-grid-clearing((@columns - 1), @class);
+}
