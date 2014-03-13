@@ -1,8 +1,3 @@
-@wizard-bg: @gray-lightest;
-@wizard-hover-color: #f3f4f5;
-@wizard-height: 46px;
-@wizard-border-radius: 4px;
-
 .wizard {
   &:extend(.clearfix all);
   position: relative;
@@ -10,7 +5,7 @@
   background-color: @wizard-bg;
   border: 1px solid @border-color;
   border-radius: @wizard-border-radius;
-  .box-shadow: (0 1px 4px rgba(0, 0, 0, .065));
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .065);
 
   ul {
     width: 4000px;
@@ -43,23 +38,24 @@
       background: #ededed;
       &.active {
         color: @state-info-text;
-        background: #f1f6fc;
+        background: @state-info-bg;
         .chevron:before {
-          border-left: 14px solid #f1f6fc;
+          border-left: 14px solid @state-info-bg;
+        }
+        .badge {
+          background: @state-info-text;
+          color: #fff;
         }
       }
       &.complete {
         color: @state-success-text;
-        background: #f3f4f5;
+        background: @state-success-bg;
         .chevron:before {
-          border-left: 14px solid #f3f4f5;
+          border-left: 14px solid @state-success-bg;
         }
-        &:hover {
-          cursor: pointer;
-          background: #e7eff8;
-          .chevron:before {
-            border-left: 14px solid #e7eff8;
-          }
+        .badge {
+          background: @state-success-text;
+          color: #fff;
         }
       }
       &:first-child {

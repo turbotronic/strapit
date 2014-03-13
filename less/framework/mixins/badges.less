@@ -1,0 +1,10 @@
+// Badge
+// -------------------------
+.badge-variant(@state; @border; @bg-color; @text-color) {
+  .badge-@{state},
+  .badge.@{state} {
+    border-color: @border;
+    background-color: @bg-color;
+    color: @text-color;
+  }
+}
