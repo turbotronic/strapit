@@ -326,7 +326,7 @@ module.exports = function (grunt) {
   grunt.registerTask('dist-js', ['concat', 'uglify']);
 
   // CSS distribution task.
-  grunt.registerTask('dist-css', ['less', 'autoprefixer', 'csslint', 'csscomb', 'cssmin', 'usebanner']);
+  grunt.registerTask('dist-css', ['less', 'autoprefixer', 'usebanner', 'csslint', 'csscomb', 'cssmin']);
 
   // Docs distribution task.
   grunt.registerTask('dist-docs', ['copy:docs']);
