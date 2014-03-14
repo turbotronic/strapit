@@ -1902,7 +1902,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap Javascript requi
     animation: true,
     placement: 'top',
     selector: false,
-    template: '<div class="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
+    template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
     trigger: 'hover focus',
     title: '',
     delay: 0,
@@ -2270,7 +2270,6 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap Javascript requi
   }
 
 }(jQuery);
-
 /* ========================================================================
  * Bootstrap: popover.js v3.1.1
  * http://getbootstrap.com/javascript/#popovers
