@@ -14,3 +14,4 @@ Icon
 # Files in this folder
 _gh_pages/*
 node_modules/*
+bower.json
