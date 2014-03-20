@@ -2258,21 +2258,28 @@ lead: "Over a dozen reusable components built to provide iconography, labels, al
 
   </div>
 
-  <!-- Preloader
+      <!-- Preloader
   ================================================== -->
   <div class="bs-docs-section">
-    <h1 id="preloader" class="page-header">Preloader</h1>
+   <h1 id="preloaders" class="page-header">Preloaders</h1>
 
-    <h3>Example</h3>
-    <p>Use this empty div to use for loading of elements.</p>
+   <p class="lead">These are fun little CSS-based preloaders which can be used for page loads, image loads, etc. See <code>custom/preloader.less</code>.</p>
+    <h2 id="social-icons-how-to-use">How to Use Them</h2>
+    <p>The width and height are variables that can be changed within "preloader.less" to your liking. You can also change the text "LOADING" to any preferred text or remove it altogether. Lastly, to support IE8, we swap to a simple GIF animation, again, you can change or delete the LOADING text.</p>
+    <p>To use the preloader, simply swap the name of any page/image DIV to the class name "preloader" for the default bar animation or "preloader-circles" for pulsing circles.</p>
     <div class="bs-example">
-      <div class="preloader">
-      </div>
+      <p><!--[if IE 8]><style>.preloader, .preloader-circles {position: relative; color: #3b567c; font-family: sans-serif; font-size: 14px; line-height: 114px; text-align: center; background-image:url('preloader_ie.gif'); width: 48px; height: 48px;}</style><![endif]--></p>
+      <p><div class="preloader">LOADING</div></p>
     </div>
 {% highlight html %}
-<div class="preloader">...</div>
+<p>
+  <!--[if IE 8]><style>.preloader, .preloader-circles {position: relative; color: #3b567c; font-family: sans-serif; font-size: 14px; line-height: 114px; text-align: center; background-image:url('preloader_ie.gif'); width: 48px; height: 48px;}</style><![endif]-->
+  <div class="preloader">LOADING</div>
+</p>
 {% endhighlight %}
-  </div>
+      <h3 id="preloader-why">Why Preloaders?</h3>
+         <p>When to use a preloader will depend upon load times of elements, etc. In general, if the page/element load is longer than 3 seconds, consider using a preloader.</p>
+      </div>
 
   <!-- Wells
   ================================================== -->
